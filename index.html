@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinder- und Jugendpraxis Gandenberger-Bachem · München Bogenhausen</title>
+<meta name="description" content="Praxis für Kinder- und Jugendmedizin in München Bogenhausen. Dr. med. Susanne Gandenberger-Bachem, Dr. med. Ania Jocham, Dr. med. Heike Boerschmann.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:    #F8F5F0;
+  --bg2:   #F0EBE3;
+  --ink:   #2A2522;
+  --ink2:  #7A7470;
+  --rule:  #E2DDD7;
+  --acc:   #8B7355;
+  --acc2:  #F5EFE6;
+  --white: #FFFFFF;
+  --nav-h: 64px;
+  --max:   1200px;
+  --pad:   clamp(20px,5vw,72px);
+  --r:     0.35s cubic-bezier(0.25,0,0,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden;background:var(--bg)}
+body{font-family:"Inter",sans-serif;font-weight:300;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;height:var(--nav-h);background:rgba(248,245,240,0.97);backdrop-filter:blur(20px);border-bottom:0.5px solid var(--rule)}
+.nav-i{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-ente{width:28px;height:22px;color:var(--acc);flex-shrink:0}
+.logo-text .name{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:400;letter-spacing:0.01em;line-height:1.1;color:var(--ink)}
+.logo-text .sub{font-size:9px;font-weight:300;color:var(--ink2);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:12px;color:var(--ink2);font-weight:300;letter-spacing:0.05em;transition:color var(--r)}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:12px;font-weight:400;color:var(--acc);border:0.5px solid var(--acc);padding:8px 18px;letter-spacing:0.06em;transition:background var(--r),color var(--r)}
+.nav-cta:hover{background:var(--acc);color:var(--white)}
+.burger{display:none;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center}
+.burger span{display:block;width:20px;height:1px;background:var(--ink);transition:all var(--r)}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;inset:var(--nav-h) 0 0;background:var(--bg);z-index:199;flex-direction:column;padding:36px var(--pad) 48px}
+.mob-nav.open{display:flex}
+.mob-nav a{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:300;padding:16px 0;border-bottom:0.5px solid var(--rule);color:var(--ink)}
+.mob-nav-cta{display:block;text-align:center;margin-top:28px;padding:16px;background:var(--acc);color:var(--white);font-size:13px;letter-spacing:0.08em}
+
+/* ── HERO — zentriert, einladend ── */
+.hero{padding:clamp(48px,7vw,96px) var(--pad) clamp(40px,6vw,80px);text-align:center;background:var(--bg);border-bottom:0.5px solid var(--rule)}
+.hero-inner{max-width:680px;margin:0 auto}
+.hero-eyebrow{font-size:10px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--acc);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:10px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:"";display:block;width:28px;height:0.5px;background:var(--acc);opacity:0.5}
+.hero-h1{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4.5vw,52px);font-weight:300;line-height:1.2;letter-spacing:-0.02em;color:var(--ink);margin-bottom:16px}
+.hero-h1 em{font-style:italic;color:var(--acc)}
+.hero-sub{font-size:14px;line-height:1.85;color:var(--ink2);margin-bottom:32px;font-weight:300}
+.hero-cta-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.btn-filled{display:inline-flex;align-items:center;gap:8px;padding:0 28px;height:48px;background:var(--acc);color:var(--white);font-size:12px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;transition:background var(--r)}
+.btn-filled:hover{background:#735f45}
+.btn-filled svg{flex-shrink:0}
+.btn-ghost{font-size:12px;font-weight:300;letter-spacing:0.08em;color:var(--ink2);border-bottom:0.5px solid var(--rule);padding-bottom:1px;transition:color var(--r),border-color var(--r)}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+
+/* ── VERTRAUEN — kleine Zeile unter dem Hero ── */
+.vertrauen{background:var(--acc2);border-bottom:0.5px solid var(--rule);padding:14px var(--pad)}
+.vertrauen-i{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.v-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink2);letter-spacing:0.04em}
+.v-item svg{width:14px;height:14px;stroke:var(--acc);fill:none;stroke-width:2;flex-shrink:0}
+.v-sep{width:1px;height:16px;background:var(--rule)}
+
+/* ── STATEMENT ── */
+.statement{padding:clamp(48px,6vw,80px) var(--pad);text-align:center;background:var(--white);border-bottom:0.5px solid var(--rule)}
+.statement-inner{max-width:640px;margin:0 auto}
+.statement-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+.statement-text{font-family:"Cormorant Garamond",serif;font-size:clamp(20px,2.5vw,30px);font-weight:300;line-height:1.55;color:var(--ink);letter-spacing:-0.01em}
+.statement-text em{font-style:italic;color:var(--acc)}
+
+/* ── TEAM ── */
+.team{padding:clamp(48px,6vw,80px) 0;background:var(--bg);border-bottom:0.5px solid var(--rule)}
+.team-head{max-width:var(--max);margin:0 auto;padding:0 var(--pad) 32px;text-align:center}
+.team-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px}
+.team-sub{font-size:12px;color:var(--ink2);letter-spacing:0.04em}
+.team-grid{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,32px)}
+.person-card{background:var(--white);border:0.5px solid var(--rule)}
+.person-img{height:clamp(180px,20vw,260px);background:var(--bg2);position:relative;overflow:hidden}
+.person-img-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--ink2);opacity:0.2}
+.person-img-ph svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1}
+.person-img-ph span{font-size:8px;letter-spacing:0.18em;text-transform:uppercase}
+.person-info{padding:clamp(14px,1.8vw,22px)}
+.person-nr{font-size:9px;color:var(--acc);letter-spacing:0.14em;margin-bottom:6px;opacity:0.7}
+.person-name{font-family:"Cormorant Garamond",serif;font-size:clamp(15px,1.5vw,19px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:5px}
+.person-role{font-size:9px;color:var(--ink2);letter-spacing:0.1em;text-transform:uppercase;line-height:1.6}
+
+/* ── LEISTUNGEN ── */
+.phasen{padding:clamp(48px,6vw,80px) 0;background:var(--bg2);border-bottom:0.5px solid var(--rule)}
+.phasen-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.phasen-head{text-align:center;margin-bottom:36px}
+.phasen-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px}
+.phasen-desc{font-size:12px;line-height:1.8;color:var(--ink2)}
+.ph-list{background:var(--white);border:0.5px solid var(--rule)}
+.ph-item{border-bottom:0.5px solid var(--rule)}
+.ph-item:last-child{border-bottom:none}
+.ph-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:none;border:none;cursor:pointer;text-align:left;gap:12px;transition:background var(--r)}
+.ph-btn:hover{background:var(--bg)}
+.ph-left{display:flex;align-items:center;gap:16px}
+.ph-nr{font-size:10px;color:var(--acc);opacity:0.6;min-width:18px;font-weight:400}
+.ph-name{font-family:"Cormorant Garamond",serif;font-size:clamp(16px,1.6vw,20px);font-weight:300;color:var(--ink);letter-spacing:-0.01em}
+.ph-age{font-size:10px;color:var(--ink2);opacity:0.6;margin-left:8px}
+.ph-ico{color:var(--ink2);flex-shrink:0;opacity:0.35;transition:transform var(--r)}
+.ph-btn[aria-expanded="true"]{background:var(--acc2)}
+.ph-btn[aria-expanded="true"] .ph-ico{transform:rotate(180deg)}
+.ph-btn[aria-expanded="true"] .ph-name{color:var(--acc)}
+.ph-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.25,0,0,1)}
+.ph-body.open{max-height:300px}
+.ph-bi{padding:0 20px 16px 54px}
+.ph-tags{display:flex;flex-wrap:wrap;gap:6px}
+.ph-tag{font-size:11px;color:var(--ink);background:var(--bg);padding:5px 12px;border:0.5px solid var(--rule)}
+
+/* ── PRAXIS — warm & hell ── */
+.praxis{padding:clamp(48px,6vw,80px) 0;background:var(--white);border-bottom:0.5px solid var(--rule)}
+.praxis-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.praxis-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--acc);margin-bottom:16px;opacity:0.8}
+.praxis-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,3vw,40px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px}
+.praxis-adr{border-top:0.5px solid var(--rule);padding-top:16px;margin-bottom:16px}
+.praxis-adr p{font-size:13px;color:var(--ink2);line-height:2.1;font-weight:300}
+.praxis-adr strong{color:var(--ink);font-weight:400}
+.praxis-tel{font-family:"Cormorant Garamond",serif;font-size:clamp(18px,2vw,26px);color:var(--acc);font-weight:400;letter-spacing:-0.01em;transition:opacity var(--r)}
+.praxis-tel:hover{opacity:0.7}
+.praxis-foto{aspect-ratio:4/3;background:var(--bg2);border:0.5px solid var(--rule);overflow:hidden;position:relative}
+.praxis-foto-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--ink2);opacity:0.2}
+.praxis-foto-ph svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1}
+.praxis-foto-ph span{font-size:9px;letter-spacing:0.2em;text-transform:uppercase}
+
+/* ── KONTAKT ── */
+.kontakt{padding:clamp(48px,6vw,80px) 0;background:var(--bg)}
+.kontakt-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.kontakt-head{text-align:center;margin-bottom:clamp(32px,4vw,52px)}
+.kontakt-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px}
+.kontakt-sub{font-size:12px;color:var(--ink2)}
+.kontakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
+.k-block{margin-bottom:20px}
+.k-lbl{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
+.k-val{font-family:"Cormorant Garamond",serif;font-size:clamp(15px,1.4vw,20px);color:var(--ink);font-weight:400;line-height:1.4}
+.k-val a{transition:opacity var(--r)}
+.k-val a:hover{opacity:0.6}
+.k-val.sm{font-family:"Inter",sans-serif;font-size:12px;color:var(--ink2)}
+.k-cta{display:inline-flex;align-items:center;gap:10px;padding:0 28px;height:48px;background:var(--acc);color:var(--white);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-top:16px;transition:background var(--r)}
+.k-cta:hover{background:#735f45}
+.oz-head{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+.oz-table{width:100%;border-collapse:collapse}
+.oz-tr td{padding:9px 0;border-bottom:0.5px solid var(--rule);font-size:12px;font-weight:300}
+.oz-tr td:first-child{color:var(--ink2);width:40%}
+.oz-tr td:last-child{color:var(--ink)}
+.oz-tr.heute td{color:var(--acc)!important;font-weight:400}
+.heute-pill{font-size:8px;background:var(--acc2);color:var(--acc);padding:2px 6px;letter-spacing:0.08em;text-transform:uppercase;margin-left:6px;display:none;border:0.5px solid rgba(139,115,85,0.2)}
+.heute .heute-pill{display:inline}
+.oz-note{margin-top:12px;font-size:11px;color:var(--ink2);line-height:1.75}
+.oz-note a{color:var(--acc)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);padding:clamp(20px,3vw,32px) 0;border-top:0.5px solid var(--rule)}
+.footer-i{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-logo{display:flex;align-items:center;gap:8px;color:var(--acc)}
+.footer-links{display:flex;gap:20px;list-style:none}
+.footer-links a{font-size:11px;color:var(--ink2);letter-spacing:0.04em;transition:color var(--r)}
+.footer-links a:hover{color:var(--ink)}
+.footer-copy{font-size:11px;color:var(--ink2);opacity:0.6}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1023px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+}
+@media(max-width:767px){
+  :root{--nav-h:56px}
+  .hero{padding:36px var(--pad) 32px}
+  .vertrauen-i{gap:16px}
+  .v-sep{display:none}
+  .team-grid{grid-template-columns:1fr}
+  .person-img{height:200px}
+  .praxis-inner{grid-template-columns:1fr}
+  .praxis-foto{display:none}
+  .kontakt-grid{grid-template-columns:1fr;gap:40px}
+  .footer-i{flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media(max-width:480px){
+  .hero-cta-row{flex-direction:column;align-items:center}
+  .btn-filled{width:100%;max-width:280px;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-i">
+    <a href="#" class="logo" aria-label="Kinder- und Jugendpraxis Gandenberger-Bachem">
+      <svg class="logo-ente" viewBox="0 0 60 48" fill="none" aria-hidden="true">
+        <path d="M7 42C7 28 16 19 29 19C42 19 52 28 52 42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M29 19C29 11 34 7 40 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="38" cy="8" r="2" fill="currentColor"/>
+        <path d="M40 8C47 6 52 9 51 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <div class="name">Gandenberger-Bachem</div>
+        <div class="sub">Kinder- und Jugendmedizin</div>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#team">Team</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
+       target="_blank" rel="noopener noreferrer" class="nav-cta">Termin buchen</a>
+    <button class="burger" aria-label="Menü" aria-expanded="false" onclick="burgerToggle(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mob-nav" class="mob-nav" aria-hidden="true">
+  <a href="#team" onclick="closeMob()">Team</a>
+  <a href="#leistungen" onclick="closeMob()">Leistungen</a>
+  <a href="#kontakt" onclick="closeMob()">Kontakt</a>
+  <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
+     target="_blank" rel="noopener noreferrer" class="mob-nav-cta">Termin buchen</a>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">München Bogenhausen</p>
+    <h1 class="hero-h1">Für die kleinen Menschen,<br>die <em>alles bedeuten.</em></h1>
+    <p class="hero-sub">Kinder- und Jugendmedizin mit Herz. Drei Ärztinnen,<br>die sich Zeit nehmen — seit 1998 in München Bogenhausen.</p>
+    <div class="hero-cta-row">
+      <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
+         target="_blank" rel="noopener noreferrer" class="btn-filled">
+        Termin buchen
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#leistungen" class="btn-ghost">Leistungen ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- VERTRAUEN -->
+<div class="vertrauen" role="complementary" aria-label="Kurzinfos">
+  <div class="vertrauen-i">
+    <span class="v-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      GKV &amp; PKV
+    </span>
+    <span class="v-sep"></span>
+    <span class="v-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Alle Kassen willkommen
+    </span>
+    <span class="v-sep"></span>
+    <span class="v-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Online Terminbuchung
+    </span>
+    <span class="v-sep"></span>
+    <span class="v-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Seit 1998
+    </span>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="statement-inner">
+    <p class="statement-label">Unsere Praxis</p>
+    <p class="statement-text">
+      Bei uns erhalten Sie alle Untersuchungen und Behandlungen<br>einer modernen Praxis für Kinder- und Jugendmedizin.<br>
+      <em>[Originaltext der Praxis einfügen]</em>
+    </p>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="team">
+  <div class="team-head">
+    <h2 class="team-h2">Das Team</h2>
+    <p class="team-sub">Drei Ärztinnen, denen Ihr Kind vertraut</p>
+  </div>
+  <div class="team-grid">
+
+    <article class="person-card">
+      <div class="person-img">
+        <div class="person-img-ph" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <span>Porträt</span>
+        </div>
+      </div>
+      <div class="person-info">
+        <p class="person-nr">Praxisgründerin</p>
+        <h3 class="person-name">Dr. med. Susanne<br>Gandenberger-Bachem</h3>
+        <p class="person-role">Fachärztin für Kinder- und Jugendmedizin</p>
+      </div>
+    </article>
+
+    <article class="person-card">
+      <div class="person-img">
+        <div class="person-img-ph" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <span>Porträt</span>
+        </div>
+      </div>
+      <div class="person-info">
+        <p class="person-nr">Angestellte Fachärztin</p>
+        <h3 class="person-name">Dr. med.<br>Ania Jocham</h3>
+        <p class="person-role">Fachärztin für Kinder- und Jugendmedizin</p>
+      </div>
+    </article>
+
+    <article class="person-card">
+      <div class="person-img">
+        <div class="person-img-ph" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <span>Porträt</span>
+        </div>
+      </div>
+      <div class="person-info">
+        <p class="person-nr">Fachärztin</p>
+        <h3 class="person-name">Dr. med.<br>Heike Boerschmann</h3>
+        <p class="person-role">Fachärztin für Kinder- und Jugendmedizin</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen" class="phasen">
+  <div class="phasen-inner">
+    <div class="phasen-head">
+      <h2 class="phasen-h2">Von Anfang an dabei.</h2>
+      <p class="phasen-desc">Alle Untersuchungen und Behandlungen — nach Lebensphase.</p>
+    </div>
+    <div class="ph-list">
+
+      <div class="ph-item">
+        <button class="ph-btn" aria-expanded="false" aria-controls="ph1" onclick="togglePh(this)">
+          <div class="ph-left">
+            <span class="ph-nr">01</span>
+            <span class="ph-name">Das Neugeborene</span>
+            <span class="ph-age">Geburt bis 4 Wochen</span>
+          </div>
+          <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ph-body" id="ph1">
+          <div class="ph-bi"><div class="ph-tags">
+            <span class="ph-tag">U2 – Neugeborenenuntersuchung</span>
+            <span class="ph-tag">Stillberatung</span>
+            <span class="ph-tag">Ernährungsberatung</span>
+            <span class="ph-tag">Sonographie Säuglingshüfte</span>
+            <span class="ph-tag">Hörtest</span>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="ph-item">
+        <button class="ph-btn" aria-expanded="false" aria-controls="ph2" onclick="togglePh(this)">
+          <div class="ph-left">
+            <span class="ph-nr">02</span>
+            <span class="ph-name">Das Kleinkind</span>
+            <span class="ph-age">1 Monat bis 2 Jahre</span>
+          </div>
+          <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ph-body" id="ph2">
+          <div class="ph-bi"><div class="ph-tags">
+            <span class="ph-tag">U3 bis U6</span>
+            <span class="ph-tag">Impfungen</span>
+            <span class="ph-tag">Entwicklungstests</span>
+            <span class="ph-tag">Ernährungsberatung</span>
+            <span class="ph-tag">Sonographie Bauchraum &amp; Nieren</span>
+            <span class="ph-tag">Hör- &amp; Sehtest</span>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="ph-item">
+        <button class="ph-btn" aria-expanded="false" aria-controls="ph3" onclick="togglePh(this)">
+          <div class="ph-left">
+            <span class="ph-nr">03</span>
+            <span class="ph-name">Das Kindergartenkind</span>
+            <span class="ph-age">2 bis 6 Jahre</span>
+          </div>
+          <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ph-body" id="ph3">
+          <div class="ph-bi"><div class="ph-tags">
+            <span class="ph-tag">U7 bis U9</span>
+            <span class="ph-tag">Kindergartenuntersuchung</span>
+            <span class="ph-tag">Allergologie &amp; Hyposensibilisierung</span>
+            <span class="ph-tag">Hör- &amp; Sehtests</span>
+            <span class="ph-tag">Impfungen</span>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="ph-item">
+        <button class="ph-btn" aria-expanded="false" aria-controls="ph4" onclick="togglePh(this)">
+          <div class="ph-left">
+            <span class="ph-nr">04</span>
+            <span class="ph-name">Das Schulkind</span>
+            <span class="ph-age">6 bis 12 Jahre</span>
+          </div>
+          <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ph-body" id="ph4">
+          <div class="ph-bi"><div class="ph-tags">
+            <span class="ph-tag">U10 &amp; U11</span>
+            <span class="ph-tag">Sportuntersuchung</span>
+            <span class="ph-tag">Lungenfunktion &amp; EKG</span>
+            <span class="ph-tag">ADHS-Diagnostik &amp; Therapie</span>
+            <span class="ph-tag">Impfauffrischungen</span>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="ph-item">
+        <button class="ph-btn" aria-expanded="false" aria-controls="ph5" onclick="togglePh(this)">
+          <div class="ph-left">
+            <span class="ph-nr">05</span>
+            <span class="ph-name">Der Jugendliche</span>
+            <span class="ph-age">12 bis 18 Jahre</span>
+          </div>
+          <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ph-body" id="ph5">
+          <div class="ph-bi"><div class="ph-tags">
+            <span class="ph-tag">J1 &amp; J2</span>
+            <span class="ph-tag">Jugendarbeitsschutzuntersuchung</span>
+            <span class="ph-tag">Reiseimpfungen &amp; Reiseberatung</span>
+            <span class="ph-tag">Impfungen</span>
+          </div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRAXIS -->
+<section class="praxis">
+  <div class="praxis-inner">
+    <div>
+      <p class="praxis-label">Die Praxis</p>
+      <h2 class="praxis-h2">Freischütz&shy;straße&nbsp;9<br>München Bogenhausen</h2>
+      <div class="praxis-adr">
+        <p><strong>81927 München</strong><br>GKV und PKV &middot; Alle Krankenkassen willkommen</p>
+      </div>
+      <a href="tel:+498993948730" class="praxis-tel">089&thinsp;93&thinsp;94&thinsp;87&thinsp;3</a>
+    </div>
+    <div class="praxis-foto" role="img" aria-label="Praxisfoto">
+      <div class="praxis-foto-ph" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="0.5"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Praxisfoto</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="kontakt">
+  <div class="kontakt-inner">
+    <div class="kontakt-head">
+      <h2 class="kontakt-h2">Termin vereinbaren</h2>
+      <p class="kontakt-sub">Wir freuen uns auf Ihren Anruf oder Ihre Online-Buchung.</p>
+    </div>
+    <div class="kontakt-grid">
+      <div>
+        <div class="k-block">
+          <p class="k-lbl">Telefon</p>
+          <p class="k-val"><a href="tel:+498993948730">089&thinsp;93&thinsp;94&thinsp;87&thinsp;3</a></p>
+        </div>
+        <div class="k-block">
+          <p class="k-lbl">E-Mail</p>
+          <p class="k-val sm"><a href="mailto:termine-kinderpraxis@die-familienpraxis.de">termine-kinderpraxis@die-familienpraxis.de</a></p>
+        </div>
+        <div class="k-block">
+          <p class="k-lbl">Adresse</p>
+          <p class="k-val">Freischützstraße&nbsp;9<br>81927&nbsp;München</p>
+        </div>
+        <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
+           target="_blank" rel="noopener noreferrer" class="k-cta">
+          Online Termin buchen
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div>
+        <p class="oz-head">Öffnungszeiten</p>
+        <table class="oz-table" aria-label="Öffnungszeiten">
+          <tbody>
+            <tr class="oz-tr" id="oz-mo"><td>Montag</td><td>08:30&nbsp;–&nbsp;13:00 &middot; 15:00&nbsp;–&nbsp;18:00<span class="heute-pill">Heute</span></td></tr>
+            <tr class="oz-tr" id="oz-di"><td>Dienstag</td><td>nach Vereinbarung<span class="heute-pill">Heute</span></td></tr>
+            <tr class="oz-tr" id="oz-mi"><td>Mittwoch</td><td>08:30&nbsp;–&nbsp;13:00 &middot; 15:00&nbsp;–&nbsp;18:00<span class="heute-pill">Heute</span></td></tr>
+            <tr class="oz-tr" id="oz-do"><td>Donnerstag</td><td>08:30&nbsp;–&nbsp;13:00<span class="heute-pill">Heute</span></td></tr>
+            <tr class="oz-tr" id="oz-fr"><td>Freitag</td><td>08:30&nbsp;–&nbsp;12:00<span class="heute-pill">Heute</span></td></tr>
+            <tr class="oz-tr"><td>Samstag</td><td style="color:var(--ink2)">geschlossen</td></tr>
+            <tr class="oz-tr"><td>Sonntag</td><td style="color:var(--ink2)">geschlossen</td></tr>
+          </tbody>
+        </table>
+        <p class="oz-note">Außerhalb der Öffnungszeiten: <a href="tel:116117">116&nbsp;117</a> – Ärztlicher Bereitschaftsdienst</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-i">
+    <div class="footer-logo">
+      <svg width="22" height="18" viewBox="0 0 60 48" fill="none" aria-hidden="true">
+        <path d="M7 42C7 28 16 19 29 19C42 19 52 28 52 42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M29 19C29 11 34 7 40 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="38" cy="8" r="2" fill="currentColor"/>
+        <path d="M40 8C47 6 52 9 51 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <ul class="footer-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="mailto:termine-kinderpraxis@die-familienpraxis.de">Kontakt</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="jahr"></span> Kinder- und Jugendpraxis Gandenberger-Bachem</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var map=[null,"oz-mo","oz-di","oz-mi","oz-do","oz-fr",null,null];
+  var id=map[new Date().getDay()];
+  if(id){var el=document.getElementById(id);if(el)el.classList.add("heute");}
+  var j=document.getElementById("jahr");
+  if(j)j.textContent=new Date().getFullYear();
+})();
+function burgerToggle(btn){
+  var m=document.getElementById("mob-nav");
+  var open=m.classList.toggle("open");
+  btn.classList.toggle("open",open);
+  btn.setAttribute("aria-expanded",open);
+  m.setAttribute("aria-hidden",!open);
+  document.body.style.overflow=open?"hidden":"";
+}
+function closeMob(){
+  var m=document.getElementById("mob-nav");
+  var b=document.querySelector(".burger");
+  m.classList.remove("open");
+  if(b){b.classList.remove("open");b.setAttribute("aria-expanded","false");}
+  m.setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+}
+function togglePh(btn){
+  var wasOpen=btn.getAttribute("aria-expanded")==="true";
+  document.querySelectorAll(".ph-btn").forEach(function(b){
+    b.setAttribute("aria-expanded","false");
+    var body=document.getElementById(b.getAttribute("aria-controls"));
+    if(body)body.classList.remove("open");
+  });
+  if(!wasOpen){
+    btn.setAttribute("aria-expanded","true");
+    var body=document.getElementById(btn.getAttribute("aria-controls"));
+    if(body)body.classList.add("open");
+  }
+}
+</script>
+</body>
+</html>
