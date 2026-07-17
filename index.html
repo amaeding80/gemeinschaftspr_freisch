@@ -3,448 +3,762 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kinder- und Jugendpraxis Gandenberger-Bachem · München Bogenhausen</title>
-<meta name="description" content="Praxis für Kinder- und Jugendmedizin in München Bogenhausen. Dr. med. Susanne Gandenberger-Bachem, Dr. med. Ania Jocham, Dr. med. Heike Boerschmann.">
+<title>Kinderpraxis Gandenberger-Bachem · München Bogenhausen</title>
+<meta name="description" content="Kinder- und Jugendmedizin in München Bogenhausen. Drei Ärztinnen begleiten Ihr Kind von der U2 bis zur J2 — persönlich, mit Zeit und Erfahrung seit 1998. Freischützstraße 9, 81927 München.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kinderpraxis Gandenberger-Bachem · München Bogenhausen">
+<meta property="og:description" content="Drei Ärztinnen begleiten Ihr Kind von der U2 bis zur J2 — persönlich, mit Zeit und Erfahrung seit 1998. Freischützstraße 9, 81927 München.">
+<meta property="og:image" content="hero.webp">
+<meta property="og:locale" content="de_DE">
+<meta name="theme-color" content="#7A5C38">
+<link rel="preload" as="image" href="hero.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:    #F8F5F0;
-  --bg2:   #F0EBE3;
-  --ink:   #2A2522;
-  --ink2:  #7A7470;
-  --rule:  #E2DDD7;
-  --acc:   #8B7355;
-  --acc2:  #F5EFE6;
-  --white: #FFFFFF;
-  --nav-h: 64px;
-  --max:   1200px;
-  --pad:   clamp(20px,5vw,72px);
-  --r:     0.35s cubic-bezier(0.25,0,0,1);
-}
+/* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden;background:var(--bg)}
-body{font-family:"Inter",sans-serif;font-weight:300;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block;object-fit:cover}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+[hidden]{display:none!important}
+img,svg{max-width:100%;height:auto;display:block}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:300;background:#F9F5F0;color:#25211E;-webkit-font-smoothing:antialiased}
 
-/* ── NAV ── */
-nav{position:sticky;top:0;z-index:200;height:var(--nav-h);background:rgba(248,245,240,0.97);backdrop-filter:blur(20px);border-bottom:0.5px solid var(--rule)}
-.nav-i{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:100%;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:12px}
-.logo-ente{width:28px;height:22px;color:var(--acc);flex-shrink:0}
-.logo-text .name{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:400;letter-spacing:0.01em;line-height:1.1;color:var(--ink)}
-.logo-text .sub{font-size:9px;font-weight:300;color:var(--ink2);letter-spacing:0.18em;text-transform:uppercase;margin-top:2px}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-size:12px;color:var(--ink2);font-weight:300;letter-spacing:0.05em;transition:color var(--r)}
+/* ── Tokens ── */
+:root{
+  --bg:#F9F5F0;
+  --bg2:#EEE7DB;
+  --ink:#25211E;
+  --ink2:#6B6257;
+  --acc:#7A5C38;
+  --acc-lt:#F5EDE0;
+  --rule:#DDD8CF;
+  --white:#FFFFFF;
+  --max:1080px;
+  --pad:clamp(22px,5vw,60px);
+  --head:'Newsreader',Georgia,serif;
+}
+
+/* ── Nav ── */
+.nav{position:sticky;top:0;z-index:200;background:rgba(249,245,240,0.94);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--rule)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--head);font-size:18px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
+.nav-logo span{color:var(--acc)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;color:var(--ink2);text-decoration:none;letter-spacing:0.01em;transition:color 0.2s}
 .nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:12px;font-weight:400;color:var(--acc);border:0.5px solid var(--acc);padding:8px 18px;letter-spacing:0.06em;transition:background var(--r),color var(--r)}
-.nav-cta:hover{background:var(--acc);color:var(--white)}
-.burger{display:none;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center}
-.burger span{display:block;width:20px;height:1px;background:var(--ink);transition:all var(--r)}
-.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-cta{background:var(--acc);color:#fff;font-size:13px;font-weight:500;padding:9px 20px;border-radius:2px;text-decoration:none;letter-spacing:0.02em;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;color:var(--ink)}
+.burger span{display:block;width:22px;height:1.5px;background:currentColor;transition:all 0.25s}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.mob-nav{display:none;position:fixed;inset:var(--nav-h) 0 0;background:var(--bg);z-index:199;flex-direction:column;padding:36px var(--pad) 48px}
-.mob-nav.open{display:flex}
-.mob-nav a{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:300;padding:16px 0;border-bottom:0.5px solid var(--rule);color:var(--ink)}
-.mob-nav-cta{display:block;text-align:center;margin-top:28px;padding:16px;background:var(--acc);color:var(--white);font-size:13px;letter-spacing:0.08em}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-nav{position:fixed;inset:82px 0 0;background:var(--bg);z-index:199;display:flex;flex-direction:column;padding:clamp(24px,5vw,40px) var(--pad);gap:0}
+.mob-nav a{font-family:var(--head);font-size:22px;font-weight:400;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--rule);padding:18px 0;display:block}
+.mob-nav .mob-cta{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;background:var(--acc);color:#fff;text-align:center;padding:14px;margin-top:8px;letter-spacing:0.02em}
 
-/* ── HERO — zentriert, einladend ── */
-.hero{padding:clamp(48px,7vw,96px) var(--pad) clamp(40px,6vw,80px);text-align:center;background:var(--bg);border-bottom:0.5px solid var(--rule)}
-.hero-inner{max-width:680px;margin:0 auto}
-.hero-eyebrow{font-size:10px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--acc);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:10px}
-.hero-eyebrow::before,.hero-eyebrow::after{content:"";display:block;width:28px;height:0.5px;background:var(--acc);opacity:0.5}
-.hero-h1{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4.5vw,52px);font-weight:300;line-height:1.2;letter-spacing:-0.02em;color:var(--ink);margin-bottom:16px}
+/* ── Hero ── */
+.hero{background:var(--bg);padding:clamp(36px,4.5vw,60px) var(--pad) clamp(32px,4vw,52px)}
+.hero-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px);align-items:center}
+.hero-h1{font-family:var(--head);font-size:clamp(32px,4.2vw,58px);font-weight:300;line-height:1.13;letter-spacing:-0.03em;color:var(--ink);margin-bottom:20px}
 .hero-h1 em{font-style:italic;color:var(--acc)}
-.hero-sub{font-size:14px;line-height:1.85;color:var(--ink2);margin-bottom:32px;font-weight:300}
-.hero-cta-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-.btn-filled{display:inline-flex;align-items:center;gap:8px;padding:0 28px;height:48px;background:var(--acc);color:var(--white);font-size:12px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;transition:background var(--r)}
-.btn-filled:hover{background:#735f45}
-.btn-filled svg{flex-shrink:0}
-.btn-ghost{font-size:12px;font-weight:300;letter-spacing:0.08em;color:var(--ink2);border-bottom:0.5px solid var(--rule);padding-bottom:1px;transition:color var(--r),border-color var(--r)}
-.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+.hero-sub{font-size:clamp(15px,1.4vw,17px);line-height:1.78;color:var(--ink2);font-weight:300;max-width:440px;margin-bottom:28px}
+.hero-note{font-family:var(--head);font-size:clamp(13px,1.1vw,15px);font-style:italic;color:var(--ink2);line-height:1.65;border-left:2px solid var(--acc);padding-left:16px;margin-bottom:36px;max-width:400px}
+.hero-actions{display:flex;gap:14px;flex-wrap:nowrap}
+.hero-btn-p{background:var(--acc);color:#fff;font-size:14px;font-weight:500;padding:14px 26px;border-radius:2px;text-decoration:none;letter-spacing:0.02em;transition:opacity 0.2s}
+.hero-btn-p:hover{opacity:0.85}
+.hero-btn-s{background:transparent;color:var(--ink);font-size:14px;font-weight:400;padding:14px 26px;border:1px solid var(--rule);border-radius:2px;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s}
+.hero-btn-s:hover{background:var(--bg2)}
+.hero-visual{position:relative}
+.hero-img-wrap{border-radius:4px;overflow:hidden;background:var(--bg2);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-img-wrap picture,.hero-img-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 8%}
+.hero-img-ph{display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--rule)}
+.hero-img-ph svg{width:48px;height:48px;stroke:var(--rule)}
+.hero-img-ph span{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--rule)}
+.hero-badge{position:absolute;bottom:-18px;right:-12px;background:var(--white);border:0.5px solid var(--rule);border-radius:3px;padding:14px 18px;box-shadow:0 4px 20px rgba(37,33,30,0.08)}
+.hero-badge-val{font-family:var(--head);font-size:22px;font-weight:300;color:var(--ink);letter-spacing:-0.02em}
+.hero-badge-lbl{font-size:11px;color:var(--ink2);letter-spacing:0.04em}
 
-/* ── VERTRAUEN — kleine Zeile unter dem Hero ── */
-.vertrauen{background:var(--acc2);border-bottom:0.5px solid var(--rule);padding:14px var(--pad)}
-.vertrauen-i{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
-.v-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink2);letter-spacing:0.04em}
-.v-item svg{width:14px;height:14px;stroke:var(--acc);fill:none;stroke-width:2;flex-shrink:0}
-.v-sep{width:1px;height:16px;background:var(--rule)}
+/* ── Quick Info ── */
+.quickbar{background:var(--acc);padding:18px var(--pad)}
+.quickbar-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.qi-item{display:flex;align-items:center;gap:12px}
+.qi-icon{width:36px;height:36px;background:rgba(255,255,255,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.qi-icon svg{width:16px;height:16px;stroke:#fff;fill:none}
+.qi-text{}
+.qi-label{font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:2px}
+.qi-val{font-size:13px;font-weight:500;color:#fff}
 
-/* ── STATEMENT ── */
-.statement{padding:clamp(48px,6vw,80px) var(--pad);text-align:center;background:var(--white);border-bottom:0.5px solid var(--rule)}
-.statement-inner{max-width:640px;margin:0 auto}
-.statement-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
-.statement-text{font-family:"Cormorant Garamond",serif;font-size:clamp(20px,2.5vw,30px);font-weight:300;line-height:1.55;color:var(--ink);letter-spacing:-0.01em}
-.statement-text em{font-style:italic;color:var(--acc)}
+/* ── Vertrauen Bar ── */
+.vbar{background:var(--white);border-bottom:0.5px solid var(--rule);padding:14px var(--pad)}
+.vbar-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:32px;justify-content:center;flex-wrap:wrap}
+.vbar-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);letter-spacing:0.02em}
+.vbar-dot{width:5px;height:5px;border-radius:50%;background:var(--acc);flex-shrink:0}
 
-/* ── TEAM ── */
-.team{padding:clamp(48px,6vw,80px) 0;background:var(--bg);border-bottom:0.5px solid var(--rule)}
-.team-head{max-width:var(--max);margin:0 auto;padding:0 var(--pad) 32px;text-align:center}
-.team-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px}
-.team-sub{font-size:12px;color:var(--ink2);letter-spacing:0.04em}
-.team-grid{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,32px)}
-.person-card{background:var(--white);border:0.5px solid var(--rule)}
-.person-img{height:clamp(180px,20vw,260px);background:var(--bg2);position:relative;overflow:hidden}
-.person-img-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--ink2);opacity:0.2}
-.person-img-ph svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1}
-.person-img-ph span{font-size:8px;letter-spacing:0.18em;text-transform:uppercase}
-.person-info{padding:clamp(14px,1.8vw,22px)}
-.person-nr{font-size:9px;color:var(--acc);letter-spacing:0.14em;margin-bottom:6px;opacity:0.7}
-.person-name{font-family:"Cormorant Garamond",serif;font-size:clamp(15px,1.5vw,19px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:5px}
-.person-role{font-size:9px;color:var(--ink2);letter-spacing:0.1em;text-transform:uppercase;line-height:1.6}
+/* ── Section Shared ── */
+.section-inner{max-width:var(--max);margin:0 auto}
+.section-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.section-h2{font-family:var(--head);font-size:clamp(26px,3vw,42px);font-weight:300;letter-spacing:-0.025em;line-height:1.15;color:var(--ink);margin-bottom:16px}
+.section-sub{font-size:clamp(14px,1.3vw,16px);color:var(--ink2);line-height:1.8;font-weight:300;max-width:560px}
 
-/* ── LEISTUNGEN ── */
-.phasen{padding:clamp(48px,6vw,80px) 0;background:var(--bg2);border-bottom:0.5px solid var(--rule)}
-.phasen-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.phasen-head{text-align:center;margin-bottom:36px}
-.phasen-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px}
-.phasen-desc{font-size:12px;line-height:1.8;color:var(--ink2)}
-.ph-list{background:var(--white);border:0.5px solid var(--rule)}
+/* ── Haltung / Werte ── */
+.haltung{padding:clamp(60px,7vw,96px) var(--pad);background:var(--white);border-bottom:0.5px solid var(--rule)}
+.haltung-head{margin-bottom:clamp(40px,5vw,60px)}
+.haltung-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.5vw,36px)}
+.haltung-card{padding:clamp(24px,3vw,36px);background:var(--bg);border-top:2px solid var(--acc-lt)}
+.haltung-nr{font-family:var(--head);font-size:clamp(32px,3.5vw,48px);font-weight:300;color:var(--rule);letter-spacing:-0.04em;line-height:1;margin-bottom:20px}
+.haltung-h3{font-family:var(--head);font-size:clamp(17px,1.6vw,22px);font-weight:400;color:var(--ink);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.2}
+.haltung-p{font-size:16px;line-height:1.78;color:var(--ink2);font-weight:300}
+
+/* ── Team ── */
+.team{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
+.team-head{margin-bottom:clamp(40px,5vw,60px)}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.5vw,36px)}
+.team-card{background:var(--white);border:0.5px solid var(--rule);display:flex;flex-direction:column}
+.team-photo{aspect-ratio:4/5;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.team-photo-ph{display:flex;flex-direction:column;align-items:center;gap:8px}
+.team-photo-ph svg{width:40px;height:40px;stroke:var(--rule)}
+.team-photo-ph span{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--rule)}
+.team-body{padding:clamp(18px,2vw,26px);display:flex;flex-direction:column;flex:1}
+.team-role{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
+.team-name{font-family:var(--head);font-size:clamp(17px,1.6vw,21px);font-weight:400;color:var(--ink);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.2}
+.team-trait{font-size:15px;line-height:1.72;color:var(--ink2);font-weight:300;margin-bottom:0}
+.team-langs{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.team-personal{font-size:14px;line-height:1.65;color:var(--ink2);font-weight:300;font-style:italic;margin-top:auto;padding-top:14px;border-top:0.5px solid var(--rule)}
+.team-lang{font-size:10px;letter-spacing:0.06em;text-transform:uppercase;padding:3px 8px;border:0.5px solid var(--rule);color:var(--ink2)}
+
+
+/* ── MFA Team ── */
+.mfa-divider{max-width:var(--max);margin:clamp(32px,4vw,48px) auto 0;padding-top:clamp(24px,3vw,36px);border-top:0.5px solid var(--rule);display:flex;align-items:center;gap:16px}
+.mfa-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
+.mfa-grid{max-width:var(--max);margin:clamp(20px,2.5vw,28px) auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.5vw,20px)}
+.mfa-card{background:var(--white);border:0.5px solid var(--rule)}
+.mfa-photo{aspect-ratio:1/1;background:var(--bg2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mfa-body{padding:12px 14px}
+.mfa-name{font-family:var(--head);font-size:15px;font-weight:400;color:var(--ink);letter-spacing:-0.01em;margin-bottom:3px}
+.mfa-role{font-size:12px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink2)}
+@media(max-width:767px){.mfa-grid{grid-template-columns:repeat(2,1fr)}}
+/* ── Leistungen Accordion ── */
+.phasen{padding:clamp(60px,7vw,96px) var(--pad);background:var(--white);border-bottom:0.5px solid var(--rule)}
+.phasen-head{margin-bottom:clamp(40px,5vw,60px)}
+.ph-list{display:flex;flex-direction:column;gap:0;border-top:0.5px solid var(--rule)}
 .ph-item{border-bottom:0.5px solid var(--rule)}
-.ph-item:last-child{border-bottom:none}
-.ph-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:none;border:none;cursor:pointer;text-align:left;gap:12px;transition:background var(--r)}
-.ph-btn:hover{background:var(--bg)}
-.ph-left{display:flex;align-items:center;gap:16px}
-.ph-nr{font-size:10px;color:var(--acc);opacity:0.6;min-width:18px;font-weight:400}
-.ph-name{font-family:"Cormorant Garamond",serif;font-size:clamp(16px,1.6vw,20px);font-weight:300;color:var(--ink);letter-spacing:-0.01em}
-.ph-age{font-size:10px;color:var(--ink2);opacity:0.6;margin-left:8px}
-.ph-ico{color:var(--ink2);flex-shrink:0;opacity:0.35;transition:transform var(--r)}
-.ph-btn[aria-expanded="true"]{background:var(--acc2)}
+.ph-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:clamp(18px,2.2vw,26px) 0;cursor:pointer;border:none;background:transparent;text-align:left;gap:16px;color:var(--ink)}
+.ph-btn:hover .ph-name{color:var(--acc)}
+.ph-left{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
+.ph-nr{font-family:var(--head);font-size:clamp(18px,2vw,26px);font-weight:300;color:var(--rule);letter-spacing:-0.02em;min-width:36px}
+.ph-name-group{display:flex;flex-direction:column;gap:2px}
+.ph-name{font-family:var(--head);font-size:clamp(16px,1.6vw,22px);font-weight:400;color:var(--ink);letter-spacing:-0.01em;transition:color 0.2s}
+.ph-age{font-size:13px;color:var(--ink2);letter-spacing:0.02em}
+.ph-ico{stroke:var(--ink2);transition:transform 0.3s ease;flex-shrink:0}
 .ph-btn[aria-expanded="true"] .ph-ico{transform:rotate(180deg)}
 .ph-btn[aria-expanded="true"] .ph-name{color:var(--acc)}
-.ph-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.25,0,0,1)}
-.ph-body.open{max-height:300px}
-.ph-bi{padding:0 20px 16px 54px}
-.ph-tags{display:flex;flex-wrap:wrap;gap:6px}
-.ph-tag{font-size:11px;color:var(--ink);background:var(--bg);padding:5px 12px;border:0.5px solid var(--rule)}
+.ph-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.35s ease}
+.ph-btn[aria-expanded="true"]+.ph-body{grid-template-rows:1fr}
+.ph-bi{overflow:hidden}
+.ph-bi-inner{padding:0 0 clamp(20px,2.5vw,32px) clamp(52px,4.5vw,64px)}
+.ph-desc{font-size:16px;line-height:1.78;color:var(--ink2);margin-bottom:16px;font-weight:300}
+.ph-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.ph-tag{font-size:13px;padding:5px 11px;background:var(--bg);color:var(--ink2);border:0.5px solid var(--rule);letter-spacing:0.01em}
+.ph-ext-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--acc);text-decoration:none;letter-spacing:0.01em;margin-top:6px}
+.ph-ext-link:hover{text-decoration:underline}
 
-/* ── PRAXIS — warm & hell ── */
-.praxis{padding:clamp(48px,6vw,80px) 0;background:var(--white);border-bottom:0.5px solid var(--rule)}
-.praxis-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
-.praxis-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--acc);margin-bottom:16px;opacity:0.8}
-.praxis-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,3vw,40px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px}
-.praxis-adr{border-top:0.5px solid var(--rule);padding-top:16px;margin-bottom:16px}
-.praxis-adr p{font-size:13px;color:var(--ink2);line-height:2.1;font-weight:300}
-.praxis-adr strong{color:var(--ink);font-weight:400}
-.praxis-tel{font-family:"Cormorant Garamond",serif;font-size:clamp(18px,2vw,26px);color:var(--acc);font-weight:400;letter-spacing:-0.01em;transition:opacity var(--r)}
-.praxis-tel:hover{opacity:0.7}
-.praxis-foto{aspect-ratio:4/3;background:var(--bg2);border:0.5px solid var(--rule);overflow:hidden;position:relative}
-.praxis-foto-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--ink2);opacity:0.2}
-.praxis-foto-ph svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1}
-.praxis-foto-ph span{font-size:9px;letter-spacing:0.2em;text-transform:uppercase}
-
-/* ── KONTAKT ── */
-.kontakt{padding:clamp(48px,6vw,80px) 0;background:var(--bg)}
-.kontakt-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.kontakt-head{text-align:center;margin-bottom:clamp(32px,4vw,52px)}
-.kontakt-h2{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.5vw,34px);font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px}
-.kontakt-sub{font-size:12px;color:var(--ink2)}
-.kontakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
-.k-block{margin-bottom:20px}
-.k-lbl{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--acc);margin-bottom:5px}
-.k-val{font-family:"Cormorant Garamond",serif;font-size:clamp(15px,1.4vw,20px);color:var(--ink);font-weight:400;line-height:1.4}
-.k-val a{transition:opacity var(--r)}
-.k-val a:hover{opacity:0.6}
-.k-val.sm{font-family:"Inter",sans-serif;font-size:12px;color:var(--ink2)}
-.k-cta{display:inline-flex;align-items:center;gap:10px;padding:0 28px;height:48px;background:var(--acc);color:var(--white);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-top:16px;transition:background var(--r)}
-.k-cta:hover{background:#735f45}
-.oz-head{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+/* ── Kontakt + Anfahrt (kombiniert) ── */
+.kontakt{padding:clamp(40px,5vw,60px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
+.kontakt-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(24px,4vw,56px)}
+.k-col-head{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:18px;padding-bottom:10px;border-bottom:0.5px solid var(--rule)}
+.k-block{margin-bottom:16px}
+.k-lbl{font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:4px}
+.k-val{font-size:16px;color:var(--ink);line-height:1.55;font-weight:300}
+.k-val a{color:var(--ink);text-decoration:none}
+.k-val a:hover{color:var(--acc)}
+.k-val.sm{font-size:14px}
+.k-cta{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#fff;font-size:13px;font-weight:500;padding:10px 18px;text-decoration:none;letter-spacing:0.04em;transition:opacity 0.2s;margin-top:4px}
+.k-cta:hover{opacity:0.85}
 .oz-table{width:100%;border-collapse:collapse}
-.oz-tr td{padding:9px 0;border-bottom:0.5px solid var(--rule);font-size:12px;font-weight:300}
-.oz-tr td:first-child{color:var(--ink2);width:40%}
-.oz-tr td:last-child{color:var(--ink)}
-.oz-tr.heute td{color:var(--acc)!important;font-weight:400}
-.heute-pill{font-size:8px;background:var(--acc2);color:var(--acc);padding:2px 6px;letter-spacing:0.08em;text-transform:uppercase;margin-left:6px;display:none;border:0.5px solid rgba(139,115,85,0.2)}
-.heute .heute-pill{display:inline}
-.oz-note{margin-top:12px;font-size:11px;color:var(--ink2);line-height:1.75}
-.oz-note a{color:var(--acc)}
+.oz-tr th{font-size:14px;font-weight:400;color:var(--ink);text-align:left;padding:7px 0;border-bottom:0.5px solid var(--rule);white-space:nowrap;padding-right:16px}
+.oz-tr td{font-size:14px;color:var(--ink2);text-align:right;padding:7px 0;border-bottom:0.5px solid var(--rule);font-weight:300}
+.oz-tr.heute th,.oz-tr.heute td{color:var(--acc);font-weight:500}
+.heute-pill{display:none;margin-left:6px;font-size:11px;background:var(--acc);color:#fff;padding:2px 5px;letter-spacing:0.04em}
+.oz-tr.heute .heute-pill{display:inline}
+.oz-note{font-size:13px;color:var(--ink2);margin-top:10px;line-height:1.6}
+.oz-note a{color:var(--acc);text-decoration:none}
+.anfahrt-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:4px}
+.anfahrt-list li{font-size:14px;color:var(--ink2);line-height:1.6;font-weight:300;padding-left:12px;position:relative}
+.anfahrt-list li::before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--acc)}
+.map-btn{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--acc);text-decoration:none;padding:9px 14px;border:1px solid var(--acc);margin-top:14px;font-weight:400}
+.map-btn:hover{background:var(--acc-lt)}
+@media(max-width:1023px){.kontakt-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:767px){.kontakt-grid{grid-template-columns:1fr}}
 
-/* ── FOOTER ── */
-footer{background:var(--bg2);padding:clamp(20px,3vw,32px) 0;border-top:0.5px solid var(--rule)}
-.footer-i{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.footer-logo{display:flex;align-items:center;gap:8px;color:var(--acc)}
-.footer-links{display:flex;gap:20px;list-style:none}
-.footer-links a{font-size:11px;color:var(--ink2);letter-spacing:0.04em;transition:color var(--r)}
-.footer-links a:hover{color:var(--ink)}
-.footer-copy{font-size:11px;color:var(--ink2);opacity:0.6}
 
-/* ── RESPONSIVE ── */
+/* ── Footer ── */
+footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
+.footer-i{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-logo{font-family:var(--head);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:-0.01em}
+.footer-links{display:flex;gap:24px;list-style:none}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s}
+.footer-links a:hover{color:rgba(255,255,255,0.7)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.02em}
+
+/* ── Praxis-Fakten Strip ── */
+.praxisfakten{padding:clamp(48px,5.5vw,72px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
+.pf-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,40px);margin-bottom:32px}
+.pf-item{display:flex;flex-direction:column;gap:14px}
+.pf-ico{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border:0.5px solid var(--rule);border-radius:2px;flex-shrink:0}
+.pf-ico svg{width:17px;height:17px;stroke:var(--petrol);fill:none;stroke-width:1.5}
+.pf-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--petrol);margin-bottom:2px}
+.pf-text{font-size:16px;line-height:1.7;color:var(--ink2);font-weight:300}
+.pf-sig{max-width:var(--max);margin:0 auto;padding-top:28px;border-top:0.5px solid var(--rule);font-family:var(--head);font-size:15px;color:var(--ink2);font-style:italic;font-weight:300}
+@media(max-width:1023px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pf-grid{grid-template-columns:1fr}}
+
+
+@media(max-width:767px){
+  .hero-visual{max-width:100%}
+  .hero-badge{right:0;bottom:-12px}
+  .team-grid{grid-template-columns:1fr}
+  .quickbar-inner{grid-template-columns:1fr;gap:16px}
+  .ck-btns{flex-direction:column}
+}
 @media(max-width:1023px){
-  .nav-links,.nav-cta{display:none}
+  .nav-links{display:none}
+  .nav-cta{display:none}
   .burger{display:flex}
 }
-@media(max-width:767px){
-  :root{--nav-h:56px}
-  .hero{padding:36px var(--pad) 32px}
-  .vertrauen-i{gap:16px}
-  .v-sep{display:none}
-  .team-grid{grid-template-columns:1fr}
-  .person-img{height:200px}
-  .praxis-inner{grid-template-columns:1fr}
-  .praxis-foto{display:none}
-  .kontakt-grid{grid-template-columns:1fr;gap:40px}
-  .footer-i{flex-direction:column;align-items:flex-start;gap:12px}
+@media(orientation:landscape) and (max-height:600px){
+  .hero.hero-v2{min-height:auto}
+  .hero-v2 .hero-visual{min-height:36vw}
+  .hero-v2 .hero-img-wrap{height:36vw}
 }
+
+
+/* ── Hero V2 · Editorial, warm, trustworthy ── */
+:root{
+  --bg:#FAF8F4;
+  --bg2:#F2EEE7;
+  --ink:#2B2B2B;
+  --ink2:#69645E;
+  --petrol:#20494A;
+  --sage:#AEBCA6;
+  --terracotta:#B87A61;
+  --acc:var(--petrol);
+  --acc-lt:#E7EDE8;
+  --rule:#DED9D1;
+  --max:1180px;
+}
+.nav-inner{height:82px;max-width:var(--max)}
+.nav-logo{font-size:20px}
+.nav-links{gap:34px}
+.nav-cta{background:var(--petrol);border-radius:999px;padding:11px 22px}
+
+.hero.hero-v2{
+  min-height:min(78vh, 640px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+  overflow:hidden;
+  padding:0;
+  background:var(--bg);
+}
+.hero.hero-v2::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-v2 .hero-inner{
+  display:contents;
+}
+.hero-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(48px,6vw,80px) clamp(28px,4.5vw,64px);
+  position:relative;
+  z-index:2;
+}
+.hero-v2 .section-label{color:var(--petrol);margin-bottom:22px}
+.hero-eyebrow-line{display:flex;align-items:center;gap:12px}
+.hero-eyebrow-line::before{content:"";width:34px;height:1px;background:var(--terracotta)}
+.hero-v2 .hero-h1{
+  font-size:clamp(50px,6.6vw,88px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  margin-bottom:30px;
+  max-width:720px;
+}
+.hero-v2 .hero-h1 span{display:block}
+.hero-v2 .hero-h1 em{color:var(--petrol);font-weight:300}
+.hero-v2 .hero-sub{
+  font-size:clamp(17px,1.6vw,20px);
+  line-height:1.7;
+  max-width:530px;
+  margin-bottom:34px;
+}
+.hero-v2 .hero-actions{gap:12px;align-items:center}
+.hero-v2 .hero-btn-p{
+  background:var(--petrol);
+  border-radius:999px;
+  padding:16px 27px;
+  box-shadow:0 12px 30px rgba(32,73,74,.16);
+  transition:transform .22s ease,box-shadow .22s ease,opacity .2s;
+}
+.hero-v2 .hero-btn-p:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(32,73,74,.20)}
+.hero-v2 .hero-btn-s{
+  border:none;
+  padding:15px 10px;
+  border-radius:0;
+  position:relative;
+}
+.hero-v2 .hero-btn-s::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--terracotta);transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
+.hero-v2 .hero-btn-s:hover{background:transparent}
+.hero-v2 .hero-btn-s:hover::after{transform:scaleX(1)}
+
+.hero-v2 .hero-visual{
+  padding:0;
+  position:relative;
+  min-height:500px;
+}
+.hero-v2 .hero-img-wrap{
+  position:absolute;
+  inset:0 0 0 -3px;
+  aspect-ratio:unset;
+  border-radius:0 0 0 28px;
+  background:var(--bg2);
+  overflow:hidden;
+}
+.hero-v2 .hero-img-wrap::before{
+  content:"";
+  position:absolute;
+  inset:0 0 0 -3px;
+  background:linear-gradient(to right,
+    rgba(249,245,240,1) 0%,
+    rgba(249,245,240,.4) 6%,
+    transparent 16%);
+  z-index:1;
+  pointer-events:none;
+}
+.hero-v2 .hero-img-wrap::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:28%;
+  background:linear-gradient(to top,rgba(249,245,240,.25),transparent);
+  z-index:1;
+  pointer-events:none;
+}
+.hero-scene{position:absolute;inset:0;display:grid;place-items:center;padding:11%;z-index:2}
+.hero-scene svg{width:100%;height:100%;opacity:.73}
+.hero-img-badge{position:absolute;left:18px;bottom:18px;z-index:3;display:none;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(37,33,30,.45);backdrop-filter:blur(8px);padding:7px 12px;border-radius:999px}
+
+.hero-usp-badge{display:inline-flex;align-items:center;gap:8px;background:var(--acc-lt);border:1px solid rgba(122,92,56,.18);padding:8px 14px;border-radius:2px;margin-bottom:18px}
+.hero-usp-badge span{font-size:11px;font-weight:500;color:var(--acc);letter-spacing:.05em}
+.hero-usp-badge svg{width:13px;height:13px;stroke:var(--acc);flex-shrink:0}
+
+
+@media(max-width:1023px){
+  .hero.hero-v2{min-height:auto;grid-template-columns:1fr}
+  .hero-v2 .hero-inner{display:contents}
+  .hero-copy{order:2;padding:36px clamp(22px,5vw,48px) 52px}
+  .hero-v2 .hero-visual{order:1;min-height:62vw}
+  .hero-v2 .hero-img-wrap{position:relative;height:62vw;border-radius:0 0 20px 20px}
+  .hero-v2 .hero-img-wrap::before{background:linear-gradient(to bottom,transparent 0%,rgba(249,245,240,.7) 80%,#F9F5F0 100%)}
+  .hero-v2 .hero-h1{font-size:clamp(42px,9vw,68px)}
+}
+@media(max-width:767px){
+  .nav-inner{height:68px}
+  .hero-v2 .hero-h1{font-size:clamp(36px,12vw,54px);line-height:1.05}
+  .hero-v2 .hero-sub{font-size:15px}
+  .hero-v2 .hero-visual{min-height:55vw}
+  .hero-v2 .hero-img-wrap{height:55vw}
+}
+
+/* ── Mobile ≤480px: Hero-Buttons untereinander (nur Smartphones) ── */
 @media(max-width:480px){
-  .hero-cta-row{flex-direction:column;align-items:center}
-  .btn-filled{width:100%;max-width:280px;justify-content:center}
+  .hero-v2 .hero-actions{flex-direction:column;align-items:stretch}
+}
+/* ── Mob-Nav Höhenkorrektur auf Mobile ── */
+@media(max-width:767px){
+  .mob-nav{inset:68px 0 0}
 }
 </style>
 </head>
 <body>
 
-<nav role="navigation" aria-label="Hauptnavigation">
-  <div class="nav-i">
-    <a href="#" class="logo" aria-label="Kinder- und Jugendpraxis Gandenberger-Bachem">
-      <svg class="logo-ente" viewBox="0 0 60 48" fill="none" aria-hidden="true">
-        <path d="M7 42C7 28 16 19 29 19C42 19 52 28 52 42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M29 19C29 11 34 7 40 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="38" cy="8" r="2" fill="currentColor"/>
-        <path d="M40 8C47 6 52 9 51 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      <div class="logo-text">
-        <div class="name">Gandenberger-Bachem</div>
-        <div class="sub">Kinder- und Jugendmedizin</div>
-      </div>
-    </a>
-    <ul class="nav-links" role="list">
+</div>
+
+<!-- ── Nav ── -->
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Kinderpraxis <span>Gandenberger-Bachem</span></a>
+    <ul class="nav-links">
+      <li><a href="#haltung">Unsere Haltung</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
-       target="_blank" rel="noopener noreferrer" class="nav-cta">Termin buchen</a>
-    <button class="burger" aria-label="Menü" aria-expanded="false" onclick="burgerToggle(this)">
+    <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="nav-cta">Termin buchen</a>
+    <button class="burger" id="burger-btn" aria-expanded="false" aria-label="Menü öffnen" aria-controls="mob-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<div id="mob-nav" class="mob-nav" aria-hidden="true">
-  <a href="#team" onclick="closeMob()">Team</a>
-  <a href="#leistungen" onclick="closeMob()">Leistungen</a>
-  <a href="#kontakt" onclick="closeMob()">Kontakt</a>
-  <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
-     target="_blank" rel="noopener noreferrer" class="mob-nav-cta">Termin buchen</a>
+<!-- ── Mobile Nav ── -->
+<div class="mob-nav" id="mob-nav" hidden aria-hidden="true">
+  <a href="#haltung">Unsere Haltung</a>
+  <a href="#team">Team</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="mob-cta">Termin buchen</a>
 </div>
 
-<main id="main">
+<main>
 
-<!-- HERO -->
-<section class="hero">
+<!-- ── Hero V2 ── -->
+<section class="hero hero-v2">
   <div class="hero-inner">
-    <p class="hero-eyebrow">München Bogenhausen</p>
-    <h1 class="hero-h1">Für die kleinen Menschen,<br>die <em>alles bedeuten.</em></h1>
-    <p class="hero-sub">Kinder- und Jugendmedizin mit Herz. Drei Ärztinnen,<br>die sich Zeit nehmen — seit 1998 in München Bogenhausen.</p>
-    <div class="hero-cta-row">
-      <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
-         target="_blank" rel="noopener noreferrer" class="btn-filled">
-        Termin buchen
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <a href="#leistungen" class="btn-ghost">Leistungen ansehen</a>
+    <div class="hero-copy">
+      <div class="hero-usp-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Seit 1998 für Familien in Bogenhausen da</span>
+      </div>
+      <p class="section-label hero-eyebrow-line">Kinder- und Jugendmedizin</p>
+      <h1 class="hero-h1"><span>Hier ist Ihr Kind</span><em>in guten Händen.</em></h1>
+      <p class="hero-sub">Mit offenem Ohr für jede Frage — und einfühlsamer Medizin für jedes Kind.</p>
+      <div class="hero-actions">
+        <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="hero-btn-p">Termin vereinbaren&nbsp; →</a>
+        <a href="#haltung" class="hero-btn-s">Praxis kennenlernen</a>
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <picture>
+          <source srcset="hero.webp" type="image/webp">
+          <img src="hero.jpg" alt="Ärztin der Kinderpraxis Gandenberger-Bachem mit Patientin beim Spielen mit Stethoskop und Kuscheltier" loading="eager" fetchpriority="high">
+        </picture>
+        <span class="hero-img-badge">Praxis Bogenhausen seit 1998</span>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- VERTRAUEN -->
-<div class="vertrauen" role="complementary" aria-label="Kurzinfos">
-  <div class="vertrauen-i">
-    <span class="v-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-      GKV &amp; PKV
-    </span>
-    <span class="v-sep"></span>
-    <span class="v-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-      Alle Kassen willkommen
-    </span>
-    <span class="v-sep"></span>
-    <span class="v-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-      Online Terminbuchung
-    </span>
-    <span class="v-sep"></span>
-    <span class="v-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-      Seit 1998
-    </span>
+<!-- ── Vertrauen Bar ── -->
+<div class="vbar" aria-label="Auf einen Blick">
+  <div class="vbar-inner">
+    <div class="vbar-item"><span class="vbar-dot"></span>Alle Kassen willkommen</div>
+    <div class="vbar-item"><span class="vbar-dot"></span>Online-Terminbuchung via Doctolib</div>
+    <div class="vbar-item"><span class="vbar-dot"></span>Seit 1998 für Familien da</div>
+    <div class="vbar-item"><span class="vbar-dot"></span>Akute Beschwerden: bitte anrufen</div>
   </div>
 </div>
 
-<!-- STATEMENT -->
-<section class="statement">
-  <div class="statement-inner">
-    <p class="statement-label">Unsere Praxis</p>
-    <p class="statement-text">
-      Bei uns erhalten Sie alle Untersuchungen und Behandlungen<br>einer modernen Praxis für Kinder- und Jugendmedizin.<br>
-      <em>[Originaltext der Praxis einfügen]</em>
-    </p>
+<!-- ── Haltung / Werte ── -->
+<section id="haltung" class="haltung">
+  <div class="section-inner">
+    <div class="haltung-head">
+      <p class="section-label">So arbeiten wir</p>
+      <h2 class="section-h2">Medizin, die zuhört.</h2>
+      <p class="section-sub">Drei Ärztinnen, die sich Zeit nehmen — für Fragen und für das, was gerade wirklich wichtig ist.</p>
+    </div>
+    <div class="haltung-grid">
+      <div class="haltung-card">
+        <div class="haltung-nr">01</div>
+        <h3 class="haltung-h3">Zuhören kommt zuerst.</h3>
+        <p class="haltung-p">Hinter jeder Frage steckt eine Sorge. Wir nehmen uns die Zeit, sie zu verstehen — bevor wir handeln.</p>
+      </div>
+      <div class="haltung-card">
+        <div class="haltung-nr">02</div>
+        <h3 class="haltung-h3">So wenig wie möglich. So viel wie nötig.</h3>
+        <p class="haltung-p">So wenig wie möglich, so viel wie nötig. Nicht mehr, nicht weniger.</p>
+      </div>
+      <div class="haltung-card">
+        <div class="haltung-nr">03</div>
+        <h3 class="haltung-h3">Wir kennen Ihr Kind.</h3>
+        <p class="haltung-p">Nicht nur die Akte. Manche Familien begleiten wir von der U2 bis zur J2 und darüber hinaus. Das prägt, wie wir denken und behandeln.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- TEAM -->
+
+<!-- ── Was das konkret bedeutet ── -->
+<div class="praxisfakten">
+  <div class="pf-grid">
+
+    <div class="pf-item">
+      <div class="pf-ico">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <p class="pf-label">Hausbesuche</p>
+      <p class="pf-text">Wenn Ihr Kind krank ist und nicht transportiert werden kann, kommen wir — nach medizinischer Notwendigkeit.</p>
+    </div>
+
+    <div class="pf-item">
+      <div class="pf-ico">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+      <p class="pf-label">Erinnerungsservice</p>
+      <p class="pf-text">Wir erinnern Sie automatisch an Vorsorge- und Impftermine — damit im Alltag nichts untergeht.</p>
+    </div>
+
+    <div class="pf-item">
+      <div class="pf-ico">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <p class="pf-label">Spezialisten-Rat</p>
+      <p class="pf-text">Bei komplexen Fällen holen wir über ein verschlüsseltes Netzwerk direkt Expertenrat ein — ohne dass Ihr Kind dafür woanders hin muss.</p>
+    </div>
+
+    <div class="pf-item">
+      <div class="pf-ico">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17z"/></svg>
+      </div>
+      <p class="pf-label">Einfach anrufen</p>
+      <p class="pf-text">Bei akuten Beschwerden: Rufen Sie an. Wir klären mit Ihnen gemeinsam, was als Nächstes sinnvoll ist.</p>
+    </div>
+
+  </div>
+  <p class="pf-sig">— Ihre Kinderärztinnen</p>
+</div>
+
+
+<!-- ── Team ── -->
 <section id="team" class="team">
-  <div class="team-head">
-    <h2 class="team-h2">Das Team</h2>
-    <p class="team-sub">Drei Ärztinnen, denen Ihr Kind vertraut</p>
-  </div>
-  <div class="team-grid">
+  <div class="section-inner">
+    <div class="team-head">
+      <p class="section-label">Unser Team</p>
+      <h2 class="section-h2">Menschen hinter der Medizin.</h2>
+      <p class="section-sub">Drei Ärztinnen, die sich wirklich Zeit nehmen — für jedes Kind, für jede Familie.</p>
+      <div class="team-langs" style="margin-top:20px"><span class="team-lang">Deutsch</span><span class="team-lang">English</span><span class="team-lang">Français</span></div>
+    </div>
+    <div class="team-grid">
 
-    <article class="person-card">
-      <div class="person-img">
-        <div class="person-img-ph" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <span>Porträt</span>
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="team-photo-ph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Portrait</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <p class="team-role">Praxisinhaberin</p>
+          <h3 class="team-name">Dr. med. Susanne Gandenberger-Bachem</h3>
+          <p class="team-trait">Fachärztin für Kinder- und Jugendmedizin seit 1996 — Praxisinhaberin seit 2011.</p>
+          <p class="team-personal">Mutter von drei Söhnen — am liebsten draußen in den Bergen, auf dem Rad oder am Wasser.</p>
         </div>
       </div>
-      <div class="person-info">
-        <p class="person-nr">Praxisgründerin</p>
-        <h3 class="person-name">Dr. med. Susanne<br>Gandenberger-Bachem</h3>
-        <p class="person-role">Fachärztin für Kinder- und Jugendmedizin</p>
-      </div>
-    </article>
 
-    <article class="person-card">
-      <div class="person-img">
-        <div class="person-img-ph" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <span>Porträt</span>
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="team-photo-ph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Portrait</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <p class="team-role">Ärztin im Team</p>
+          <h3 class="team-name">Dr. med. Ania Jocham</h3>
+          <p class="team-trait">Fachärztin für Kinder- und Jugendmedizin seit 2001 — im Team seit Januar 2015.</p>
+          <p class="team-personal">Mutter eines Sohnes — in München geboren, aufgewachsen und verwurzelt.</p>
         </div>
       </div>
-      <div class="person-info">
-        <p class="person-nr">Angestellte Fachärztin</p>
-        <h3 class="person-name">Dr. med.<br>Ania Jocham</h3>
-        <p class="person-role">Fachärztin für Kinder- und Jugendmedizin</p>
-      </div>
-    </article>
 
-    <article class="person-card">
-      <div class="person-img">
-        <div class="person-img-ph" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <span>Porträt</span>
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="team-photo-ph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Portrait</span>
+          </div>
+        </div>
+        <div class="team-body">
+          <p class="team-role">Ärztin im Team</p>
+          <h3 class="team-name">Dr. med. Heike Boerschmann</h3>
+          <p class="team-trait">Fachärztin für Kinder- und Jugendmedizin seit Dezember 2015 — im Team seit Juli 2020.</p>
+          <p class="team-personal">Mutter von zwei Kindern — hat ihr praktisches Jahr in Delhi absolviert.</p>
         </div>
       </div>
-      <div class="person-info">
-        <p class="person-nr">Fachärztin</p>
-        <h3 class="person-name">Dr. med.<br>Heike Boerschmann</h3>
-        <p class="person-role">Fachärztin für Kinder- und Jugendmedizin</p>
+
+    </div>
+
+    <!-- MFA-Bereich: Platzhalter bis Fotos vorliegen -->
+    <div class="mfa-divider">
+      <span class="mfa-label">Praxisteam</span>
+    </div>
+    <div class="mfa-grid">
+      <div class="mfa-card">
+        <div class="mfa-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--rule)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="mfa-body"><p class="mfa-name">Foto folgt</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
-    </article>
+      <div class="mfa-card">
+        <div class="mfa-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--rule)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="mfa-body"><p class="mfa-name">Foto folgt</p><p class="mfa-role">Med. Fachangestellte</p></div>
+      </div>
+      <div class="mfa-card">
+        <div class="mfa-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--rule)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="mfa-body"><p class="mfa-name">Foto folgt</p><p class="mfa-role">Med. Fachangestellte</p></div>
+      </div>
+      <div class="mfa-card">
+        <div class="mfa-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--rule)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="mfa-body"><p class="mfa-name">Foto folgt</p><p class="mfa-role">Med. Fachangestellte</p></div>
+      </div>
+    </div>
 
   </div>
 </section>
 
-<!-- LEISTUNGEN -->
+<!-- ── Leistungen / Phasen ── -->
 <section id="leistungen" class="phasen">
-  <div class="phasen-inner">
+  <div class="section-inner">
     <div class="phasen-head">
-      <h2 class="phasen-h2">Von Anfang an dabei.</h2>
-      <p class="phasen-desc">Alle Untersuchungen und Behandlungen — nach Lebensphase.</p>
+      <p class="section-label">Leistungen</p>
+      <h2 class="section-h2">Von Anfang an dabei.</h2>
+      <p class="section-sub">Begleitung vom ersten Tag bis ins Jugendalter — für jede Phase das Richtige.</p>
     </div>
     <div class="ph-list">
 
       <div class="ph-item">
-        <button class="ph-btn" aria-expanded="false" aria-controls="ph1" onclick="togglePh(this)">
+        <button class="ph-btn" id="ph-btn-1" aria-expanded="false" aria-controls="ph1">
           <div class="ph-left">
             <span class="ph-nr">01</span>
-            <span class="ph-name">Das Neugeborene</span>
-            <span class="ph-age">Geburt bis 4 Wochen</span>
+            <div class="ph-name-group">
+              <span class="ph-name">Das Neugeborene</span>
+              <span class="ph-age">Geburt – 4 Wochen</span>
+            </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="ph-body" id="ph1">
-          <div class="ph-bi"><div class="ph-tags">
-            <span class="ph-tag">U2 – Neugeborenenuntersuchung</span>
-            <span class="ph-tag">Stillberatung</span>
-            <span class="ph-tag">Ernährungsberatung</span>
-            <span class="ph-tag">Sonographie Säuglingshüfte</span>
-            <span class="ph-tag">Hörtest</span>
+        <div class="ph-body" id="ph1" role="region" aria-labelledby="ph-btn-1" aria-hidden="true">
+          <div class="ph-bi"><div class="ph-bi-inner">
+            <p class="ph-desc">Die ersten Wochen mit einem Neugeborenen sind aufregend und bringen viele neue Eindrücke mit sich. Von Anfang an stehen wir Ihnen mit Zeit und Erfahrung zur Seite.</p>
+            <div class="ph-tags">
+              <span class="ph-tag">U2 – Neugeborenenuntersuchung (3.–10. Lebenstag)</span>
+              <span class="ph-tag">Stillberatung</span>
+              <span class="ph-tag">Ernährungsberatung</span>
+              <span class="ph-tag">Hüftultraschall (Sonographie)</span>
+              <span class="ph-tag">Hörtest (Tympanometrie)</span>
+              <span class="ph-tag">Entwicklungsbeurteilung</span>
+            </div>
           </div></div>
         </div>
       </div>
 
       <div class="ph-item">
-        <button class="ph-btn" aria-expanded="false" aria-controls="ph2" onclick="togglePh(this)">
+        <button class="ph-btn" id="ph-btn-2" aria-expanded="false" aria-controls="ph2">
           <div class="ph-left">
             <span class="ph-nr">02</span>
-            <span class="ph-name">Das Kleinkind</span>
-            <span class="ph-age">1 Monat bis 2 Jahre</span>
+            <div class="ph-name-group">
+              <span class="ph-name">Das Kleinkind</span>
+              <span class="ph-age">4 Wochen – 2 Jahre</span>
+            </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="ph-body" id="ph2">
-          <div class="ph-bi"><div class="ph-tags">
-            <span class="ph-tag">U3 bis U6</span>
-            <span class="ph-tag">Impfungen</span>
-            <span class="ph-tag">Entwicklungstests</span>
-            <span class="ph-tag">Ernährungsberatung</span>
-            <span class="ph-tag">Sonographie Bauchraum &amp; Nieren</span>
-            <span class="ph-tag">Hör- &amp; Sehtest</span>
+        <div class="ph-body" id="ph2" role="region" aria-labelledby="ph-btn-2" aria-hidden="true">
+          <div class="ph-bi"><div class="ph-bi-inner">
+            <p class="ph-desc">Kaum eine Zeit verändert Ihr Kind so sehr wie die ersten Lebensjahre. Wir stehen Ihnen in dieser besonderen Zeit mit Rat und Erfahrung zur Seite.</p>
+            <div class="ph-tags">
+              <span class="ph-tag">Vorsorgeuntersuchungen U3–U6 (4 Wochen bis 12 Monate)</span>
+              <span class="ph-tag">Impfungen nach STIKO</span>
+              <span class="ph-tag">Entwicklungstests</span>
+              <span class="ph-tag">Ernährungsberatung</span>
+              <span class="ph-tag">Ultraschall: Bauchraum, Nieren &amp; Harnblase</span>
+              <span class="ph-tag">Hör- &amp; Sehtest</span>
+            </div>
+            <a class="ph-ext-link" href="http://www.kinderaerzte-im-netz.de/mediathek/vorsorge-und-impferinnerung/" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Kostenloser Erinnerungsservice für Vorsorge- &amp; Impftermine
+            </a>
           </div></div>
         </div>
       </div>
 
       <div class="ph-item">
-        <button class="ph-btn" aria-expanded="false" aria-controls="ph3" onclick="togglePh(this)">
+        <button class="ph-btn" id="ph-btn-3" aria-expanded="false" aria-controls="ph3">
           <div class="ph-left">
             <span class="ph-nr">03</span>
-            <span class="ph-name">Das Kindergartenkind</span>
-            <span class="ph-age">2 bis 6 Jahre</span>
+            <div class="ph-name-group">
+              <span class="ph-name">Das Kindergartenkind</span>
+              <span class="ph-age">2 – 6 Jahre</span>
+            </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="ph-body" id="ph3">
-          <div class="ph-bi"><div class="ph-tags">
-            <span class="ph-tag">U7 bis U9</span>
-            <span class="ph-tag">Kindergartenuntersuchung</span>
-            <span class="ph-tag">Allergologie &amp; Hyposensibilisierung</span>
-            <span class="ph-tag">Hör- &amp; Sehtests</span>
-            <span class="ph-tag">Impfungen</span>
+        <div class="ph-body" id="ph3" role="region" aria-labelledby="ph-btn-3" aria-hidden="true">
+          <div class="ph-bi"><div class="ph-bi-inner">
+            <p class="ph-desc">Im Kindergartenalter wird die Welt jeden Tag ein Stück größer. Wir sind für Sie und Ihr Kind da – mit persönlicher Beratung und einem offenen Blick für diese spannende Zeit.</p>
+            <div class="ph-tags">
+              <span class="ph-tag">Vorsorgeuntersuchungen U7–U9 (21 Monate bis 5 Jahre)</span>
+              <span class="ph-tag">Kindergartenuntersuchung</span>
+              <span class="ph-tag">Allergologie &amp; Hyposensibilisierungstherapie</span>
+              <span class="ph-tag">Spezifische Immuntherapie</span>
+              <span class="ph-tag">Hör- &amp; Sehtests</span>
+              <span class="ph-tag">Ultraschall: Schilddrüse &amp; Bauchraum</span>
+              <span class="ph-tag">Impfungen nach STIKO</span>
+            </div>
+            <a class="ph-ext-link" href="http://www.rki.de" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Aktuelle Impfempfehlungen der STIKO (RKI)
+            </a>
           </div></div>
         </div>
       </div>
 
       <div class="ph-item">
-        <button class="ph-btn" aria-expanded="false" aria-controls="ph4" onclick="togglePh(this)">
+        <button class="ph-btn" id="ph-btn-4" aria-expanded="false" aria-controls="ph4">
           <div class="ph-left">
             <span class="ph-nr">04</span>
-            <span class="ph-name">Das Schulkind</span>
-            <span class="ph-age">6 bis 12 Jahre</span>
+            <div class="ph-name-group">
+              <span class="ph-name">Das Schulkind</span>
+              <span class="ph-age">6 – 12 Jahre</span>
+            </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="ph-body" id="ph4">
-          <div class="ph-bi"><div class="ph-tags">
-            <span class="ph-tag">U10 &amp; U11</span>
-            <span class="ph-tag">Sportuntersuchung</span>
-            <span class="ph-tag">Lungenfunktion &amp; EKG</span>
-            <span class="ph-tag">ADHS-Diagnostik &amp; Therapie</span>
-            <span class="ph-tag">Impfauffrischungen</span>
+        <div class="ph-body" id="ph4" role="region" aria-labelledby="ph-btn-4" aria-hidden="true">
+          <div class="ph-bi"><div class="ph-bi-inner">
+            <p class="ph-desc">Mit dem Schulalter beginnt ein neuer Lebensabschnitt. Auch jetzt haben wir ein offenes Ohr für Sie und Ihr Kind.</p>
+            <div class="ph-tags">
+              <span class="ph-tag">Vorsorgeuntersuchungen U10 &amp; U11 (7–10 Jahre)</span>
+              <span class="ph-tag">Sportuntersuchung</span>
+              <span class="ph-tag">Lungenfunktion, Sauerstoffmessung (Pulsoximetrie) &amp; EKG</span>
+              <span class="ph-tag">ADHS-Diagnostik &amp; Therapie</span>
+              <span class="ph-tag">Sehtests (inkl. Stereo- &amp; Farbtest)</span>
+              <span class="ph-tag">Wundversorgung</span>
+              <span class="ph-tag">Laboruntersuchungen</span>
+              <span class="ph-tag">Operationsvorbereitung &amp; Narkosebescheinigung</span>
+              <span class="ph-tag">Impfauffrischungen nach STIKO</span>
+            </div>
           </div></div>
         </div>
       </div>
 
       <div class="ph-item">
-        <button class="ph-btn" aria-expanded="false" aria-controls="ph5" onclick="togglePh(this)">
+        <button class="ph-btn" id="ph-btn-5" aria-expanded="false" aria-controls="ph5">
           <div class="ph-left">
             <span class="ph-nr">05</span>
-            <span class="ph-name">Der Jugendliche</span>
-            <span class="ph-age">12 bis 18 Jahre</span>
+            <div class="ph-name-group">
+              <span class="ph-name">Der Jugendliche</span>
+              <span class="ph-age">12 – 18 Jahre</span>
+            </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="ph-body" id="ph5">
-          <div class="ph-bi"><div class="ph-tags">
-            <span class="ph-tag">J1 &amp; J2</span>
-            <span class="ph-tag">Jugendarbeitsschutzuntersuchung</span>
-            <span class="ph-tag">Reiseimpfungen &amp; Reiseberatung</span>
-            <span class="ph-tag">Impfungen</span>
+        <div class="ph-body" id="ph5" role="region" aria-labelledby="ph-btn-5" aria-hidden="true">
+          <div class="ph-bi"><div class="ph-bi-inner">
+            <p class="ph-desc">Jugendliche wünschen sich oft mehr Eigenständigkeit. Wir nehmen ihre Anliegen ernst und schaffen Raum für persönliche Gespräche.</p>
+            <div class="ph-tags">
+              <span class="ph-tag">Jugendgesundheitsuntersuchung J1 (13–14 Jahre) &amp; J2 (16–17 Jahre)</span>
+              <span class="ph-tag">Jugendsprechstunde (vertraulich)</span>
+              <span class="ph-tag">Jugendarbeitsschutzuntersuchung</span>
+              <span class="ph-tag">Reiseimpfungen &amp; Reiseberatung</span>
+              <span class="ph-tag">Impfungen nach STIKO</span>
+              <span class="ph-tag">Hausbesuche nach medizinischer Notwendigkeit</span>
+            </div>
+            <a class="ph-ext-link" href="https://www.paedexpert.de" target="_blank" rel="noopener noreferrer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Telemedizin – PädExpert: Fachärztlicher Expertenrat digital
+            </a>
           </div></div>
         </div>
       </div>
@@ -453,69 +767,65 @@ footer{background:var(--bg2);padding:clamp(20px,3vw,32px) 0;border-top:0.5px sol
   </div>
 </section>
 
-<!-- PRAXIS -->
-<section class="praxis">
-  <div class="praxis-inner">
-    <div>
-      <p class="praxis-label">Die Praxis</p>
-      <h2 class="praxis-h2">Freischütz&shy;straße&nbsp;9<br>München Bogenhausen</h2>
-      <div class="praxis-adr">
-        <p><strong>81927 München</strong><br>GKV und PKV &middot; Alle Krankenkassen willkommen</p>
-      </div>
-      <a href="tel:+498993948730" class="praxis-tel">089&thinsp;93&thinsp;94&thinsp;87&thinsp;3</a>
-    </div>
-    <div class="praxis-foto" role="img" aria-label="Praxisfoto">
-      <div class="praxis-foto-ph" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="0.5"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>Praxisfoto</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- KONTAKT -->
+<!-- ── Kontakt + Anfahrt ── -->
 <section id="kontakt" class="kontakt">
-  <div class="kontakt-inner">
-    <div class="kontakt-head">
-      <h2 class="kontakt-h2">Termin vereinbaren</h2>
-      <p class="kontakt-sub">Wir freuen uns auf Ihren Anruf oder Ihre Online-Buchung.</p>
-    </div>
-    <div class="kontakt-grid">
-      <div>
-        <div class="k-block">
-          <p class="k-lbl">Telefon</p>
-          <p class="k-val"><a href="tel:+498993948730">089&thinsp;93&thinsp;94&thinsp;87&thinsp;3</a></p>
-        </div>
-        <div class="k-block">
-          <p class="k-lbl">E-Mail</p>
-          <p class="k-val sm"><a href="mailto:termine-kinderpraxis@die-familienpraxis.de">termine-kinderpraxis@die-familienpraxis.de</a></p>
-        </div>
-        <div class="k-block">
-          <p class="k-lbl">Adresse</p>
-          <p class="k-val">Freischützstraße&nbsp;9<br>81927&nbsp;München</p>
-        </div>
-        <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem"
-           target="_blank" rel="noopener noreferrer" class="k-cta">
-          Online Termin buchen
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+  <div class="kontakt-grid">
+
+    <div>
+      <p class="k-col-head">Erreichbarkeit</p>
+      <div class="k-block">
+        <p class="k-lbl">Telefon</p>
+        <p class="k-val"><a href="tel:+498993948730">089 – 93 94 87 3</a></p>
       </div>
-      <div>
-        <p class="oz-head">Öffnungszeiten</p>
-        <table class="oz-table" aria-label="Öffnungszeiten">
-          <tbody>
-            <tr class="oz-tr" id="oz-mo"><td>Montag</td><td>08:30&nbsp;–&nbsp;13:00 &middot; 15:00&nbsp;–&nbsp;18:00<span class="heute-pill">Heute</span></td></tr>
-            <tr class="oz-tr" id="oz-di"><td>Dienstag</td><td>nach Vereinbarung<span class="heute-pill">Heute</span></td></tr>
-            <tr class="oz-tr" id="oz-mi"><td>Mittwoch</td><td>08:30&nbsp;–&nbsp;13:00 &middot; 15:00&nbsp;–&nbsp;18:00<span class="heute-pill">Heute</span></td></tr>
-            <tr class="oz-tr" id="oz-do"><td>Donnerstag</td><td>08:30&nbsp;–&nbsp;13:00<span class="heute-pill">Heute</span></td></tr>
-            <tr class="oz-tr" id="oz-fr"><td>Freitag</td><td>08:30&nbsp;–&nbsp;12:00<span class="heute-pill">Heute</span></td></tr>
-            <tr class="oz-tr"><td>Samstag</td><td style="color:var(--ink2)">geschlossen</td></tr>
-            <tr class="oz-tr"><td>Sonntag</td><td style="color:var(--ink2)">geschlossen</td></tr>
-          </tbody>
-        </table>
-        <p class="oz-note">Außerhalb der Öffnungszeiten: <a href="tel:116117">116&nbsp;117</a> – Ärztlicher Bereitschaftsdienst</p>
+      <div class="k-block">
+        <p class="k-lbl">Fax</p>
+        <p class="k-val">089 – 93 94 87 40</p>
       </div>
+      <div class="k-block">
+        <p class="k-lbl">E-Mail</p>
+        <p class="k-val sm"><a href="mailto:termine-kinderpraxis@die-familienpraxis.de">termine-kinderpraxis@<br>die-familienpraxis.de</a></p>
+      </div>
+      <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="k-cta">
+        Online Termin buchen
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
+
+    <div>
+      <p class="k-col-head">Öffnungszeiten</p>
+      <table class="oz-table" aria-label="Öffnungszeiten">
+        <tbody>
+          <tr class="oz-tr" id="oz-mo"><th scope="row">Montag</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-di"><th scope="row">Dienstag</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-mi"><th scope="row">Mittwoch</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-do"><th scope="row">Donnerstag</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-fr"><th scope="row">Freitag</th><td>09–12<span class="heute-pill">Heute</span></td></tr>
+        </tbody>
+      </table>
+      <p class="oz-note">Außerhalb der Öffnungszeiten: <a href="tel:116117">116&nbsp;117</a></p>
+    </div>
+
+    <div>
+      <p class="k-col-head">Anfahrt</p>
+      <div class="k-block">
+        <p class="k-lbl">Adresse</p>
+        <p class="k-val">Freischützstraße&nbsp;9<br>81927&nbsp;München · Bogenhausen</p>
+      </div>
+      <div class="k-block">
+        <p class="k-lbl">ÖPNV</p>
+        <ul class="anfahrt-list">
+          <li>S8 Englschalking, ca. 5 Min. zu Fuß</li>
+          <li>U-Bahn Arabellapark + Bus 154, 184, 189</li>
+          <li>Parkplätze vor dem Haus</li>
+          <li>Barrierefrei zugänglich</li>
+        </ul>
+      </div>
+      <a href="https://maps.google.com/?q=Freischützstraße+9,+81927+München" target="_blank" rel="noopener noreferrer" class="map-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        In Google Maps öffnen
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -523,14 +833,7 @@ footer{background:var(--bg2);padding:clamp(20px,3vw,32px) 0;border-top:0.5px sol
 
 <footer>
   <div class="footer-i">
-    <div class="footer-logo">
-      <svg width="22" height="18" viewBox="0 0 60 48" fill="none" aria-hidden="true">
-        <path d="M7 42C7 28 16 19 29 19C42 19 52 28 52 42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M29 19C29 11 34 7 40 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="38" cy="8" r="2" fill="currentColor"/>
-        <path d="M40 8C47 6 52 9 51 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </div>
+    <div class="footer-logo">Kinderpraxis Gandenberger-Bachem · München</div>
     <ul class="footer-links">
       <li><a href="impressum.html">Impressum</a></li>
       <li><a href="datenschutz.html">Datenschutz</a></li>
@@ -542,41 +845,62 @@ footer{background:var(--bg2);padding:clamp(20px,3vw,32px) 0;border-top:0.5px sol
 
 <script>
 (function(){
+  // Jahr
+  var j=document.getElementById("jahr");
+  if(j)j.textContent=new Date().getFullYear();
+
+  // Heute-Markierung
   var map=[null,"oz-mo","oz-di","oz-mi","oz-do","oz-fr",null,null];
   var id=map[new Date().getDay()];
   if(id){var el=document.getElementById(id);if(el)el.classList.add("heute");}
-  var j=document.getElementById("jahr");
-  if(j)j.textContent=new Date().getFullYear();
-})();
-function burgerToggle(btn){
-  var m=document.getElementById("mob-nav");
-  var open=m.classList.toggle("open");
-  btn.classList.toggle("open",open);
-  btn.setAttribute("aria-expanded",open);
-  m.setAttribute("aria-hidden",!open);
-  document.body.style.overflow=open?"hidden":"";
-}
-function closeMob(){
-  var m=document.getElementById("mob-nav");
-  var b=document.querySelector(".burger");
-  m.classList.remove("open");
-  if(b){b.classList.remove("open");b.setAttribute("aria-expanded","false");}
-  m.setAttribute("aria-hidden","true");
-  document.body.style.overflow="";
-}
-function togglePh(btn){
-  var wasOpen=btn.getAttribute("aria-expanded")==="true";
-  document.querySelectorAll(".ph-btn").forEach(function(b){
-    b.setAttribute("aria-expanded","false");
-    var body=document.getElementById(b.getAttribute("aria-controls"));
-    if(body)body.classList.remove("open");
-  });
-  if(!wasOpen){
-    btn.setAttribute("aria-expanded","true");
-    var body=document.getElementById(btn.getAttribute("aria-controls"));
-    if(body)body.classList.add("open");
+  // Mobile Navigation
+  var burgerBtn=document.getElementById("burger-btn");
+  var mobNav=document.getElementById("mob-nav");
+  function openMob(){
+    mobNav.removeAttribute("hidden");mobNav.setAttribute("aria-hidden","false");
+    burgerBtn.setAttribute("aria-expanded","true");burgerBtn.setAttribute("aria-label","Menü schließen");
+    burgerBtn.classList.add("open");document.body.style.overflow="hidden";
+    var first=mobNav.querySelector("a");if(first)first.focus();
   }
-}
+  function closeMob(){
+    mobNav.setAttribute("hidden","");mobNav.setAttribute("aria-hidden","true");
+    burgerBtn.setAttribute("aria-expanded","false");burgerBtn.setAttribute("aria-label","Menü öffnen");
+    burgerBtn.classList.remove("open");document.body.style.overflow="";burgerBtn.focus();
+  }
+  burgerBtn.addEventListener("click",function(){
+    if(burgerBtn.getAttribute("aria-expanded")==="true"){closeMob();}else{openMob();}
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"&&burgerBtn.getAttribute("aria-expanded")==="true")closeMob();
+  });
+  mobNav.addEventListener("keydown",function(e){
+    if(e.key!=="Tab")return;
+    var focusable=mobNav.querySelectorAll("a");
+    var first=focusable[0];var last=focusable[focusable.length-1];
+    if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus();}}
+    else{if(document.activeElement===last){e.preventDefault();first.focus();}}
+  });
+  mobNav.querySelectorAll("a[href^='#']").forEach(function(link){
+    link.addEventListener("click",closeMob);
+  });
+
+  // Accordion
+  document.querySelectorAll(".ph-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var wasOpen=btn.getAttribute("aria-expanded")==="true";
+      document.querySelectorAll(".ph-btn").forEach(function(b){
+        b.setAttribute("aria-expanded","false");
+        var body=document.getElementById(b.getAttribute("aria-controls"));
+        if(body)body.setAttribute("aria-hidden","true");
+      });
+      if(!wasOpen){
+        btn.setAttribute("aria-expanded","true");
+        var body=document.getElementById(btn.getAttribute("aria-controls"));
+        if(body)body.setAttribute("aria-hidden","false");
+      }
+    });
+  });
+})();
 </script>
 </body>
 </html>
