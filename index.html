@@ -272,7 +272,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   justify-content:center;
   padding:clamp(48px,6vw,80px) clamp(28px,4.5vw,64px);
   position:relative;
-  z-index:2;
+  z-index:3;
 }
 .hero-v2 .section-label{color:var(--petrol);margin-bottom:22px}
 .hero-eyebrow-line{display:flex;align-items:center;gap:12px}
@@ -318,10 +318,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 }
 .hero-v2 .hero-img-wrap{
   position:absolute;
-  inset:20px 20px 20px 0;
+  inset:16px 16px 16px -24px;
   aspect-ratio:unset;
-  border-radius:20px;
-  box-shadow:0 12px 48px rgba(30,41,59,.10);
+  border-radius:120px 24px 120px 24px;
+  box-shadow:0 16px 56px rgba(30,41,59,.12);
   background:var(--bg2);
   overflow:hidden;
 }
@@ -359,7 +359,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   .hero-v2 .hero-inner{display:contents}
   .hero-copy{order:2;padding:36px clamp(22px,5vw,48px) 52px}
   .hero-v2 .hero-visual{order:1;min-height:62vw}
-  .hero-v2 .hero-img-wrap{position:relative;height:62vw;border-radius:16px;inset:unset;box-shadow:none}
+  .hero-v2 .hero-img-wrap{position:relative;height:62vw;border-radius:60px 16px 60px 16px;inset:unset;box-shadow:none}
   .hero-v2 .hero-img-wrap::before{background:linear-gradient(to bottom,transparent 0%,rgba(249,245,240,.7) 80%,#F9F5F0 100%)}
   .hero-v2 .hero-h1{font-size:clamp(42px,9vw,68px)}
 }
@@ -368,7 +368,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   .hero-v2 .hero-h1{font-size:clamp(36px,12vw,54px);line-height:1.05}
   .hero-v2 .hero-sub{font-size:15px}
   .hero-v2 .hero-visual{min-height:55vw}
-  .hero-v2 .hero-img-wrap{height:55vw;border-radius:14px}
+  .hero-v2 .hero-img-wrap{height:55vw;border-radius:40px 12px 40px 12px}
 }
 
 /* ── Mobile ≤480px: Hero-Buttons untereinander (nur Smartphones) ── */
@@ -405,6 +405,21 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .kcta-akut .kcta-btn{background:transparent;color:var(--ink);border:1px solid var(--rule)}
 .kcta-btn:hover{opacity:.82}
 @media(max-width:767px){.kontakt-cta{grid-template-columns:1fr}}
+
+/* ── Digitale Services ── */
+.digitalservices{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg2);border-bottom:0.5px solid var(--rule)}
+.ds-head{margin-bottom:clamp(40px,5vw,56px)}
+.ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.ds-card{background:var(--bg);border:0.5px solid var(--rule);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column}
+.ds-icon{width:44px;height:44px;border-radius:50%;background:var(--acc-lt);display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0}
+.ds-icon svg{width:20px;height:20px;stroke:var(--petrol);fill:none;stroke-width:1.5}
+.ds-nr{font-family:var(--head);font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.ds-h3{font-family:var(--head);font-size:clamp(17px,1.6vw,21px);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:10px;line-height:1.2}
+.ds-p{font-size:15px;line-height:1.78;color:var(--ink2);font-weight:300;flex:1;margin-bottom:22px}
+.ds-btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--petrol);text-decoration:none;border:1px solid var(--petrol);padding:10px 18px;border-radius:999px;letter-spacing:.02em;transition:background .2s,color .2s;align-self:flex-start;margin-top:auto}
+.ds-btn:hover{background:var(--petrol);color:#fff}
+@media(max-width:767px){.ds-grid{grid-template-columns:1fr}}
+@media(max-width:1023px) and (min-width:768px){.ds-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -455,7 +470,6 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <p class="hero-sub">Medizinische Exzellenz für Ihr Kind. Vertrauen und Ruhe für Sie.</p>
       <div class="hero-actions">
         <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="hero-btn-p">Termin vereinbaren&nbsp; →</a>
-        <a href="#haltung" class="hero-btn-s">Praxis kennenlernen</a>
       </div>
 
     </div>
@@ -637,6 +651,50 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   </div>
 </section>
 
+<!-- ── Digitale Praxis-Services ── -->
+<section class="digitalservices">
+  <div class="section-inner">
+    <div class="ds-head">
+      <p class="section-label">Online-Services</p>
+      <h2 class="section-h2">Schnell erledigt — unsere digitalen Services.</h2>
+      <p class="section-sub">Viele Anliegen lassen sich direkt online regeln — ohne Warteschleife, ohne Anruf.</p>
+    </div>
+    <div class="ds-grid">
+
+      <div class="ds-card">
+        <div class="ds-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6M9 16h6M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 8h6"/></svg>
+        </div>
+        <p class="ds-nr">01</p>
+        <h3 class="ds-h3">Folgerezept bestellen</h3>
+        <p class="ds-p">Ihr Kind benötigt ein bekanntes Dauermedikament? Bestellen Sie es einfach online. Abholung am nächsten Werktag — ohne Wartezeit.</p>
+        <a href="mailto:termine-kinderpraxis@die-familienpraxis.de?subject=Folgerezept%20anfordern&body=Guten%20Tag%2C%0A%0Aich%20m%C3%B6chte%20ein%20Folgerezept%20f%C3%BCr%20folgendes%20Medikament%20bestellen%3A%0A%0AMedikament%3A%20%0AKind%20(Name%2C%20Geburtsdatum)%3A%20%0A%0AVielen%20Dank!" class="ds-btn">Rezept anfordern →</a>
+      </div>
+
+      <div class="ds-card">
+        <div class="ds-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        </div>
+        <p class="ds-nr">02</p>
+        <h3 class="ds-h3">Folge-Krankschreibung (AU)</h3>
+        <p class="ds-p">Ihr Kind war bereits bei uns und ist noch nicht fit? Beantragen Sie die Verlängerung der Pflege-AU unkompliziert digital.</p>
+        <a href="mailto:termine-kinderpraxis@die-familienpraxis.de?subject=AU-Verl%C3%A4ngerung&body=Guten%20Tag%2C%0A%0Aich%20bitte%20um%20Verl%C3%A4ngerung%20der%20Pflege-AU%20f%C3%BCr%3A%0A%0AKind%20(Name%2C%20Geburtsdatum)%3A%20%0ABisherige%20AU%20bis%3A%20%0AWeitere%20Infos%20zum%20Krankheitsbild%3A%20%0A%0AVielen%20Dank!" class="ds-btn">AU online verlängern →</a>
+      </div>
+
+      <div class="ds-card">
+        <div class="ds-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17z"/></svg>
+        </div>
+        <p class="ds-nr">03</p>
+        <h3 class="ds-h3">Rückruf-Service nutzen</h3>
+        <p class="ds-p">Keine Lust auf Warteschleifen? Hinterlassen Sie uns Ihre Nummer und ein kurzes Anliegen. Wir melden uns verlässlich bei Ihnen.</p>
+        <a href="mailto:termine-kinderpraxis@die-familienpraxis.de?subject=R%C3%BCckruf%20anfordern&body=Guten%20Tag%2C%0A%0Aich%20bitte%20um%20R%C3%BCckruf.%0A%0AName%3A%20%0ATelefonnummer%3A%20%0AErreichbar%20(Uhrzeit)%3A%20%0AAnliegen%20(kurz)%3A%20%0A%0AVielen%20Dank!" class="ds-btn">Rückruf anfordern →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── Leistungen / Phasen ── -->
 <section id="leistungen" class="phasen">
   <div class="section-inner">
@@ -663,11 +721,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <p class="ph-desc">Die ersten Wochen mit einem Neugeborenen sind aufregend und bringen viele neue Eindrücke mit sich. Von Anfang an stehen wir Ihnen mit Zeit und Erfahrung zur Seite.</p>
             <div class="ph-tags">
               <span class="ph-tag">U2 – Neugeborenenuntersuchung (3.–10. Lebenstag)</span>
-              <span class="ph-tag">Stillberatung</span>
-              <span class="ph-tag">Ernährungsberatung</span>
-              <span class="ph-tag">Hüftultraschall (Sonographie)</span>
-              <span class="ph-tag">Hörtest (Tympanometrie)</span>
-              <span class="ph-tag">Entwicklungsbeurteilung</span>
+              <span class="ph-tag">Sanfte Still- und Ernährungsberatung</span>
+              <span class="ph-tag">Sicherer Hüftultraschall (Früherkennung ohne Belastung)</span>
+              <span class="ph-tag">Schonender Hörtest (Tympanometrie – Messung des Trommelfells)</span>
+              <span class="ph-tag">Liebevolle Entwicklungsbeurteilung</span>
             </div>
           </div></div>
         </div>
@@ -689,11 +746,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <p class="ph-desc">Kaum eine Zeit verändert Ihr Kind so sehr wie die ersten Lebensjahre. Wir stehen Ihnen in dieser besonderen Zeit mit Rat und Erfahrung zur Seite.</p>
             <div class="ph-tags">
               <span class="ph-tag">Vorsorgeuntersuchungen U3–U6 (4 Wochen bis 12 Monate)</span>
-              <span class="ph-tag">Impfungen nach STIKO</span>
-              <span class="ph-tag">Entwicklungstests</span>
-              <span class="ph-tag">Ernährungsberatung</span>
-              <span class="ph-tag">Ultraschall: Bauchraum, Nieren &amp; Harnblase</span>
-              <span class="ph-tag">Hör- &amp; Sehtest</span>
+              <span class="ph-tag">Wichtige Schutzimpfungen nach STIKO</span>
+              <span class="ph-tag">Spielerische Entwicklungstests</span>
+              <span class="ph-tag">Ultraschall des Bauchraums (Nieren &amp; Harnblase)</span>
+              <span class="ph-tag">Kindgerechter Hör- &amp; Sehtest</span>
             </div>
             <a class="ph-ext-link" href="http://www.kinderaerzte-im-netz.de/mediathek/vorsorge-und-impferinnerung/" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -719,12 +775,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <p class="ph-desc">Im Kindergartenalter wird die Welt jeden Tag ein Stück größer. Wir sind für Sie und Ihr Kind da – mit persönlicher Beratung und einem offenen Blick für diese spannende Zeit.</p>
             <div class="ph-tags">
               <span class="ph-tag">Vorsorgeuntersuchungen U7–U9 (21 Monate bis 5 Jahre)</span>
-              <span class="ph-tag">Kindergartenuntersuchung</span>
-              <span class="ph-tag">Allergologie &amp; Hyposensibilisierungstherapie</span>
-              <span class="ph-tag">Spezifische Immuntherapie</span>
-              <span class="ph-tag">Hör- &amp; Sehtests</span>
-              <span class="ph-tag">Ultraschall: Schilddrüse &amp; Bauchraum</span>
-              <span class="ph-tag">Impfungen nach STIKO</span>
+              <span class="ph-tag">Ausführliche Kindergartenuntersuchung</span>
+              <span class="ph-tag">Allergie-Check &amp; sanfte Immuntherapie (Hyposensibilisierung)</span>
+              <span class="ph-tag">Ultraschall (Schilddrüse &amp; Bauchraum)</span>
+              <span class="ph-tag">Impfungen nach aktuellen Empfehlungen</span>
             </div>
             <a class="ph-ext-link" href="http://www.rki.de" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -750,14 +804,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <p class="ph-desc">Mit dem Schulalter beginnt ein neuer Lebensabschnitt. Auch jetzt haben wir ein offenes Ohr für Sie und Ihr Kind.</p>
             <div class="ph-tags">
               <span class="ph-tag">Vorsorgeuntersuchungen U10 &amp; U11 (7–10 Jahre)</span>
-              <span class="ph-tag">Sportuntersuchung</span>
-              <span class="ph-tag">Lungenfunktion, Sauerstoffmessung (Pulsoximetrie) &amp; EKG</span>
-              <span class="ph-tag">ADHS-Diagnostik &amp; Therapie</span>
-              <span class="ph-tag">Sehtests (inkl. Stereo- &amp; Farbtest)</span>
-              <span class="ph-tag">Wundversorgung</span>
-              <span class="ph-tag">Laboruntersuchungen</span>
-              <span class="ph-tag">Operationsvorbereitung &amp; Narkosebescheinigung</span>
-              <span class="ph-tag">Impfauffrischungen nach STIKO</span>
+              <span class="ph-tag">Sportmedizinische Untersuchung (für Verein &amp; Schule)</span>
+              <span class="ph-tag">Lungenfunktionstest &amp; Herz-Check (EKG &amp; Sauerstoffmessung)</span>
+              <span class="ph-tag">Einfühlsame ADHS-Diagnostik &amp; Therapiebegleitung</span>
+              <span class="ph-tag">Umfassende Laboruntersuchungen &amp; schnelle Wundversorgung</span>
             </div>
           </div></div>
         </div>
@@ -778,12 +828,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
           <div class="ph-bi"><div class="ph-bi-inner">
             <p class="ph-desc">Jugendliche wünschen sich oft mehr Eigenständigkeit. Wir nehmen ihre Anliegen ernst und schaffen Raum für persönliche Gespräche.</p>
             <div class="ph-tags">
-              <span class="ph-tag">Jugendgesundheitsuntersuchung J1 (13–14 Jahre) &amp; J2 (16–17 Jahre)</span>
-              <span class="ph-tag">Jugendsprechstunde (vertraulich)</span>
-              <span class="ph-tag">Jugendarbeitsschutzuntersuchung</span>
-              <span class="ph-tag">Reiseimpfungen &amp; Reiseberatung</span>
-              <span class="ph-tag">Impfungen nach STIKO</span>
-              <span class="ph-tag">Hausbesuche nach medizinischer Notwendigkeit</span>
+              <span class="ph-tag">Jugendgesundheitsuntersuchung J1 &amp; J2 (13–17 Jahre)</span>
+              <span class="ph-tag">Vertrauliche Jugendsprechstunde (Raum für eigene Fragen ohne Eltern)</span>
+              <span class="ph-tag">Jugendarbeitsschutzuntersuchung (für Nebenjobs &amp; Ausbildung)</span>
+              <span class="ph-tag">Reisemedizinische Beratung &amp; Impfschutz für den Urlaub</span>
             </div>
             <a class="ph-ext-link" href="https://www.paedexpert.de" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
