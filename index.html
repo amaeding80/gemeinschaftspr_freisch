@@ -54,7 +54,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.mob-nav{position:fixed;inset:82px 0 0;background:var(--bg);z-index:199;display:flex;flex-direction:column;padding:clamp(24px,5vw,40px) var(--pad);gap:0}
+.mob-nav{position:fixed;inset:119px 0 0;background:var(--bg);z-index:199;display:flex;flex-direction:column;padding:clamp(24px,5vw,40px) var(--pad);gap:0}
 .mob-nav a{font-family:var(--head);font-size:22px;font-weight:400;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--rule);padding:18px 0;display:block}
 .mob-nav .mob-cta{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;background:var(--acc);color:#fff;text-align:center;padding:14px;margin-top:8px;letter-spacing:0.02em}
 
@@ -116,7 +116,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .team-head{margin-bottom:clamp(40px,5vw,60px)}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.5vw,36px)}
 .team-card{background:var(--white);border:0.5px solid var(--rule);display:flex;flex-direction:column}
-.team-photo{aspect-ratio:4/5;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.team-photo{aspect-ratio:3/4;background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .team-photo-ph{display:flex;flex-direction:column;align-items:center;gap:8px}
 .team-photo-ph svg{width:40px;height:40px;stroke:var(--rule)}
 .team-photo-ph span{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--rule)}
@@ -254,7 +254,8 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .nav-cta{background:var(--petrol);border-radius:999px;padding:11px 22px}
 
 .hero.hero-v2{
-  min-height:min(78vh, 640px);
+  min-height:min(70vh, 560px);
+  background:#fcfbf9;
   display:grid;
   grid-template-columns:1fr 1fr;
   position:relative;
@@ -456,10 +457,48 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .eltern-praxistipp strong{font-weight:500;color:var(--petrol);display:block;margin-bottom:8px}
 @media(max-width:767px){.eltern-grid{grid-template-columns:1fr}}
 @media(max-width:1023px) and (min-width:768px){.eltern-grid{grid-template-columns:1fr 1fr}}
+
+/* ── Sprachen-Bar ── */
+.lang-bar{background:var(--ink);padding:9px var(--pad)}
+.lang-bar-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12px;color:rgba(255,255,255,.5);flex-wrap:wrap}
+.lang-bar-left{display:flex;align-items:center;gap:10px}
+.lang-pills{display:flex;gap:6px}
+.lang-pill{font-size:11px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.6);padding:2px 8px;border:1px solid rgba(255,255,255,.18);border-radius:999px}
+.lang-right a{color:rgba(255,255,255,.65);text-decoration:none;font-size:12px;transition:color .2s}
+.lang-right a:hover{color:#fff}
+@media(max-width:767px){.lang-bar{display:none}}
+
+/* ── USP-Strip (ersetzt vbar) ── */
+.usp-strip{background:#fff;border-bottom:0.5px solid var(--rule);padding:clamp(28px,3.5vw,44px) var(--pad)}
+.usp-strip-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,52px)}
+.usp-item{padding-left:18px;border-left:2px solid var(--acc-lt)}
+.usp-title{font-family:var(--head);font-size:clamp(15px,1.4vw,18px);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:7px}
+.usp-text{font-size:14px;line-height:1.75;color:var(--ink2);font-weight:300}
+@media(max-width:767px){.usp-strip-inner{grid-template-columns:1fr;gap:18px}}
+
+/* ── Hero-Akut-Hinweis ── */
+.hero-akut-hint{font-size:12px;color:var(--ink2);margin-top:10px;font-weight:300;line-height:1.5}
 </style>
 </head>
 <body>
 
+</div>
+
+<!-- ── Sprachen-Bar ── -->
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <div class="lang-bar-left">
+      <div class="lang-pills">
+        <span class="lang-pill">DE</span>
+        <span class="lang-pill">EN</span>
+        <span class="lang-pill">FR</span>
+      </div>
+      <span>Beratung auf Deutsch, Englisch &amp; Französisch</span>
+    </div>
+    <div class="lang-right">
+      <a href="tel:+498993948730">089 – 93 94 87 3</a>
+    </div>
+  </div>
 </div>
 
 <!-- ── Nav ── -->
@@ -471,7 +510,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <li><a href="#team">Team</a></li>
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#elternbereich">Für Eltern</a></li>
+      <li><a href="infothek.html">Für Eltern</a></li>
     </ul>
     <button class="burger" id="burger-btn" aria-expanded="false" aria-label="Menü öffnen" aria-controls="mob-nav">
       <span></span><span></span><span></span>
@@ -489,7 +528,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   <a href="#team">Team</a>
   <a href="#leistungen">Leistungen</a>
   <a href="#kontakt">Kontakt</a>
-  <a href="#elternbereich">Für Eltern</a>
+  <a href="infothek.html">Für Eltern</a>
   <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="mob-cta">Termin buchen</a>
 </div>
 
@@ -501,14 +540,15 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     <div class="hero-copy">
       <div class="hero-usp-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>In Bogenhausen seit 1998</span>
+        <span>Alle Kassen &amp; Privatpraxis · Bogenhausen</span>
       </div>
       <p class="section-label hero-eyebrow-line">Kinder- und Jugendmedizin</p>
-      <h1 class="hero-h1"><span>Wir schenken Ihnen Gelassenheit.</span><em>Weil wir Ihr Kind begleiten – von Anfang an.</em></h1>
-      <p class="hero-sub">Medizinische Exzellenz für Ihr Kind. Vertrauen und Ruhe für Sie.</p>
+      <h1 class="hero-h1"><em>Mit Gelassenheit</em><span>durch die ersten gemeinsamen Jahre.</span></h1>
+      <p class="hero-sub">Erfahrene Kinderheilkunde mit Herz und Ruhe. Wir begleiten die Entwicklung Ihres Kindes von Anfang an.</p>
       <div class="hero-actions">
-        <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="hero-btn-p">Termin vereinbaren&nbsp; →</a>
+        <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="hero-btn-p">Online-Termin via Doctolib →</a>
       </div>
+      <p class="hero-akut-hint">Bei akuten Beschwerden rufen Sie uns bitte direkt an.</p>
 
     </div>
 
@@ -525,13 +565,21 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   </div>
 </section>
 
-<!-- ── Vertrauen Bar ── -->
-<div class="vbar" aria-label="Auf einen Blick">
-  <div class="vbar-inner">
-    <div class="vbar-item"><span class="vbar-dot"></span>Alle Kassen willkommen</div>
-    <div class="vbar-item"><span class="vbar-dot"></span>Online-Terminbuchung via Doctolib</div>
-    <div class="vbar-item"><span class="vbar-dot"></span>Seit 1998 für Familien da</div>
-    <div class="vbar-item"><span class="vbar-dot"></span>Akute Beschwerden: bitte anrufen</div>
+<!-- ── USP-Strip ── -->
+<div class="usp-strip" aria-label="Unsere Stärken">
+  <div class="usp-strip-inner">
+    <div class="usp-item">
+      <h3 class="usp-title">Zeit für das Wichtige</h3>
+      <p class="usp-text">Wir hören zu, erklären verständlich und nehmen uns die Zeit, die Ihr Kind braucht.</p>
+    </div>
+    <div class="usp-item">
+      <h3 class="usp-title">Digitaler Praxis-Service</h3>
+      <p class="usp-text">Rezepte, Überweisungen und Termine erledigen Sie bei uns einfach online, ganz ohne Warteschleife.</p>
+    </div>
+    <div class="usp-item">
+      <h3 class="usp-title">Von U2 bis zum Jugendalter</h3>
+      <p class="usp-text">Wir begleiten die Entwicklung Ihres Kindes verlässlich durch alle Lebensphasen.</p>
+    </div>
   </div>
 </div>
 
@@ -856,7 +904,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
           <div class="ph-left">
             <span class="ph-nr">05</span>
             <div class="ph-name-group">
-              <span class="ph-name">Der Jugendliche</span>
+              <span class="ph-name">Das Jugend-Alter</span>
               <span class="ph-age">12 – 18 Jahre</span>
             </div>
           </div>
@@ -962,75 +1010,6 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
 </main>
 
-<!-- ── Elternbereich ── -->
-<section id="elternbereich" class="elternbereich">
-  <div class="eltern-inner">
-
-    <!-- Login-Box -->
-    <div class="eltern-login" id="elternLogin">
-      <div class="eltern-login-card">
-        <div class="eltern-login-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <h2 class="eltern-login-h">Praxis-Infothek für Eltern</h2>
-        <p class="eltern-login-sub">Bitte geben Sie das Praxis-Passwort ein, das Sie von uns auf der Infokarte oder beim Besuch erhalten haben.</p>
-        <input type="password" id="praxisPass" class="eltern-input" placeholder="Passwort eingeben …" onkeydown="if(event.key==='Enter')checkPraxisPassword()">
-        <button class="eltern-login-btn" onclick="checkPraxisPassword()">Bereich öffnen →</button>
-        <p class="eltern-error" id="elternError">Das Passwort ist leider nicht korrekt. Bitte fragen Sie an der Anmeldung nach.</p>
-      </div>
-    </div>
-
-    <!-- Inhalt nach Login -->
-    <div class="eltern-content" id="elternContent">
-      <div class="eltern-content-head">
-        <div class="eltern-unlock-badge">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Freigeschaltet</span>
-        </div>
-        <h2 class="section-h2">Praxis-Infothek für Eltern</h2>
-        <p class="section-sub">Hier finden Sie Merkblätter, empfohlene Links und aktuelle Hinweise aus unserer Praxis.</p>
-      </div>
-
-      <div class="eltern-grid">
-
-        <!-- Spalte 1 -->
-        <div class="eltern-col">
-          <h3 class="eltern-col-h">Merkblätter &amp; Dosierungen</h3>
-          <ul>
-            <li><a href="#" target="_blank">Fieber-Senkungstabelle (PDF, folgt)</a></li>
-            <li><a href="#" target="_blank">Erste-Hilfe-Leitfaden Kinder (PDF, folgt)</a></li>
-            <li><a href="#" target="_blank">Dosierungstabelle Paracetamol &amp; Ibuprofen (PDF, folgt)</a></li>
-            <li><a href="#" target="_blank">Merkblatt Hand-Fuß-Mund-Krankheit (PDF, folgt)</a></li>
-            <li><a href="#" target="_blank">Merkblatt Scharlach (PDF, folgt)</a></li>
-          </ul>
-        </div>
-
-        <!-- Spalte 2 -->
-        <div class="eltern-col">
-          <h3 class="eltern-col-h">Empfohlene Fach-Links</h3>
-          <ul>
-            <li><a href="https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Impfkalender.html" target="_blank" rel="noopener noreferrer">STIKO-Impfkalender (RKI)</a></li>
-            <li><a href="https://www.kinderaerzte-im-netz.de" target="_blank" rel="noopener noreferrer">Kinderärzte im Netz</a></li>
-            <li><a href="https://www.giftnotruf.de" target="_blank" rel="noopener noreferrer">Vergiftungsnotruf München</a></li>
-            <li><a href="https://www.bzga.de" target="_blank" rel="noopener noreferrer">Bundeszentrale Gesundheitliche Aufklärung</a></li>
-            <li><a href="https://www.kinderschutzbund.de" target="_blank" rel="noopener noreferrer">Deutscher Kinderschutzbund</a></li>
-          </ul>
-        </div>
-
-        <!-- Spalte 3 -->
-        <div class="eltern-col">
-          <h3 class="eltern-col-h">Aktuelle Praxis-Empfehlung</h3>
-          <div class="eltern-praxistipp">
-            <strong>Hinweis unserer Ärztinnen</strong>
-            Hier erscheinen aktuelle Tipps und Hinweise zu Krankheitswellen, saisonalen Themen oder Neuigkeiten aus der Praxis. Dieser Text kann jederzeit von uns angepasst werden.
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <footer>
   <div class="footer-i">
