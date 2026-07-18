@@ -464,8 +464,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .lang-bar-left{display:flex;align-items:center;gap:10px}
 .lang-pills{display:flex;gap:6px}
 .lang-pill{font-size:11px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.6);padding:2px 8px;border:1px solid rgba(255,255,255,.18);border-radius:999px}
-.lang-right a{color:rgba(255,255,255,.65);text-decoration:none;font-size:12px;transition:color .2s}
-.lang-right a:hover{color:#fff}
+.opening-status{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.75);white-space:nowrap}
+.status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.status-dot--open{background:#4ade80;box-shadow:0 0 5px rgba(74,222,128,.5)}
+.status-dot--closed{background:#f87171}
 @media(max-width:767px){.lang-bar{display:none}}
 
 /* ── USP-Strip (ersetzt vbar) ── */
@@ -495,9 +497,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       </div>
       <span>Beratung auf Deutsch, Englisch &amp; Französisch</span>
     </div>
-    <div class="lang-right">
-      <a href="tel:+498993948730">089 – 93 94 87 3</a>
-    </div>
+    <div class="opening-status" id="status-display" aria-live="polite">Lade Praxisstatus…</div>
   </div>
 </div>
 
@@ -577,7 +577,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <p class="usp-text">Rezepte, Überweisungen und Termine erledigen Sie bei uns einfach online, ganz ohne Warteschleife.</p>
     </div>
     <div class="usp-item">
-      <h3 class="usp-title">Von U2 bis zum Jugendalter</h3>
+      <h3 class="usp-title">Vom ersten Lebenstag bis zum Erwachsenwerden</h3>
       <p class="usp-text">Wir begleiten die Entwicklung Ihres Kindes verlässlich durch alle Lebensphasen.</p>
     </div>
   </div>
@@ -798,6 +798,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <div class="ph-name-group">
               <span class="ph-name">Das Neugeborene</span>
               <span class="ph-age">Geburt – 4 Wochen</span>
+              <small class="ph-small">Die U2-Untersuchung (3. bis 10. Lebenstag) — ganz entspannt in der Praxis.</small>
             </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -823,6 +824,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <div class="ph-name-group">
               <span class="ph-name">Das Kleinkind</span>
               <span class="ph-age">4 Wochen – 2 Jahre</span>
+              <small class="ph-small">Die ersten großen Entwicklungsschritte (U3 bis U6 im ersten Lebensjahr).</small>
             </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -852,6 +854,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <div class="ph-name-group">
               <span class="ph-name">Das Kindergartenkind</span>
               <span class="ph-age">2 – 6 Jahre</span>
+              <small class="ph-small">Sicher aufwachsen und spielend lernen (U7 bis U9).</small>
             </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -881,6 +884,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <div class="ph-name-group">
               <span class="ph-name">Das Schulkind</span>
               <span class="ph-age">6 – 12 Jahre</span>
+              <small class="ph-small">Fit für den neuen Alltag und die Schulzeit (U10 &amp; U11).</small>
             </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -906,6 +910,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
             <div class="ph-name-group">
               <span class="ph-name">Das Jugend-Alter</span>
               <span class="ph-age">12 – 18 Jahre</span>
+              <small class="ph-small">Vertrauliche Begleitung durch die Teenager-Jahre (J1 &amp; J2).</small>
             </div>
           </div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1097,6 +1102,108 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       document.getElementById('praxisPass').focus();
     }
   }
+</script>
+<script>
+/* ── Kinderpraxis Gandenberger-Bachem – Dynamischer Praxisstatus ── */
+(function(){
+  /* Öffnungszeiten anpassen: [vonH, vonM, bisH, bisM] oder null = geschlossen */
+  var OZ = {
+    1: [[8,0,12,30],[15,0,17,30]], /* Montag    08:00–12:30 / 15:00–17:30 */
+    2: [[8,0,12,30],[15,0,17,30]], /* Dienstag  08:00–12:30 / 15:00–17:30 */
+    3: [[8,0,12,30]],              /* Mittwoch  08:00–12:30 (kein Nachmittag) */
+    4: [[8,0,12,30],[15,0,18,0]], /* Donnerstag 08:00–12:30 / 15:00–18:00 */
+    5: [[8,0,12,0]],               /* Freitag   08:00–12:00 */
+    6: null,                       /* Samstag   geschlossen */
+    0: null                        /* Sonntag   geschlossen */
+  };
+
+  function osterSonntag(jahr){
+    var a=jahr%19,b=Math.floor(jahr/100),c=jahr%100;
+    var d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25);
+    var g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30;
+    var i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7;
+    var m=Math.floor((a+11*h+22*l)/451);
+    var monat=Math.floor((h+l-7*m+114)/31);
+    var tag=(h+l-7*m+114)%31+1;
+    return new Date(jahr,monat-1,tag);
+  }
+
+  function bayerischeFeiertage(jahr){
+    var o=osterSonntag(jahr);
+    function addT(d,t){var n=new Date(d);n.setDate(n.getDate()+t);return n;}
+    function k(d){return d.getMonth()+'_'+d.getDate();}
+    var fT={};
+    var liste=[
+      new Date(jahr,0,1),  /* Neujahr */
+      new Date(jahr,0,6),  /* Heilige Drei Könige */
+      addT(o,-2),          /* Karfreitag */
+      addT(o,1),           /* Ostermontag */
+      new Date(jahr,4,1),  /* Tag der Arbeit */
+      addT(o,39),          /* Christi Himmelfahrt */
+      addT(o,50),          /* Pfingstmontag */
+      addT(o,60),          /* Fronleichnam */
+      new Date(jahr,7,15), /* Mariä Himmelfahrt */
+      new Date(jahr,9,3),  /* Tag der Deutschen Einheit */
+      new Date(jahr,10,1), /* Allerheiligen */
+      new Date(jahr,11,24),/* Heiligabend (geschlossen) */
+      new Date(jahr,11,25),/* 1. Weihnachtstag */
+      new Date(jahr,11,26) /* 2. Weihnachtstag */
+    ];
+    liste.forEach(function(d){fT[k(d)]=true;});
+    return fT;
+  }
+
+  function pad(n){return n<10?'0'+n:n;}
+
+  function updateStatus(){
+    var now=new Date();
+    var wt=now.getDay(); /* 0=So,1=Mo,...,6=Sa */
+    var h=now.getHours(),m=now.getMinutes();
+    var nowMin=h*60+m;
+    var jahr=now.getFullYear();
+    var fT=bayerischeFeiertage(jahr);
+    var tagKey=now.getMonth()+'_'+now.getDate();
+    var el=document.getElementById('status-display');
+    if(!el)return;
+
+    var dot='<span class="status-dot ';
+    if(fT[tagKey]){
+      el.innerHTML=dot+'status-dot--closed"></span>Heute am Feiertag geschlossen';
+      return;
+    }
+    var slots=OZ[wt];
+    if(!slots||slots.length===0){
+      el.innerHTML=dot+'status-dot--closed"></span>Heute geschlossen';
+      return;
+    }
+    var offen=false,bisText='';
+    for(var i=0;i<slots.length;i++){
+      var s=slots[i];
+      var vonMin=s[0]*60+s[1];
+      var bisMin=s[2]*60+s[3];
+      if(nowMin>=vonMin&&nowMin<bisMin){
+        offen=true;
+        bisText=pad(s[2])+':'+pad(s[3])+' Uhr';
+        break;
+      }
+    }
+    if(offen){
+      el.innerHTML=dot+'status-dot--open"></span>Jetzt geöffnet &bull; bis '+bisText;
+    } else {
+      /* nächste Öffnungszeit finden */
+      var naechst='';
+      for(var i=0;i<slots.length;i++){
+        var s=slots[i];
+        var vonMin=s[0]*60+s[1];
+        if(nowMin<vonMin){naechst=' • öffnet um '+pad(s[0])+':'+pad(s[1])+' Uhr';break;}
+      }
+      el.innerHTML=dot+'status-dot--closed"></span>Jetzt geschlossen'+naechst;
+    }
+  }
+
+  updateStatus();
+  setInterval(updateStatus,60000);
+})();
 </script>
 </body>
 </html>
