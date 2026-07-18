@@ -40,7 +40,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 }
 
 /* ── Nav ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;box-shadow:0 1px 0 var(--rule)}
+.nav{position:fixed;top:34px;left:0;right:0;z-index:999;background:#fff;box-shadow:0 1px 0 var(--rule)}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-logo{font-family:var(--head);font-size:18px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
 .nav-logo span{color:var(--acc)}
@@ -116,7 +116,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .team-head{margin-bottom:clamp(40px,5vw,60px)}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem}
 .team-card{background:#ffffff;border:0.5px solid var(--rule);border-radius:16px;display:flex;flex-direction:column;text-align:center;padding:1.5rem 1rem 1.2rem;transition:transform .35s ease,box-shadow .35s ease}
-.team-photo{width:160px;height:215px;background:#eef0ec;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0 auto 1.2rem auto}
+.team-photo{width:180px;height:180px;background:#eef0ec;border-radius:50%;overflow:hidden;margin:0 auto 1.2rem auto;border:3px solid var(--petrol);box-shadow:0 4px 14px rgba(58,90,64,0.15)}.team-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
 .team-photo-ph{display:flex;flex-direction:column;align-items:center;gap:8px}
 .team-photo-ph svg{width:40px;height:40px;stroke:var(--rule)}
 .team-photo-ph span{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--rule)}
@@ -134,7 +134,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .mfa-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
 .mfa-grid{max-width:var(--max);margin:clamp(20px,2.5vw,28px) auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem}
 .mfa-card{background:#ffffff;border:0.5px solid var(--rule);border-radius:12px;text-align:center;padding:1.2rem .8rem;transition:transform .35s ease,box-shadow .35s ease}
-.mfa-photo{width:190px;height:190px;background:#f0ede8;border-radius:50%;overflow:hidden;margin:0 auto .8rem auto;border:3px solid var(--petrol);box-shadow:0 4px 14px rgba(58,90,64,0.15)}.mfa-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.mfa-photo{width:180px;height:180px;background:#f0ede8;border-radius:50%;overflow:hidden;margin:0 auto .8rem auto;border:3px solid var(--petrol);box-shadow:0 4px 14px rgba(58,90,64,0.15)}.mfa-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
 .mfa-body{padding:12px 14px}
 .mfa-name{font-family:var(--head);font-size:15px;font-weight:400;color:var(--ink);letter-spacing:-0.01em;margin-bottom:3px}
 .mfa-role{font-size:12px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink2)}
@@ -144,13 +144,13 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .phasen-head{margin-bottom:clamp(40px,5vw,60px)}
 .ph-list{display:flex;flex-direction:column;gap:0;border-top:0.5px solid var(--rule)}
 .ph-item{border-bottom:0.5px solid var(--rule)}
-.ph-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:clamp(18px,2.2vw,26px) 0;cursor:pointer;border:none;background:transparent;text-align:left;gap:16px;color:var(--ink)}
+.ph-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:clamp(18px,2.2vw,26px) 0;cursor:pointer;border:none;background:transparent;text-align:left;gap:16px;color:var(--ink);font-family:inherit}
 .ph-btn:hover .ph-name{color:var(--acc)}
 .ph-left{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
 .ph-nr{font-family:var(--head);font-size:clamp(18px,2vw,26px);font-weight:300;color:var(--rule);letter-spacing:-0.02em;min-width:36px}
 .ph-name-group{display:flex;flex-direction:column;gap:2px}
 .ph-name{font-family:var(--head);font-size:clamp(16px,1.6vw,22px);font-weight:400;color:var(--ink);letter-spacing:-0.01em;transition:color 0.2s}
-.ph-age{font-size:13px;color:var(--ink2);letter-spacing:0.02em}
+.ph-age{font-size:13px;color:var(--ink2);letter-spacing:0.02em}.ph-small{font-size:14px;color:var(--ink2);line-height:1.55;margin-top:3px;font-style:normal}
 .ph-ico{stroke:var(--ink2);transition:transform 0.3s ease;flex-shrink:0}
 .ph-btn[aria-expanded="true"] .ph-ico{transform:rotate(180deg)}
 .ph-btn[aria-expanded="true"] .ph-name{color:var(--acc)}
@@ -158,7 +158,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .ph-btn[aria-expanded="true"]+.ph-body{grid-template-rows:1fr}
 .ph-bi{overflow:hidden}
 .ph-bi-inner{padding:0 0 clamp(20px,2.5vw,32px) clamp(52px,4.5vw,64px)}
-.ph-desc{font-family:var(--body);font-size:1rem;line-height:1.6;color:var(--ink2);margin-bottom:16px;font-weight:300;max-width:620px}
+.ph-desc{font-size:17px;line-height:1.75;color:var(--ink2);margin-bottom:16px;font-weight:300;max-width:620px}
 .ph-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
 .ph-tag{font-size:13px;padding:5px 11px;background:var(--bg);color:var(--ink2);border:0.5px solid var(--rule);letter-spacing:0.01em}
 .ph-ext-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--acc);text-decoration:none;letter-spacing:0.01em;margin-top:6px}
@@ -382,7 +382,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 }
 
 /* ── Akut-Banner ── */
-.akut-bar{margin-top:64px;background:var(--terracotta);padding:11px var(--pad);text-align:center}
+.akut-bar{margin-top:98px;background:var(--terracotta);padding:11px var(--pad);text-align:center}
 .akut-bar p{font-size:13px;color:#1E293B;letter-spacing:0.02em;line-height:1.5}
 .akut-bar a{color:#1E293B;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(30,41,59,.35);white-space:nowrap}
 .akut-bar a:hover{border-bottom-color:#1E293B}
@@ -460,7 +460,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
 /* ── Sprachen-Bar ── */
 .lang-bar{height:34px;display:flex;align-items:center;background:#E8EDE6;border-bottom:0.5px solid #C8D4C5;padding:0 var(--pad)}
-.lang-bar-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12px;color:var(--ink);flex-wrap:wrap}
+.lang-bar-inner{width:100%;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12px;color:var(--ink);flex-wrap:wrap}
 .lang-bar-left{display:flex;align-items:center;gap:10px}
 .lang-pills{display:flex;gap:5px}
 .lang-pill{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--petrol);padding:2px 9px;border:1.5px solid var(--petrol);border-radius:999px;cursor:pointer}
@@ -725,11 +725,11 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     </div>
     <div class="mfa-grid">
       <div class="mfa-card">
-        <div class="mfa-photo"><img src="Heidrun%20M..webp" alt="Heidrun M." loading="lazy"></div>
+        <div class="mfa-photo"><img src="mfa-heidrun.webp" alt="Heidrun M." loading="lazy"></div>
         <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
-        <div class="mfa-photo"><img src="Jennifer%20Bichler.webp" alt="Jennifer B." loading="lazy"></div>
+        <div class="mfa-photo"><img src="mfa-jennifer.webp" alt="Jennifer B." loading="lazy"></div>
         <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
@@ -737,11 +737,11 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
         <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
-        <div class="mfa-photo"><img src="Simge%20K..webp" alt="Simge K." loading="lazy"></div>
+        <div class="mfa-photo"><img src="mfa-simge.webp" alt="Simge K." loading="lazy"></div>
         <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
-        <div class="mfa-photo"><img src="Azra%20K..webp" alt="Azra K." loading="lazy"></div>
+        <div class="mfa-photo"><img src="mfa-azra.webp" alt="Azra K." loading="lazy"></div>
         <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
     </div>
@@ -1212,6 +1212,19 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
   updateStatus();
   setInterval(updateStatus,60000);
+})();
+</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('.nav');
+  var lbh = 34;
+  function updateNav(){
+    var s = window.scrollY || window.pageYOffset;
+    nav.style.top = s >= lbh ? '0px' : (lbh - s) + 'px';
+  }
+  window.addEventListener('scroll', updateNav, {passive:true});
+  updateNav();
 })();
 </script>
 </body>
