@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Praxis-Infothek für Eltern · Kinderpraxis Gandenberger-Bachem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#FAF9F6;--bg2:#EDE8DF;--ink:#1E293B;--ink2:#64748B;
+  --petrol:#3A5A40;--sage:#8F9E8B;--terracotta:#D4A373;
+  --acc:var(--petrol);--acc-lt:#EEF2ED;--rule:#DDD8CF;
+  --white:#fff;--max:1180px;--pad:clamp(22px,5vw,60px);
+  --head:'Newsreader',Georgia,serif;
+}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:rgba(250,249,246,.95);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--rule)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-family:var(--head);font-size:18px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.nav-logo span{color:var(--acc)}
+.nav-back{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink2);text-decoration:none;letter-spacing:.01em;transition:color .2s}
+.nav-back:hover{color:var(--ink)}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+/* Hero / Intro */
+.info-hero{background:var(--bg);padding:clamp(52px,7vw,88px) var(--pad);border-bottom:0.5px solid var(--rule)}
+.info-hero-inner{max-width:var(--max);margin:0 auto}
+.info-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.info-h1{font-family:var(--head);font-size:clamp(28px,3.5vw,48px);font-weight:300;letter-spacing:-.03em;line-height:1.12;color:var(--ink);margin-bottom:16px}
+.info-sub{font-size:clamp(14px,1.3vw,17px);line-height:1.8;color:var(--ink2);font-weight:300;max-width:580px}
+.info-note{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:12px;color:var(--ink2);background:var(--bg2);padding:8px 14px;border-radius:999px}
+.info-note svg{width:13px;height:13px;stroke:var(--ink2);fill:none;flex-shrink:0}
+/* Content Grid */
+.info-content{padding:clamp(52px,6vw,80px) var(--pad);background:var(--white)}
+.info-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.5vw,36px)}
+.info-col{background:var(--bg);border:0.5px solid var(--rule);padding:clamp(24px,3vw,36px)}
+.info-col-icon{width:40px;height:40px;background:var(--acc-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.info-col-icon svg{width:18px;height:18px;stroke:var(--petrol);fill:none;stroke-width:1.5}
+.info-col-h{font-family:var(--head);font-size:clamp(16px,1.5vw,19px);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:16px;padding-bottom:12px;border-bottom:0.5px solid var(--rule)}
+.info-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.info-col li{font-size:14px;color:var(--ink2);line-height:1.65;font-weight:300;padding-left:14px;position:relative}
+.info-col li::before{content:"";position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--sage)}
+.info-col a{color:var(--petrol);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+.info-col a:hover{border-bottom-color:var(--petrol)}
+.info-col .badge-neu{font-size:10px;font-weight:500;letter-spacing:.05em;background:var(--terracotta);color:#fff;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+/* Aktuell-Box */
+.aktuell-box{background:var(--acc-lt);border:0.5px solid rgba(58,90,64,.15);padding:clamp(20px,2.5vw,30px)}
+.aktuell-kw{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--petrol);margin-bottom:10px}
+.aktuell-titel{font-family:var(--head);font-size:16px;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.aktuell-text{font-size:14px;line-height:1.75;color:var(--ink2);font-weight:300}
+/* Kontakt-Strip */
+.info-footer-strip{background:var(--bg2);border-top:0.5px solid var(--rule);padding:clamp(28px,3.5vw,44px) var(--pad)}
+.info-footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.info-footer-txt{font-size:14px;color:var(--ink2);font-weight:300}
+.info-footer-txt strong{font-weight:500;color:var(--ink);display:block;margin-bottom:3px}
+.info-cta{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-size:13px;font-weight:500;padding:12px 22px;border-radius:999px;text-decoration:none;letter-spacing:.02em;transition:opacity .2s}
+.info-cta:hover{opacity:.87}
+/* Footer */
+footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
+.footer-i{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-logo{font-family:var(--head);font-size:14px;font-weight:300;color:rgba(255,255,255,.45);letter-spacing:-.01em}
+.footer-links{display:flex;gap:20px;list-style:none}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.02em}
+@media(max-width:767px){
+  .info-grid{grid-template-columns:1fr}
+  .info-footer-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:1023px) and (min-width:768px){
+  .info-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kinderpraxis <span>Gandenberger-Bachem</span></a>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Zurück zur Website
+    </a>
+  </div>
+</nav>
+
+<div class="info-hero">
+  <div class="info-hero-inner">
+    <p class="info-label">Nur für unsere Familien</p>
+    <h1 class="info-h1">Die Praxis-Infothek<br>für unsere Familien</h1>
+    <p class="info-sub">Wichtige Merkblätter, Dosierungstabellen und verlässliche Fach-Links — von unseren Ärztinnen für Sie zusammengestellt.</p>
+    <div class="info-note">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Diese Seite ist nicht öffentlich verlinkt — Sie erreichen sie über unsere Praxis-Infokarte.
+    </div>
+  </div>
+</div>
+
+<div class="info-content">
+  <div class="info-grid">
+
+    <!-- Spalte 1: Merkblätter -->
+    <div class="info-col">
+      <div class="info-col-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
+      </div>
+      <h2 class="info-col-h">Merkblätter &amp; Dosierungen</h2>
+      <ul>
+        <li><a href="#">Fieber-Senkungstabelle (PDF) <span class="badge-neu">Neu</span></a></li>
+        <li><a href="#">Erste-Hilfe-Leitfaden für Kinder (PDF)</a></li>
+        <li><a href="#">Dosierungstabelle Paracetamol &amp; Ibuprofen (PDF)</a></li>
+        <li><a href="#">Merkblatt Hand-Fuß-Mund-Krankheit (PDF)</a></li>
+        <li><a href="#">Merkblatt Scharlach (PDF)</a></li>
+        <li><a href="#">Ernährung im ersten Lebensjahr (PDF)</a></li>
+      </ul>
+    </div>
+
+    <!-- Spalte 2: Fach-Links -->
+    <div class="info-col">
+      <div class="info-col-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <h2 class="info-col-h">Empfohlene Fach-Links</h2>
+      <ul>
+        <li><a href="https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Impfkalender.html" target="_blank" rel="noopener noreferrer">STIKO-Impfkalender (RKI)</a></li>
+        <li><a href="https://www.kinderaerzte-im-netz.de" target="_blank" rel="noopener noreferrer">Kinderärzte im Netz</a></li>
+        <li><a href="tel:08912491" >Giftnotruf München: 089 – 19240</a></li>
+        <li><a href="https://www.bzga.de" target="_blank" rel="noopener noreferrer">Bundeszentrale Gesundheitliche Aufklärung</a></li>
+        <li><a href="https://www.kinderschutzbund.de" target="_blank" rel="noopener noreferrer">Deutscher Kinderschutzbund</a></li>
+        <li><a href="https://www.paedexpert.de" target="_blank" rel="noopener noreferrer">PädExpert – Telemedizin für Kinder</a></li>
+      </ul>
+    </div>
+
+    <!-- Spalte 3: Aktuelles von der Praxis -->
+    <div class="info-col">
+      <div class="info-col-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+      <h2 class="info-col-h">Aktuelle Praxis-Empfehlung</h2>
+      <div class="aktuell-box">
+        <p class="aktuell-kw">Hinweis unserer Ärztinnen</p>
+        <p class="aktuell-titel">Hier erscheint der aktuelle Tipp</p>
+        <p class="aktuell-text">Dieser Bereich wird von unseren Ärztinnen regelmäßig aktualisiert — mit saisonalen Hinweisen, Infos zu aktuellen Krankheitswellen und praktischen Tipps für den Alltag mit Kindern.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="info-footer-strip">
+  <div class="info-footer-inner">
+    <div class="info-footer-txt">
+      <strong>Haben Sie eine Frage oder ein akutes Anliegen?</strong>
+      Rufen Sie uns an — wir sind für Sie da: 089 – 93 94 87 3
+    </div>
+    <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="info-cta">
+      Termin online buchen →
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-i">
+    <div class="footer-logo">Kinderpraxis Gandenberger-Bachem · München</div>
+    <ul class="footer-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="jahr"></span> Kinderpraxis Gandenberger-Bachem</p>
+  </div>
+</footer>
+
+<script>
+var j=document.getElementById("jahr");
+if(j)j.textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
