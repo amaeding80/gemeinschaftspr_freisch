@@ -420,6 +420,42 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .ds-btn:hover{background:var(--petrol);color:#fff}
 @media(max-width:767px){.ds-grid{grid-template-columns:1fr}}
 @media(max-width:1023px) and (min-width:768px){.ds-grid{grid-template-columns:1fr 1fr}}
+
+/* ── Elternbereich ── */
+.elternbereich{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
+.eltern-inner{max-width:var(--max);margin:0 auto}
+
+/* Login-Box */
+.eltern-login{max-width:480px;margin:0 auto;text-align:center}
+.eltern-login-card{background:var(--white,#fff);border:0.5px solid var(--rule);border-radius:16px;padding:clamp(32px,4vw,52px);box-shadow:0 8px 40px rgba(30,41,59,.07)}
+.eltern-login-icon{width:52px;height:52px;background:var(--acc-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.eltern-login-icon svg{width:22px;height:22px;stroke:var(--petrol);fill:none;stroke-width:1.5}
+.eltern-login-h{font-family:var(--head);font-size:clamp(20px,2vw,26px);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:10px}
+.eltern-login-sub{font-size:14px;line-height:1.72;color:var(--ink2);font-weight:300;margin-bottom:28px}
+.eltern-input{width:100%;padding:13px 16px;border:1px solid var(--rule);border-radius:8px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bg);outline:none;transition:border-color .2s;letter-spacing:.05em}
+.eltern-input:focus{border-color:var(--sage)}
+.eltern-login-btn{margin-top:12px;width:100%;padding:14px;background:var(--petrol);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:.03em;transition:opacity .2s}
+.eltern-login-btn:hover{opacity:.87}
+.eltern-error{margin-top:12px;font-size:13px;color:#C0392B;display:none;line-height:1.5}
+
+/* Infothek (nach Login) */
+.eltern-content{display:none}
+.eltern-content-head{margin-bottom:clamp(36px,4vw,52px)}
+.eltern-unlock-badge{display:inline-flex;align-items:center;gap:8px;background:var(--acc-lt);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+.eltern-unlock-badge span{font-size:11px;font-weight:500;color:var(--petrol);letter-spacing:.05em}
+.eltern-unlock-badge svg{width:12px;height:12px;stroke:var(--petrol);fill:none;stroke-width:2}
+.eltern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.eltern-col{background:#fff;border:0.5px solid var(--rule);padding:clamp(22px,2.5vw,32px)}
+.eltern-col-h{font-family:var(--head);font-size:clamp(15px,1.4vw,18px);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:16px;padding-bottom:12px;border-bottom:0.5px solid var(--rule)}
+.eltern-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.eltern-col li{font-size:14px;color:var(--ink2);line-height:1.6;font-weight:300;padding-left:14px;position:relative}
+.eltern-col li::before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--sage)}
+.eltern-col a{color:var(--petrol);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+.eltern-col a:hover{border-bottom-color:var(--petrol)}
+.eltern-praxistipp{background:var(--acc-lt);border:0.5px solid var(--acc-lt);padding:clamp(18px,2vw,26px);font-size:14px;line-height:1.75;color:var(--ink);font-weight:300}
+.eltern-praxistipp strong{font-weight:500;color:var(--petrol);display:block;margin-bottom:8px}
+@media(max-width:767px){.eltern-grid{grid-template-columns:1fr}}
+@media(max-width:1023px) and (min-width:768px){.eltern-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -435,6 +471,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <li><a href="#team">Team</a></li>
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#elternbereich">Für Eltern</a></li>
     </ul>
     <button class="burger" id="burger-btn" aria-expanded="false" aria-label="Menü öffnen" aria-controls="mob-nav">
       <span></span><span></span><span></span>
@@ -452,6 +489,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   <a href="#team">Team</a>
   <a href="#leistungen">Leistungen</a>
   <a href="#kontakt">Kontakt</a>
+  <a href="#elternbereich">Für Eltern</a>
   <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="mob-cta">Termin buchen</a>
 </div>
 
@@ -924,6 +962,76 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
 </main>
 
+<!-- ── Elternbereich ── -->
+<section id="elternbereich" class="elternbereich">
+  <div class="eltern-inner">
+
+    <!-- Login-Box -->
+    <div class="eltern-login" id="elternLogin">
+      <div class="eltern-login-card">
+        <div class="eltern-login-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h2 class="eltern-login-h">Praxis-Infothek für Eltern</h2>
+        <p class="eltern-login-sub">Bitte geben Sie das Praxis-Passwort ein, das Sie von uns auf der Infokarte oder beim Besuch erhalten haben.</p>
+        <input type="password" id="praxisPass" class="eltern-input" placeholder="Passwort eingeben …" onkeydown="if(event.key==='Enter')checkPraxisPassword()">
+        <button class="eltern-login-btn" onclick="checkPraxisPassword()">Bereich öffnen →</button>
+        <p class="eltern-error" id="elternError">Das Passwort ist leider nicht korrekt. Bitte fragen Sie an der Anmeldung nach.</p>
+      </div>
+    </div>
+
+    <!-- Inhalt nach Login -->
+    <div class="eltern-content" id="elternContent">
+      <div class="eltern-content-head">
+        <div class="eltern-unlock-badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Freigeschaltet</span>
+        </div>
+        <h2 class="section-h2">Praxis-Infothek für Eltern</h2>
+        <p class="section-sub">Hier finden Sie Merkblätter, empfohlene Links und aktuelle Hinweise aus unserer Praxis.</p>
+      </div>
+
+      <div class="eltern-grid">
+
+        <!-- Spalte 1 -->
+        <div class="eltern-col">
+          <h3 class="eltern-col-h">Merkblätter &amp; Dosierungen</h3>
+          <ul>
+            <li><a href="#" target="_blank">Fieber-Senkungstabelle (PDF, folgt)</a></li>
+            <li><a href="#" target="_blank">Erste-Hilfe-Leitfaden Kinder (PDF, folgt)</a></li>
+            <li><a href="#" target="_blank">Dosierungstabelle Paracetamol &amp; Ibuprofen (PDF, folgt)</a></li>
+            <li><a href="#" target="_blank">Merkblatt Hand-Fuß-Mund-Krankheit (PDF, folgt)</a></li>
+            <li><a href="#" target="_blank">Merkblatt Scharlach (PDF, folgt)</a></li>
+          </ul>
+        </div>
+
+        <!-- Spalte 2 -->
+        <div class="eltern-col">
+          <h3 class="eltern-col-h">Empfohlene Fach-Links</h3>
+          <ul>
+            <li><a href="https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Impfkalender.html" target="_blank" rel="noopener noreferrer">STIKO-Impfkalender (RKI)</a></li>
+            <li><a href="https://www.kinderaerzte-im-netz.de" target="_blank" rel="noopener noreferrer">Kinderärzte im Netz</a></li>
+            <li><a href="https://www.giftnotruf.de" target="_blank" rel="noopener noreferrer">Vergiftungsnotruf München</a></li>
+            <li><a href="https://www.bzga.de" target="_blank" rel="noopener noreferrer">Bundeszentrale Gesundheitliche Aufklärung</a></li>
+            <li><a href="https://www.kinderschutzbund.de" target="_blank" rel="noopener noreferrer">Deutscher Kinderschutzbund</a></li>
+          </ul>
+        </div>
+
+        <!-- Spalte 3 -->
+        <div class="eltern-col">
+          <h3 class="eltern-col-h">Aktuelle Praxis-Empfehlung</h3>
+          <div class="eltern-praxistipp">
+            <strong>Hinweis unserer Ärztinnen</strong>
+            Hier erscheinen aktuelle Tipps und Hinweise zu Krankheitswellen, saisonalen Themen oder Neuigkeiten aus der Praxis. Dieser Text kann jederzeit von uns angepasst werden.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <footer>
   <div class="footer-i">
     <div class="footer-logo">Kinderpraxis Gandenberger-Bachem · München</div>
@@ -994,6 +1102,22 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     });
   });
 })();
+
+  // Elternbereich Login
+  function checkPraxisPassword(){
+    var pw=document.getElementById('praxisPass').value.trim().toLowerCase();
+    var valid=['freischuetz','1998'];
+    if(valid.indexOf(pw)>-1){
+      document.getElementById('elternLogin').style.display='none';
+      document.getElementById('elternContent').style.display='block';
+      document.getElementById('elternbereich').scrollIntoView({behavior:'smooth',block:'start'});
+    }else{
+      var err=document.getElementById('elternError');
+      err.style.display='block';
+      document.getElementById('praxisPass').value='';
+      document.getElementById('praxisPass').focus();
+    }
+  }
 </script>
 </body>
 </html>
