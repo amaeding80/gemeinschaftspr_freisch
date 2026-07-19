@@ -1061,51 +1061,6 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   }
 }
 
-  .team {
-    padding-top: 20px !important;
-  }
-
-  .team-trait {
-    min-height: 7rem !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-}
-
-  .team-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: stretch !important;
-    justify-content: center;
-    gap: 15px !important;
-    padding: 20px 10px !important;
-  }
-
-  .team-card {
-    flex: 1;
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 15px !important;
-  }
-
-  .team-personal {
-    margin-top: auto !important;
-    margin-bottom: 10px !important;
-    width: 100%;
-  }
-
-  .team-trait {
-    min-height: auto !important;
-    padding-bottom: 15px;
-  }
-
-}
-
-}
-
 
 
 
@@ -1975,6 +1930,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   // Karussell auf Mobile erzwingen (JS-Fallback — CSS-Cascade-sicher)
   function initCarousel(){
     if(window.innerWidth > 767) return;
+    if(window.innerWidth < window.innerHeight) { /* portrait only */ } else { return; }
     var defs = [
       { sel: '.team-grid', cardSel: '.team-card', cardW: '82vw', maxW: '320px', gap: '14px' },
       { sel: '.mfa-grid',  cardSel: '.mfa-card',  cardW: '68vw', maxW: '280px', gap: '10px' }
