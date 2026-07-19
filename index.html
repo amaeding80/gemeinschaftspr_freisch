@@ -1048,6 +1048,154 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   .kontakt-cta{
     grid-template-columns:repeat(2,1fr) !important;
   }
+
+  /* 6. Team-Fotos flacher im Landscape */
+  .team-photo{ width:80px !important; height:80px !important }
+  .team-card img{ max-height:160px !important; object-fit:cover !important; }
+
+  /* 7. Haltung-Grid (Medizin die zuhört): 3-spaltig */
+  .haltung-grid{
+    display:grid !important;
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:15px !important;
+  }
+}
+
+/* ==========================================
+   TABLET HOCHFORMAT (PORTRAIT)
+   ========================================== */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  body { font-size: 16px; }
+
+  /* Seitliche Abstände */
+  .hero-inner, .usp-strip-inner, .pf-wrap, .team-inner,
+  .phasen-inner, .kontakt-inner, .footer-i {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  /* Hero */
+  .hero.hero-v2 {
+    height: 70vh;
+    min-height: 600px;
+    align-items: center;
+  }
+  .hero-copy {
+    max-width: 520px;
+    padding: 40px;
+    margin-left: 20px;
+  }
+  .hero-v2 .hero-h1 { font-size: 2rem; line-height: 1.25; }
+
+  /* USP-Strip: 2-spaltig */
+  .usp-strip-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Praxisfakten: 2-spaltig */
+  .pf-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px;
+  }
+
+  /* Team-Grid: 2-spaltig */
+  .team-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    overflow-x: unset;
+    gap: 25px;
+  }
+  .team-card { flex: unset !important; max-width: unset; }
+
+  /* Sticky Bar ausblenden */
+  .sticky-action-bar { display: none !important; }
+
+  /* Hero-Button: nicht mehr volle Breite */
+  .hero-btn-p {
+    width: auto !important;
+    padding: 15px 35px !important;
+    display: inline-flex !important;
+  }
+
+  /* Kontakt + Footer: 2-spaltig */
+  .kontakt-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px;
+  }
+  .footer-i {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+/* ==========================================
+   TABLET QUERFORMAT (LANDSCAPE)
+   ========================================== */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  /* Navigation: Burger aus, Desktop-Nav ein */
+  .burger { display: none !important; }
+  .nav-links { display: flex !important; gap: 25px; }
+  .nav-links a { padding: 10px 15px; font-size: 1.05rem; }
+  .nav-cta { display: inline-flex !important; }
+
+  /* Hero */
+  .hero.hero-v2 {
+    height: 80vh;
+    min-height: 650px;
+    align-items: center;
+    padding-left: 10%;
+  }
+  .hero-copy {
+    max-width: 500px;
+    padding: 45px;
+    margin-left: 0;
+  }
+  .hero-v2 .hero-h1 { font-size: 2.3rem; line-height: 1.2; }
+
+  /* USP-Strip: 3-spaltig */
+  .usp-strip-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Praxisfakten: 3-spaltig */
+  .pf-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Team-Grid: 3-spaltig */
+  .team-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    overflow-x: unset;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .team-card { flex: unset !important; max-width: unset; }
+  .team-photo { max-height: 240px; overflow: hidden; }
+
+  /* Footer */
+  .footer-i {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
 }
 </style>
 </head>

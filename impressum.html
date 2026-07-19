@@ -131,6 +131,128 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .footer-copy{font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.02em}
 @media(max-width:1023px){.nav-links{display:none}.burger{display:flex}}
 @media(max-width:767px){.ds-wrap h2{margin-top:36px}}
+
+/* ==========================================
+   TABLET HOCHFORMAT (PORTRAIT) – RECHTSTEXTE
+   ========================================== */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .ds-wrap {
+    padding: 50px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .ds-wrap p,
+  .ds-wrap li {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .ds-wrap h2 { font-size: 1.4rem; margin-top: 36px; }
+  .ds-wrap h3 { font-size: 1.15rem; margin-top: 24px; }
+
+  /* Tabellen wieder als echte Tabellen */
+  .ds-wrap table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 30px 0 !important;
+    overflow: hidden !important;
+  }
+  .ds-wrap thead {
+    display: table-header-group !important;
+    background-color: #1B362A !important;
+  }
+  .ds-wrap th {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 14px 18px !important;
+    text-align: left !important;
+  }
+  .ds-wrap tr {
+    display: table-row !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #EBF2EE !important;
+    margin-bottom: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+  .ds-wrap tr:nth-child(even) { background: #fbfdfc !important; }
+  .ds-wrap td {
+    display: table-cell !important;
+    padding: 14px 18px !important;
+    font-size: 0.95rem !important;
+    color: #2b2b2b !important;
+    border-bottom: 1px solid #EBF2EE !important;
+    text-align: left !important;
+    width: auto !important;
+  }
+  .ds-wrap td:last-child { border-bottom: none !important; }
+}
+
+/* ==========================================
+   TABLET QUERFORMAT (LANDSCAPE) – RECHTSTEXTE
+   ========================================== */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .ds-wrap {
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+  .ds-wrap p,
+  .ds-wrap li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2b2b2b;
+  }
+  .ds-wrap h2 {
+    font-size: 1.6rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #1B362A;
+  }
+  .ds-wrap h3 { font-size: 1.2rem; margin-top: 28px; }
+
+  /* Tabellen */
+  .ds-wrap table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 40px 0 !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;
+  }
+  .ds-wrap thead {
+    display: table-header-group !important;
+    background-color: #1B362A !important;
+  }
+  .ds-wrap th {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 16px 20px !important;
+    font-size: 1rem !important;
+    text-align: left !important;
+  }
+  .ds-wrap tr {
+    display: table-row !important;
+    background: #ffffff !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  .ds-wrap tr:nth-child(even) { background-color: #f8faf9 !important; }
+  .ds-wrap td {
+    display: table-cell !important;
+    padding: 16px 20px !important;
+    font-size: 0.95rem !important;
+    color: #2b2b2b !important;
+    border-bottom: 1px solid #EBF2EE !important;
+    text-align: left !important;
+    width: auto !important;
+  }
+  .ds-wrap tr:last-child td { border-bottom: none !important; }
+}
 </style>
 </head>
 <body>
