@@ -1299,6 +1299,45 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   }
 
 }
+
+/* ==========================================
+   SMARTPHONE QUERFORMAT – STRETCH + MARGIN-AUTO TRICK
+   ========================================== */
+@media (max-width: 930px) and (orientation: landscape) {
+
+  nav.nav {
+    position: relative !important;
+    top: 0 !important;
+  }
+
+  .team-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: center;
+    gap: 15px !important;
+    padding: 20px 10px !important;
+  }
+
+  .team-card {
+    flex: 1;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 15px !important;
+  }
+
+  .team-personal {
+    margin-top: auto !important;
+    margin-bottom: 10px !important;
+    width: 100%;
+  }
+
+  .team-trait {
+    min-height: auto !important;
+    padding-bottom: 15px;
+  }
+
+}
 </style>
 </head>
 <body>
