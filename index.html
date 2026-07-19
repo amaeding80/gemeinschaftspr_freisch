@@ -1106,8 +1106,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
 }
 
+
+
 /* ==========================================
-   SMARTPHONE QUERFORMAT – SAUBERE FINALE VERSION
+   SMARTPHONE QUERFORMAT – SWIPE-SLIDER FINAL
    ========================================== */
 @media (max-width: 930px) and (orientation: landscape) {
 
@@ -1120,24 +1122,30 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     display: flex !important;
     flex-direction: row !important;
     align-items: stretch !important;
-    gap: 15px !important;
-    padding: 20px 10px !important;
+    gap: 20px !important;
+    padding: 20px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
   }
 
   .team-card {
+    flex: 0 0 75% !important;
+    scroll-snap-align: center !important;
     display: flex !important;
     flex-direction: column !important;
-    padding: 15px !important;
+    padding: 20px !important;
+    box-sizing: border-box;
   }
 
   .team-trait {
     min-height: auto !important;
-    padding-bottom: 10px !important;
+    padding-bottom: 15px !important;
   }
 
   .team-personal {
     margin-top: auto !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 15px !important;
     width: 100%;
   }
 
