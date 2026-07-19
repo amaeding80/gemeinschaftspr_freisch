@@ -1068,6 +1068,30 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 /* ==========================================
    SMARTPHONE QUERFORMAT – SWIPE-SLIDER FINAL
    ========================================== */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 60px 40px !important;
+    height: auto !important;
+  }
+  .hero-text-container {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin-bottom: 40px !important;
+  }
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.25 !important;
+  }
+  .hero-image-container {
+    width: 100% !important;
+    max-width: 550px !important;
+  }
+}
+
 @media (max-width: 1024px) and (orientation: landscape) {
 
   header {
@@ -1111,6 +1135,28 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     width: 100%;
   }
 
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 30px 40px !important;
+    height: auto !important;
+  }
+  .hero-text-container {
+    margin-bottom: 25px !important;
+  }
+  .hero-title {
+    font-size: 2.2rem !important;
+  }
+  .hero-image {
+    max-height: 280px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
 }
 </style>
 </head>
