@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung | Gemeinschaftspraxis für Kinder- und Jugendmedizin</title>
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:300;background:#F9F5F0;color:#25211E;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#F9F5F0;
+  --ink:#25211E;
+  --ink2:#6B6257;
+  --acc:#7A5C38;
+  --acc-lt:#F5EDE0;
+  --rule:#DDD8CF;
+  --white:#FFFFFF;
+  --max:1080px;
+  --pad:clamp(22px,5vw,60px);
+  --head:'Newsreader',Georgia,serif;
+}
+.lang-bar{height:34px;display:flex;align-items:center;background:#E8EDE6;border-bottom:0.5px solid #C8D4C5;padding:0 var(--pad)}
+.lang-bar-inner{width:100%;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12px;color:var(--ink);flex-wrap:wrap}
+.lang-bar-left{display:flex;align-items:center;gap:10px}
+.lang-pills{display:flex;gap:5px}
+.lang-pill{font-size:11px;font-weight:600;letter-spacing:.06em;color:#3A5A40;padding:2px 9px;border:1.5px solid #3A5A40;border-radius:999px;cursor:pointer}
+.opening-status{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--ink);white-space:nowrap}
+.status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.status-dot--open{background:#22c55e}
+.status-dot--closed{background:#ef4444}
+.nav{position:fixed;top:34px;left:0;right:0;z-index:999;background:#fff;box-shadow:0 1px 0 var(--rule)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--head);font-size:18px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
+.nav-logo span{color:var(--acc)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;color:var(--ink2);text-decoration:none;letter-spacing:0.01em;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;color:var(--ink)}
+.burger span{display:block;width:22px;height:1.5px;background:currentColor;transition:all 0.25s}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-nav{position:fixed;inset:119px 0 0;background:var(--bg);z-index:199;display:flex;flex-direction:column;padding:clamp(24px,5vw,40px) var(--pad);gap:0}
+.mob-nav a{font-family:var(--head);font-size:22px;font-weight:400;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--rule);padding:18px 0;display:block}
+.mob-nav .mob-cta{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;background:var(--acc);color:#fff;text-align:center;padding:14px;margin-top:8px;letter-spacing:0.02em;border-bottom:none}
+.page-offset{height:98px}
+.ds-wrap{max-width:760px;margin:0 auto;padding:clamp(48px,6vw,80px) var(--pad) clamp(60px,8vw,100px)}
+.ds-wrap h1{font-family:var(--head);font-size:clamp(28px,3.5vw,44px);font-weight:300;letter-spacing:-0.025em;line-height:1.15;color:var(--ink);margin-bottom:24px}
+.ds-wrap .intro{font-size:17px;line-height:1.78;color:var(--ink2);font-weight:300;margin-bottom:32px;max-width:640px}
+.highlight-box{background:var(--acc-lt);border-left:3px solid var(--acc);padding:18px 22px;margin:28px 0;border-radius:2px}
+.highlight-box strong{font-weight:500;color:var(--ink);display:block;margin-bottom:6px}
+.highlight-box p{font-size:15px;line-height:1.72;color:var(--ink2);font-weight:300}
+.ds-wrap h2{font-family:var(--head);font-size:clamp(18px,2vw,24px);font-weight:400;color:var(--ink);letter-spacing:-0.015em;margin-top:48px;margin-bottom:8px;padding-bottom:10px;border-bottom:0.5px solid var(--rule)}
+.ds-wrap h3{font-size:16px;font-weight:500;color:var(--ink);margin-top:28px;margin-bottom:8px;letter-spacing:0.01em}
+.ds-wrap p{font-size:16px;line-height:1.78;color:var(--ink2);font-weight:300;margin-bottom:16px}
+.ds-wrap ul{margin-bottom:16px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.ds-wrap ul li{font-size:16px;line-height:1.7;color:var(--ink2);font-weight:300;padding-left:14px;position:relative}
+.ds-wrap ul li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--acc)}
+.ds-wrap strong{font-weight:500;color:var(--ink)}
+.ds-nav{margin-top:56px;padding-top:20px;border-top:0.5px solid var(--rule);display:flex;gap:24px;flex-wrap:wrap}
+.ds-nav a{font-size:13px;color:var(--acc);text-decoration:none;letter-spacing:0.02em}
+.ds-nav a:hover{text-decoration:underline}
+.ds-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--acc);text-decoration:none;letter-spacing:0.02em;margin-bottom:28px}
+.ds-back:hover{text-decoration:underline}
+footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
+.footer-i{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-logo{font-family:var(--head);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:-0.01em}
+.footer-links{display:flex;gap:24px;list-style:none}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s}
+.footer-links a:hover{color:rgba(255,255,255,0.7)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.02em}
+@media(max-width:1023px){.nav-links{display:none}.burger{display:flex}}
+@media(max-width:767px){.ds-wrap h2{margin-top:36px}}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <div class="lang-bar-left">
+      <div class="lang-pills">
+        <span class="lang-pill">DE</span>
+        <span class="lang-pill">EN</span>
+        <span class="lang-pill">FR</span>
+      </div>
+      <span>Beratung auf Deutsch, Englisch &amp; Französisch</span>
+    </div>
+    <div class="opening-status" id="status-display" aria-live="polite">Lade Praxisstatus…</div>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Gemeinschaftspraxis <span>für Kinder- und Jugendmedizin</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#haltung">Unsere Haltung</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="index.html#leistungen">Leistungen</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+      <li><a href="infothek.html">Für Eltern</a></li>
+    </ul>
+    <button class="burger" id="burger-btn" aria-expanded="false" aria-label="Menü öffnen" aria-controls="mob-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav" id="mob-nav" hidden aria-hidden="true">
+  <a href="index.html#haltung">Unsere Haltung</a>
+  <a href="index.html#team">Team</a>
+  <a href="index.html#leistungen">Leistungen</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="infothek.html">Für Eltern</a>
+  <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="mob-cta">Termin buchen</a>
+</div>
+
+<div class="page-offset"></div>
+
+<main>
+<div class="ds-wrap">
+
+  <a href="index.html" class="ds-back">← Zurück zur Startseite</a>
+
+  <h1>Datenschutzerklärung</h1>
+
+  <p class="intro">Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.</p>
+
+  <div class="highlight-box">
+    <strong>Hinweis zum Datenschutz (Gelassenheit ab dem ersten Klick):</strong>
+    <p>Unsere Website ist darauf ausgelegt, die Privatsphäre von Familien maximal zu schützen. Wir nutzen ausschließlich technisch notwendige Funktionen. Es werden keine Cookies zu Analyse-, Marketing- oder Tracking-Zwecken eingesetzt. Aus diesem Grund ist auf unserer Website keine Einwilligung über ein störendes Cookie-Banner erforderlich.</p>
+  </div>
+
+  <h2>1. Allgemeine Hinweise und Pflichtinformationen</h2>
+
+  <h3>Verantwortliche Stelle</h3>
+  <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+  <p>
+    Gemeinschaftspraxis für Kinder- und Jugendmedizin<br>
+    Dr. med. Christina Gandenberger-Bachem<br>
+    Dr. med. Heike Boerschmann<br>
+    Dr. med. Jennifer Bichler (angestellte Fachärztin)<br>
+    Fachärztinnen für Kinder- und Jugendmedizin<br>
+    Freischützstraße 9, 81927 München
+  </p>
+
+  <h2>2. Datenerfassung auf unserer Website</h2>
+
+  <h3>Webhosting und Bereitstellung der Website (IONOS)</h3>
+  <p>Unsere Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei handelt es sich in erster Linie um IP-Adressen, Meta- und Kommunikationsdaten oder Webseitenzugriffe.</p>
+  <p>Der Einsatz des Hosters erfolgt zum Zwecke einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).</p>
+  <p><strong>Name und Anschrift des Hosters:</strong><br>
+    IONOS SE<br>
+    Elgendorfer Str. 57<br>
+    56410 Montabaur<br>
+    Deutschland
+  </p>
+  <p><strong>Auftragsverarbeitung:</strong> Wir haben mit dem oben genannten Anbieter einen Vertrag über die Auftragsverarbeitung (AVV) geschlossen. Dies stellt sicher, dass der Dienstleister die Daten der Website-Besucher ausschließlich nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.</p>
+
+  <h3>Kontakt- und Rückrufformular</h3>
+  <p>Wenn Sie uns per Formular Anfragen oder Rückrufwünsche zukommen lassen, werden Ihre Angaben aus dem Formular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+  <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), falls diese abgefragt wurde.</p>
+
+  <div class="ds-nav">
+    <a href="impressum.html">Zum Impressum →</a>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="footer-i">
+    <div class="footer-logo">Gemeinschaftspraxis für Kinder- und Jugendmedizin · München</div>
+    <ul class="footer-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="jahr"></span> Gemeinschaftspraxis für Kinder- und Jugendmedizin</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var j=document.getElementById("jahr");
+  if(j)j.textContent=new Date().getFullYear();
+
+  var btn=document.getElementById('burger-btn');
+  var mob=document.getElementById('mob-nav');
+  if(btn&&mob){
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',String(!open));
+      btn.classList.toggle('open',!open);
+      mob.hidden=open;
+      mob.setAttribute('aria-hidden',String(open));
+    });
+  }
+
+  var nav=document.querySelector('.nav');
+  var lbh=34;
+  function updateNav(){
+    var s=window.scrollY||window.pageYOffset;
+    nav.style.top=s>=lbh?'0px':(lbh-s)+'px';
+  }
+  window.addEventListener('scroll',updateNav,{passive:true});
+  updateNav();
+
+  // Praxisstatus
+  var OZ={1:[[8,0,12,0],[14,0,18,0]],2:[[8,0,12,0],[14,0,16,0]],3:[[8,0,12,0],[14,0,18,0]],4:[[8,0,12,0],[14,0,16,0]],5:[[8,0,12,0]]};
+  function pad(n){return n<10?'0'+n:String(n)}
+  function osterSonntag(y){var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31)-1,day=(h+l-7*m+114)%31+1;return new Date(y,mo,day)}
+  function bayerischeFeiertage(y){var os=osterSonntag(y),fT={};function add(d){fT[d.getMonth()+'_'+d.getDate()]=true}function ao(b,days){var d=new Date(b);d.setDate(d.getDate()+days);add(d)}add(new Date(y,0,1));add(new Date(y,0,6));add(new Date(y,4,1));add(new Date(y,7,15));add(new Date(y,9,3));add(new Date(y,10,1));add(new Date(y,11,24));add(new Date(y,11,25));add(new Date(y,11,26));add(new Date(y,11,31));ao(os,-2);ao(os,1);ao(os,39);ao(os,50);ao(os,60);return fT}
+  function updateStatus(){var now=new Date(),wt=now.getDay(),h=now.getHours(),m=now.getMinutes(),nowMin=h*60+m,fT=bayerischeFeiertage(now.getFullYear()),tagKey=now.getMonth()+'_'+now.getDate(),el=document.getElementById('status-display');if(!el)return;var dot='<span class="status-dot ';if(fT[tagKey]){el.innerHTML=dot+'status-dot--closed"></span>Heute am Feiertag geschlossen';return}var slots=OZ[wt];if(!slots||!slots.length){el.innerHTML=dot+'status-dot--closed"></span>Heute geschlossen';return}var offen=false,bisText='';for(var i=0;i<slots.length;i++){var s=slots[i];if(nowMin>=s[0]*60+s[1]&&nowMin<s[2]*60+s[3]){offen=true;bisText=pad(s[2])+':'+pad(s[3])+' Uhr';break}}if(offen){el.innerHTML=dot+'status-dot--open"></span>Jetzt geöffnet &bull; bis '+bisText}else{var n='';for(var i=0;i<slots.length;i++){if(nowMin<slots[i][0]*60+slots[i][1]){n=' · öffnet um '+pad(slots[i][0])+':'+pad(slots[i][1])+' Uhr';break}}el.innerHTML=dot+'status-dot--closed"></span>Jetzt geschlossen'+n}}
+  updateStatus();
+  setInterval(updateStatus,60000);
+})();
+</script>
+</body>
+</html>
