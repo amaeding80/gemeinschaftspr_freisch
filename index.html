@@ -1113,20 +1113,24 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 /* ==========================================
    SMARTPHONE QUERFORMAT – SWIPE-SLIDER FINAL
    ========================================== */
-@media (max-width: 930px) and (orientation: landscape) {
+@media (max-width: 1024px) and (orientation: landscape) {
 
-  nav.nav {
+  header {
     position: relative !important;
     top: 0 !important;
   }
 
   .team-grid {
+    /* TEST: Hintergrund rot wenn Querformat aktiv */
+    background-color: red !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
     align-items: stretch !important;
     gap: 20px !important;
     padding: 20px !important;
+    width: 100% !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch;
@@ -1134,11 +1138,14 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
   .team-card {
     flex: 0 0 75% !important;
+    width: 75% !important;
+    min-width: 75% !important;
+    max-width: 75% !important;
     scroll-snap-align: center !important;
     display: flex !important;
     flex-direction: column !important;
     padding: 20px !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
 
   .team-trait {
