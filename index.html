@@ -1117,6 +1117,42 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
    TABLET HOCHFORMAT — alle Tablets (iPad, Android, Amazon, Surface)
    min-width:768px · max-width:1024px · portrait
    ══════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════
+   DESKTOP RESET — stellt sicher dass Grid auf PC/iMac immer grid ist,
+   egal was pointer:coarse-Blöcke darunter tun.
+   ══════════════════════════════════════════════════════════════ */
+@media (min-width: 1025px) {
+  .mfa-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    overflow-x: visible !important;
+    flex: unset !important;
+    flex-wrap: unset !important;
+  }
+  .mfa-grid .mfa-card {
+    flex: unset !important;
+    max-width: unset !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+  .mfa-photo {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  .team-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    overflow-x: visible !important;
+    flex: unset !important;
+  }
+  .team-grid .team-card {
+    flex: unset !important;
+    max-width: unset !important;
+    width: auto !important;
+  }
+  .team-carousel-hint, .mfa-carousel-hint { display: none !important; }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (pointer: coarse) {
 
   /* ── Hero: weißes Card-Design wie Mobile ── */
@@ -1621,7 +1657,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       </div>
       <div class="mfa-card">
         <div class="mfa-photo"><img src="mfa-jennifer.webp" alt="Jennifer B." loading="lazy"></div>
-        <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
+        <div class="mfa-body"><p class="mfa-name">Jennifer B.</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
         <div class="mfa-photo"><img src="mfa-steffi.webp" alt="Steffi W." loading="lazy"></div>
