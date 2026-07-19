@@ -1120,33 +1120,31 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     top: 0 !important;
   }
 
-  /* 1. Container als Text-Fließbereich */
   .team-grid {
-    display: block !important;
-    white-space: nowrap !important;
-    overflow-x: auto !important;
-    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 20px !important;
     padding: 20px !important;
+    overflow-x: auto !important;
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch;
+    grid-template-columns: unset !important;
   }
 
-  /* 2. Kacheln: außen wie Text, innen wie Flexbox */
   .team-card {
-    display: inline-flex !important;
-    flex-direction: column !important;
-    vertical-align: top !important;
-    white-space: normal !important;
+    flex: 0 0 75% !important;
     width: 75% !important;
     min-width: 75% !important;
     max-width: 75% !important;
-    margin-right: 20px !important;
     scroll-snap-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
     padding: 20px !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. Trennlinie-Magnet bleibt erhalten */
   .team-trait {
     min-height: auto !important;
     padding-bottom: 15px !important;
