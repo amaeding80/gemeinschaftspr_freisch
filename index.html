@@ -1275,6 +1275,30 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     text-align: center;
   }
 }
+
+/* ==========================================
+   SMARTPHONE QUERFORMAT – HEADER + STRICHE-FIX
+   ========================================== */
+@media (max-width: 930px) and (orientation: landscape) {
+
+  nav.nav {
+    position: relative !important;
+    top: 0 !important;
+  }
+
+  .team {
+    padding-top: 20px !important;
+  }
+
+  .team-trait {
+    min-height: 7rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
 </style>
 </head>
 <body>
