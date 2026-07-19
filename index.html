@@ -1345,60 +1345,50 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   .ds-p { font-size: 0.85rem !important; }
   .ds-btn { font-size: 13px !important; padding: 11px 14px !important; }
 
-  /* ── Ärztinnen: horizontales Wisch-Karussell ── */
+  /* ── Ärztinnen: 3-spaltiges Grid, volle Breite, kein Wischhinweis ── */
   .team-grid {
-    display: flex !important;
-    grid-template-columns: unset !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    overflow-x: visible !important;
     gap: 20px !important;
-    padding-bottom: 16px;
-    scrollbar-width: none;
-    margin-left: -32px;
-    margin-right: -32px;
-    padding-left: 32px;
-    padding-right: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
-  .team-grid::-webkit-scrollbar { display: none; }
   .team-grid .team-card {
-    flex: 0 0 44% !important;
-    max-width: 360px !important;
-    scroll-snap-align: start;
-    min-width: 0;
+    flex: unset !important;
+    max-width: unset !important;
+    width: auto !important;
+    scroll-snap-align: unset;
   }
   .team-photo { width: 90px !important; height: 90px !important; }
+  .team-carousel-hint { display: none !important; }
 
-  /* ── Praxisteam: Karussell + kleinere Bilder ── */
+  /* ── Praxisteam: 5-spaltiges Grid, volle Breite, kein Wischhinweis ── */
   .mfa-grid {
-    display: flex !important;
-    grid-template-columns: unset !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    overflow-x: visible !important;
     gap: 14px !important;
-    padding-bottom: 12px;
-    scrollbar-width: none;
-    margin-left: -32px;
-    margin-right: -32px;
-    padding-left: 32px;
-    padding-right: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: var(--max);
   }
-  .mfa-grid::-webkit-scrollbar { display: none; }
   .mfa-grid .mfa-card {
-    flex: 0 0 20% !important;
-    max-width: 160px !important;
-    scroll-snap-align: start;
-    min-width: 110px;
-    padding: 14px 10px !important;
+    flex: unset !important;
+    max-width: unset !important;
+    width: auto !important;
+    min-width: 0;
+    padding: 16px 10px !important;
+    scroll-snap-align: unset;
   }
-  .mfa-photo { width: 65px !important; height: 65px !important; margin-bottom: 0.5rem !important; }
+  .mfa-photo { width: 80px !important; height: 80px !important; margin-bottom: 0.5rem !important; }
   .mfa-name { font-size: 12px !important; }
   .mfa-role { font-size: 10px !important; }
-
-  /* ── Wisch-Hinweise einblenden ── */
-  .team-carousel-hint { display: flex !important; }
-  .mfa-carousel-hint  { display: flex !important; }
+  .mfa-carousel-hint { display: none !important; }
 }
 </style>
 </head>
