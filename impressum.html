@@ -18,6 +18,61 @@
 @font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/newsreader-400-normal.woff2') format('woff2')}
 @font-face{font-family:'Newsreader';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/newsreader-400-italic.woff2') format('woff2')}
 @font-face{font-family:'Newsreader';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/newsreader-500-normal.woff2') format('woff2')}
+
+/* ── MOBILE OPTIMIERUNG RECHTSTEXTE ── */
+@media(max-width:950px){
+  .ds-wrap{
+    padding:24px 15px 48px;
+  }
+  .ds-wrap p,
+  .ds-wrap li{
+    font-size:0.95rem;
+    line-height:1.6;
+    color:#2b2b2b;
+    margin-bottom:15px;
+  }
+  .ds-wrap h2{
+    font-size:1.3rem;
+    margin-top:30px;
+    margin-bottom:12px;
+    color:#1B362A;
+  }
+  .ds-wrap h3{
+    font-size:1.1rem;
+    margin-top:20px;
+    margin-bottom:8px;
+  }
+  .ds-wrap table,
+  .ds-wrap thead,
+  .ds-wrap tbody,
+  .ds-wrap th,
+  .ds-wrap td,
+  .ds-wrap tr{
+    display:block;
+    width:100%;
+  }
+  .ds-wrap thead{ display:none }
+  .ds-wrap tr{
+    margin-bottom:15px;
+    border:1px solid #EBF2EE;
+    padding:10px;
+    background:#fff;
+    border-radius:6px;
+  }
+  .ds-wrap td{
+    text-align:left;
+    padding:6px 0;
+    border-bottom:1px dashed #f0f0f0;
+  }
+  .ds-wrap td:last-child{ border-bottom:none }
+}
+@media(max-width:950px) and (orientation:landscape){
+  .ds-wrap{
+    max-width:680px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
