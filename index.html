@@ -14,10 +14,8 @@
 <meta name="theme-color" content="#7A5C38">
 <link rel="preload" as="image" href="hero.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-  <style>
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 /* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -134,13 +132,13 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 /* ── MFA Team ── */
 .mfa-divider{max-width:var(--max);margin:clamp(32px,4vw,48px) auto 0;padding-top:clamp(24px,3vw,36px);border-top:0.5px solid var(--rule);display:flex;align-items:center;gap:16px}
 .mfa-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
-.mfa-grid{max-width:var(--max);margin:clamp(20px,2.5vw,28px) auto 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.5rem}
+.mfa-grid{max-width:var(--max);margin:clamp(20px,2.5vw,28px) auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem}
 .mfa-card{background:#ffffff;border:0.5px solid var(--rule);border-radius:12px;text-align:center;padding:1.2rem .8rem;transition:transform .35s ease,box-shadow .35s ease}
-.mfa-photo{width:180px;height:180px;background:#f0ede8;border-radius:50%;overflow:hidden;margin:0 auto .8rem auto;border:3px solid var(--petrol);box-shadow:0 4px 14px rgba(58,90,64,0.15)}.mfa-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%}img[alt="Jennifer B."]{object-position:center bottom!important}
+.mfa-photo{width:180px;height:180px;background:#f0ede8;border-radius:50%;overflow:hidden;margin:0 auto .8rem auto;border:3px solid var(--petrol);box-shadow:0 4px 14px rgba(58,90,64,0.15)}.mfa-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
 .mfa-body{padding:12px 14px}
 .mfa-name{font-family:var(--head);font-size:15px;font-weight:400;color:var(--ink);letter-spacing:-0.01em;margin-bottom:3px}
 .mfa-role{font-size:12px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink2)}
-
+@media(max-width:767px){.mfa-grid{grid-template-columns:repeat(2,1fr)}}
 /* ── Leistungen Accordion ── */
 .phasen{padding:clamp(60px,7vw,96px) var(--pad);background:var(--white);border-bottom:0.5px solid var(--rule)}
 .phasen-head{margin-bottom:clamp(40px,5vw,60px)}
@@ -220,6 +218,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 @media(max-width:767px){
   .hero-visual{max-width:100%}
   .hero-badge{right:0;bottom:-12px}
+  .team-grid{grid-template-columns:1fr}
   .quickbar-inner{grid-template-columns:1fr;gap:16px}
   .ck-btns{flex-direction:column}
 }
@@ -366,8 +365,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   .hero-v2 .hero-h1{font-size:clamp(42px,9vw,68px)}
 }
 @media(max-width:767px){
-  .nav-inner{height:56px}
-  .nav{top:28px}
+  .nav-inner{height:68px}
   .hero-v2 .hero-h1{font-size:clamp(36px,12vw,54px);line-height:1.05}
   .hero-v2 .hero-sub{font-size:15px}
   .hero-v2 .hero-visual{min-height:55vw}
@@ -380,7 +378,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 }
 /* ── Mob-Nav Höhenkorrektur auf Mobile ── */
 @media(max-width:767px){
-  .mob-nav{inset:84px 0 0}
+  .mob-nav{inset:68px 0 0}
 }
 
 /* ── Akut-Banner ── */
@@ -388,7 +386,6 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .akut-bar p{font-size:13px;color:#1E293B;letter-spacing:0.02em;line-height:1.5}
 .akut-bar a{color:#1E293B;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(30,41,59,.35);white-space:nowrap}
 .akut-bar a:hover{border-bottom-color:#1E293B}
-@media(max-width:767px){.akut-bar{margin-top:84px;padding:12px 15px}.akut-bar p{font-size:12px;line-height:1.4}}
 
 /* ── Kontakt CTA-Boxes ── */
 .kontakt-cta{max-width:var(--max);margin:0 auto clamp(40px,5vw,60px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
@@ -462,21 +459,17 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 @media(max-width:1023px) and (min-width:768px){.eltern-grid{grid-template-columns:1fr 1fr}}
 
 /* ── Sprachen-Bar ── */
-.lang-bar{height:34px;display:flex;align-items:center;background:#EBF2EE;border-bottom:0.5px solid #C6D9CB;padding:0 var(--pad)}
-.lang-bar-inner{width:100%;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.lang-bar-left{display:flex;align-items:center;gap:16px}
-.lang-switcher{display:flex;align-items:center;gap:10px}
-.lang-item{font-size:0.85rem;font-weight:500;letter-spacing:0.03em;color:#1B362A;cursor:pointer;opacity:.55;transition:opacity .2s;text-decoration:none;background:none;border:none;padding:0;font-family:inherit}
-.lang-item:hover{opacity:.85}
-.lang-item.active{font-weight:700;opacity:1;text-decoration:underline;text-underline-offset:3px}
-.lang-sep{font-size:0.75rem;color:#1B362A;opacity:.25;user-select:none}
-.opening-status{display:flex;align-items:center;gap:7px;font-size:0.85rem;font-weight:500;letter-spacing:0.03em;color:#1B362A;white-space:nowrap}
-.status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.status-dot--open{background:#2E7D32;box-shadow:0 0 0 2px rgba(46,125,50,.18)}
-.status-dot--closed{background:#C84B4B;box-shadow:0 0 0 2px rgba(200,75,75,.15)}
-.status-dot--pause{background:#C07D00;box-shadow:0 0 0 2px rgba(192,125,0,.15)}
-@media(max-width:767px){.lang-bar{height:28px}.lang-bar-inner{gap:6px}.lang-item,.opening-status{font-size:0.8rem}.lang-sep{font-size:0.7rem}}
-@media(max-width:480px){.lang-bar{padding:0 16px;height:26px}.lang-bar-inner{gap:6px}.lang-item,.opening-status{font-size:0.76rem}}
+.lang-bar{height:34px;display:flex;align-items:center;background:#E8EDE6;border-bottom:0.5px solid #C8D4C5;padding:0 var(--pad)}
+.lang-bar-inner{width:100%;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12px;color:var(--ink);flex-wrap:wrap}
+.lang-bar-left{display:flex;align-items:center;gap:10px}
+.lang-pills{display:flex;gap:5px}
+.lang-pill{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--petrol);padding:2px 9px;border:1.5px solid var(--petrol);border-radius:999px;cursor:pointer}
+.lang-pill:hover{background:var(--petrol);color:#fff}
+.opening-status{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--ink);white-space:nowrap}
+.status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.status-dot--open{background:#4ade80;box-shadow:0 0 5px rgba(74,222,128,.5)}
+.status-dot--closed{background:#f87171}
+@media(max-width:767px){.lang-bar{display:none}}
 
 /* ── USP-Strip (ersetzt vbar) ── */
 .usp-strip{background:#fff;border-bottom:0.5px solid var(--rule);padding:clamp(20px,2.5vw,34px) var(--pad)}
@@ -497,655 +490,187 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .welcome-badge{display:inline-flex;align-items:center;gap:6px;background:var(--terracotta);color:#fff;font-size:11px;font-weight:500;letter-spacing:.04em;padding:5px 12px;border-radius:999px;margin-bottom:14px;opacity:.92}
 .welcome-dot{width:5px;height:5px;border-radius:50%;background:#fff;opacity:.8}
 
-/* ═══════════════════════════════════════════════════════
-   SMARTPHONE-OPTIMIERUNG — Conversion + Wärme + Daumen
-   ═══════════════════════════════════════════════════════ */
-
-/* ── Sticky Bottom Action Bar ── */
-.sticky-action-bar{
-  display:none;
-  position:fixed;bottom:0;left:0;right:0;
-  z-index:888;
-  background:#fff;
-  border-top:0.5px solid var(--rule);
-  box-shadow:0 -6px 24px rgba(30,41,59,.12);
-  padding-bottom:env(safe-area-inset-bottom,0px);
-  transform:translateY(100%);
-  transition:transform .32s cubic-bezier(.4,0,.2,1);
-}
-.sticky-action-bar.bar-visible{transform:translateY(0)}
-.sticky-bar-inner{display:grid;grid-template-columns:1fr 1fr}
-.sticky-bar-call{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:0 12px;min-height:56px;
-  background:#fff8f7;color:#B91C1C;
-  font-size:14px;font-weight:500;letter-spacing:.02em;
-  text-decoration:none;
-  border-right:0.5px solid var(--rule);
-  -webkit-tap-highlight-color:transparent;
-}
-.sticky-bar-call svg{width:17px;height:17px;stroke:currentColor;fill:none;flex-shrink:0}
-.sticky-bar-termin{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:0 12px;min-height:56px;
-  background:var(--petrol);color:#fff;
-  font-size:14px;font-weight:500;letter-spacing:.02em;
-  text-decoration:none;
-  -webkit-tap-highlight-color:transparent;
-}
-.sticky-bar-termin svg{width:17px;height:17px;stroke:#fff;fill:none;flex-shrink:0}
-
-/* Mobile: Hero-Bild zwischen H1 und Sub-Text */
-.hero-mob-visual{display:none}
-/* Wisch-Hinweise nur auf Smartphone */
-.team-carousel-hint,.mfa-carousel-hint{display:none}
-
-/* ── PORTRAIT (Hochformat) ≤ 767px ── */
-@media(max-width:767px){
-  /* Sticky Bar einschalten */
-  .sticky-action-bar{display:block}
-
-  /* Body padding — kein Inhalt unter der Bar */
-  body{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
-
-  /* ── HERO MOBILE: Bild als weicher Hintergrund via ::after ── */
-
-  .hero.hero-v2{
-    background:#F9F5F0 !important;
-    background-image:none !important;
-    display:block;
-    position:relative;
-    overflow:hidden;
-    height:auto;
-    min-height:0;
-    max-height:none;
-    padding:0 0 48px;
-  }
-
-  /* Blurred image — pseudo-element direkt auf der Hero-Section */
-  .hero.hero-v2::after{
-    content:"";
-    position:absolute;
-    inset:-6px;
-    z-index:0;
-    background-image:url('hero.webp');
-    background-size:cover;
-    background-position:55% 12%;
-    filter:blur(1.5px);
-    transform:scale(1.02);
-  }
-
-  /* Gradient: Bild oben sichtbar → fließt ins Beige */
-  .hero.hero-v2::before{
-    content:"";
-    position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(to bottom,
-      rgba(249,245,240,0.00) 0%,
-      rgba(249,245,240,0.28) 44%,
-      rgba(249,245,240,0.88) 65%,
-      rgba(249,245,240,1.00) 82%
-    );
-  }
-
-  /* hero-inner: Höhe durch Inhalt */
-  .hero-v2 .hero-inner{
-    position:static;
-    height:auto;
-  }
-
-  /* hero-mob-visual ausblenden — Bild kommt aus ::after */
-  .hero-mob-visual{ display:none !important; }
-
-  /* Desktop-Visual ausblenden */
-  .hero-v2 .hero-visual{ display:none }
-  .hero-usp-badge,.welcome-badge{ display:none }
-
-  /* Text: relativ positioniert – Container wächst mit dem Inhalt */
-  .hero-copy{
-    position:relative;
-    top:auto; bottom:auto;
-    left:auto; right:auto;
-    z-index:2;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    padding:30px 24px;
-    gap:0;
-    background:rgba(255,255,255,0.75);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    border-radius:12px;
-    margin:16px 16px 0;
-  }
-
-  .hero-eyebrow-line{
-    color:#3B5E4F;
-    font-size:10px;
-    letter-spacing:0.06em;
-    padding:0 0 2px;
-    margin:0;
-  }
-  .hero-eyebrow-line::before{ background:#3B5E4F }
-
-  .hero-v2 .hero-h1{
-    color:#1B362A;
-    font-size:22px;
-    line-height:1.3;
-    margin:0 0 6px;
-    padding:0;
-  }
-  .hero-v2 .hero-h1 em{ font-style:normal; font-size:22px }
-  .hero-v2 .hero-h1 span{ font-size:22px }
-
-  .hero-sub{
-    color:#1B362A;
-    font-size:13px;
-    line-height:1.4;
-    margin:0 0 12px;
-    padding:0;
-    display:-webkit-box;
-    -webkit-line-clamp:3;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
-  }
-
-  .hero-v2 .hero-actions{
-    flex-direction:column;
-    align-items:stretch;
-    gap:0; padding:0; margin:0;
-  }
-  .hero-btn-p{
-    text-align:center;
-    padding:14px 24px;
-    font-size:14.5px;
-    font-weight:500;
-    border-radius:999px;
-    min-height:48px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:6px;
-    background:#1B362A;
-    color:#fff;
-    box-shadow:0 4px 12px rgba(27,54,42,0.15);
-    transition:background 0.15s,transform 0.1s;
-  }
-  .hero-btn-p:active{ background:#122519; transform:scale(0.98) }
-  .hero-btn-s{ display:none }
-
-  .hero-akut-hint{
-    color:#555555;
-    font-size:11px;
-    padding:0; margin:4px 0 0;
-    text-align:center;
-    margin-bottom:0;
-  }
-
-    /* Team: horizontales Wisch-Karussell */
-  .team-grid{
-    display:flex;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    gap:14px;
-    padding-bottom:16px;
-    cursor:grab;
-    scrollbar-width:none;
-  }
-  .team-grid::-webkit-scrollbar{display:none}
-  .team-grid .team-card{
-    flex:0 0 82vw;
-    max-width:320px;
-    scroll-snap-align:start;
-    border-radius:16px;
-  }
-  /* Karussell-Hinweis */
-  .team-carousel-hint{
-    font-size:12px;color:var(--ink2);
-    margin-top:-8px;margin-bottom:16px;
-    display:flex;align-items:center;gap:6px;opacity:.7;
-  }
-  .team-carousel-hint svg{width:14px;height:14px;stroke:currentColor;fill:none;flex-shrink:0}
-
-  /* MFA-Wisch-Hinweis */
-  .mfa-carousel-hint{
-    display:flex;
-    font-size:12px;color:var(--ink2);
-    margin-top:12px;margin-bottom:10px;
-    align-items:center;gap:6px;opacity:.7;
-  }
-
-  /* MFA: horizontales Karussell */
-  .mfa-grid{
-    display:flex;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    gap:12px;
-    padding-bottom:12px;
-    scrollbar-width:none;
-    grid-template-columns:unset;
-  }
-  .mfa-grid::-webkit-scrollbar{display:none}
-  .mfa-grid .mfa-card{
-    flex:0 0 44vw;
-    max-width:190px;
-    scroll-snap-align:start;
-  }
-
-  /* Öffnungszeiten: Tabelle → Flex-Blöcke */
-  .oz-table{display:block}
-  .oz-table thead{display:none}
-  .oz-table tbody{display:flex;flex-direction:column;gap:0}
-  .oz-tr{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:11px 0;
-    border-bottom:0.5px solid var(--rule);
-  }
-  .oz-tr th,.oz-tr td{
-    display:block;
-    padding:0;border:none;
-    font-size:15px;white-space:nowrap;
-  }
-  .oz-tr th{font-weight:400;color:var(--ink)}
-  .oz-tr td{text-align:right;color:var(--ink2)}
-  .oz-tr.heute th{color:var(--petrol);font-weight:600}
-  .oz-tr.heute td{color:var(--petrol);font-weight:500}
-
-  /* Kontakt: gestapelt */
-  .kontakt-grid{grid-template-columns:1fr}
-  .kontakt-cta{grid-template-columns:1fr}
-
-  /* Quickbar */
-  .quickbar-inner{grid-template-columns:1fr;gap:14px}
-
-  /* Haltung */
-  .haltung-grid{grid-template-columns:1fr}
-
-  /* Digitale Services */
-  .ds-grid{grid-template-columns:1fr}
-
-  /* Praxisfakten */
-  .pf-grid{grid-template-columns:1fr 1fr}
-
-  /* ds-btn: volle Breite auf Handy */
-  .ds-btn{width:100%;justify-content:center;padding:14px 20px;font-size:15px;min-height:48px}
-
-  /* Touch-Targets: alle Buttons mind. 48px */
-  .k-cta,.map-btn,.kcta-btn,.nav-cta{min-height:48px;display:inline-flex;align-items:center}
-  .ph-btn{min-height:54px}
-
-  /* USP Strip kompakt */
-  .usp-strip-inner{grid-template-columns:1fr;gap:12px}
-  .usp-item{padding-left:14px}
-
-  /* Praxisfakten: Reihenfolge beibehalten, Signatur nach unten */
-  .pf-grid{
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-  }
-
-  .pf-sig{
-    border-top:none;
-    padding-top:0;
-    margin-top:2px;
-    margin-left:20px;
-    padding-bottom:20px;
-    border-bottom:0.5px solid var(--rule);
-  }
-}
-
-/* ── LANDSCAPE (Querformat) ≤ 900px Breite, ≤ 500px Höhe ── */
-@media(orientation:landscape) and (max-width:900px) and (max-height:530px){
-  /* body padding kleiner — mehr Platz zum Lesen */
-  body{padding-bottom:0}
-
-  /* Nav: auto-hide beim Scrollen (per JS gesteuert, Klasse .nav-landscape-hidden) */
-  .nav{transition:transform .28s ease}
-  .nav.nav-landscape-hidden{transform:translateY(-100%)}
-
-  /* Hero: 2-spaltig im Querformat */
-  .hero.hero-v2{display:grid;grid-template-columns:1fr 1fr}
-  .hero-copy{order:1;padding:20px 24px 24px}
-  .hero-v2 .hero-visual{order:2;display:block;min-height:auto}
-  .hero-mob-visual{display:none}
-  .hero-v2 .hero-h1{font-size:clamp(26px,5.5vw,40px);margin-bottom:12px}
-  .hero-v2 .hero-sub{font-size:14px;margin-bottom:14px}
-  .hero-v2 .hero-actions{flex-direction:row}
-  .hero-v2 .hero-img-wrap{height:100%;position:absolute;inset:12px 12px 12px -16px}
-  .hero-usp-badge,.welcome-badge{display:none}
-
-  /* Haltung: 2-spaltig */
-  .haltung-grid{grid-template-columns:1fr 1fr}
-
-  /* Team-Grid: kleinere Karten */
-  .team-grid .team-card{flex:0 0 65vw}
-
-  /* Sticky Bar: kleiner im Landscape */
-  .sticky-bar-call,.sticky-bar-termin{min-height:48px;font-size:13px}
-
-  /* Mob-Nav scrollbar im Landscape */
-  .mob-nav{overflow-y:auto;-webkit-overflow-scrolling:touch}
-
-  /* Sections: weniger Padding */
-  .haltung,.team,.phasen,.digitalservices,.elternbereich,.kontakt{
-    padding-top:clamp(32px,5vw,52px);
-    padding-bottom:clamp(32px,5vw,52px);
-  }
-}
-
-/* ── Portrait-spezifisch: ≤ 480px (kleine Smartphones) ── */
-@media(max-width:480px){
-  .pf-grid{grid-template-columns:1fr}
-  /* hero-copy padding NICHT überschreiben — kommt aus dem 767px-Block */
-}
-
-/* ═══════════════════════════════════════════════
-   MOBILE FIX v2 — Team · MFA · Footer · Landscape
-   ═══════════════════════════════════════════════ */
-
-/* ── Team-Karussell: saubere Basis ── */
-@media(max-width:767px){
-  /* Carousel reset (überschreibt altes grid) */
-  .team-grid{
-    display:flex !important;
-    grid-template-columns:unset !important;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    gap:14px;
-    padding:0 0 16px;
-    scrollbar-width:none;
-    /* Seitlicher Einzug damit erste Karte nicht klebt */
-    margin-left:-22px;
-    margin-right:-22px;
-    padding-left:22px;
-    padding-right:22px;
-  }
-  .team-grid::-webkit-scrollbar{display:none}
-  .team-grid .team-card{
-    flex:0 0 82vw !important;
-    max-width:320px;
-    scroll-snap-align:start;
-    min-width:0;
-  }
-  /* Team-Foto: Größe reduzieren damit es in die Karte passt */
-  .team-photo{width:130px !important;height:130px !important;margin-bottom:.9rem}
-
-  /* MFA-Karussell: 2 Karten sichtbar, 3. blitzt hervor */
-  .mfa-grid{
-    display:flex !important;
-    grid-template-columns:unset !important;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    gap:10px;
-    padding:0 0 12px;
-    scrollbar-width:none;
-    margin-left:-22px;
-    margin-right:-22px;
-    padding-left:22px;
-    padding-right:22px;
-    max-width:unset;
-  }
-  .mfa-grid::-webkit-scrollbar{display:none}
-  .mfa-grid .mfa-card{
-    flex:0 0 68vw !important;
-    max-width:280px;
-    scroll-snap-align:start;
-    min-width:0;
-    padding:.9rem .6rem;
-  }
-  /* MFA-Fotos: viel kleiner auf Mobile */
-  .mfa-photo{width:90px !important;height:90px !important;margin-bottom:.6rem}
-  .mfa-name{font-size:13px}
-  .mfa-role{font-size:10px}
-
-  /* ── Footer Mobile: gestapelt + zentriert ── */
-  footer{padding:36px 22px calc(28px + env(safe-area-inset-bottom,0px))}
-  .footer-muenchen{display:none}
-  .footer-i{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:0;
-  }
-  .footer-logo{
-    font-size:15px;
-    color:rgba(255,255,255,.65);
-    margin-bottom:20px;
-    line-height:1.5;
-  }
-  .footer-links{
-    display:flex;
-    gap:0;
-    margin-bottom:20px;
-    border-top:0.5px solid rgba(255,255,255,.08);
-    border-bottom:0.5px solid rgba(255,255,255,.08);
-    width:100%;
-    justify-content:center;
-  }
-  .footer-links li{flex:1}
-  .footer-links a{
-    display:block;
-    font-size:14px;
-    color:rgba(255,255,255,.55);
-    padding:16px 8px;
-    letter-spacing:.01em;
-    text-align:center;
-  }
-  .footer-links li+li a{border-left:0.5px solid rgba(255,255,255,.08)}
-  .footer-copy{
-    font-size:11px;
-    color:rgba(255,255,255,.2);
-    line-height:1.6;
-  }
-}
-
-/* ── Landscape: Team + MFA + Footer ── */
-@media(orientation:landscape) and (max-width:900px) and (max-height:530px){
-  /* Team: kleinere Karten im Landscape-Karussell */
-  .team-grid{
-    display:flex !important;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    padding-bottom:12px;
-  }
-  .team-grid .team-card{flex:0 0 55vw !important;max-width:300px}
-  .team-photo{width:100px !important;height:100px !important}
-
-  /* MFA: 3 Kacheln im Landscape sichtbar */
-  .mfa-grid{
-    display:flex !important;
-    overflow-x:auto;
-  }
-  .mfa-grid .mfa-card{flex:0 0 28vw !important;max-width:160px}
-  .mfa-photo{width:70px !important;height:70px !important}
-
-  /* Footer im Landscape: horizontal kompakt */
-  footer{padding:20px 24px calc(16px + env(safe-area-inset-bottom,0px))}
-  .footer-i{
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-  }
-  .footer-logo{font-size:13px;margin-bottom:0}
-  .footer-links{gap:20px;margin-bottom:0}
-  .footer-links li{flex:unset}
-  .footer-links a{font-size:12px;padding:8px 0;border:none !important}
-  .footer-copy{font-size:10px}
-}
-
-/* ── Kleines Landscape (z.B. SE): body padding = 0 ── */
-@media(orientation:landscape) and (max-height:430px){
-  body{padding-bottom:0}
-  .sticky-action-bar{display:none}
-}
-
-/* ── SMARTPHONE QUERFORMAT – nur Smartphones (max-height:480px) ── */
-@media(orientation:landscape) and (max-width:950px) and (max-height:480px){
-
-  /* 1. Notfall-Banner kompakter */
-  .akut-bar{
-    padding:8px 15px;
-  }
-
-  /* 2. Hero: kompakte weiße Box */
-  .hero.hero-v2{
-    height:auto;
-    min-height:0;
-    padding-bottom:16px;
-  }
-  .hero-copy{
-    padding:15px 20px;
-    max-width:90%;
-    margin:12px auto 0;
-  }
-  .hero-v2 .hero-h1{
-    font-size:1.15rem;
-    line-height:1.3;
-    margin-bottom:8px;
-  }
-  .hero-v2 .hero-h1 em{ font-size:1.15rem }
-  .hero-v2 .hero-h1 span{ font-size:1.15rem }
-  .hero-sub{
-    font-size:0.88rem;
-    margin-bottom:10px;
-    -webkit-line-clamp:2;
-  }
-  .hero-btn-p{
-    padding:10px 20px;
-    font-size:0.9rem;
-    min-height:42px;
-  }
-
-  /* 3. Praxisfakten: 2-spaltig */
-  .pf-grid{
-    grid-template-columns:repeat(2,1fr) !important;
-    display:grid !important;
-    gap:20px;
-  }
-
-  /* 4. Team: 3 Karten nebeneinander */
-  .team-grid{
-    display:grid !important;
-    overflow-x:unset;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-  }
-  .team-grid .team-card{ flex:unset !important; max-width:unset }
-  .team-photo{ width:80px !important; height:80px !important }
-
-  /* 5. Kontakt: 2-spaltig */
-  .kontakt-grid{
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-  .kontakt-cta{
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-
-  /* 6. Team-Fotos flacher im Landscape */
-  .team-photo{ width:80px !important; height:80px !important }
-  .team-card img{ max-height:160px !important; object-fit:cover !important; }
-
-  /* 7. Haltung-Grid (Medizin die zuhört): 3-spaltig */
-  .haltung-grid{
-    display:grid !important;
-    grid-template-columns:repeat(3,1fr) !important;
-    gap:15px !important;
-  }
-}
-
-
-
-
-
-/* ==========================================
-   SMARTPHONE QUERFORMAT – SWIPE-SLIDER FINAL
-   ========================================== */
+/* ==========================================================================
+   TABLET-FIX: Für ein absolut sauberes Team-Layout (Portrait bis 1024px)
+   ========================================================================== */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .hero.hero-v2 { min-height: auto !important; grid-template-columns: 1fr !important; }
-  .hero-v2 .hero-inner { display: contents !important; }
-  .hero-copy { order: 2 !important; padding: 36px clamp(22px,5vw,48px) 52px !important; }
-  .hero-v2 .hero-visual { order: 1 !important; min-height: 62vw !important; }
-  .hero-v2 .hero-img-wrap { position: relative !important; height: 62vw !important; border-radius: 60px 16px 60px 16px !important; inset: unset !important; box-shadow: none !important; }
-  .hero-v2 .hero-h1 { font-size: clamp(42px,9vw,68px) !important; }
-}
-
-@media (max-width: 1024px) and (orientation: landscape) {
-
-  header {
-    position: relative !important;
-    top: 0 !important;
-  }
-
-  .team-grid {
+  /* --- 1. SEKTION: ÄRZTINNEN (Exakt 3 Kacheln nebeneinander) --- */
+  .aerzte-section-container {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    align-items: stretch !important;
-    gap: 20px !important;
-    padding: 20px !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch;
-    grid-template-columns: unset !important;
-  }
-
-  .team-card {
-    flex: 0 0 75% !important;
-    width: 75% !important;
-    min-width: 75% !important;
-    max-width: 75% !important;
-    scroll-snap-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 20px !important;
+    justify-content: space-between !important;
+    gap: 15px !important;
+    width: 100% !important;
+    padding: 0 20px !important;
     box-sizing: border-box !important;
   }
-
-  .team-trait {
-    min-height: auto !important;
-    padding-bottom: 15px !important;
+  .aerzte-section-container .arzt-kachel {
+    flex: 0 0 32% !important;
+    width: 32% !important;
+    max-width: 32% !important;
   }
-
-  .team-personal {
-    margin-top: auto !important;
-    margin-bottom: 15px !important;
-    width: 100%;
+  /* --- 2. SEKTION: PRAXISTEAM --- */
+  .praxisteam-section-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
   }
-
+  .praxisteam-section-container .arzt-kachel {
+    flex: 0 0 48% !important;
+    width: 48% !important;
+  }
+  /* --- 3. INTERNE KACHEL-STRUKTUR --- */
+  .arzt-kachel {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  /* 4. BILD-KONTROLLE */
+  .arzt-kachel .bild-wrapper,
+  .arzt-kachel img {
+    width: 110px !important;
+    min-width: 110px !important;
+    height: 110px !important;
+    max-height: 110px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+  }
+  /* 5. TEXTBEREICH */
+  .kachel-text-bereich {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .arzt-kachel h3,
+  .arzt-kachel .name {
+    font-size: 1.2rem !important;
+    margin-bottom: 5px !important;
+    white-space: normal !important;
+  }
+  .arzt-kachel p,
+  .arzt-kachel .job-titel {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+  .arzt-kachel .trennlinie {
+    display: none !important;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .hero.hero-v2 { min-height: auto !important; grid-template-columns: 1fr !important; }
-  .hero-v2 .hero-inner { display: contents !important; }
-  .hero-copy { order: 2 !important; padding: 30px 40px !important; }
-  .hero-v2 .hero-visual { order: 1 !important; min-height: 40vw !important; }
-  .hero-v2 .hero-img-wrap { height: 40vw !important; position: relative !important; inset: unset !important; }
-  .hero-v2 .hero-h1 { font-size: 2.2rem !important; }
+/* ==========================================================================
+   TABLET-FIX: Für das Querformat (Landscape-Mode von 768px bis 1366px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+  /* --- 1. SEKTION: ÄRZTINNEN (3 Kacheln nebeneinander) --- */
+  .aerzte-section-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+  }
+  .aerzte-section-container .arzt-kachel {
+    flex: 0 0 31.5% !important;
+    width: 31.5% !important;
+    max-width: 31.5% !important;
+  }
+  /* --- 2. SEKTION: PRAXISTEAM (Sauberes 3er-Raster) --- */
+  .praxisteam-section-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+  }
+  .praxisteam-section-container .arzt-kachel {
+    flex: 0 0 31.5% !important;
+    width: 31.5% !important;
+    max-width: 31.5% !important;
+  }
+  /* --- 3. INTERNE KACHEL-STRUKTUR --- */
+  .arzt-kachel {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px !important;
+    background: #ffffff !important;
+    border-radius: 15px !important;
+    padding: 24px 20px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04) !important;
+    box-sizing: border-box !important;
+  }
+  /* 4. BILD-KONTROLLE */
+  .arzt-kachel .bild-wrapper,
+  .arzt-kachel img {
+    width: 115px !important;
+    min-width: 115px !important;
+    height: 115px !important;
+    max-height: 115px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+  }
+  /* 5. TEXT-BEREICH */
+  .kachel-text-bereich {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .arzt-kachel h3,
+  .arzt-kachel .name {
+    font-size: 1.25rem !important;
+    margin-bottom: 4px !important;
+    white-space: normal !important;
+  }
+  .arzt-kachel p,
+  .arzt-kachel .job-titel {
+    font-size: 0.95rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+  }
+  .arzt-kachel .trennlinie {
+    display: none !important;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- ── Top-Bar ── -->
-<div class="lang-bar" role="navigation" aria-label="Sprachauswahl und Praxisstatus">
+<!-- ── Sprachen-Bar ── -->
+<div class="lang-bar">
   <div class="lang-bar-inner">
-    <nav class="lang-bar-left">
-      <div class="lang-switcher" aria-label="Sprache wählen">
-        <button class="lang-item active" data-lang="de" aria-current="true">DE</button>
-        <span class="lang-sep" aria-hidden="true">/</span>
-        <button class="lang-item" data-lang="en">EN</button>
-        <span class="lang-sep" aria-hidden="true">/</span>
-        <button class="lang-item" data-lang="fr">FR</button>
+    <div class="lang-bar-left">
+      <div class="lang-pills">
+        <span class="lang-pill">DE</span>
+        <span class="lang-pill">EN</span>
+        <span class="lang-pill">FR</span>
       </div>
-    </nav>
+      <span>Beratung auf Deutsch, Englisch &amp; Französisch</span>
+    </div>
     <div class="opening-status" id="status-display" aria-live="polite">Lade Praxisstatus…</div>
   </div>
 </div>
@@ -1194,13 +719,6 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <div class="welcome-badge"><span class="welcome-dot"></span>Schön, dass Sie da sind.</div>
       <p class="section-label hero-eyebrow-line">Kinder- und Jugendmedizin</p>
       <h1 class="hero-h1"><em>Mit Gelassenheit</em><span>durch die ersten gemeinsamen Jahre.</span></h1>
-      <!-- Mobile: Bild direkt nach H1 (nur Hochformat Smartphone) -->
-      <div class="hero-mob-visual" aria-hidden="true">
-        <picture>
-          <source srcset="hero.webp" type="image/webp">
-          <img src="hero.jpg" alt="" loading="eager">
-        </picture>
-      </div>
       <p class="hero-sub">Erfahrene Kinderheilkunde mit Herz und Ruhe. Wir begleiten die Entwicklung Ihres Kindes von Anfang an.</p>
       <div class="hero-actions">
         <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="hero-btn-p">Online-Termin via Doctolib →</a>
@@ -1234,8 +752,8 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <p class="usp-text">Rezepte, Überweisungen und Termine erledigen Sie bei uns einfach online, ganz ohne Warteschleife.</p>
     </div>
     <div class="usp-item">
-      <h3 class="usp-title">Wir sprechen Ihre Sprache</h3>
-      <p class="usp-text">Bei uns im Herzen von Bogenhausen verständigen wir uns unkompliziert auf Deutsch, Englisch und Französisch.</p>
+      <h3 class="usp-title">Internationaler Service</h3>
+      <p class="usp-text">Beratung in drei Sprachen: Deutsch, Englisch und Französisch — für internationale Familien in München.</p>
     </div>
   </div>
 </div>
@@ -1319,10 +837,6 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <p class="section-sub">Drei Persönlichkeiten, eine gemeinsame Haltung: Wir verbinden moderne Kinderheilkunde mit Empathie und familiärer Atmosphäre.</p>
       <div class="team-langs" style="margin-top:20px"><span class="team-lang">Deutsch</span><span class="team-lang">English</span><span class="team-lang">Français</span></div>
     </div>
-    <p class="team-carousel-hint">
-      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Nach rechts wischen um alle Ärztinnen zu sehen
-    </p>
     <div class="team-grid">
 
       <div class="team-card">
@@ -1336,7 +850,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
           <p class="team-role">Praxisinhaberin</p>
           <h3 class="team-name">Dr. med. Susanne Gandenberger-Bachem</h3>
           <p class="team-trait">Fachärztin für Kinder- und Jugendmedizin seit 1996 — Praxisinhaberin seit 2011.</p>
-          <p class="team-personal">Mutter von drei Söhnen — in den Bergen, auf dem Rad oder am Wasser.</p>
+          <p class="team-personal">Mutter von drei Söhnen — am liebsten draußen in den Bergen, auf dem Rad oder am Wasser.</p>
         </div>
       </div>
 
@@ -1376,14 +890,10 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     <div class="mfa-divider">
       <span class="mfa-label">Praxisteam</span>
     </div>
-    <p class="mfa-carousel-hint">
-      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Bitte nach rechts wischen
-    </p>
     <div class="mfa-grid">
       <div class="mfa-card">
-        <div class="mfa-photo"><img src="mfa-heidrun.webp" alt="Heidi M." loading="lazy"></div>
-        <div class="mfa-body"><p class="mfa-name">Heidi M.</p><p class="mfa-role">Medizinische Fachangestellte</p></div>
+        <div class="mfa-photo"><img src="mfa-heidrun.webp" alt="Heidrun M." loading="lazy"></div>
+        <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
         <div class="mfa-photo"><img src="mfa-jennifer.webp" alt="Jennifer B." loading="lazy"></div>
@@ -1391,15 +901,15 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       </div>
       <div class="mfa-card">
         <div class="mfa-photo"><img src="mfa-steffi.webp" alt="Steffi W." loading="lazy"></div>
-        <div class="mfa-body"><p class="mfa-name">Steffi W.</p><p class="mfa-role">Medizinische Fachangestellte</p></div>
+        <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
         <div class="mfa-photo"><img src="mfa-simge.webp" alt="Simge K." loading="lazy"></div>
-        <div class="mfa-body"><p class="mfa-name">Simge K.</p><p class="mfa-role">Medizinische Fachangestellte</p></div>
+        <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
       <div class="mfa-card">
         <div class="mfa-photo"><img src="mfa-azra.webp" alt="Azra K." loading="lazy"></div>
-        <div class="mfa-body"><p class="mfa-name">Azra K.</p><p class="mfa-role">Auszubildende im dritten Lehrjahr</p></div>
+        <div class="mfa-body"><p class="mfa-name">Praxisteam</p><p class="mfa-role">Med. Fachangestellte</p></div>
       </div>
     </div>
 </section>
@@ -1634,7 +1144,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       </div>
       <div class="k-block">
         <p class="k-lbl">E-Mail</p>
-        <p class="k-val sm"><a href="mailto:termine-kinderpraxis@die-familienpraxis.de" style="white-space:nowrap">termine-kinderpraxis@die-familienpraxis.de</a></p>
+        <p class="k-val sm"><a href="mailto:termine-kinderpraxis@die-familienpraxis.de">termine-kinderpraxis@<br>die-familienpraxis.de</a></p>
       </div>
       <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="k-cta">
         Online Termin buchen
@@ -1685,12 +1195,12 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
 <footer>
   <div class="footer-i">
-    <div class="footer-logo">Gemeinschaftspraxis Kinder- und Jugendmedizin<span class="footer-muenchen"> · München</span></div>
+    <div class="footer-logo">Gemeinschaftspraxis Kinder- und Jugendmedizin · München</div>
     <ul class="footer-links">
       <li><a href="impressum.html">Impressum</a></li>
       <li><a href="datenschutz.html">Datenschutz</a></li>
     </ul>
-    <p class="footer-copy">&copy; <span id="jahr"></span> Gemeinschaftspraxis Kinder- und Jugendmedizin &nbsp;·&nbsp; <span style="white-space:nowrap">Made by <a href="https://praxisecht.de" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.4);text-decoration:none">praxisecht.de</a></span></p>
+    <p class="footer-copy">&copy; <span id="jahr"></span> Gemeinschaftspraxis Kinder- und Jugendmedizin</p>
   </div>
 </footer>
 
@@ -1857,17 +1367,13 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       el.innerHTML=dot+'status-dot--open"></span>Jetzt geöffnet &bull; bis '+bisText;
     } else {
       /* nächste Öffnungszeit finden */
-      var naechstUhr='';
+      var naechst='';
       for(var i=0;i<slots.length;i++){
         var s=slots[i];
         var vonMin=s[0]*60+s[1];
-        if(nowMin<vonMin){naechstUhr=pad(s[0])+':'+pad(s[1])+' Uhr';break;}
+        if(nowMin<vonMin){naechst=' • öffnet um '+pad(s[0])+':'+pad(s[1])+' Uhr';break;}
       }
-      if(naechstUhr){
-        el.innerHTML=dot+'status-dot--pause"></span>Öffnet wieder um '+naechstUhr;
-      } else {
-        el.innerHTML=dot+'status-dot--closed"></span>Heute geschlossen';
-      }
+      el.innerHTML=dot+'status-dot--closed"></span>Jetzt geschlossen'+naechst;
     }
   }
 
@@ -1886,105 +1392,6 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   }
   window.addEventListener('scroll', updateNav, {passive:true});
   updateNav();
-})();
-</script>
-
-<!-- ── Sticky Bottom Action Bar (Smartphone) ── -->
-<div class="sticky-action-bar" id="sticky-bar" aria-label="Schnellzugriff">
-  <div class="sticky-bar-inner">
-    <a href="tel:+498993948730" class="sticky-bar-call" aria-label="Praxis anrufen">
-      <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17z"/></svg>
-      Akut anrufen
-    </a>
-    <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/familienpraxis-dr-gold-dr-gandenberger-bachem" target="_blank" rel="noopener noreferrer" class="sticky-bar-termin" aria-label="Termin online buchen">
-      <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Termin online
-    </a>
-  </div>
-</div>
-
-
-<script>
-(function(){
-  var bar = document.getElementById('sticky-bar');
-  var hero = document.querySelector('.hero.hero-v2');
-  var nav = document.querySelector('.nav');
-  var lastScroll = 0;
-
-  // Sticky Bar: erscheint nach kurzem Scrollen (120px) — sofort erreichbar
-  function updateStickyBar(){
-    var s = window.scrollY || window.pageYOffset;
-    if(s > 120){
-      bar.classList.add('bar-visible');
-    } else {
-      bar.classList.remove('bar-visible');
-    }
-  }
-  if(bar){
-    window.addEventListener('scroll', updateStickyBar, {passive:true});
-    updateStickyBar();
-  }
-
-  // Landscape Nav: beim Scrollen nach unten ausblenden, nach oben einblenden
-  function updateLandscapeNav(){
-    if(window.innerHeight > 530 || window.innerWidth > 900) {
-      nav.classList.remove('nav-landscape-hidden');
-      return;
-    }
-    var cur = window.scrollY || window.pageYOffset;
-    if(cur > lastScroll && cur > 80){
-      nav.classList.add('nav-landscape-hidden');
-    } else if(cur < lastScroll - 10){
-      nav.classList.remove('nav-landscape-hidden');
-    }
-    lastScroll = Math.max(0, cur);
-  }
-  window.addEventListener('scroll', updateLandscapeNav, {passive:true});
-})();
-</script>
-
-<script>
-(function(){
-  // Karussell auf Mobile erzwingen (JS-Fallback — CSS-Cascade-sicher)
-  function initCarousel(){
-    if(window.innerWidth > 767) return;
-    if(window.innerWidth < window.innerHeight) { /* portrait only */ } else { return; }
-    var defs = [
-      { sel: '.team-grid', cardSel: '.team-card', cardW: '82vw', maxW: '320px', gap: '14px' },
-      { sel: '.mfa-grid',  cardSel: '.mfa-card',  cardW: '68vw', maxW: '280px', gap: '10px' }
-    ];
-    defs.forEach(function(d){
-      var grid = document.querySelector(d.sel);
-      if(!grid) return;
-      // Container
-      Object.assign(grid.style, {
-        display: 'flex',
-        overflowX: 'auto',
-        scrollSnapType: 'x mandatory',
-        webkitOverflowScrolling: 'touch',
-        gap: d.gap,
-        paddingBottom: '12px',
-        scrollbarWidth: 'none',
-        gridTemplateColumns: 'unset',
-        paddingLeft: '22px',
-        paddingRight: '22px',
-        marginLeft: '-22px',
-        marginRight: '-22px'
-      });
-      // Karten
-      var cards = grid.querySelectorAll(d.cardSel);
-      cards.forEach(function(c){
-        Object.assign(c.style, {
-          flex: '0 0 ' + d.cardW,
-          maxWidth: d.maxW,
-          scrollSnapAlign: 'start',
-          minWidth: '0'
-        });
-      });
-    });
-  }
-  document.addEventListener('DOMContentLoaded', initCarousel);
-  window.addEventListener('resize', initCarousel, {passive:true});
 })();
 </script>
 </body>
