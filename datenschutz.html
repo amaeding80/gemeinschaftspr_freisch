@@ -28,14 +28,14 @@
   .ds-wrap li{
     font-size:0.95rem;
     line-height:1.6;
-    color:#2b2b2b;
+    color:var(--ink2);
     margin-bottom:15px;
   }
   .ds-wrap h2{
     font-size:1.3rem;
     margin-top:30px;
     margin-bottom:12px;
-    color:#1B362A;
+    color:var(--acc);
   }
   .ds-wrap h3{
     font-size:1.1rem;
@@ -54,7 +54,7 @@
   .ds-wrap thead{ display:none }
   .ds-wrap tr{
     margin-bottom:15px;
-    border:1px solid #EBF2EE;
+    border:1px solid var(--rule);
     padding:10px;
     background:#fff;
     border-radius:6px;
@@ -73,25 +73,26 @@
     margin-right:auto;
   }
 }
+.footer-pe{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.55);text-decoration:none;font-size:12px;letter-spacing:0.01em;border:0.5px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px 10px 3px 6px;transition:border-color .2s,color .2s}.footer-pe:hover{border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.85)!important}.footer-pe-dot{width:6px;height:6px;border-radius:50%;background:#c47a5a;flex-shrink:0;opacity:0.85}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:300;background:#F9F5F0;color:#25211E;-webkit-font-smoothing:antialiased}
+body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:300;background:#FAF7F2;color:#1C2B33;-webkit-font-smoothing:antialiased}
 :root{
-  --bg:#F9F5F0;
-  --ink:#25211E;
-  --ink2:#6B6257;
-  --acc:#7A5C38;
-  --acc-lt:#F5EDE0;
-  --rule:#DDD8CF;
+  --bg:#FAF7F2;
+  --ink:#1C2B33;
+  --ink2:#576A75;
+  --acc:#1B485A;
+  --acc-lt:#EFF5F7;
+  --rule:#E8E1D7;
   --white:#FFFFFF;
   --max:1080px;
   --pad:clamp(22px,5vw,60px);
   --head:'Newsreader',Georgia,serif;
 }
-.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;box-shadow:0 1px 0 var(--rule)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,242,.95);box-shadow:0 1px 0 var(--rule)}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-logo{font-family:var(--head);font-size:18px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
 .nav-logo span{color:var(--acc)}
@@ -162,7 +163,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   }
   .ds-wrap thead {
     display: table-header-group !important;
-    background-color: #1B362A !important;
+    background-color: var(--acc) !important;
   }
   .ds-wrap th {
     color: #ffffff !important;
@@ -172,20 +173,20 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   }
   .ds-wrap tr {
     display: table-row !important;
-    background: #ffffff !important;
-    border-bottom: 1px solid #EBF2EE !important;
+    background: var(--white) !important;
+    border-bottom: 1px solid var(--rule) !important;
     margin-bottom: 0 !important;
     border: none !important;
     border-radius: 0 !important;
     padding: 0 !important;
   }
-  .ds-wrap tr:nth-child(even) { background: #fbfdfc !important; }
+  .ds-wrap tr:nth-child(even) { background: var(--bg) !important; }
   .ds-wrap td {
     display: table-cell !important;
     padding: 14px 18px !important;
     font-size: 0.95rem !important;
-    color: #2b2b2b !important;
-    border-bottom: 1px solid #EBF2EE !important;
+    color: var(--ink2) !important;
+    border-bottom: 1px solid var(--rule) !important;
     text-align: left !important;
     width: auto !important;
   }
@@ -200,19 +201,19 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     padding: 60px 40px;
     max-width: 800px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: var(--white);
   }
   .ds-wrap p,
   .ds-wrap li {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #2b2b2b;
+    color: var(--ink2);
   }
   .ds-wrap h2 {
     font-size: 1.6rem;
     margin-top: 40px;
     margin-bottom: 15px;
-    color: #1B362A;
+    color: var(--acc);
   }
   .ds-wrap h3 { font-size: 1.2rem; margin-top: 28px; }
 
@@ -227,7 +228,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   }
   .ds-wrap thead {
     display: table-header-group !important;
-    background-color: #1B362A !important;
+    background-color: var(--acc) !important;
   }
   .ds-wrap th {
     color: #ffffff !important;
@@ -238,7 +239,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   }
   .ds-wrap tr {
     display: table-row !important;
-    background: #ffffff !important;
+    background: var(--white) !important;
     border: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -249,8 +250,8 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
     display: table-cell !important;
     padding: 16px 20px !important;
     font-size: 0.95rem !important;
-    color: #2b2b2b !important;
-    border-bottom: 1px solid #EBF2EE !important;
+    color: var(--ink2) !important;
+    border-bottom: 1px solid var(--rule) !important;
     text-align: left !important;
     width: auto !important;
   }
@@ -334,8 +335,8 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 
 
   <h3>Google Fonts</h3>
-  <p>Diese Website verwendet Google Fonts, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Google Fonts werden durch eine direkte Verbindung zu den Servern von Google beim Aufruf unserer Website geladen. Dabei wird Ihre IP-Adresse an Google übermittelt und von Google gespeichert. Wir haben keinen Einfluss auf diese Datenübermittlung.</p>
-  <p>Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen und ansprechenden Darstellung unserer Website). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO.</p>
+  <p>Diese Website verwendet Google Fonts, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Google Fonts werden durch eine direkte Verbindung zu den Servern von Google beim Aufruf unserer Webseite geladen. Dabei wird Ihre IP-Adresse an Google übermittelt und von Google gespeichert. Wir haben keinen Einfluss auf diese Datenübermittlung.</p>
+  <p>Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen und ansprechenden Darstellung unserer Webseite). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO.</p>
   <p>Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
 
 
@@ -377,7 +378,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
       <li><a href="impressum.html">Impressum</a></li>
       <li><a href="datenschutz.html">Datenschutz</a></li>
     </ul>
-    <p class="footer-copy">&copy; <span id="jahr"></span> Gemeinschaftspraxis für Kinder- und Jugendmedizin &nbsp;·&nbsp; <span style="white-space:nowrap">Made by <a href="https://praxisecht.de" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.4);text-decoration:none">praxisecht.de</a></span></p>
+    <a href="https://praxisecht.de" target="_blank" rel="noopener" class="footer-pe"><span class="footer-pe-dot"></span>Handgebaut von praxisecht.de</a>
   </div>
 </footer>
 
