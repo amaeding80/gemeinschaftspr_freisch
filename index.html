@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de"
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1850,6 +1850,80 @@ body.gb-modal-open{overflow:hidden}
   font-size:.68rem;color:var(--text-muted);margin-top:6px}
 .gb-doctoli-dot{width:6px;height:6px;border-radius:50%;background:#0064D2}
 
+
+/* ── MOBILE HOCHFORMAT ≤767px — Hero GB ── */
+.akut-mob-strip{display:none}
+.hero-akut-mob{display:none}
+@media(max-width:767px){
+  /* Akut-Strip: zwischen Nav und Hero */
+  .akut-mob-strip{
+    display:block;
+    margin-top:56px;
+    background:rgba(217,115,82,0.10);
+    border-bottom:1px solid rgba(217,115,82,0.22);
+    padding:9px 16px;
+    text-align:center;
+  }
+  .akut-mob-strip p{
+    font-size:12px;color:var(--accent);
+    font-weight:500;letter-spacing:0.02em;line-height:1.4;
+    margin:0;
+  }
+  /* Hero: Foto als Hintergrund, Karte unten */
+  .hero.hero-v2{
+    background-image:url('bilder/hero.webp');
+    background-size:cover;
+    background-position:center 15%;
+    min-height:120vw;
+    display:flex!important;
+    flex-direction:column;
+    justify-content:flex-end;
+    overflow:hidden;
+    padding:0;
+    grid-template-columns:unset!important;
+  }
+  .hero-v2 .hero-inner{
+    display:flex!important;
+    flex-direction:column;
+    width:100%;
+  }
+  .hero-v2 .hero-visual{display:none!important}
+  .hero-copy{
+    order:1;
+    background:#FDF8F2;
+    border-radius:18px 18px 0 0;
+    border-top:3px solid var(--accent);
+    padding:18px 20px 22px;
+    margin:0;
+  }
+  .hero-v2 .hero-h1{
+    font-size:clamp(23px,6.5vw,29px);
+    line-height:1.15;margin-bottom:8px;
+  }
+  .h1-s2{padding-left:0!important;margin-top:0}
+  .hero-v2 .hero-sub{
+    font-size:15px;line-height:1.6;
+    margin-bottom:14px;max-width:100%;
+  }
+  .hero-v2 .hero-btns{
+    flex-direction:column;align-items:stretch;gap:6px;
+  }
+  .hero-v2 .btn-primaer{
+    justify-content:center;text-align:center;width:100%;
+  }
+  .hero-v2 .btn-sekundaer{
+    background:transparent!important;border:none!important;
+    box-shadow:none!important;padding:8px 0;
+    text-align:center;justify-content:center;
+    font-size:14px;color:var(--primary);
+  }
+  .hero-akut-mob{
+    display:block;font-size:12px;color:var(--text-muted);
+    text-align:center;margin-top:10px;
+    font-weight:300;line-height:1.4;
+  }
+}
+
   </style>
 <script type="application/ld+json">
 {
@@ -1932,6 +2006,8 @@ body.gb-modal-open{overflow:hidden}
 <main>
 
 <!-- HERO -->
+<div class="akut-mob-strip"><p>Akut? Bitte anrufen — Nummer unten.</p></div>
+
 <section class="hero hero-v2">
   <div class="hero-inner">
     <div class="hero-copy">
@@ -1947,6 +2023,7 @@ body.gb-modal-open{overflow:hidden}
         <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="btn-primaer" onclick="event.preventDefault();openTerminModalGB()">Gleich Termin finden</a>
         <a href="videosprechstunde.html" class="btn-sekundaer">zur Videosprechstunde</a>
       </div>
+      <p class="hero-akut-mob">Akute Beschwerden: bitte anrufen.</p>
     </div>
     <div class="hero-visual">
       <div class="hero-fisch" aria-hidden="true">
@@ -2044,8 +2121,8 @@ body.gb-modal-open{overflow:hidden}
       <div class="team-karte">
         <div class="team-foto">
           <picture>
-            <source srcset="bilder/heike-boerschmann.webp" type="image/webp">
-            <img src="bilder/heike-boerschmann-orig.jpg" alt="Dr. med. Heike Boerschmann" loading="lazy">
+            <source srcset="bilder/susanne.webp" type="image/webp">
+            <img src="bilder/susanne.webp" alt="Dr. med. Heike Boerschmann" loading="lazy">
           </picture>
         </div>
         <div class="team-body">
