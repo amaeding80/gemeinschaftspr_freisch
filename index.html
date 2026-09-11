@@ -2662,8 +2662,18 @@ body.gb-modal-open{overflow:hidden}
   /* B1 — Nav: angepasste Höhe */
   .nav-inner { height: 72px !important; }
 
-  /* B2 — Widget Zettel: nicht über Gesichtern */
-  .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+  /* B2 — Widget Zettel: sichtbar auf Tablet Hoch */
+  .ft-zettel {
+    display: block !important;
+    opacity: 0;
+    pointer-events: none;
+    left: 12px !important;
+    width: 172px !important;
+  }
+  .ft-zettel.ft-sichtbar {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
 
   /* B3 — Demo-Bar: ausblenden */
   .gb-demo-bar { display: none !important; }
@@ -2729,6 +2739,26 @@ body.gb-modal-open{overflow:hidden}
 
   /* B7 — "Was uns ausmacht": Detailfoto etwas kleiner */
   .wua-detail { width: 26% !important; }
+
+  /* B8 — Großer Fisch-Mascot: nur Desktop */
+  .hero-fisch { display: none !important; }
+
+  /* B9 — Kleiner Fisch-Badge im Eyebrow: zeigen (wie Mobile) */
+  .fisch-mob-badge {
+    display: inline-flex !important;
+    width: 52px !important;
+    height: 52px !important;
+    margin-left: 8px !important;
+    vertical-align: middle !important;
+  }
+
+  /* B10 — Footer: schlichter, 1 Spalte */
+  .footer-cols { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .footer-notfall { display: none !important; }
+  .footer-anfahrt { display: none !important; }
+  .footer-col-links { column-count: 2; }
+  footer { padding-top: 36px !important; padding-bottom: 28px !important; }
+  .footer-bottom { padding-top: 16px !important; gap: 8px !important; }
 }
 
 
@@ -2744,8 +2774,18 @@ body.gb-modal-open{overflow:hidden}
   .nav-logo br { display: none !important; }
   .nav-logo span { display: inline !important; font-size: 13px !important; margin-left: 4px; }
 
-  /* C2 — Widgets: ausblenden (nicht über Gesichtern) */
-  .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+  /* C2 — Widgets */
+  .ft-zettel {
+    display: block !important;
+    opacity: 0;
+    pointer-events: none;
+    left: 12px !important;
+    width: 172px !important;
+  }
+  .ft-zettel.ft-sichtbar {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
   .gb-demo-bar { display: none !important; }
 
   /* C3 — Hero-Foto: Heike+Kind, kein Schrank-Crop */
@@ -2785,6 +2825,11 @@ body.gb-modal-open{overflow:hidden}
 
   /* C7 — MFA: Abstände zwischen MFA-Kacheln anpassen */
   .mfa-grid { gap: 1rem !important; }
+
+  /* C8 — Footer: schlichter auf Tablet Quer */
+  .footer-cols { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+  .footer-notfall { display: none !important; }
+  footer { padding-top: 40px !important; padding-bottom: 28px !important; }
 }
 
 
@@ -3536,7 +3581,7 @@ body.gb-modal-open{overflow:hidden}
       Akut anrufen
     </a>
     <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="dock-termin" aria-label="Termin online buchen" onclick="event.preventDefault();openTerminModalGB()">
-      <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
       Gleich Termin finden
     </a>
   </div>
