@@ -2008,8 +2008,8 @@ body.gb-modal-open{overflow:hidden}
   }
   .mfa-grid::-webkit-scrollbar{display:none}
   .mfa-card{flex:0 0 40vw !important;max-width:160px;scroll-snap-align:start;flex-shrink:0 !important;padding:.5rem .3rem !important}
-  .mfa-foto{height:130px !important;border-radius:10px !important}
-  .mfa-foto img{object-position:center 20% !important}
+  .mfa-foto{height:150px !important;border-radius:10px !important}
+  .mfa-foto img{object-position:center 30% !important}
   .mfa-name{font-size:12px !important}
   /* MFA Zurück-Karte */
   .mfa-zurueck-card{
@@ -2310,27 +2310,34 @@ body.gb-modal-open{overflow:hidden}
   .k-val{font-size:13px !important}
   .map-btn{font-size:12.5px !important}
 
-  /* ── Footer: schlank, nebeneinander ── */
-  footer{padding:20px 20px calc(14px + env(safe-area-inset-bottom,0px)) !important}
-  .footer-cols{display:flex !important;flex-direction:row !important;gap:12px !important;align-items:flex-start !important;justify-content:space-between !important}
-  .footer-col:nth-child(1){flex:1;min-width:0}
-  .footer-col:nth-child(3){flex:0 0 auto;text-align:right}
-  .footer-bottom{flex-direction:row !important;flex-wrap:nowrap !important;padding-top:10px !important}
+  /* ── Footer: 2-zeilig, ultra-schlank ── */
+  footer{padding:12px 20px calc(10px + env(safe-area-inset-bottom,0px)) !important}
+  /* Alle Spalten weg außer Rechtliches */
+  .footer-col:nth-child(1){display:none !important}
   .footer-col:nth-child(2){display:none !important}
   .footer-notfall{display:none !important}
   .footer-anfahrt{display:none !important}
+  /* Zeile 1: Impressum · Datenschutz horizontal */
+  .footer-cols{display:flex !important;flex-direction:column !important;gap:0 !important;margin-bottom:6px !important}
+  .footer-col:nth-child(3){display:flex !important;flex-direction:row !important;align-items:center !important;gap:0 !important}
+  .footer-col-h{display:none !important}
+  .footer-col-links{display:flex !important;flex-direction:row !important;gap:14px !important}
+  .footer-col-links a{font-size:11.5px !important}
+  .footer-col:nth-child(3) .footer-col-links li:nth-child(3){display:none !important}
+  /* Zeile 2: Praxisname + handgebaut in einer Zeile */
+  .footer-bottom{
+    padding-top:8px !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:6px !important;
+    border-top:0.5px solid rgba(255,255,255,0.1) !important;
+  }
+  .footer-bottom p{font-size:9.5px !important;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .footer-pe{font-size:9.5px !important;padding:2px 6px 2px 4px !important;flex-shrink:0}
   .footer-praxis-name{font-size:12.5px !important;margin-bottom:4px}
-  .footer-adresse{font-size:12px !important;margin-bottom:3px}
-  .footer-anfahrt{font-size:11.5px !important;margin-bottom:8px}
-  .footer-notfall{padding:9px 12px !important;margin-top:8px !important}
-  .footer-notfall-lbl{font-size:10px !important;margin-bottom:3px !important}
-  .footer-notfall-num{font-size:12.5px !important}
-  .footer-col-h{font-size:10px !important;margin-bottom:7px !important;padding-bottom:6px !important}
-  .footer-col-links a{font-size:12.5px !important}
-  .footer-col-links{gap:4px !important}
-  .footer-bottom{padding-top:12px !important;gap:5px !important}
-  .footer-bottom p{font-size:10.5px !important}
-  .footer-pe{font-size:10.5px !important;padding:2px 7px 2px 5px !important}
+
 }
 </style>
 </head>
@@ -2658,7 +2665,7 @@ body.gb-modal-open{overflow:hidden}
     </div>
     <p class="ek-swipe-hint" aria-hidden="true">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      Wischen · Zurück am Ende
+      Weiter
     </p>
 
   </div>
