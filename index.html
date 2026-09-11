@@ -2487,13 +2487,67 @@ body.gb-modal-open{overflow:hidden}
     width: auto !important;
     min-width: 0 !important;
   }
-  .team-foto { width: 56px !important; aspect-ratio: 1/1 !important; }
+  .team-foto { width: 56px !important; aspect-ratio: 1/1 !important; border-radius: 10px !important; }
   .team-carousel-hint { display: flex !important; }
 
   /* A4 — Leistungen/Haltung: 2-spaltig kompakt */
   .haltung-editorial {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
+  }
+
+  /* A4b — MFA: wischbares Karussell */
+  .mfa-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 10px !important;
+    gap: 10px !important;
+  }
+  .mfa-grid::-webkit-scrollbar { display: none; }
+  .mfa-page {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+    scroll-snap-align: start !important;
+  }
+  .mfa-grid .mfa-card {
+    flex: 0 0 calc(34vw - 16px) !important;
+    max-width: 130px !important;
+    scroll-snap-align: start !important;
+    min-width: 0 !important;
+    padding: .7rem .4rem !important;
+  }
+  .mfa-foto { height: 60px !important; }
+
+  /* A4c — "Was uns ausmacht": kein schwebendes Detailfoto, kompakter Text */
+  .wua-detail { display: none !important; }
+  .wua-inner { padding: 20px !important; }
+  .wua-h2 { font-size: 16px !important; margin: 6px 0 12px !important; }
+  .wua-intro { font-size: 13px !important; margin-bottom: 12px !important; }
+  .wua-statement p { font-size: 13px !important; line-height: 1.5 !important; }
+  .wua-statements { gap: 12px !important; margin-bottom: 14px !important; }
+
+  /* A4d — Hero: beide Buttons sichtbar als Zeile */
+  .hero-v2 .btn-sekundaer {
+    display: inline-flex !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: var(--primary) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    min-height: auto !important;
+    align-items: center !important;
+    white-space: nowrap !important;
   }
 
   /* A5 — Widgets: ausblenden */
@@ -2554,6 +2608,68 @@ body.gb-modal-open{overflow:hidden}
 
   /* B3 — Demo-Bar: ausblenden */
   .gb-demo-bar { display: none !important; }
+
+  /* B4 — Hero: beide Buttons als Zeile */
+  .hero-v2 .hero-btns,
+  .hero-v2 .hero-actions {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex-wrap: nowrap !important;
+  }
+  .hero-v2 .btn-primaer,
+  .hero-btn-p {
+    flex: 0 0 auto !important;
+    width: auto !important;
+  }
+  .hero-v2 .btn-sekundaer {
+    display: inline-flex !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: var(--primary) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    min-height: auto !important;
+    align-items: center !important;
+  }
+
+  /* B5 — Team: Foto-Größe angepasst */
+  .team-foto { width: 90px !important; aspect-ratio: 1/1 !important; border-radius: 12px !important; }
+
+  /* B6 — MFA: wischbares Karussell (Tablet hoch = viele Kacheln nebeneinander) */
+  .mfa-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-bottom: 12px !important;
+    gap: 14px !important;
+  }
+  .mfa-grid::-webkit-scrollbar { display: none; }
+  .mfa-page {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    scroll-snap-align: start !important;
+  }
+  .mfa-grid .mfa-card {
+    flex: 0 0 calc(22vw - 12px) !important;
+    max-width: 160px !important;
+    scroll-snap-align: start !important;
+    min-width: 0 !important;
+  }
+  .mfa-foto { height: 90px !important; }
+
+  /* B7 — "Was uns ausmacht": Detailfoto etwas kleiner */
+  .wua-detail { width: 26% !important; }
 }
 
 
@@ -2561,7 +2677,7 @@ body.gb-modal-open{overflow:hidden}
    BLOCK C — TABLET QUERFORMAT  ≥768px, landscape, ≥601px Höhe
    Tablet-Hochformat und Handy-Querformat nicht anfassen!
    ───────────────────────────────────────────────────────────────────────── */
-@media (min-width: 768px) and (orientation: landscape) and (min-height: 601px) {
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) and (min-height: 601px) {
 
   /* C1 — Nav: Desktop-Links sichtbar, Burger weg, Logo eine Zeile */
   .nav-links { display: flex !important; }
@@ -2579,6 +2695,37 @@ body.gb-modal-open{overflow:hidden}
 
   /* Tablet-quer Hintergrundbild: richtige Position */
   .hero.hero-v2::after { background-position: 30% 10% !important; }
+
+  /* C4 — Hero: beide Buttons sichtbar (Zeile) */
+  .hero-v2 .hero-btns,
+  .hero-v2 .hero-actions {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .hero-v2 .btn-sekundaer {
+    display: inline-flex !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: var(--primary) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    min-height: auto !important;
+    align-items: center !important;
+  }
+
+  /* C5 — Team: Fotos korrekte Größe (kein Oval) */
+  .team-foto { border-radius: 12px !important; }
+
+  /* C6 — "Was uns ausmacht": Detailfoto etwas kleiner */
+  .wua-detail { width: 28% !important; }
+
+  /* C7 — MFA: Abstände zwischen MFA-Kacheln anpassen */
+  .mfa-grid { gap: 1rem !important; }
 }
 
 
