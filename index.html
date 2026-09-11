@@ -2009,6 +2009,7 @@ body.gb-modal-open{overflow:hidden}
   }
   .mfa-grid::-webkit-scrollbar{display:none}
   .mfa-card{
+    display:flex !important;
     flex:0 0 130px !important;
     max-width:150px;
     scroll-snap-align:start;
@@ -2027,7 +2028,7 @@ body.gb-modal-open{overflow:hidden}
     height:100px !important;
     border-radius:50% !important;
     flex-shrink:0 !important;
-    margin-bottom:0 !important;
+    margin:0 !important;
   }
   .mfa-foto img{object-position:center 20% !important}
   .mfa-body{width:100%;margin-top:0}
@@ -2356,7 +2357,8 @@ body.gb-modal-open{overflow:hidden}
     gap:6px !important;
     border-top:0.5px solid rgba(255,255,255,0.1) !important;
   }
-  .footer-bottom p{font-size:13px !important;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .footer-lang{display:none !important}
+  .footer-bottom p{font-size:13px !important;flex:0 0 auto;white-space:nowrap}
   .footer-pe{font-size:12.5px !important;padding:3px 8px 3px 6px !important;flex-shrink:0}
   .footer-praxis-name{font-size:12.5px !important;margin-bottom:4px}
 
@@ -2981,7 +2983,7 @@ body.gb-modal-open{overflow:hidden}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; <span id="jahr"></span> Familienpraxis Kinder- und Jugendmedizin · München Bogenhausen</p>
+    <p>&copy; <span id="jahr"></span><span class="footer-lang"> Familienpraxis Kinder- und Jugendmedizin · München Bogenhausen</span></p>
     <a href="https://praxisecht.de" target="_blank" rel="noopener" class="footer-pe"><span class="footer-pe-dot"></span>Handgebaut von praxisecht.de</a>
   </div>
 </footer>
