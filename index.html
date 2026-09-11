@@ -1868,31 +1868,22 @@ body.gb-modal-open{overflow:hidden}
     font-weight:500;letter-spacing:0.02em;line-height:1.4;
     margin:0;
   }
-  /* Hero: Foto als Hintergrund, Karte unten */
+  /* Hero: Bild als voller Hintergrund — wird von Block oben gesteuert */
   .hero.hero-v2{
     background-image:url('bilder/hero.webp');
     background-size:cover;
     background-position:center 50%;
     min-height:82vh;
-    display:flex!important;
-    flex-direction:column;
-    justify-content:flex-end;
+    display:block!important;
     overflow:hidden;
     padding:0;
     grid-template-columns:unset!important;
   }
-  .hero-v2 .hero-inner{
-    display:flex!important;
-    flex-direction:column;
-    width:100%;
-  }
   .hero-v2 .hero-visual{display:none!important}
   .hero-copy{
     order:1;
-    background:rgba(252,248,244,0.72);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    border-radius:18px 18px 0 0;
+    background:transparent;
+    border-radius:0;
     border-top:3px solid var(--accent);
     padding:18px 20px 22px;
     margin:0;
