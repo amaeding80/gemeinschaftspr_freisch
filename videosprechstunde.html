@@ -101,6 +101,7 @@
     .sek-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
     .sek-h2{font-family:var(--head);font-size:clamp(22px,3vw,36px);color:var(--primary);font-weight:400;margin-bottom:32px;line-height:1.2}
     .vs-swipe-hint,.ds-swipe-hint{display:none}
+    .app-mob-btns{display:none}
     .schritt{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:20px 0;border-bottom:0.5px solid var(--rule)}
     .schritt:last-child{border-bottom:none}
     .schritt-nr{width:40px;height:40px;border-radius:50%;background:var(--bg-soft);border:0.5px solid var(--rule);display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:17px;color:var(--primary);flex-shrink:0;margin-top:2px}
@@ -276,13 +277,16 @@
     @media(max-width:767px){
       .app-layout{display:flex !important;flex-direction:row !important;align-items:flex-start;gap:14px}
       .app-layout>div:first-child{flex:1;min-width:0}
-      .app-postit-outer{flex-shrink:0;width:124px !important;margin-top:0}
+      .app-postit-outer{flex-shrink:0;width:124px !important;margin-top:0;padding-top:18px;overflow:visible}
       .app-postit{width:118px !important;padding:12px 10px 14px !important;transform:rotate(-4deg) !important}
       .app-postit-icon img{width:44px !important;height:44px !important}
       .app-postit-name{font-size:10px !important;margin-bottom:2px}
       .app-postit-dev,.app-postit-badge{font-size:9px !important}
       .app-postit-stars svg{width:9px !important;height:9px !important}
       .app-postit-links{display:none !important}
+      .app-mob-btns{display:flex !important;gap:8px;margin-top:16px}
+      .app-mob-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.22);border-radius:10px;padding:10px 14px;text-decoration:none;color:#fff;font-size:13px;font-weight:500;flex:1;justify-content:center;min-width:0}
+      .app-mob-btn svg{flex-shrink:0;width:18px;height:18px}
       .app-h2{font-size:20px !important;margin-bottom:8px}
       .app-sub{font-size:13.5px !important;margin-bottom:18px !important}
       .vs-sub-extra{display:none}
@@ -337,6 +341,16 @@
         <p class="app-label">Schritt 1 — App herunterladen</p>
         <h2 class="app-h2">„Meine Pädiatrische Praxis" installieren</h2>
         <p class="app-sub">Die App ist kostenlos. Bitte vor dem Termin herunterladen und einmalig einrichten — das spart Zeit beim Videoanruf.</p>
+        <div class="app-mob-btns" aria-label="App herunterladen">
+          <a href="https://apps.apple.com/de/app/meine-p%C3%A4diatrische-praxis/id921469943" target="_blank" rel="noopener" class="app-mob-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            App Store
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.monks.praxis_app.kin&hl=de" target="_blank" rel="noopener" class="app-mob-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.33.18.7.24 1.08.18L13.64 12 4.26.07c-.38-.07-.75-.01-1.08.17C2.48.67 2 1.47 2 2.4v19.2c0 .93.48 1.73 1.18 2.16zM16.66 15.14L5.84 21.47l8.35-8.35 2.47 2zm2.6-4.44c.44.27.74.7.74 1.3s-.3 1.03-.74 1.3l-1.79 1.03-2.73-2.73 2.73-2.73zM5.84 2.53l10.82 6.33-2.47 2.47-8.35-8.8z"/></svg>
+            Google Play
+          </a>
+        </div>
         <div class="qr-zeile" aria-label="QR-Codes zum Scannen mit dem Smartphone">
           <div class="qr-karte">
             <div class="qr-icon"> iPhone</div>

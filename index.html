@@ -2290,11 +2290,13 @@ body.gb-modal-open{overflow:hidden}
     gap:10px !important;
     margin-left:-22px;
     margin-right:-22px;
-    padding-left:22px;
+    padding-left:0;
     padding-right:22px;
     padding-bottom:8px;
+    scroll-padding-left:22px;
   }
   .einblicke-karten::-webkit-scrollbar{display:none}
+  .einblicke-karten::before{content:'';display:block;flex-shrink:0;width:22px}
   .ek-row{display:contents !important}
   .ek-karte{
     flex:0 0 72vw !important;
@@ -2331,9 +2333,9 @@ body.gb-modal-open{overflow:hidden}
   .ek-swipe-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.65;margin-top:6px}
 
   /* ── Öffnungszeiten + Kontakt: 1-spaltig, kompakt ── */
-  .kontakt-grid{display:flex !important;flex-direction:row !important;overflow-x:auto !important;scroll-snap-type:x mandatory !important;-webkit-overflow-scrolling:touch;gap:0 !important;margin-left:-22px;margin-right:-22px;padding-left:22px;padding-right:22px;scrollbar-width:none;padding-bottom:12px}
+  .kontakt-grid{display:flex !important;flex-direction:row !important;overflow-x:auto !important;scroll-snap-type:x mandatory !important;-webkit-overflow-scrolling:touch;gap:0 !important;margin-left:-22px !important;margin-right:-22px !important;padding-left:0 !important;padding-right:0 !important;scrollbar-width:none;padding-bottom:12px !important}
   .kontakt-grid::-webkit-scrollbar{display:none}
-  .kontakt-grid>div{flex:0 0 calc(100vw - 44px) !important;scroll-snap-align:start !important;padding-right:20px !important;box-sizing:border-box !important;min-width:0}
+  .kontakt-grid>div{flex:0 0 100vw !important;scroll-snap-align:start !important;padding:0 22px !important;box-sizing:border-box !important;min-width:0;word-break:break-word}
   .oz-tr{padding:6px 0 !important}
   .oz-tr th,.oz-tr td{font-size:13.5px !important}
   .oz-note{font-size:12px !important;margin-top:8px !important}
