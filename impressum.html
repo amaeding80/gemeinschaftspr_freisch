@@ -131,7 +131,12 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 .footer-links a:hover{color:rgba(255,255,255,0.7)}
 .footer-copy{font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.02em}
 @media(max-width:1023px){.nav-links{display:none}.burger{display:flex}}
-@media(max-width:767px){.ds-wrap h2{margin-top:36px}}
+@media(max-width:767px){
+  .ds-wrap h2{margin-top:36px;overflow-wrap:break-word}
+  .ds-wrap h3{overflow-wrap:break-word}
+  .ds-wrap a{overflow-wrap:anywhere;word-break:break-word}
+  .nav-logo{font-size:13px;max-width:calc(100% - 52px)}
+}
 
 /* ==========================================
    TABLET HOCHFORMAT (PORTRAIT) – RECHTSTEXTE
@@ -308,7 +313,7 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
   <p>
     Telefon: 089 – 93 94 87 3<br>
     Fax: 089 – 93 94 87 40<br>
-    E-Mail: <a href="mailto:termine-kinderpraxis@die-familienpraxis.de" style="white-space:nowrap">termine-kinderpraxis@die-familienpraxis.de</a><br>
+    E-Mail: <a href="mailto:termine-kinderpraxis@die-familienpraxis.de" style="overflow-wrap:anywhere;word-break:break-word">termine-kinderpraxis@die-familienpraxis.de</a><br>
     Webseite: <a href="https://www.die-familienpraxis.de/" target="_blank" rel="noopener">www.die-familienpraxis.de</a>
   </p>
 

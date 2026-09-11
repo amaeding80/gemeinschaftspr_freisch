@@ -58,9 +58,14 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 @media(max-width:767px){
   .page-hero-inner{grid-template-columns:1fr}
   .hero-foto-col{order:1}
-  .hero-foto-wrap{height:180px}
+  .hero-foto-wrap{height:220px;width:100%}
+  /* nav: zwei Zeilen */
+  .nav{background:#FAF7F2}
+  .nav-inner{flex-direction:column;align-items:flex-start;height:auto;padding-top:10px;padding-bottom:8px;gap:4px}
+  .nav-logo{font-size:13px}
+  .nav-back{min-height:44px;font-size:14px;display:flex;align-items:center}
 }
-@media(max-width:1024px) and (orientation:portrait){
+@media(min-width:768px) and (max-width:1024px) and (orientation:portrait){
   .page-hero-inner{grid-template-columns:1fr 260px}
   .hero-foto-wrap{height:200px}
 }
