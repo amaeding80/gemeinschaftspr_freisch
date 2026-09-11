@@ -127,7 +127,17 @@
     .footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
     .footer-links a:hover{color:#fff}
     @media(max-width:767px){
-  .ds-inner{grid-template-columns:1fr}
+  /* Schritte carousel */
+  .schritte{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad));padding-left:var(--pad);padding-right:var(--pad);padding-bottom:14px}
+  .schritte::-webkit-scrollbar{display:none}
+  .schritt{flex:0 0 calc(100vw - 64px);scroll-snap-align:start;border-bottom:none !important;border:0.5px solid var(--rule);border-radius:14px;padding:20px;flex-shrink:0}
+  /* Datenschutz carousel */
+  .ds-inner{display:flex !important;grid-template-columns:unset !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;padding-bottom:14px;margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad));padding-left:var(--pad);padding-right:var(--pad)}
+  .ds-inner::-webkit-scrollbar{display:none}
+  .ds-punkt{flex:0 0 calc(100vw - 64px);scroll-snap-align:start;flex-shrink:0}
+  /* Zurück-Karten */
+  .vs-zurueck-card,.ds-zurueck-card{flex:0 0 100px;scroll-snap-align:start;flex-shrink:0;display:flex !important;align-items:center;justify-content:center;border:0.5px solid var(--rule);border-radius:14px;min-height:120px;cursor:pointer;background:var(--bg-soft)}
+  .vs-zurueck-inner,.ds-zurueck-inner{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--primary);font-size:13px;font-weight:500}
   .vs-cta-btns{flex-direction:column;align-items:stretch}
   .btn-primaer,.btn-sekundaer{justify-content:center}
   .footer-inner{flex-direction:column;align-items:flex-start;gap:12px}
@@ -387,6 +397,12 @@
         <p>Starten Sie den Anruf zur vereinbarten Zeit. Bitte kurz vorher prüfen, dass Kamera und Mikrofon der App freigegeben sind.</p>
       </div>
     </div>
+    <div class="vs-zurueck-card" onclick="document.querySelector('.schritte').scrollTo({left:0,behavior:'smooth'})" role="button" aria-label="Zum ersten Schritt">
+      <div class="vs-zurueck-inner">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Zurück</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -412,6 +428,12 @@
       </div>
       <h3>Server in Deutschland</h3>
       <p>Die Infrastruktur erfüllt die Anforderungen der DSGVO. Verarbeitung und Speicherung erfolgen ausschließlich in Deutschland.</p>
+    </div>
+    <div class="ds-zurueck-card" onclick="document.querySelector('.ds-inner').scrollTo({left:0,behavior:'smooth'})" role="button" aria-label="Zur ersten Kachel">
+      <div class="ds-zurueck-inner">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Zurück</span>
+      </div>
     </div>
   </div>
 </div>
