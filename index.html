@@ -2375,6 +2375,260 @@ body.gb-modal-open{overflow:hidden}
   .footer-praxis-name{font-size:12.5px !important;margin-bottom:4px}
 
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE ERWEITERUNG — 5 eigene Device-Welten (BLOCK A–E)
+   GOLDENE REGEL: max-width:767px ohne orientation:portrait NIE ANFASSEN
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLOCK A — HANDY QUERFORMAT  ≤960px, orientation:landscape
+   Hochformat-Handy: kein einziger Selektor ohne orientation:landscape!
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 960px) and (orientation: landscape) {
+
+  /* A1 — Nav: opak, kompakt, kein Maskottchen */
+  .haupt-nav { background: #fff !important; box-shadow: 0 1px 0 var(--rule) !important; }
+  .nav-inner { height: 50px !important; }
+  .nav-inner picture { display: none !important; }
+  .nav-links { display: none !important; }
+  .burger { display: flex !important; }
+  .mob-nav { inset: 50px 0 0 !important; }
+
+  /* A2 — Akut-Strip: unter Nav */
+  .akut-mob-strip {
+    display: block !important;
+    margin-top: 50px !important;
+    padding: 5px 16px !important;
+  }
+  .akut-mob-strip p { font-size: 11px !important; }
+
+  /* A2 — Hero: kein Vollbild-Foto, kompakter Creme-Block */
+  .hero.hero-v2 {
+    min-height: 0 !important;
+    height: auto !important;
+    background-image: none !important;
+    background-color: #F9F5F0 !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+  .hero.hero-v2::before,
+  .hero.hero-v2::after { display: none !important; }
+  .hero-v2 .hero-inner { display: block !important; height: auto !important; position: static !important; }
+  .hero-mob-visual { display: none !important; }
+  .hero-v2 .hero-visual { display: none !important; }
+  .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
+
+  .hero-copy {
+    position: static !important;
+    background: #F9F5F0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    border-top: 3px solid var(--accent) !important;
+    padding: 12px 20px 14px !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    gap: 0 !important;
+  }
+  .hero-eyebrow-group { margin-bottom: 6px !important; }
+  .hero-v2 .hero-h1 { font-size: 17px !important; line-height: 1.25 !important; margin: 0 0 5px !important; }
+  .hero-v2 .hero-h1 em { font-size: 17px !important; }
+  .hero-v2 .hero-h1 span { font-size: 17px !important; }
+  .hero-sub {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    margin: 0 0 10px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  .hero-v2 .hero-btns,
+  .hero-v2 .hero-actions {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .hero-v2 .btn-primaer,
+  .hero-btn-p {
+    padding: 9px 18px !important;
+    font-size: 13px !important;
+    min-height: 38px !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+  }
+  .hero-akut-mob { display: none !important; }
+
+  /* A3 — Team: eine Karte sichtbar, wischbar */
+  .team-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 12px !important;
+    padding-top: 0 !important;
+    grid-template-columns: unset !important;
+  }
+  .team-grid .team-karte {
+    flex: 0 0 72vw !important;
+    max-width: 260px !important;
+    scroll-snap-align: start !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+  .team-foto { width: 56px !important; aspect-ratio: 1/1 !important; }
+  .team-carousel-hint { display: flex !important; }
+
+  /* A4 — Leistungen/Haltung: 2-spaltig kompakt */
+  .haltung-editorial {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* A5 — Widgets: ausblenden */
+  .gb-demo-bar { display: none !important; }
+  .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+
+  /* A6 — Sections: kompaktes Padding */
+  .haltung, .team, .phasen, .digitalservices, .elternbereich, .kontakt {
+    padding-top: clamp(24px, 4vw, 40px) !important;
+    padding-bottom: clamp(24px, 4vw, 40px) !important;
+  }
+
+  /* A6 — Keine sticky Bottom-Bar im Querformat */
+  body { padding-bottom: 0 !important; }
+  .mobil-dock { display: none !important; }
+}
+
+/* A+ — Ausnahme: mehr Höhe vorhanden → Foto rechts zeigen */
+@media (max-width: 960px) and (orientation: landscape) and (min-height: 501px) {
+  .hero.hero-v2 {
+    display: grid !important;
+    grid-template-columns: 55% 45% !important;
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+  .hero-v2 .hero-inner { display: contents !important; }
+  .hero-copy { order: 1 !important; }
+  .hero-v2 .hero-visual {
+    order: 2 !important;
+    display: block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-height: 220px !important;
+  }
+  .hero-v2 .hero-img-wrap,
+  .hero-img-box {
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+  }
+  .hero-v2 .hero-img-wrap img,
+  .hero-img-box img { object-position: 30% 10% !important; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLOCK B — TABLET HOCHFORMAT  768px–1024px, portrait
+   Kein Touch auf Handy-Blöcke!
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+  /* B1 — Nav: angepasste Höhe */
+  .nav-inner { height: 72px !important; }
+
+  /* B2 — Widget Zettel: nicht über Gesichtern */
+  .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+
+  /* B3 — Demo-Bar: ausblenden */
+  .gb-demo-bar { display: none !important; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLOCK C — TABLET QUERFORMAT  ≥768px, landscape, ≥601px Höhe
+   Tablet-Hochformat und Handy-Querformat nicht anfassen!
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 768px) and (orientation: landscape) and (min-height: 601px) {
+
+  /* C1 — Nav: Desktop-Links sichtbar, Burger weg, Logo eine Zeile */
+  .nav-links { display: flex !important; }
+  .burger { display: none !important; }
+  .nav-logo br { display: none !important; }
+  .nav-logo span { display: inline !important; font-size: 13px !important; margin-left: 4px; }
+
+  /* C2 — Widgets: ausblenden (nicht über Gesichtern) */
+  .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+  .gb-demo-bar { display: none !important; }
+
+  /* C3 — Hero-Foto: Heike+Kind, kein Schrank-Crop */
+  .hero-img-box img,
+  .hero-v2 .hero-img-wrap img { object-position: 30% 10% !important; }
+
+  /* Tablet-quer Hintergrundbild: richtige Position */
+  .hero.hero-v2::after { background-position: 30% 10% !important; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLOCK D — NEST HUB  ~1024×600
+   Eigene Welt — nicht «ist doch iPad quer»
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1020px) and (max-width: 1030px) and (max-height: 620px) {
+
+  /* D1 — Nav: Logo eine Zeile, kompakter */
+  .nav-inner { height: 56px !important; }
+  .nav-logo br { display: none !important; }
+  .nav-logo { font-size: 16px !important; }
+  .nav-logo span { display: inline !important; font-size: 12px !important; margin-left: 4px; }
+  .nav-inner picture img { height: 56px !important; }
+
+  /* D2 — Hero: kompakter */
+  .hero.hero-v2 { min-height: 0 !important; }
+  .hero-v2 .hero-h1 { font-size: clamp(20px, 2.5vw, 28px) !important; }
+  .hero-sub { font-size: 13px !important; }
+
+  /* D3 — Widgets: ausblenden (600px Höhe reicht nicht) */
+  .gb-demo-bar { display: none !important; }
+  .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+
+  /* D4 — Team: etwas kompakter */
+  .team-foto { width: 70px !important; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLOCK E — NEST HUB MAX  ~1280×800
+   max-height Pflicht — hohe Desktops dürfen E nicht erben!
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1260px) and (max-width: 1300px) and (max-height: 820px) and (min-height: 760px) {
+
+  /* E1 — Demo-Bar: ausblenden */
+  .gb-demo-bar { display: none !important; }
+
+  /* E2 — Zettel: ausblenden */
+  .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+
+  /* E3 — Nav Logo: eine Zeile */
+  .nav-logo br { display: none !important; }
+  .nav-logo span { display: inline !important; font-size: 13px !important; margin-left: 4px; }
+
+  /* E4 — Hero-Foto: korrekte Position */
+  .hero-img-box img { object-position: 30% 10% !important; }
+}
+
 @media(min-width:768px){
   .srv-zurueck-card,.srv-swipe-hint,
   .lv-wischen-hint,.lv-chip-zurueck,
