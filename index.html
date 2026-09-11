@@ -2684,9 +2684,15 @@ body.gb-modal-open{overflow:hidden}
   /* B3 — Demo-Bar: ausblenden */
   .gb-demo-bar { display: none !important; }
 
-  /* B3b — Hero: kein Foto, einspaltig wie Mobile */
+  /* B3b — Hero: kein Foto, kein Hintergrundbild, einspaltig wie Mobile */
   .hero-v2 .hero-visual { display: none !important; }
   .hero-fisch { display: none !important; }
+  .hero.hero-v2 {
+    background: #F9F5F0 !important;
+    background-image: none !important;
+  }
+  .hero.hero-v2::after { display: none !important; }
+  .hero.hero-v2::before { display: none !important; }
   .hero-v2 .hero-inner {
     display: block !important;
     padding: 0 !important;
@@ -2694,6 +2700,12 @@ body.gb-modal-open{overflow:hidden}
   .hero-copy {
     padding: 88px 36px 52px !important;
     max-width: 620px !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
   }
   .hero-v2 .hero-h1 { font-size: clamp(28px, 4.5vw, 42px) !important; }
   .hero-sub { font-size: 16px !important; line-height: 1.55 !important; }
@@ -2810,16 +2822,44 @@ body.gb-modal-open{overflow:hidden}
   .ft-zettel-clip { display: none !important; }
   .gb-demo-bar { display: none !important; }
 
-  /* C3 — Hero-Foto: Heike+Kind, kein Schrank-Crop */
-  .hero-img-box img,
-  .hero-v2 .hero-img-wrap img { object-position: 30% 10% !important; }
-
-  /* Tablet-quer Hintergrundbild: richtige Position */
-  .hero.hero-v2::after { background-position: 30% 10% !important; }
-
-  /* C3b — Großer Fisch-Mascot weg, Hero-Copy mit Abstand für ft-zettel */
+  /* C3 — Hero: kein Foto, kein Blur-Hintergrund, plain wie Mobile */
+  .hero-v2 .hero-visual { display: none !important; }
   .hero-fisch { display: none !important; }
-  .hero-copy { padding-left: clamp(210px, 18vw, 220px) !important; }
+  .hero.hero-v2 {
+    background: #F9F5F0 !important;
+    background-image: none !important;
+  }
+  .hero.hero-v2::after { display: none !important; }
+  .hero.hero-v2::before { display: none !important; }
+  .hero-v2 .hero-inner {
+    display: block !important;
+    padding: 0 !important;
+    position: static !important;
+    height: auto !important;
+  }
+  .hero-copy {
+    padding: 88px 40px 52px !important;
+    max-width: 680px !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    position: static !important;
+    z-index: auto !important;
+  }
+  .hero-v2 .hero-h1 { font-size: clamp(26px, 3.5vw, 40px) !important; }
+  .hero-sub { font-size: 16px !important; line-height: 1.55 !important; }
+
+  /* C3b — Kleiner Fisch-Badge im Eyebrow: wie Mobile zeigen */
+  .fisch-mob-badge {
+    display: inline-flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin-left: 8px !important;
+    vertical-align: middle !important;
+  }
 
   /* C4 — Hero: beide Buttons sichtbar (Zeile) */
   .hero-v2 .hero-btns,
@@ -2855,7 +2895,9 @@ body.gb-modal-open{overflow:hidden}
   /* C8 — Footer: schlichter auf Tablet Quer */
   .footer-cols { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
   .footer-notfall { display: none !important; }
+  .footer-anfahrt { display: none !important; }
   footer { padding-top: 40px !important; padding-bottom: 28px !important; }
+  .footer-bottom { padding-top: 16px !important; gap: 8px !important; }
 }
 
 
