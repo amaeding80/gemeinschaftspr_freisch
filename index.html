@@ -1707,14 +1707,22 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     #ek-lb-close:hover{background:rgba(255,255,255,.28)}
     #ek-lb-prev,#ek-lb-next{
       position:fixed;top:50%;transform:translateY(-50%);
-      width:48px;height:48px;border-radius:50%;
-      background:rgba(255,255,255,.15);border:none;cursor:pointer;
-      color:#fff;font-size:34px;line-height:48px;text-align:center;
-      transition:background .2s;
+      width:44px;height:44px;border-radius:12px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+      cursor:pointer;color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      transition:background .18s,border-color .18s,transform .18s;
     }
-    #ek-lb-prev{left:16px}
-    #ek-lb-next{right:16px}
-    #ek-lb-prev:hover,#ek-lb-next:hover{background:rgba(255,255,255,.30)}
+    #ek-lb-prev{left:20px}
+    #ek-lb-next{right:20px}
+    #ek-lb-prev:hover,#ek-lb-next:hover{
+      background:rgba(255,255,255,.18);
+      border-color:rgba(255,255,255,.38);
+      transform:translateY(-50%) scale(1.06);
+    }
+    #ek-lb-prev svg,#ek-lb-next svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
     #ek-lb-label{
       position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
       color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.05em;
@@ -3153,9 +3161,9 @@ body.gb-modal-open{overflow:hidden}
 
 <div id="ek-lightbox" role="dialog" aria-modal="true">
   <button id="ek-lb-close" aria-label="Schließen">&#x2715;</button>
-  <button id="ek-lb-prev" aria-label="Vorheriges Bild">&#x2039;</button>
+  <button id="ek-lb-prev" aria-label="Vorheriges Bild"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
   <img id="ek-lb-img" src="" alt="">
-  <button id="ek-lb-next" aria-label="Nächstes Bild">&#x203A;</button>
+  <button id="ek-lb-next" aria-label="Nächstes Bild"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
   <span id="ek-lb-label"></span>
 </div>
 <script>
