@@ -595,7 +595,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .footer-col-text{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:6px}
 .footer-bottom{max-width:var(--max);margin:0 auto;padding-top:24px;border-top:0.5px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 @media(max-width:767px){.footer-cols{grid-template-columns:1fr;gap:28px}.footer-bottom{flex-direction:column;align-items:flex-start}}
-@media(max-width:1024px) and (orientation:portrait){.footer-cols{grid-template-columns:1fr 1fr}}
+@media(min-width:768px) and (max-width:1024px) and (orientation:portrait){.footer-cols{grid-template-columns:1fr 1fr}}
 .team-karte:hover{transform:translateY(-3px)}
 .mfa-card:hover{transform:translateY(-2px)}
 .usp-item:hover{transform:translateY(-3px)}
@@ -1980,6 +1980,176 @@ body.gb-modal-open{overflow:hidden}
   ]
 }
 </script>
+<style>
+/* ── MOBILE PORTRAIT FIXES v14 ── */
+@media(max-width:767px){
+
+  /* ── MFA/Praxisteam: Fotos sichtbar machen ── */
+  .mfa-foto{height:120px !important;border-radius:12px !important}
+  .mfa-foto img{object-position:center 15% !important}
+  .mfa-grid .mfa-card{flex:0 0 46vw !important;max-width:200px;padding:.6rem .4rem}
+  .mfa-body{padding:6px 2px}
+  .mfa-name{font-size:13px !important}
+  .mfa-role{font-size:11px !important}
+
+  /* ── Was uns ausmacht: Mobile ── */
+  .was-uns-ausmacht{min-height:auto}
+  .wua-bg-img{object-position:center 40%}
+  .wua-inner{padding:36px 22px}
+  .wua-text{max-width:100%}
+  .wua-h2{font-size:clamp(24px,7vw,32px)}
+  .wua-intro{font-size:14px;line-height:1.72}
+  .wua-abschluss{font-size:13px;line-height:1.65}
+  .wua-postkarte{padding:10px 12px;gap:10px}
+  .wua-pk-sub{font-size:11px;overflow-wrap:anywhere;word-break:break-word}
+
+  /* ── Online-Elternschalter: 2-spaltes Text-Grid ── */
+  .online-service-mid{padding:36px 20px}
+  .srv-list{
+    display:grid !important;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    max-width:100%;
+    border:0.5px solid var(--border,#e8e4de);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  /* display:contents macht srv-slide transparent fuer das parent-Grid */
+  .srv-slide{display:contents}
+  .srv-row{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    padding:16px 14px !important;
+    border:none !important;
+    border-radius:0 !important;
+    gap:4px !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    min-height:44px;
+  }
+  /* Linke Spalte: rechter Trennstrich */
+  .srv-slide .srv-row:first-child{border-right:0.5px solid var(--border,#e8e4de) !important}
+  /* Obere Zeile: unterer Trennstrich */
+  .srv-slide:first-of-type .srv-row{border-bottom:0.5px solid var(--border,#e8e4de) !important}
+  .srv-ri{display:none !important}
+  .srv-desc{display:none !important}
+  .srv-right{display:none !important}
+  .srv-name{
+    font-size:14px !important;
+    font-weight:500 !important;
+    color:var(--petrol,#1D5F6E) !important;
+    white-space:normal !important;
+    line-height:1.3;
+  }
+  .srv-divider{display:none !important}
+  /* Videosprechstunde: volle Breite */
+  a.srv-row{
+    grid-column:1/-1 !important;
+    border-bottom:none !important;
+    border-right:none !important;
+    border-top:0.5px solid var(--border,#e8e4de) !important;
+    background:rgba(217,115,82,0.04) !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    gap:10px !important;
+    padding:14px 16px !important;
+  }
+  a.srv-row .srv-ri{display:flex !important;width:32px !important;height:32px !important;flex-shrink:0}
+  a.srv-row .srv-name{font-size:15px !important;font-weight:600 !important}
+  a.srv-row .srv-right{display:flex !important;margin-left:auto}
+  a.srv-row .srv-desc{display:none !important}
+
+  /* ── Leistungen: Wisch-Karussell ── */
+  .ph-list{
+    display:flex !important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:12px;
+    margin-left:-22px;
+    margin-right:-22px;
+    padding-left:22px;
+    padding-right:22px;
+    padding-bottom:16px;
+  }
+  .ph-list::-webkit-scrollbar{display:none}
+  .ph-item{
+    flex:0 0 calc(100vw - 64px) !important;
+    max-width:340px;
+    scroll-snap-align:start;
+    min-width:0;
+    border:0.5px solid var(--border,#e8e4de) !important;
+    border-radius:16px !important;
+    overflow:hidden;
+    background:var(--white,#fff);
+    flex-shrink:0;
+  }
+  /* Accordion immer offen auf Mobile */
+  .ph-body{
+    height:auto !important;
+    overflow:visible !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+  .ph-bi{padding:0 16px 20px !important}
+  .ph-bi-inner{padding:0 !important}
+  .ph-ico{display:none !important}
+  .ph-btn{cursor:default;padding:16px !important;pointer-events:none}
+  .ph-termin{pointer-events:auto}
+  /* Zurueck-Karte */
+  .ph-zurueck-card{
+    flex:0 0 110px !important;
+    max-width:110px !important;
+    min-height:140px;
+    display:flex !important;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:var(--bg-soft,#F5F0EB) !important;
+    border-radius:16px !important;
+    cursor:pointer;
+    padding:20px 10px !important;
+    flex-shrink:0;
+  }
+  .ph-zurueck-card .ph-btn,.ph-zurueck-card .ph-body{display:none !important}
+  .ph-zurueck-inner{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    color:var(--petrol,#1D5F6E);
+    font-size:13px;
+    font-weight:500;
+  }
+
+  /* ── Oeffnungszeiten: kompakter ── */
+  .oz-tr{padding:8px 0 !important}
+  .oz-tr th,.oz-tr td{font-size:14px !important}
+  .k-col-head{font-size:11px;margin-bottom:10px;padding-bottom:8px}
+  .k-block{margin-bottom:10px}
+
+  /* ── Footer: kompakter ── */
+  footer{padding:28px 20px calc(20px + env(safe-area-inset-bottom,0px)) !important}
+  .footer-cols{
+    grid-template-columns:1fr 1fr !important;
+    gap:20px !important;
+  }
+  .footer-col:first-child{grid-column:1/-1}
+  .footer-praxis-name{font-size:13px !important;margin-bottom:5px}
+  .footer-adresse{font-size:12px !important;margin-bottom:4px}
+  .footer-anfahrt{font-size:11px !important;margin-bottom:8px}
+  .footer-notfall{padding:10px 12px !important;margin-top:10px !important}
+  .footer-notfall-lbl{font-size:10px !important;margin-bottom:4px !important}
+  .footer-notfall-num{font-size:13px !important}
+  .footer-col-h{font-size:10px !important;margin-bottom:8px !important;padding-bottom:7px !important}
+  .footer-col-links a{font-size:13px !important}
+  .footer-col-links{gap:5px !important}
+  .footer-bottom{padding-top:14px !important;gap:6px !important}
+  .footer-bottom p{font-size:11px !important}
+  .footer-pe{font-size:11px !important;padding:2px 8px 2px 5px !important}
+}
+</style>
 </head>
 <body>
 <div id="status-display" hidden aria-hidden="true"></div>
@@ -2133,7 +2303,7 @@ body.gb-modal-open{overflow:hidden}
         <div class="team-body">
           <p class="team-rolle">Ärztin im Team</p>
           <h3 class="team-name">Dr. med. Jennifer Bichler</h3>
-          <p class="team-text">Fachärztin für Kinder- und Jugendmedizin — im Team seit Januar 2015.</p>
+          <p class="team-text">Fachärztin für Kinder- und Jugendmedizin.</p>
         </div>
       </div>
 
@@ -2147,7 +2317,7 @@ body.gb-modal-open{overflow:hidden}
         <div class="team-body">
           <p class="team-rolle">Ärztin im Team</p>
           <h3 class="team-name">Dr. med. Heike Boerschmann</h3>
-          <p class="team-text">Fachärztin für Kinder- und Jugendmedizin seit Dezember 2015 — im Team seit Juli 2020.</p>
+          <p class="team-text">Fachärztin für Kinder- und Jugendmedizin seit Dezember 2015.</p>
           <p class="team-personal">Mutter von zwei Kindern — hat ihr praktisches Jahr in Delhi absolviert.</p>
         </div>
       </div>
@@ -2208,26 +2378,30 @@ body.gb-modal-open{overflow:hidden}
     <h2 class="sek-h2" style="margin-bottom:8px">Schnell erledigt — ohne Anruf.</h2>
     <p style="color:var(--ink2);font-size:15px;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto">Rezepte, Bescheinigungen und Dokumente — direkt online, sicher und ohne Telefonat.</p>
     <div class="srv-list">
-      <button class="srv-row" onclick="gbServiceOpen('rezept')">
-        <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6M9 16h6M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 8h6"/></svg></div>
-        <div class="srv-body"><div class="srv-name">Rezept anfordern</div><div class="srv-desc">Bekanntes Dauermedikament direkt auf deine Karte</div></div>
-        <div class="srv-right"><span class="srv-tag">2 Min.</span><span class="srv-arrow">›</span></div>
-      </button>
-      <button class="srv-row" onclick="gbServiceOpen('fax')">
-        <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg></div>
-        <div class="srv-body"><div class="srv-name">Fax direkt online senden</div><div class="srv-desc">Kein Faxgerät notwendig — PDF sicher und direkt an uns übermitteln</div></div>
-        <div class="srv-right"><span class="srv-tag orange">Sofort</span><span class="srv-arrow">›</span></div>
-      </button>
-      <button class="srv-row" onclick="gbServiceOpen('befund')">
-        <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <div class="srv-body"><div class="srv-name">Befund anfordern</div><div class="srv-desc">Labor, Ultraschall oder Untersuchungsergebnis</div></div>
-        <div class="srv-right"><span class="srv-tag">3 Min.</span><span class="srv-arrow">›</span></div>
-      </button>
-      <button class="srv-row" onclick="gbServiceOpen('upload')">
-        <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-        <div class="srv-body"><div class="srv-name">Dokument hochladen</div><div class="srv-desc">Impfpass, Einweisung oder Arztbrief — sicher übermitteln</div></div>
-        <div class="srv-right"><span class="srv-tag">1 Min.</span><span class="srv-arrow">›</span></div>
-      </button>
+      <div class="srv-slide">
+        <button class="srv-row" onclick="gbServiceOpen('rezept')">
+          <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6M9 16h6M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 8h6"/></svg></div>
+          <div class="srv-body"><div class="srv-name">Rezept anfordern</div><div class="srv-desc">Bekanntes Dauermedikament direkt auf deine Karte</div></div>
+          <div class="srv-right"><span class="srv-tag">2 Min.</span><span class="srv-arrow">›</span></div>
+        </button>
+        <button class="srv-row" onclick="gbServiceOpen('fax')">
+          <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg></div>
+          <div class="srv-body"><div class="srv-name">Fax direkt online senden</div><div class="srv-desc">Kein Faxgerät notwendig — PDF sicher und direkt an uns übermitteln</div></div>
+          <div class="srv-right"><span class="srv-tag orange">Sofort</span><span class="srv-arrow">›</span></div>
+        </button>
+      </div>
+      <div class="srv-slide">
+        <button class="srv-row" onclick="gbServiceOpen('befund')">
+          <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="srv-body"><div class="srv-name">Befund anfordern</div><div class="srv-desc">Labor, Ultraschall oder Untersuchungsergebnis</div></div>
+          <div class="srv-right"><span class="srv-tag">3 Min.</span><span class="srv-arrow">›</span></div>
+        </button>
+        <button class="srv-row" onclick="gbServiceOpen('upload')">
+          <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <div class="srv-body"><div class="srv-name">Dokument hochladen</div><div class="srv-desc">Impfpass, Einweisung oder Arztbrief — sicher übermitteln</div></div>
+          <div class="srv-right"><span class="srv-tag">1 Min.</span><span class="srv-arrow">›</span></div>
+        </button>
+      </div>
       <div class="srv-divider"></div>
       <a href="videosprechstunde.html" class="srv-row" style="border-left-color:transparent">
         <div class="srv-ri" style="background:#FDF0EB"><svg viewBox="0 0 24 24" aria-hidden="true" style="stroke:#D97352"><path d="M15 10l4.553-2.53A1 1 0 0 1 21 8.413v7.174a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/></svg></div>
@@ -2432,6 +2606,13 @@ body.gb-modal-open{overflow:hidden}
               PädExpert — telemedizinischer Fachärzte-Expertenrat
             </a>
           </div></div>
+        </div>
+      </div>
+
+      <div class="ph-item ph-zurueck-card" onclick="document.querySelector('.ph-list').scrollTo({left:0,behavior:'smooth'})">
+        <div class="ph-zurueck-inner">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Zurück</span>
         </div>
       </div>
 
