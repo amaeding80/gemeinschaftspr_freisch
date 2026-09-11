@@ -2659,8 +2659,11 @@ body.gb-modal-open{overflow:hidden}
    ───────────────────────────────────────────────────────────────────────── */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 
-  /* B1 — Nav: angepasste Höhe */
+  /* B1 — Nav: Burger, keine Links */
   .nav-inner { height: 72px !important; }
+  .nav-links { display: none !important; }
+  .nav-inner .btn-nav-termin { display: none !important; }
+  .burger { display: flex !important; }
 
   /* B2 — Widget Zettel: sichtbar auf Tablet Hoch */
   .ft-zettel {
@@ -2668,15 +2671,32 @@ body.gb-modal-open{overflow:hidden}
     opacity: 0;
     pointer-events: none;
     left: 12px !important;
-    width: 172px !important;
+    width: 180px !important;
+    overflow: hidden !important;
   }
   .ft-zettel.ft-sichtbar {
     opacity: 1 !important;
     pointer-events: all !important;
   }
+  .ft-zettel-row-text { white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+  .ft-zettel-clip { display: none !important; }
 
   /* B3 — Demo-Bar: ausblenden */
   .gb-demo-bar { display: none !important; }
+
+  /* B3b — Hero: kein Foto, einspaltig wie Mobile */
+  .hero-v2 .hero-visual { display: none !important; }
+  .hero-fisch { display: none !important; }
+  .hero-v2 .hero-inner {
+    display: block !important;
+    padding: 0 !important;
+  }
+  .hero-copy {
+    padding: 88px 36px 52px !important;
+    max-width: 620px !important;
+  }
+  .hero-v2 .hero-h1 { font-size: clamp(28px, 4.5vw, 42px) !important; }
+  .hero-sub { font-size: 16px !important; line-height: 1.55 !important; }
 
   /* B4 — Hero: beide Buttons als Zeile */
   .hero-v2 .hero-btns,
@@ -2780,12 +2800,14 @@ body.gb-modal-open{overflow:hidden}
     opacity: 0;
     pointer-events: none;
     left: 12px !important;
-    width: 172px !important;
+    width: 180px !important;
+    overflow: hidden !important;
   }
   .ft-zettel.ft-sichtbar {
     opacity: 1 !important;
     pointer-events: all !important;
   }
+  .ft-zettel-clip { display: none !important; }
   .gb-demo-bar { display: none !important; }
 
   /* C3 — Hero-Foto: Heike+Kind, kein Schrank-Crop */
@@ -2794,6 +2816,10 @@ body.gb-modal-open{overflow:hidden}
 
   /* Tablet-quer Hintergrundbild: richtige Position */
   .hero.hero-v2::after { background-position: 30% 10% !important; }
+
+  /* C3b — Großer Fisch-Mascot weg, Hero-Copy mit Abstand für ft-zettel */
+  .hero-fisch { display: none !important; }
+  .hero-copy { padding-left: clamp(210px, 18vw, 220px) !important; }
 
   /* C4 — Hero: beide Buttons sichtbar (Zeile) */
   .hero-v2 .hero-btns,
