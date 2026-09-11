@@ -706,7 +706,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .hero-v2 .hero-visual{ display:none }
   .hero-usp-badge,.welcome-badge{ display:none }
 
-  /* Card: klebt am unteren Rand, leicht transparent */
+  /* Card: klebt am unteren Rand, Glassmorphism */
   .hero-copy{
     position:relative;
     z-index:2;
@@ -715,9 +715,9 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     justify-content:flex-start;
     padding:22px 20px 28px;
     gap:0;
-    background:rgba(255,255,255,0.90);
-    backdrop-filter:blur(4px);
-    -webkit-backdrop-filter:blur(4px);
+    background:rgba(252,248,244,0.72);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
     border-radius:16px 16px 0 0;
     border-top:3px solid var(--accent);
     margin:0;
@@ -1889,7 +1889,9 @@ body.gb-modal-open{overflow:hidden}
   .hero-v2 .hero-visual{display:none!important}
   .hero-copy{
     order:1;
-    background:rgba(249,245,242,0.88);
+    background:rgba(252,248,244,0.72);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
     border-radius:18px 18px 0 0;
     border-top:3px solid var(--accent);
     padding:18px 20px 22px;
