@@ -126,6 +126,7 @@
     .footer-links{display:flex;gap:20px;flex-wrap:wrap}
     .footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
     .footer-links a:hover{color:#fff}
+    .vs-zurueck-card,.ds-zurueck-card{display:none}
     @media(max-width:767px){
   /* Schritte carousel */
   .schritte{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad));padding-left:var(--pad);padding-right:var(--pad);padding-bottom:14px}
@@ -269,9 +270,15 @@
     .app-postit-link-text{display:flex;flex-direction:column;line-height:1.15}
     .app-postit-link-sub{font-size:8.5px;color:#888;font-weight:400}
     .app-postit-link-name{font-size:11.5px;font-weight:700;color:#111}
-    @media(max-width:767px){.app-layout{grid-template-columns:1fr}.app-postit-outer{margin-top:28px}}
+    @media(max-width:767px){.app-layout{grid-template-columns:1fr}.app-postit-outer{margin-top:28px}.vs-sub-extra{display:none}}
 
-  </style>
+  
+    @media(max-width:767px){
+      .footer-name{font-size:14px !important}
+      .footer-links a{font-size:13px !important}
+      .footer-pe{font-size:12.5px !important}
+    }
+    </style>
 </head>
 <body>
 
@@ -289,7 +296,7 @@
 <div class="vs-hero">
   <p class="vs-eyebrow">Videosprechstunde</p>
   <h1 class="vs-h1">Manchmal reicht ein Blick<br>auf dem Bildschirm —<br><em>ohne Stau und Wartezimmer.</em></h1>
-  <p class="vs-sub">App holen, Termin ausmachen — und wir schauen gemeinsam drauf.</p>
+  <p class="vs-sub">App holen, Termin ausmachen — und wir schauen gemeinsam drauf.<span class="vs-sub-extra"> Einfach, sicher, ohne Anfahrt.</span></p>
   <div class="vs-badges">
     <span class="vs-badge">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
