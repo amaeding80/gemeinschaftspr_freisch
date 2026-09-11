@@ -759,24 +759,37 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     align-items:stretch;
     gap:0; padding:0; margin:0;
   }
-  .btn-primaer{
+  /* CTA volle Breite */
+  .hero-v2 .btn-primaer{
+    display:flex !important;
+    width:100%;
     text-align:center;
-    padding:14px 24px;
-    font-size:14.5px;
-    font-weight:500;
-    border-radius:999px;
-    min-height:48px;
-    display:flex;
-    align-items:center;
     justify-content:center;
-    margin-bottom:6px;
-    background:#1B362A;
+    padding:14px 20px;
+    font-size:15px;
+    font-weight:600;
+    border-radius:10px;
+    min-height:48px;
+    background:#1B485A;
     color:#fff;
-    box-shadow:0 4px 12px rgba(27,54,42,0.15);
-    transition:background 0.15s,transform 0.1s;
+    box-shadow:0 3px 10px rgba(27,72,90,0.18);
+    margin-bottom:10px;
   }
-  .btn-primaer:active{ background:#122519; transform:scale(0.98) }
-  .btn-sekundaer{ display:none }
+  .hero-v2 .btn-primaer:active{ background:#133649; transform:scale(0.98) }
+  /* Videosprechstunde: Textlink */
+  .hero-v2 .btn-sekundaer{
+    display:block !important;
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+    color:var(--primary);
+    text-decoration:underline;
+    text-underline-offset:3px;
+    text-align:center;
+    padding:6px 0;
+    font-size:14px;
+    font-weight:500;
+  }
 
   .hero-akut-hint{
     color:#555555;
@@ -1868,24 +1881,21 @@ body.gb-modal-open{overflow:hidden}
     font-weight:500;letter-spacing:0.02em;line-height:1.4;
     margin:0;
   }
-  /* Hero: Bild als voller Hintergrund — wird von Block oben gesteuert */
+  /* Hero Variante B — stapeln (Foto erscheint im hero-visual darunter) */
   .hero.hero-v2{
-    background-image:url('bilder/hero.webp');
-    background-size:cover;
-    background-position:center 50%;
-    min-height:82vh;
-    display:block!important;
-    overflow:hidden;
+    background-image:none !important;
+    min-height:0;
+    display:block !important;
+    overflow:visible;
     padding:0;
-    grid-template-columns:unset!important;
+    grid-template-columns:unset !important;
   }
-  .hero-v2 .hero-visual{display:none!important}
   .hero-copy{
     order:1;
-    background:transparent;
+    background:#FAF7F2 !important;
     border-radius:0;
-    border-top:3px solid var(--accent);
-    padding:18px 20px 22px;
+    border-top:none;
+    padding:20px 20px 24px;
     margin:0;
   }
   .hero-v2 .hero-h1{
