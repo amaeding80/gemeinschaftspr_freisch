@@ -177,6 +177,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .phasen-head{margin-bottom:clamp(40px,5vw,60px)}
 .ph-list{display:flex;flex-direction:column;gap:0;border-top:0.5px solid var(--rule)}
 .ph-item{border-bottom:0.5px solid var(--rule)}
+.ph-zurueck-card{display:none}
 .ph-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:clamp(18px,2.2vw,26px) 0;cursor:pointer;border:none;background:transparent;text-align:left;gap:16px;color:var(--ink);font-family:inherit}
 .ph-btn:hover .ph-name{color:var(--acc)}
 .ph-left{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
@@ -1984,15 +1985,30 @@ body.gb-modal-open{overflow:hidden}
 /* ── MOBILE PORTRAIT FIXES v14 ── */
 @media(max-width:767px){
 
-  /* ── MFA/Praxisteam: Fotos sichtbar machen ── */
-  .mfa-foto{height:120px !important;border-radius:12px !important}
+  /* ── MFA Praxisteam: 2 Fotos nebeneinander, wischbar ── */
+  .mfa-grid{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:10px !important;
+    padding-left:22px !important;
+    padding-right:22px !important;
+    margin-left:-22px;
+    margin-right:-22px;
+    padding-bottom:8px;
+    justify-content:flex-start !important;
+  }
+  .mfa-grid::-webkit-scrollbar{display:none}
+  .mfa-card{flex:0 0 40vw !important;max-width:160px;scroll-snap-align:start;flex-shrink:0 !important;padding:.5rem .3rem !important}
+  .mfa-foto{height:110px !important;border-radius:10px !important}
   .mfa-foto img{object-position:center 15% !important}
-  .mfa-grid .mfa-card{flex:0 0 46vw !important;max-width:200px;padding:.6rem .4rem}
-  .mfa-body{padding:6px 2px}
-  .mfa-name{font-size:13px !important}
-  .mfa-role{font-size:11px !important}
+  .mfa-name{font-size:12px !important}
+  .mfa-role{font-size:10.5px !important}
 
-  /* ── Was uns ausmacht: Mobile ── */
+  /* ── Was uns ausmacht ── */
   .was-uns-ausmacht{min-height:auto}
   .wua-bg-img{object-position:center 40%}
   .wua-inner{padding:36px 22px}
@@ -2003,65 +2019,81 @@ body.gb-modal-open{overflow:hidden}
   .wua-postkarte{padding:10px 12px;gap:10px}
   .wua-pk-sub{font-size:11px;overflow-wrap:anywhere;word-break:break-word}
 
-  /* ── Online-Elternschalter: 2-spaltes Text-Grid ── */
+  /* ── Wir begleiten: Chips nur Text, kompakt ── */
+  .lv-chip-sub{display:none !important}
+  .lv-chip{padding:8px 14px !important;font-size:13px !important}
+
+  /* ── Online-Elternschalter: 2 Kacheln pro Slide, wischbar ── */
   .online-service-mid{padding:36px 20px}
   .srv-list{
-    display:grid !important;
-    grid-template-columns:1fr 1fr;
-    gap:0;
+    display:flex !important;
+    flex-direction:row !important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:12px;
     max-width:100%;
-    border:0.5px solid var(--border,#e8e4de);
-    border-radius:14px;
-    overflow:hidden;
-  }
-  /* display:contents macht srv-slide transparent fuer das parent-Grid */
-  .srv-slide{display:contents}
-  .srv-row{
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    padding:16px 14px !important;
+    margin-left:-22px;
+    margin-right:-22px;
+    padding-left:22px;
+    padding-right:22px;
+    padding-bottom:14px;
     border:none !important;
     border-radius:0 !important;
-    gap:4px !important;
-    background:transparent !important;
-    box-shadow:none !important;
-    min-height:44px;
   }
-  /* Linke Spalte: rechter Trennstrich */
-  .srv-slide .srv-row:first-child{border-right:0.5px solid var(--border,#e8e4de) !important}
-  /* Obere Zeile: unterer Trennstrich */
-  .srv-slide:first-of-type .srv-row{border-bottom:0.5px solid var(--border,#e8e4de) !important}
-  .srv-ri{display:none !important}
-  .srv-desc{display:none !important}
-  .srv-right{display:none !important}
-  .srv-name{
-    font-size:14px !important;
-    font-weight:500 !important;
-    color:var(--petrol,#1D5F6E) !important;
-    white-space:normal !important;
-    line-height:1.3;
+  .srv-list::-webkit-scrollbar{display:none}
+  .srv-slide{
+    flex:0 0 calc(100vw - 64px) !important;
+    scroll-snap-align:start;
+    flex-shrink:0;
+    display:flex !important;
+    flex-direction:column;
+    gap:0;
+    border:0.5px solid var(--border,#e8e4de) !important;
+    border-radius:14px;
+    overflow:hidden;
+    background:#fff;
   }
-  .srv-divider{display:none !important}
-  /* Videosprechstunde: volle Breite */
-  a.srv-row{
-    grid-column:1/-1 !important;
-    border-bottom:none !important;
-    border-right:none !important;
-    border-top:0.5px solid var(--border,#e8e4de) !important;
-    background:rgba(217,115,82,0.04) !important;
+  .srv-slide .srv-row{
     flex-direction:row !important;
     align-items:center !important;
-    gap:10px !important;
-    padding:14px 16px !important;
+    padding:14px !important;
+    border:none !important;
+    border-bottom:0.5px solid var(--border,#e8e4de) !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    gap:12px !important;
   }
-  a.srv-row .srv-ri{display:flex !important;width:32px !important;height:32px !important;flex-shrink:0}
-  a.srv-row .srv-name{font-size:15px !important;font-weight:600 !important}
+  .srv-slide .srv-row:last-child{border-bottom:none !important}
+  .srv-ri{width:36px !important;height:36px !important;flex-shrink:0 !important}
+  .srv-name{font-size:13.5px !important;font-weight:600 !important;white-space:normal !important;line-height:1.3}
+  .srv-desc{font-size:12px !important;display:block !important}
+  .srv-right{display:flex !important;flex-shrink:0;margin-left:auto}
+  .srv-divider{display:none !important}
+  /* Videosprechstunde: eigene Kachel am Ende der Reihe */
+  a.srv-row{
+    flex:0 0 calc(100vw - 64px) !important;
+    scroll-snap-align:start;
+    flex-shrink:0;
+    border:0.5px solid rgba(217,115,82,0.4) !important;
+    border-radius:14px !important;
+    background:rgba(217,115,82,0.05) !important;
+    padding:18px 14px !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    gap:12px !important;
+  }
+  a.srv-row .srv-ri{display:flex !important;width:40px !important;height:40px !important;flex-shrink:0}
+  a.srv-row .srv-name{font-size:15px !important;font-weight:600 !important;color:#D97352 !important}
+  a.srv-row .srv-desc{display:block !important;font-size:13px !important}
   a.srv-row .srv-right{display:flex !important;margin-left:auto}
-  a.srv-row .srv-desc{display:none !important}
 
-  /* ── Leistungen: Wisch-Karussell ── */
+  /* ── Leistungen: Wisch-Karussell + Accordion bleibt klickbar ── */
   .ph-list{
     display:flex !important;
+    flex-direction:row !important;
     overflow-x:auto;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
@@ -2072,45 +2104,38 @@ body.gb-modal-open{overflow:hidden}
     padding-left:22px;
     padding-right:22px;
     padding-bottom:16px;
+    align-items:flex-start;
+    border-top:none !important;
   }
   .ph-list::-webkit-scrollbar{display:none}
   .ph-item{
     flex:0 0 calc(100vw - 64px) !important;
     max-width:340px;
     scroll-snap-align:start;
-    min-width:0;
+    flex-shrink:0;
     border:0.5px solid var(--border,#e8e4de) !important;
+    border-bottom:0.5px solid var(--border,#e8e4de) !important;
     border-radius:16px !important;
     overflow:hidden;
-    background:var(--white,#fff);
-    flex-shrink:0;
+    background:#fff;
   }
-  /* Accordion immer offen auf Mobile */
-  .ph-body{
-    height:auto !important;
-    overflow:visible !important;
-    opacity:1 !important;
-    visibility:visible !important;
-  }
+  .ph-btn{padding:16px !important;cursor:pointer !important;pointer-events:auto !important}
   .ph-bi{padding:0 16px 20px !important}
   .ph-bi-inner{padding:0 !important}
-  .ph-ico{display:none !important}
-  .ph-btn{cursor:default;padding:16px !important;pointer-events:none}
-  .ph-termin{pointer-events:auto}
-  /* Zurueck-Karte */
+  /* Zurück-Karte: nur auf Mobile */
   .ph-zurueck-card{
-    flex:0 0 110px !important;
-    max-width:110px !important;
-    min-height:140px;
     display:flex !important;
-    flex-direction:column;
+    flex:0 0 90px !important;
+    max-width:90px !important;
+    scroll-snap-align:start;
+    flex-shrink:0;
     align-items:center;
     justify-content:center;
     background:var(--bg-soft,#F5F0EB) !important;
     border-radius:16px !important;
     cursor:pointer;
-    padding:20px 10px !important;
-    flex-shrink:0;
+    min-height:120px;
+    border:0.5px solid var(--border,#e8e4de) !important;
   }
   .ph-zurueck-card .ph-btn,.ph-zurueck-card .ph-body{display:none !important}
   .ph-zurueck-inner{
@@ -2123,31 +2148,32 @@ body.gb-modal-open{overflow:hidden}
     font-weight:500;
   }
 
-  /* ── Oeffnungszeiten: kompakter ── */
-  .oz-tr{padding:8px 0 !important}
-  .oz-tr th,.oz-tr td{font-size:14px !important}
+  /* ── Öffnungszeiten + Kontakt: 1-spaltig, kompakt ── */
+  .kontakt-grid{display:flex !important;flex-direction:column;gap:20px !important}
+  .oz-tr{padding:6px 0 !important}
+  .oz-tr th,.oz-tr td{font-size:13.5px !important}
+  .oz-note{font-size:12px !important;margin-top:8px !important}
   .k-col-head{font-size:11px;margin-bottom:10px;padding-bottom:8px}
-  .k-block{margin-bottom:10px}
+  .k-block{margin-bottom:8px}
+  .k-lbl{font-size:11px !important}
+  .k-val{font-size:13px !important}
+  .map-btn{font-size:12.5px !important}
 
-  /* ── Footer: kompakter ── */
-  footer{padding:28px 20px calc(20px + env(safe-area-inset-bottom,0px)) !important}
-  .footer-cols{
-    grid-template-columns:1fr 1fr !important;
-    gap:20px !important;
-  }
-  .footer-col:first-child{grid-column:1/-1}
-  .footer-praxis-name{font-size:13px !important;margin-bottom:5px}
-  .footer-adresse{font-size:12px !important;margin-bottom:4px}
-  .footer-anfahrt{font-size:11px !important;margin-bottom:8px}
-  .footer-notfall{padding:10px 12px !important;margin-top:10px !important}
-  .footer-notfall-lbl{font-size:10px !important;margin-bottom:4px !important}
-  .footer-notfall-num{font-size:13px !important}
-  .footer-col-h{font-size:10px !important;margin-bottom:8px !important;padding-bottom:7px !important}
-  .footer-col-links a{font-size:13px !important}
-  .footer-col-links{gap:5px !important}
-  .footer-bottom{padding-top:14px !important;gap:6px !important}
-  .footer-bottom p{font-size:11px !important}
-  .footer-pe{font-size:11px !important;padding:2px 8px 2px 5px !important}
+  /* ── Footer: schlicht, 1-spaltig ── */
+  footer{padding:24px 20px calc(16px + env(safe-area-inset-bottom,0px)) !important}
+  .footer-cols{display:flex !important;flex-direction:column;gap:14px !important}
+  .footer-praxis-name{font-size:12.5px !important;margin-bottom:4px}
+  .footer-adresse{font-size:12px !important;margin-bottom:3px}
+  .footer-anfahrt{font-size:11.5px !important;margin-bottom:8px}
+  .footer-notfall{padding:9px 12px !important;margin-top:8px !important}
+  .footer-notfall-lbl{font-size:10px !important;margin-bottom:3px !important}
+  .footer-notfall-num{font-size:12.5px !important}
+  .footer-col-h{font-size:10px !important;margin-bottom:7px !important;padding-bottom:6px !important}
+  .footer-col-links a{font-size:12.5px !important}
+  .footer-col-links{gap:4px !important}
+  .footer-bottom{padding-top:12px !important;gap:5px !important}
+  .footer-bottom p{font-size:10.5px !important}
+  .footer-pe{font-size:10.5px !important;padding:2px 7px 2px 5px !important}
 }
 </style>
 </head>
