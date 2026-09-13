@@ -396,16 +396,27 @@ footer{background:var(--ink);padding:clamp(32px,4vw,52px) var(--pad)}
 function osterSonntag(y){var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31)-1,day=(h+l-7*m+114)%31+1;return new Date(y,mo,day)}setInterval(updateStatus,60000);
 })();
 </script>
-<style>img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;}</style>
+<style>
+img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-events:none;}
+</style>
 <script>
-// bilder-schutz
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('img').forEach(function(img){
-    img.setAttribute('draggable','false');
-    img.addEventListener('contextmenu',function(e){e.preventDefault();});
-    img.addEventListener('dragstart',function(e){e.preventDefault();});
-  });
-});
+// bilder-schutz v2
+(function(){
+  function schutz(){
+    document.addEventListener('contextmenu',function(e){
+      if(e.target.tagName==='IMG'){e.preventDefault();return false;}
+    });
+    document.addEventListener('dragstart',function(e){
+      if(e.target.tagName==='IMG'){e.preventDefault();return false;}
+    });
+    document.querySelectorAll('img').forEach(function(img){
+      img.setAttribute('draggable','false');
+      img.style.webkitUserDrag='none';
+      img.style.webkitTouchCallout='none';
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',schutz);}else{schutz();}
+})();
 </script>
 </body>
 </html>

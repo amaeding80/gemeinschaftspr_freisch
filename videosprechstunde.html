@@ -495,16 +495,27 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
-<style>img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;}</style>
+<style>
+img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-events:none;}
+</style>
 <script>
-// bilder-schutz
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('img').forEach(function(img){
-    img.setAttribute('draggable','false');
-    img.addEventListener('contextmenu',function(e){e.preventDefault();});
-    img.addEventListener('dragstart',function(e){e.preventDefault();});
-  });
-});
+// bilder-schutz v2
+(function(){
+  function schutz(){
+    document.addEventListener('contextmenu',function(e){
+      if(e.target.tagName==='IMG'){e.preventDefault();return false;}
+    });
+    document.addEventListener('dragstart',function(e){
+      if(e.target.tagName==='IMG'){e.preventDefault();return false;}
+    });
+    document.querySelectorAll('img').forEach(function(img){
+      img.setAttribute('draggable','false');
+      img.style.webkitUserDrag='none';
+      img.style.webkitTouchCallout='none';
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',schutz);}else{schutz();}
+})();
 </script>
 </body>
 </html>

@@ -2976,7 +2976,7 @@ body.gb-modal-open{overflow:hidden}
   .team-grid .team-karte { flex: unset !important; max-width: unset !important; width: auto !important; scroll-snap-align: unset !important; flex-direction: column !important; text-align: center !important; }
   .team-foto { width: 100% !important; aspect-ratio: 1/1 !important; border-radius: 12px !important; margin-bottom: 10px !important; overflow: hidden !important; }
   .team-foto img { object-fit: cover !important; object-position: center 15% !important; width: 100% !important; height: 100% !important; }
-  .team-grid .team-karte:first-child .team-foto img { object-position: 65% 5% !important; }
+  .team-grid .team-karte:first-child .team-foto img { object-position: 30% 5% !important; }
   .team-grid .team-karte:nth-child(2) .team-foto img { object-position: center 10% !important; }
   .team-grid .team-karte:nth-child(3) .team-foto img { object-position: center 10% !important; }
   .team-carousel-hint { display: none !important; }
@@ -3003,10 +3003,10 @@ body.gb-modal-open{overflow:hidden}
   .ph-page { display: flex !important; flex-direction: column !important; flex: 0 0 100% !important; scroll-snap-align: start !important; min-width: 0 !important; min-height: 200px !important; }
   .ph-item { flex: 1 !important; display: flex !important; flex-direction: column !important; max-width: unset !important; width: 100% !important; scroll-snap-align: unset !important; border-radius: 0 !important; }
   .ph-zurueck-card { display: flex !important; flex: 1 !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; background: var(--bg-soft,#F5F0EB) !important; border-top: 0.5px solid var(--border,#e8e4de) !important; }
-  .ph-zurueck-link { display: block !important; text-align: center !important; padding: 14px 0 6px !important; font-size: 14px !important; color: var(--petrol,#1D5F6E) !important; cursor: pointer !important; opacity: 0.8 !important; }
+  .ph-zurueck-link { display: block !important; text-align: left !important; padding: 14px 16px 6px !important; font-size: 14px !important; color: var(--petrol,#1D5F6E) !important; cursor: pointer !important; opacity: 0.8 !important; }
   /* Schaukel-Deko: rechts im Hero */
-  .hero.hero-v2 { position: relative !important; overflow: visible !important; }
-  .schaukel-deko { display: block !important; position: absolute !important; right: 12px !important; bottom: 0 !important; width: 220px !important; height: auto !important; transform: scaleX(-1) !important; pointer-events: none !important; z-index: 2 !important; }
+  .hero-v2 { overflow: visible !important; }
+  .schaukel-deko { display: block !important; position: absolute !important; right: 12px !important; bottom: 0 !important; width: 220px !important; height: auto !important; transform: scaleX(-1) !important; pointer-events: none !important; z-index: 5 !important; }
   .ph-zurueck-link { display: block !important; text-align: center !important; padding: 12px 0 4px !important; font-size: 14px !important; color: var(--petrol,#1D5F6E) !important; cursor: pointer !important; opacity: 0.8 !important; }
   .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1D5F6E); opacity: 0.7; margin-bottom: 4px; }
 
@@ -3306,16 +3306,24 @@ body.gb-modal-open{overflow:hidden}
         <span class="lv-chip-sub">U2 · Hörtest · Hüfte</span>
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-2">
-        <span class="lv-chip-name">Baby &amp; Kleinkind</span>
-        <span class="lv-chip-sub">U3–U6 · Impfen · Sono</span>
+        <span class="lv-chip-name">Baby</span>
+        <span class="lv-chip-sub">U3–U5 · Impfen · Sono</span>
+      </a>
+      <a href="#leistungen" class="lv-chip" data-open="ph-btn-2">
+        <span class="lv-chip-name">Kleinkind</span>
+        <span class="lv-chip-sub">U6 · Sprache · Motorik</span>
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-3">
-        <span class="lv-chip-name">Kindergartenkind</span>
-        <span class="lv-chip-sub">U7–U9 · Allergie · KiGa-U</span>
+        <span class="lv-chip-name">Kindergarten</span>
+        <span class="lv-chip-sub">U7/U8 · Allergie · KiGa-U</span>
+      </a>
+      <a href="#leistungen" class="lv-chip" data-open="ph-btn-3">
+        <span class="lv-chip-name">Kind</span>
+        <span class="lv-chip-sub">U9 · Schulreife · ADHS</span>
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-4">
         <span class="lv-chip-name">Schulkind</span>
-        <span class="lv-chip-sub">U10/U11 · ADHS · Lunge</span>
+        <span class="lv-chip-sub">U10/U11 · Lunge · Sport</span>
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-5">
         <span class="lv-chip-name">Jugendliche</span>
@@ -4796,15 +4804,28 @@ document.addEventListener('DOMContentLoaded',function(){
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initPHPaging);}else{initPHPaging();}
 })();
 </script>
-<style>img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;}</style>
+<style>
+img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-events:none;}
+.img-schutz-wrap{position:relative;display:inline-block;}
+.img-schutz-wrap::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;-webkit-touch-callout:none;}
+</style>
 <script>
-// bilder-schutz
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('img').forEach(function(img){
-    img.setAttribute('draggable','false');
-    img.addEventListener('contextmenu',function(e){e.preventDefault();});
-    img.addEventListener('dragstart',function(e){e.preventDefault();});
-  });
-});
+// bilder-schutz v2
+(function(){
+  function schutz(){
+    document.addEventListener('contextmenu',function(e){
+      if(e.target.tagName==='IMG'){e.preventDefault();return false;}
+    });
+    document.addEventListener('dragstart',function(e){
+      if(e.target.tagName==='IMG'){e.preventDefault();return false;}
+    });
+    document.querySelectorAll('img').forEach(function(img){
+      img.setAttribute('draggable','false');
+      img.style.webkitUserDrag='none';
+      img.style.webkitTouchCallout='none';
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',schutz);}else{schutz();}
+})();
 </script>
 </body>
