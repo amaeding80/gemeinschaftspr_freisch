@@ -1450,14 +1450,14 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     padding: 0 !important;
   }
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
-  .hero-v2 .hero-btns { display: flex !important; flex-direction: column !important; gap: 14px !important; align-items: flex-start !important; margin-top: 22px !important; }
-  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 15px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; border-radius: 0 !important; text-decoration: none !important; }
-  .hero-v2 .hero-btns .btn-primaer::after { content: "→"; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--primary,#1B485A); color: #fff; font-size: 13px; flex-shrink: 0; }
-  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--ink2,#576A75) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 14px !important; font-weight: 400 !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; border-radius: 0 !important; text-decoration: none !important; }
-  .hero-v2 .hero-btns .btn-sekundaer::after { content: "→"; font-size: 14px; color: var(--ink2,#576A75); }
+  .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-primaer::after { display: none !important; content: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-fisch { display: none !important; }
   .hero-frame { display: none !important; }
-  .hero-usp-badge, .welcome-badge { display: none !important; }
+  .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
 
   /* ── Hero Icon-Buttons (nur Tablet Portrait) ── */
   .hero-tab-btns {
@@ -1612,7 +1612,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .team-carousel-hint { display: none !important; }
   .team-body { padding: 0 4px !important; }
   .team-rolle { font-size: 11px !important; margin-bottom: 4px !important; }
-  .team-name { font-size: 14px !important; line-height: 1.25 !important; margin-bottom: 6px !important; }
+  .team-name { font-size: 12px !important; line-height: 1.2 !important; margin-bottom: 6px !important; }
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
@@ -2939,14 +2939,14 @@ body.gb-modal-open{overflow:hidden}
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
 
   /* Standard-Buttons + Deko + Zettel-Widget verstecken */
-  .hero-v2 .hero-btns { display: flex !important; flex-direction: column !important; gap: 14px !important; align-items: flex-start !important; margin-top: 22px !important; }
-  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 15px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; border-radius: 0 !important; text-decoration: none !important; }
-  .hero-v2 .hero-btns .btn-primaer::after { content: "→"; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--primary,#1B485A); color: #fff; font-size: 13px; flex-shrink: 0; }
-  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--ink2,#576A75) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 14px !important; font-weight: 400 !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; border-radius: 0 !important; text-decoration: none !important; }
-  .hero-v2 .hero-btns .btn-sekundaer::after { content: "→"; font-size: 14px; color: var(--ink2,#576A75); }
+  .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-primaer::after { display: none !important; content: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-v2 .hero-actions { display: none !important; }
   .hero-frame { display: none !important; }
-  .hero-usp-badge, .welcome-badge { display: none !important; }
+  .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
   .ft-zettel { display: none !important; }
 
   /* Sidebar-Buttons: fix rechts, weiter unten */
@@ -2974,14 +2974,15 @@ body.gb-modal-open{overflow:hidden}
   .team-carousel-hint { display: none !important; }
   .team-body { padding: 0 4px !important; }
   .team-rolle { font-size: 11px !important; margin-bottom: 4px !important; }
-  .team-name { font-size: 14px !important; line-height: 1.25 !important; margin-bottom: 6px !important; }
+  .team-name { font-size: 12px !important; line-height: 1.2 !important; margin-bottom: 6px !important; }
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
-  /* lv-chips: alle in einer Reihe */
-  .lv-chips { flex-wrap: nowrap !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; }
-  .lv-chips::-webkit-scrollbar { display: none !important; }
-  .lv-chip { flex-shrink: 0 !important; }
+  /* lv-chips: alle 5 in einer Reihe, kein Scrollen */
+  .lv-chips { flex-wrap: nowrap !important; overflow-x: visible !important; gap: 6px !important; }
+  .lv-chip { flex-shrink: 1 !important; padding: 7px 10px !important; min-width: 0 !important; }
+  .lv-chip-name { font-size: 11px !important; white-space: nowrap !important; }
+  .lv-chip-sub { display: none !important; }
 
   /* MFA: alle Karten sichtbar, zentriert, kein Karussell */
   .mfa-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; overflow-x: visible !important; scroll-snap-type: none !important; gap: 16px !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 0 !important; }
