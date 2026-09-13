@@ -2976,7 +2976,7 @@ body.gb-modal-open{overflow:hidden}
   .team-grid .team-karte { flex: unset !important; max-width: unset !important; width: auto !important; scroll-snap-align: unset !important; flex-direction: column !important; text-align: center !important; }
   .team-foto { width: 100% !important; aspect-ratio: 1/1 !important; border-radius: 12px !important; margin-bottom: 10px !important; overflow: hidden !important; }
   .team-foto img { object-fit: cover !important; object-position: center 15% !important; width: 100% !important; height: 100% !important; }
-  .team-grid .team-karte:first-child .team-foto img { object-position: 80% 5% !important; }
+  .team-grid .team-karte:first-child .team-foto img { object-position: 65% 5% !important; }
   .team-grid .team-karte:nth-child(2) .team-foto img { object-position: center 10% !important; }
   .team-grid .team-karte:nth-child(3) .team-foto img { object-position: center 10% !important; }
   .team-carousel-hint { display: none !important; }
@@ -2995,6 +2995,7 @@ body.gb-modal-open{overflow:hidden}
   .lv-chip-name { font-size: 13px !important; }
   .lv-chip-sub { display: none !important; }
   .lv-chip-zurueck { display: none !important; }
+.schaukel-deko { display: none; }
 
   /* Leistungen: 2 pro Seite wischbar — Jugendliche füllt gleiche Höhe wie 2-Karten-Seiten */
   .ph-list { display: flex !important; flex-direction: row !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; gap: 0 !important; margin-left: 0 !important; margin-right: 0 !important; padding-bottom: 16px !important; border-top: none !important; }
@@ -3002,6 +3003,11 @@ body.gb-modal-open{overflow:hidden}
   .ph-page { display: flex !important; flex-direction: column !important; flex: 0 0 100% !important; scroll-snap-align: start !important; min-width: 0 !important; min-height: 200px !important; }
   .ph-item { flex: 1 !important; display: flex !important; flex-direction: column !important; max-width: unset !important; width: 100% !important; scroll-snap-align: unset !important; border-radius: 0 !important; }
   .ph-zurueck-card { display: flex !important; flex: 1 !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; background: var(--bg-soft,#F5F0EB) !important; border-top: 0.5px solid var(--border,#e8e4de) !important; }
+  .ph-zurueck-link { display: block !important; text-align: center !important; padding: 14px 0 6px !important; font-size: 14px !important; color: var(--petrol,#1D5F6E) !important; cursor: pointer !important; opacity: 0.8 !important; }
+  /* Schaukel-Deko: rechts im Hero */
+  .hero.hero-v2 { position: relative !important; overflow: visible !important; }
+  .schaukel-deko { display: block !important; position: absolute !important; right: 12px !important; bottom: 0 !important; width: 220px !important; height: auto !important; transform: scaleX(-1) !important; pointer-events: none !important; z-index: 2 !important; }
+  .ph-zurueck-link { display: block !important; text-align: center !important; padding: 12px 0 4px !important; font-size: 14px !important; color: var(--petrol,#1D5F6E) !important; cursor: pointer !important; opacity: 0.8 !important; }
   .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1D5F6E); opacity: 0.7; margin-bottom: 4px; }
 
   /* MFA: alle Karten sichtbar, zentriert, kein Karussell */
@@ -3287,6 +3293,7 @@ body.gb-modal-open{overflow:hidden}
       Videosprechstunde
     </a>
   </div>
+  <img class="schaukel-deko" src="Bilder/schaukel.gif" alt="" aria-hidden="true">
 </section>
 
 <!-- LEISTUNGEN-VORSCHAU -->
@@ -4743,14 +4750,13 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 
 <script>
-// Leistungen Tablet Hochformat: ph-items 2 pro Seite gruppieren + Zurück-Button
+// Leistungen Tablet Hochformat: ph-items 2 pro Seite + Zurück-Text unter Jugendliche
 (function(){
   function initPHPaging(){
     var mq=window.matchMedia('(min-width:768px) and (max-width:1024px) and (orientation:portrait)');
     if(!mq.matches)return;
     var list=document.querySelector('.ph-list');
     if(!list||list.querySelector('.ph-page'))return;
-    var zurueck=list.querySelector('.ph-zurueck-card');
     var items=Array.from(list.querySelectorAll('.ph-item:not(.ph-zurueck-card)'));
     list.innerHTML='';
     for(var i=0;i<items.length;i+=2){
@@ -4760,23 +4766,45 @@ document.addEventListener('DOMContentLoaded',function(){
       if(items[i+1])page.appendChild(items[i+1]);
       list.appendChild(page);
     }
-    if(zurueck){
-      var zurPage=document.createElement('div');
-      zurPage.className='ph-page';
-      zurPage.appendChild(zurueck);
-      list.appendChild(zurPage);
+    // Zurück-Text unter letzter Seite (Jugendliche)
+    var pages=list.querySelectorAll('.ph-page');
+    var lastPage=pages[pages.length-1];
+    var zurText=document.createElement('p');
+    zurText.className='ph-zurueck-link';
+    zurText.textContent='← Zurück';
+    zurText.addEventListener('click',function(){ list.scrollTo({left:0,behavior:'smooth'}); });
+    lastPage.appendChild(zurText);
+    // verstecken wenn aufgeklappt, zeigen wenn zugeklappt
+    var lastBtn=lastPage.querySelector('.ph-btn');
+    if(lastBtn){
+      lastBtn.addEventListener('click',function(){
+        requestAnimationFrame(function(){
+          zurText.style.display=lastBtn.getAttribute('aria-expanded')==='true'?'none':'block';
+        });
+      });
     }
     // Jugendliche-Seite auf gleiche Höhe wie 2-Karten-Seiten setzen
     requestAnimationFrame(function(){
-      var pages=list.querySelectorAll('.ph-page');
-      if(pages.length>=3){
-        var zielH=pages[0].offsetHeight;
-        pages[pages.length-2].style.minHeight=zielH+'px';
-        pages[pages.length-2].style.height=zielH+'px';
+      var allPages=list.querySelectorAll('.ph-page');
+      if(allPages.length>=2){
+        var zielH=allPages[0].offsetHeight;
+        allPages[allPages.length-1].style.minHeight=zielH+'px';
+        allPages[allPages.length-1].style.height=zielH+'px';
       }
     });
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initPHPaging);}else{initPHPaging();}
 })();
+</script>
+<style>img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;}</style>
+<script>
+// bilder-schutz
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('img').forEach(function(img){
+    img.setAttribute('draggable','false');
+    img.addEventListener('contextmenu',function(e){e.preventDefault();});
+    img.addEventListener('dragstart',function(e){e.preventDefault();});
+  });
+});
 </script>
 </body>

@@ -154,7 +154,8 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 @media(min-width:768px) and (max-width:1024px) and (orientation:portrait){
   .info-hero-inner{grid-template-columns:1fr 280px}
   .info-hero-foto-wrap{height:240px}
-  .info-grid{grid-template-columns:1fr 1fr !important;gap:22px}
+  .info-grid{grid-template-columns:1fr !important;gap:20px;max-width:600px}
+  .info-col{padding:clamp(20px,3vw,32px)}
 }
 </style>
 </head>
@@ -254,16 +255,6 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
   </div>
 </div>
 
-<div class="info-footer-strip">
-  <div class="info-footer-inner">
-    <div class="info-footer-txt">
-      <strong>Haben Sie eine Frage oder ein akutes Anliegen?</strong>
-    </div>
-    <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="info-cta">
-      Termin online buchen →
-    </a>
-  </div>
-</div>
 
 <footer>
   <div class="footer-i">
@@ -279,6 +270,17 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 <script>
 var j=document.getElementById("jahr");
 if(j)j.textContent=new Date().getFullYear();
+</script>
+<style>img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;}</style>
+<script>
+// bilder-schutz
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('img').forEach(function(img){
+    img.setAttribute('draggable','false');
+    img.addEventListener('contextmenu',function(e){e.preventDefault();});
+    img.addEventListener('dragstart',function(e){e.preventDefault();});
+  });
+});
 </script>
 </body>
 </html>
