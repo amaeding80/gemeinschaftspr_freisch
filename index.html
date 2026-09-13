@@ -2950,7 +2950,7 @@ body.gb-modal-open{overflow:hidden}
   .ft-zettel { display: none !important; }
 
   /* Nav: Blauer Streifen bis Header, Logo-Abstand, Fax-Button rechts */
-  .haupt-nav { border-left: 6px solid var(--primary,#1B485A) !important; }
+  .haupt-nav { border-left: none !important; }
   .nav-logo { padding-left: 16px !important; }
   .nav-tablet-fax { display: inline-flex !important; align-items: center !important; font-size: 11px !important; font-weight: 500 !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; padding: 6px 10px !important; border-radius: 6px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; margin-left: auto !important; margin-right: 10px !important; }
 
@@ -2975,8 +2975,8 @@ body.gb-modal-open{overflow:hidden}
   .team-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; overflow-x: visible !important; gap: 16px !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
   .team-grid .team-karte { flex: unset !important; max-width: unset !important; width: auto !important; scroll-snap-align: unset !important; flex-direction: column !important; text-align: center !important; }
   .team-foto { width: 100% !important; aspect-ratio: 4/3 !important; border-radius: 12px !important; margin-bottom: 10px !important; overflow: hidden !important; }
-  .team-foto img { object-fit: cover !important; object-position: center 20% !important; width: 100% !important; height: 100% !important; }
-  .team-grid .team-karte:first-child .team-foto img { object-position: 65% 15% !important; }
+  .team-foto img { object-fit: cover !important; object-position: center 10% !important; width: 100% !important; height: 100% !important; }
+  .team-grid .team-karte:first-child .team-foto img { object-position: 75% 10% !important; }
   .team-carousel-hint { display: none !important; }
   .team-body { padding: 0 4px !important; }
   .team-rolle { font-size: 11px !important; margin-bottom: 4px !important; }
@@ -2985,16 +2985,18 @@ body.gb-modal-open{overflow:hidden}
   .team-personal { display: none !important; }
 
   /* lv-strip: Label zentriert, Chips als 2-pro-Seite Karussell */
+  .lv-strip { border-left: 6px solid var(--primary,#1B485A) !important; padding-left: clamp(24px,4vw,40px) !important; padding-right: clamp(24px,4vw,40px) !important; }
   .lv-inner { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
   .lv-label { text-align: center !important; }
   .lv-chips { display: grid !important; grid-template-rows: auto auto !important; grid-auto-flow: column !important; grid-auto-columns: calc(50% - 4px) !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; width: 100% !important; column-gap: 8px !important; row-gap: 8px !important; flex-wrap: unset !important; padding-bottom: 0 !important; }
   .lv-chips::-webkit-scrollbar { display: none !important; }
   .lv-chip { width: auto !important; padding: 12px 14px !important; flex-shrink: unset !important; min-width: unset !important; }
-  .lv-chip:nth-child(1), .lv-chip:nth-child(3), .lv-chip:nth-child(5) { scroll-snap-align: start !important; }
+  .lv-chip:nth-child(1), .lv-chip:nth-child(3) { scroll-snap-align: start !important; }
+  .lv-chip:nth-child(5) { scroll-snap-align: start !important; grid-row: span 2 !important; }
   .lv-chip::before { display: none !important; content: "" !important; }
   .lv-chip-name { font-size: 13px !important; white-space: nowrap !important; }
   .lv-chip-sub { display: none !important; }
-  .lv-chip-zurueck { display: none !important; }
+  .lv-chip-zurueck { display: block !important; visibility: hidden !important; pointer-events: none !important; min-width: calc(50% - 4px) !important; }
 
   /* MFA: alle Karten sichtbar, zentriert, kein Karussell */
   .mfa-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; overflow-x: visible !important; scroll-snap-type: none !important; gap: 16px !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 0 !important; }
@@ -3807,7 +3809,6 @@ body.gb-modal-open{overflow:hidden}
         <li><a href="#team">Team</a></li>
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="infothek.html">Eltern &amp; erster Besuch</a></li>
-        <li><a href="#kontakt">Kontakt &amp; Sprechzeiten</a></li>
         <li><a href="videosprechstunde.html">Videosprechstunde</a></li>
       </ul>
     </div>
@@ -3825,8 +3826,6 @@ body.gb-modal-open{overflow:hidden}
       <a href="impressum.html">Impressum</a>
       <span class="ftl-dot">·</span>
       <a href="datenschutz.html">Datenschutz</a>
-      <span class="ftl-dot">·</span>
-      <a href="#kontakt">Kontakt</a>
     </div>
     <p class="footer-copy-full">&copy; <span id="jahr"></span><span class="footer-lang"> Familienpraxis Kinder- und Jugendmedizin · München Bogenhausen</span></p>
     <a href="https://praxisecht.de" target="_blank" rel="noopener" class="footer-pe"><span class="footer-pe-dot"></span>Handgebaut von praxisecht.de</a>
