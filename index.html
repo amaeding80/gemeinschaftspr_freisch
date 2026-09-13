@@ -586,7 +586,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .footer-anfahrt{font-size:12px;color:rgba(255,255,255,0.38);line-height:1.6;margin-bottom:20px}
 .footer-bottom{border-top:0.5px solid rgba(255,255,255,0.08);padding:18px var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .footer-bottom p{font-size:12px;color:rgba(255,255,255,0.45)}
-.footer-bottom a{color:rgba(255,255,255,0.55);text-decoration:none}
+.footer-bottom a{color:rgba(255,255,255,0.55);text-decoration:none}.footer-tablet-legal{display:none}.ftl-dot{color:rgba(255,255,255,0.3)}
 .footer-bottom a:hover{color:rgba(255,255,255,0.8)}
 .footer-pe{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.55);text-decoration:none;font-size:12px;letter-spacing:0.01em;border:0.5px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px 10px 3px 6px;transition:border-color .2s,color .2s}
 .footer-pe:hover{border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.85)!important}
@@ -1450,7 +1450,11 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     padding: 0 !important;
   }
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
-  .hero-v2 .hero-btns { display: none !important; }
+  .hero-v2 .hero-btns { display: flex !important; flex-direction: column !important; gap: 14px !important; align-items: flex-start !important; margin-top: 22px !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 15px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; border-radius: 0 !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-primaer::after { content: "→"; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--primary,#1B485A); color: #fff; font-size: 13px; flex-shrink: 0; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--ink2,#576A75) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 14px !important; font-weight: 400 !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; border-radius: 0 !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer::after { content: "→"; font-size: 14px; color: var(--ink2,#576A75); }
   .hero-fisch { display: none !important; }
   .hero-frame { display: none !important; }
   .hero-usp-badge, .welcome-badge { display: none !important; }
@@ -2920,7 +2924,7 @@ body.gb-modal-open{overflow:hidden}
   .nav-inner picture { display: none !important; }
 
   /* Hero: 1-spaltig, kein Hintergrundbild */
-  .hero.hero-v2 { background: var(--bg,#FAF7F2) !important; background-image: none !important; padding: 0 !important; height: auto; min-height: 0; overflow: hidden; }
+  .hero.hero-v2 { background: var(--bg,#FAF7F2) !important; background-image: none !important; padding: 0 !important; height: auto; min-height: 0; overflow: hidden; border-left: 6px solid var(--accent,#D97352) !important; }
   .hero.hero-v2::after { display: none !important; }
   .hero.hero-v2::before { display: none !important; }
   .hero-v2 .hero-inner { display: block !important; padding: clamp(32px,5vw,52px) clamp(24px,4vw,40px) clamp(40px,5vw,60px) !important; position: relative !important; height: auto !important; }
@@ -2935,14 +2939,19 @@ body.gb-modal-open{overflow:hidden}
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
 
   /* Standard-Buttons + Deko + Zettel-Widget verstecken */
-  .hero-v2 .hero-btns { display: none !important; }
+  .hero-v2 .hero-btns { display: flex !important; flex-direction: column !important; gap: 14px !important; align-items: flex-start !important; margin-top: 22px !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 15px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 10px !important; border-radius: 0 !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-primaer::after { content: "→"; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--primary,#1B485A); color: #fff; font-size: 13px; flex-shrink: 0; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--ink2,#576A75) !important; border: none !important; box-shadow: none !important; padding: 0 !important; font-size: 14px !important; font-weight: 400 !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; border-radius: 0 !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer::after { content: "→"; font-size: 14px; color: var(--ink2,#576A75); }
   .hero-v2 .hero-actions { display: none !important; }
   .hero-frame { display: none !important; }
   .hero-usp-badge, .welcome-badge { display: none !important; }
   .ft-zettel { display: none !important; }
 
   /* Sidebar-Buttons: fix rechts, weiter unten */
-  .hero-tab-btns { display: flex !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 6px !important; width: auto !important; align-items: stretch !important; overflow: visible !important; }
+  .hero-tab-btns { display: none !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 6px !important; width: auto !important; align-items: stretch !important; overflow: visible !important; }
+  .hero-tab-btns.gb-tabs-visible { display: flex !important; }
   .hero-tab-btn { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 0 !important; width: 56px !important; height: 56px !important; max-width: none !important; padding: 0 !important; border-radius: 12px 0 0 12px !important; text-decoration: none !important; font-size: 0 !important; cursor: pointer !important; border: none !important; transition: opacity 0.18s !important; }
   .hero-tab-btn svg { width: 26px !important; height: 26px !important; flex-shrink: 0 !important; }
   .hero-tab-btn-termin { background: var(--primary,#1B485A) !important; color: #fff !important; box-shadow: none !important; border-bottom: 1px solid rgba(255,255,255,0.15) !important; }
@@ -2969,6 +2978,11 @@ body.gb-modal-open{overflow:hidden}
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
+  /* lv-chips: alle in einer Reihe */
+  .lv-chips { flex-wrap: nowrap !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; }
+  .lv-chips::-webkit-scrollbar { display: none !important; }
+  .lv-chip { flex-shrink: 0 !important; }
+
   /* MFA: alle Karten sichtbar, zentriert, kein Karussell */
   .mfa-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; overflow-x: visible !important; scroll-snap-type: none !important; gap: 16px !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 0 !important; }
   .mfa-page { display: contents !important; }
@@ -2984,9 +2998,13 @@ body.gb-modal-open{overflow:hidden}
   .mob-cta { display: none !important; }
 
   /* Footer: kompakter */
-  footer { padding: 20px 24px !important; }
-  .footer-cols { gap: 10px !important; }
-  .footer-bottom { padding-top: 10px !important; }
+  footer { padding: 14px 24px !important; }
+  .footer-cols { display: none !important; }
+  .footer-bottom { padding-top: 0 !important; border-top: none !important; display: flex !important; flex-wrap: wrap !important; align-items: center !important; justify-content: space-between !important; gap: 8px !important; }
+  .footer-copy-full { display: none !important; }
+  .footer-tablet-legal { display: flex !important; align-items: center !important; gap: 10px !important; flex-wrap: nowrap !important; }
+  .footer-tablet-legal a { font-size: 12px !important; color: rgba(255,255,255,0.6) !important; text-decoration: none !important; }
+  .footer-tablet-legal a:hover { color: rgba(255,255,255,0.9) !important; }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -3785,7 +3803,14 @@ body.gb-modal-open{overflow:hidden}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; <span id="jahr"></span><span class="footer-lang"> Familienpraxis Kinder- und Jugendmedizin · München Bogenhausen</span></p>
+    <div class="footer-tablet-legal">
+      <a href="impressum.html">Impressum</a>
+      <span class="ftl-dot">·</span>
+      <a href="datenschutz.html">Datenschutz</a>
+      <span class="ftl-dot">·</span>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <p class="footer-copy-full">&copy; <span id="jahr"></span><span class="footer-lang"> Familienpraxis Kinder- und Jugendmedizin · München Bogenhausen</span></p>
     <a href="https://praxisecht.de" target="_blank" rel="noopener" class="footer-pe"><span class="footer-pe-dot"></span>Handgebaut von praxisecht.de</a>
   </div>
 </footer>
@@ -4634,6 +4659,37 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   });
 });
+
+// Tablet Hochformat: Sidebar-Buttons erst nach dem Scrollen zeigen
+(function() {
+  var mq = window.matchMedia('(min-width:768px) and (max-width:1024px) and (orientation:portrait)');
+  function initScroll() {
+    if (!mq.matches) return;
+    var hero = document.querySelector('.hero.hero-v2');
+    var btns = document.querySelector('.hero-tab-btns');
+    if (!hero || !btns) return;
+    function checkHero() {
+      var rect = hero.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        btns.classList.add('gb-tabs-visible');
+      } else {
+        btns.classList.remove('gb-tabs-visible');
+      }
+    }
+    checkHero();
+    window.addEventListener('scroll', checkHero, { passive: true });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScroll);
+  } else {
+    initScroll();
+  }
+  mq.addEventListener('change', function() {
+    var btns = document.querySelector('.hero-tab-btns');
+    if (btns) btns.classList.remove('gb-tabs-visible');
+    initScroll();
+  });
+})();
 </script>
 
 
