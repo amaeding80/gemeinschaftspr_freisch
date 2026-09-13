@@ -281,6 +281,12 @@
     
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .nav-inner picture { display: none !important; }
+  /* App-Layout: kleinerer Gap auf Tablet Hochformat */
+  .app-layout { gap: clamp(24px, 3vw, 40px) !important; }
+  /* QR-Zeile: Gap reduzieren (160px zu breit für 768px) */
+  .qr-zeile { gap: 32px !important; }
+  /* Hero Headline etwas kompakter */
+  .vs-h1 { font-size: clamp(24px, 3.5vw, 36px) !important; }
 }
 </style>
 </head>
