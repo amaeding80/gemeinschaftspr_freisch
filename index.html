@@ -2986,23 +2986,22 @@ body.gb-modal-open{overflow:hidden}
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
-  /* lv-strip: "Wir begleiten von Anfang an" — einfacher Chip-Strip */
-  .lv-strip { border-left: 6px solid var(--primary,#1B485A) !important; padding-left: clamp(24px,4vw,40px) !important; padding-right: clamp(24px,4vw,40px) !important; }
-  .lv-inner { flex-direction: row !important; align-items: center !important; flex-wrap: nowrap !important; gap: 12px !important; }
-  .lv-label { text-align: left !important; white-space: nowrap !important; flex-shrink: 0 !important; }
-  .lv-chips { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; gap: 8px !important; padding-bottom: 0 !important; }
-  .lv-chips::-webkit-scrollbar { display: none !important; }
-  .lv-chip { flex-shrink: 0 !important; padding: 9px 14px !important; }
+  /* lv-strip: "Wir begleiten von Anfang an" — alle Chips auf einen Blick */
+  .lv-strip { border-left: 6px solid var(--primary,#1B485A) !important; padding-left: clamp(24px,4vw,40px) !important; padding-right: clamp(24px,4vw,40px) !important; padding-top: 14px !important; padding-bottom: 14px !important; }
+  .lv-inner { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+  .lv-label { text-align: left !important; white-space: nowrap !important; }
+  .lv-chips { display: flex !important; flex-wrap: wrap !important; overflow-x: visible !important; gap: 8px !important; padding-bottom: 0 !important; width: 100% !important; }
+  .lv-chip { flex-shrink: 1 !important; padding: 8px 14px !important; }
   .lv-chip-name { font-size: 13px !important; }
   .lv-chip-sub { display: none !important; }
   .lv-chip-zurueck { display: none !important; }
 
-  /* Leistungen: 2 pro Seite wischbar via JS .ph-page */
+  /* Leistungen: 2 pro Seite wischbar — Jugendliche füllt gleiche Höhe wie 2-Karten-Seiten */
   .ph-list { display: flex !important; flex-direction: row !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; gap: 0 !important; margin-left: 0 !important; margin-right: 0 !important; padding-bottom: 16px !important; border-top: none !important; }
   .ph-list::-webkit-scrollbar { display: none !important; }
-  .ph-page { display: flex !important; flex-direction: column !important; flex: 0 0 100% !important; scroll-snap-align: start !important; min-width: 0 !important; }
-  .ph-item { flex: unset !important; max-width: unset !important; width: 100% !important; scroll-snap-align: unset !important; border-radius: 0 !important; }
-  .ph-zurueck-card { display: none !important; }
+  .ph-page { display: flex !important; flex-direction: column !important; flex: 0 0 100% !important; scroll-snap-align: start !important; min-width: 0 !important; min-height: 200px !important; }
+  .ph-item { flex: 1 !important; display: flex !important; flex-direction: column !important; max-width: unset !important; width: 100% !important; scroll-snap-align: unset !important; border-radius: 0 !important; }
+  .ph-zurueck-card { display: flex !important; flex: 1 !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; background: var(--bg-soft,#F5F0EB) !important; border-top: 0.5px solid var(--border,#e8e4de) !important; }
   .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1D5F6E); opacity: 0.7; margin-bottom: 4px; }
 
   /* MFA: alle Karten sichtbar, zentriert, kein Karussell */
@@ -3189,6 +3188,11 @@ body.gb-modal-open{overflow:hidden}
   .ek-swipe-hint,.ph-swipe-hint,
   .ph-zurueck-card,.mfa-zurueck-card,.ek-zurueck-card,
   .team-carousel-hint,.mfa-carousel-hint{display:none !important}
+}
+/* B2-Override: Swipe-Hint + Zurück bei Tablet Hochformat wieder einblenden */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1D5F6E); opacity: 0.7; margin-bottom: 4px; }
+  .ph-zurueck-card { display: flex !important; }
 }
 </style>
 </head>
@@ -3555,7 +3559,7 @@ body.gb-modal-open{overflow:hidden}
     </div>
     <p class="ph-swipe-hint" aria-hidden="true">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      Nach rechts wischen
+      Nach rechts wischen für mehr Leistungen
     </p>
     <div class="ph-list">
 
@@ -4739,13 +4743,14 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 
 <script>
-// Leistungen Tablet Hochformat: ph-items 2 pro Seite gruppieren
+// Leistungen Tablet Hochformat: ph-items 2 pro Seite gruppieren + Zurück-Button
 (function(){
   function initPHPaging(){
     var mq=window.matchMedia('(min-width:768px) and (max-width:1024px) and (orientation:portrait)');
     if(!mq.matches)return;
     var list=document.querySelector('.ph-list');
     if(!list||list.querySelector('.ph-page'))return;
+    var zurueck=list.querySelector('.ph-zurueck-card');
     var items=Array.from(list.querySelectorAll('.ph-item:not(.ph-zurueck-card)'));
     list.innerHTML='';
     for(var i=0;i<items.length;i+=2){
@@ -4755,6 +4760,21 @@ document.addEventListener('DOMContentLoaded',function(){
       if(items[i+1])page.appendChild(items[i+1]);
       list.appendChild(page);
     }
+    if(zurueck){
+      var zurPage=document.createElement('div');
+      zurPage.className='ph-page';
+      zurPage.appendChild(zurueck);
+      list.appendChild(zurPage);
+    }
+    // Jugendliche-Seite auf gleiche Höhe wie 2-Karten-Seiten setzen
+    requestAnimationFrame(function(){
+      var pages=list.querySelectorAll('.ph-page');
+      if(pages.length>=3){
+        var zielH=pages[0].offsetHeight;
+        pages[pages.length-2].style.minHeight=zielH+'px';
+        pages[pages.length-2].style.height=zielH+'px';
+      }
+    });
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initPHPaging);}else{initPHPaging();}
 })();
