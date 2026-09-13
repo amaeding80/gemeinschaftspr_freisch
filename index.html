@@ -80,6 +80,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .nav-pill:hover{background:#EDE5D8!important;color:var(--ink)!important}
 .nav-cta{background:var(--acc);color:#fff;font-size:13px;font-weight:500;padding:9px 20px;border-radius:2px;text-decoration:none;letter-spacing:0.02em;transition:opacity 0.2s}
 .nav-cta:hover{opacity:0.85}
+.nav-cta-gruppe{display:flex;align-items:center;gap:8px}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;color:var(--ink)}
 .burger span{display:block;width:22px;height:1.5px;background:currentColor;transition:all 0.25s}
 .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -352,6 +353,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 
 .hero-v2 .hero-visual{padding:0;position:relative;display:flex;align-items:center;justify-content:center}
 .hero-tab-btns{display:none}
+.hero-tab-btns.gb-tabs-visible{display:flex;flex-direction:column;position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:999;gap:0;width:auto;align-items:stretch}
 .hero-frame{position:relative;width:100%;max-width:480px;padding:0;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(28,43,51,0.13)}
 .hero-img-box{width:100%;aspect-ratio:4/5;height:auto;border-radius:0;overflow:hidden;position:relative;background:var(--bg-soft)}
 .hero-img-box img{width:100%;height:100%;object-fit:cover;object-position:center 15%;animation:hero-kenburns 14s ease-in-out infinite alternate;transform-origin:center 20%}@keyframes hero-kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,1%)}}
@@ -2957,7 +2959,7 @@ body.gb-modal-open{overflow:hidden}
 
   /* Sidebar-Buttons: fix rechts, weiter unten */
   .hero-tab-btns { display: none !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 6px !important; width: auto !important; align-items: stretch !important; overflow: visible !important; }
-  .hero-tab-btns.gb-tabs-visible { display: none !important; }
+  .hero-tab-btns.gb-tabs-visible { display: flex !important; }
   .hero-tab-btn { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 0 !important; width: 56px !important; height: 56px !important; max-width: none !important; padding: 0 !important; border-radius: 12px 0 0 12px !important; text-decoration: none !important; font-size: 0 !important; cursor: pointer !important; border: none !important; transition: opacity 0.18s !important; }
   .hero-tab-btn svg { width: 26px !important; height: 26px !important; flex-shrink: 0 !important; }
   .hero-tab-btn-termin { background: var(--primary,#1B485A) !important; color: #fff !important; box-shadow: none !important; border-bottom: 1px solid rgba(255,255,255,0.15) !important; }
@@ -3223,7 +3225,7 @@ body.gb-modal-open{overflow:hidden}
       <li><a href="infothek.html" class="nav-pill">Für Eltern</a></li>
     </ul>
     <a href="#online-schalter" class="nav-tablet-fax" onclick="event.preventDefault();gbServiceOpen('fax')">Fax direkt online senden</a>
-    <div class="nav-cta-gruppe" style="display:flex;align-items:center;gap:8px">
+    <div class="nav-cta-gruppe">
       <a href="videosprechstunde.html" class="nav-cta-vid" style="font-size:13px;font-weight:500;color:var(--ink2);text-decoration:none;padding:8px 14px;border:1px solid var(--rule);border-radius:2px;white-space:nowrap;transition:color .2s">Videosprechstunde</a>
       <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="nav-cta" onclick="event.preventDefault();openTerminModalGB()">Termin finden</a>
     </div>
@@ -3298,7 +3300,7 @@ body.gb-modal-open{overflow:hidden}
       Videosprechstunde
     </a>
   </div>
-  <img class="schaukel-deko" src="Bilder/schaukel.gif" alt="" aria-hidden="true">
+  <img class="schaukel-deko" src="bilder/schaukel.gif" alt="" aria-hidden="true">
 </section>
 
 <!-- LEISTUNGEN-VORSCHAU -->
@@ -4802,7 +4804,6 @@ document.addEventListener('DOMContentLoaded',function(){
       if(allPages.length>=2){
         var zielH=allPages[0].offsetHeight;
         allPages[allPages.length-1].style.minHeight=zielH+'px';
-        allPages[allPages.length-1].style.height=zielH+'px';
       }
     });
   }
