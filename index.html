@@ -1450,10 +1450,10 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     padding: 0 !important;
   }
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
-  .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
-  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-primaer::after { display: none !important; content: none !important; }
-  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-fisch { display: none !important; }
   .hero-frame { display: none !important; }
@@ -1612,7 +1612,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .team-carousel-hint { display: none !important; }
   .team-body { padding: 0 4px !important; }
   .team-rolle { font-size: 11px !important; margin-bottom: 4px !important; }
-  .team-name { font-size: 12px !important; line-height: 1.2 !important; margin-bottom: 6px !important; }
+  .team-name { font-size: 10px !important; line-height: 1.2 !important; margin-bottom: 6px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; display: block !important; }
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
@@ -2939,18 +2939,20 @@ body.gb-modal-open{overflow:hidden}
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
 
   /* Standard-Buttons + Deko + Zettel-Widget verstecken */
-  .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
-  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-primaer::after { display: none !important; content: none !important; }
-  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 8px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-v2 .hero-actions { display: none !important; }
   .hero-frame { display: none !important; }
   .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
   .ft-zettel { display: none !important; }
 
-  /* Nav: Fax-Button in Tablet-Header */
-  .nav-tablet-fax { display: inline-flex !important; align-items: center !important; font-size: 12px !important; font-weight: 500 !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; padding: 8px 14px !important; border-radius: 6px !important; text-decoration: none !important; white-space: nowrap !important; }
+  /* Nav: Blauer Streifen bis Header, Logo-Abstand, Fax-Button rechts */
+  .haupt-nav { border-left: 6px solid var(--primary,#1B485A) !important; }
+  .nav-logo { padding-left: 16px !important; }
+  .nav-tablet-fax { display: inline-flex !important; align-items: center !important; font-size: 11px !important; font-weight: 500 !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; padding: 6px 10px !important; border-radius: 6px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; margin-left: auto !important; margin-right: 10px !important; }
 
   /* Sidebar-Buttons: fix rechts, weiter unten */
   .hero-tab-btns { display: none !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 6px !important; width: auto !important; align-items: stretch !important; overflow: visible !important; }
@@ -2966,30 +2968,33 @@ body.gb-modal-open{overflow:hidden}
   .kontakt-grid > div { flex: unset !important; min-width: unset !important; padding: 0 !important; width: auto !important; scroll-snap-align: none !important; }
 
   /* Google Maps Button: in Öffnungszeiten-Spalte, Original in Anfahrt-Spalte ausblenden */
-  .map-btn--oz-col { display: inline-flex !important; margin-top: 14px !important; }
+  .map-btn--oz-col { display: inline-flex !important; margin-top: 14px !important; width: fit-content !important; align-self: flex-start !important; max-width: 200px !important; }
   .kontakt-grid > div:nth-child(2) .map-btn { display: none !important; }
 
   /* Team: 3-spaltig Grid, Foto oben — kein Karussell */
   .team-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; overflow-x: visible !important; gap: 16px !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
   .team-grid .team-karte { flex: unset !important; max-width: unset !important; width: auto !important; scroll-snap-align: unset !important; flex-direction: column !important; text-align: center !important; }
-  .team-foto { width: 100% !important; aspect-ratio: 1/1 !important; border-radius: 12px !important; margin-bottom: 10px !important; overflow: hidden !important; }
-  .team-foto img { object-fit: cover !important; object-position: center 15% !important; width: 100% !important; height: 100% !important; }
+  .team-foto { width: 100% !important; aspect-ratio: 4/3 !important; border-radius: 12px !important; margin-bottom: 10px !important; overflow: hidden !important; }
+  .team-foto img { object-fit: cover !important; object-position: center 20% !important; width: 100% !important; height: 100% !important; }
+  .team-grid .team-karte:first-child .team-foto img { object-position: 65% 15% !important; }
   .team-carousel-hint { display: none !important; }
   .team-body { padding: 0 4px !important; }
   .team-rolle { font-size: 11px !important; margin-bottom: 4px !important; }
-  .team-name { font-size: 12px !important; line-height: 1.2 !important; margin-bottom: 6px !important; }
+  .team-name { font-size: 10px !important; line-height: 1.2 !important; margin-bottom: 6px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; display: block !important; }
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
-  /* lv-strip: Label + Chips mittig zentriert */
-  .lv-inner { flex-direction: column !important; align-items: center !important; gap: 10px !important; }
+  /* lv-strip: Label zentriert, Chips als 2-pro-Seite Karussell */
+  .lv-inner { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
   .lv-label { text-align: center !important; }
-
-  /* lv-chips: alle 5 in einer Reihe, kein Scrollen */
-  .lv-chips { flex-wrap: nowrap !important; overflow-x: visible !important; gap: 6px !important; }
-  .lv-chip { flex-shrink: 1 !important; padding: 7px 10px !important; min-width: 0 !important; }
-  .lv-chip-name { font-size: 11px !important; white-space: nowrap !important; }
+  .lv-chips { display: grid !important; grid-template-rows: auto auto !important; grid-auto-flow: column !important; grid-auto-columns: calc(50% - 4px) !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; width: 100% !important; column-gap: 8px !important; row-gap: 8px !important; flex-wrap: unset !important; padding-bottom: 0 !important; }
+  .lv-chips::-webkit-scrollbar { display: none !important; }
+  .lv-chip { width: auto !important; padding: 12px 14px !important; flex-shrink: unset !important; min-width: unset !important; }
+  .lv-chip:nth-child(1), .lv-chip:nth-child(3), .lv-chip:nth-child(5) { scroll-snap-align: start !important; }
+  .lv-chip::before { display: none !important; content: "" !important; }
+  .lv-chip-name { font-size: 13px !important; white-space: nowrap !important; }
   .lv-chip-sub { display: none !important; }
+  .lv-chip-zurueck { display: none !important; }
 
   /* MFA: alle Karten sichtbar, zentriert, kein Karussell */
   .mfa-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; overflow-x: visible !important; scroll-snap-type: none !important; gap: 16px !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 0 !important; }
