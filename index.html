@@ -183,7 +183,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .srv-zurueck-card{display:none}
 .ek-zurueck-card{display:none}
 .lv-chip-zurueck{display:none}
-.lv-wischen-hint{display:none}.srv-swipe-hint{display:none}.ek-swipe-hint{display:none}.ph-swipe-hint{display:none}
+.lv-wischen-hint{display:none}.srv-swipe-hint{display:none}.ek-swipe-hint{display:none}.ph-swipe-hint{display:none}.oz-swipe-hint{display:none}
 .ph-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:clamp(18px,2.2vw,26px) 0;cursor:pointer;border:none;background:transparent;text-align:left;gap:16px;color:var(--ink);font-family:inherit}
 .ph-btn:hover .ph-name{color:var(--acc)}
 .ph-left{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
@@ -350,6 +350,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .hero-v2 .btn-sekundaer:hover::after{transform:scaleX(1)}
 
 .hero-v2 .hero-visual{padding:0;position:relative;display:flex;align-items:center;justify-content:center}
+.hero-tab-btns{display:none}
 .hero-frame{position:relative;width:100%;max-width:480px;padding:0;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(28,43,51,0.13)}
 .hero-img-box{width:100%;aspect-ratio:4/5;height:auto;border-radius:0;overflow:hidden;position:relative;background:var(--bg-soft)}
 .hero-img-box img{width:100%;height:100%;object-fit:cover;object-position:center 15%;animation:hero-kenburns 14s ease-in-out infinite alternate;transform-origin:center 20%}@keyframes hero-kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,1%)}}
@@ -1405,6 +1406,115 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   /* ── Wisch-Hinweise einblenden ── */
   .team-carousel-hint { display: flex !important; }
   .mfa-carousel-hint  { display: flex !important; }
+
+  /* ── Nav: Maskottchen ausblenden ── */
+  .nav-inner picture { display: none !important; }
+
+  /* ── Hero: 2-Spalten-Layout ── */
+  .hero.hero-v2 {
+    background: var(--bg,#FAF7F2) !important;
+    background-image: none !important;
+    padding: 0 !important;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .hero.hero-v2::after { display: none !important; }
+  .hero.hero-v2::before { display: none !important; }
+  .hero-v2 .hero-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+    padding: clamp(32px,5vw,52px) clamp(24px,4vw,40px) clamp(40px,5vw,60px) !important;
+    position: relative !important;
+    height: auto !important;
+    align-items: center !important;
+  }
+  .hero-v2 .hero-visual {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+  .hero-copy {
+    position: static !important;
+    top: auto !important; bottom: auto !important; left: auto !important; right: auto !important;
+    z-index: 1;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
+  .hero-v2 .hero-btns { display: none !important; }
+  .hero-fisch { display: none !important; }
+  .hero-frame { display: none !important; }
+  .hero-usp-badge, .welcome-badge { display: none !important; }
+
+  /* ── Hero Icon-Buttons (nur Tablet Portrait) ── */
+  .hero-tab-btns {
+    display: flex !important;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    align-items: center;
+  }
+  .hero-tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 200px;
+    padding: 30px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: var(--body,'Plus Jakarta Sans',sans-serif);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.18s, box-shadow 0.18s;
+    letter-spacing: 0.01em;
+  }
+  .hero-tab-btn svg { width: 44px; height: 44px; flex-shrink: 0; }
+  .hero-tab-btn-termin {
+    background: var(--primary,#1B485A);
+    color: #fff;
+    box-shadow: 0 8px 28px rgba(27,72,90,0.22);
+  }
+  .hero-tab-btn-video {
+    background: var(--bg,#FAF7F2);
+    color: var(--primary,#1B485A);
+    border: 1.5px solid var(--primary,#1B485A) !important;
+    box-shadow: 0 4px 14px rgba(27,72,90,0.10);
+  }
+
+  /* ── Öffnungszeiten: 3-spaltig, kein Carousel ── */
+  .oz-swipe-hint { display: none !important; }
+  .kontakt-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    overflow-x: visible !important;
+    gap: clamp(20px, 3vw, 40px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    scroll-snap-type: none !important;
+  }
+  .kontakt-grid > div {
+    flex: unset !important;
+    min-width: unset !important;
+    padding: 0 !important;
+    width: auto !important;
+    scroll-snap-align: none !important;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -2331,6 +2441,7 @@ body.gb-modal-open{overflow:hidden}
   .lv-wischen-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.65;margin-top:4px}
   .lv-chip-zurueck{display:flex !important;flex-shrink:0 !important}
   .ek-swipe-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.65;margin-top:6px}
+  .oz-swipe-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.65;margin-top:0;margin-bottom:10px}
 
   /* ── Öffnungszeiten + Kontakt: 1-spaltig, kompakt ── */
   .kontakt-grid{display:flex !important;flex-direction:row !important;overflow-x:auto !important;scroll-snap-type:x mandatory !important;-webkit-overflow-scrolling:touch;gap:0 !important;margin-left:-22px !important;margin-right:-22px !important;padding-left:0 !important;padding-right:0 !important;scrollbar-width:none;padding-bottom:12px !important}
@@ -3035,6 +3146,16 @@ body.gb-modal-open{overflow:hidden}
           </picture>
         </div>
       </div>
+      <div class="hero-tab-btns" aria-label="Schnellzugriff">
+        <a href="#" class="hero-tab-btn hero-tab-btn-termin" onclick="event.preventDefault();openTerminModalGB()" aria-label="Gleich Termin finden">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Termin finden
+        </a>
+        <a href="videosprechstunde.html" class="hero-tab-btn hero-tab-btn-video" aria-label="Zur Videosprechstunde">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          Videosprechstunde
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -3482,6 +3603,7 @@ body.gb-modal-open{overflow:hidden}
     </div>
   </div>
 
+  <p class="oz-swipe-hint" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Bitte nach rechts wischen</p>
   <div class="kontakt-grid">
     <div>
       <p class="k-col-head">Öffnungszeiten</p>
