@@ -232,7 +232,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .anfahrt-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:4px}
 .anfahrt-list li{font-size:14px;color:var(--ink2);line-height:1.6;font-weight:300;padding-left:12px;position:relative}
 .anfahrt-list li::before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--acc)}
-.map-btn{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--acc);text-decoration:none;padding:9px 14px;border:1px solid var(--acc);margin-top:14px;font-weight:400}.map-btn--oz-col{display:none}
+.map-btn{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--acc);text-decoration:none;padding:9px 14px;border:1px solid var(--acc);margin-top:14px;font-weight:400}.map-btn--oz-col{display:none}.nav-tablet-fax{display:none}
 .map-btn:hover{background:var(--acc-lt)}
 @media(max-width:1023px){.kontakt-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:767px){
@@ -2924,7 +2924,7 @@ body.gb-modal-open{overflow:hidden}
   .nav-inner picture { display: none !important; }
 
   /* Hero: 1-spaltig, kein Hintergrundbild */
-  .hero.hero-v2 { background: var(--bg,#FAF7F2) !important; background-image: none !important; padding: 0 !important; height: auto; min-height: 0; overflow: hidden; border-left: 6px solid var(--accent,#D97352) !important; }
+  .hero.hero-v2 { background: var(--bg,#FAF7F2) !important; background-image: none !important; padding: 0 !important; height: auto; min-height: 0; overflow: hidden; border-left: 6px solid var(--primary,#1B485A) !important; }
   .hero.hero-v2::after { display: none !important; }
   .hero.hero-v2::before { display: none !important; }
   .hero-v2 .hero-inner { display: block !important; padding: clamp(32px,5vw,52px) clamp(24px,4vw,40px) clamp(40px,5vw,60px) !important; position: relative !important; height: auto !important; }
@@ -2948,6 +2948,9 @@ body.gb-modal-open{overflow:hidden}
   .hero-frame { display: none !important; }
   .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
   .ft-zettel { display: none !important; }
+
+  /* Nav: Fax-Button in Tablet-Header */
+  .nav-tablet-fax { display: inline-flex !important; align-items: center !important; font-size: 12px !important; font-weight: 500 !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; padding: 8px 14px !important; border-radius: 6px !important; text-decoration: none !important; white-space: nowrap !important; }
 
   /* Sidebar-Buttons: fix rechts, weiter unten */
   .hero-tab-btns { display: none !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 6px !important; width: auto !important; align-items: stretch !important; overflow: visible !important; }
@@ -2977,6 +2980,10 @@ body.gb-modal-open{overflow:hidden}
   .team-name { font-size: 12px !important; line-height: 1.2 !important; margin-bottom: 6px !important; }
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
+
+  /* lv-strip: Label + Chips mittig zentriert */
+  .lv-inner { flex-direction: column !important; align-items: center !important; gap: 10px !important; }
+  .lv-label { text-align: center !important; }
 
   /* lv-chips: alle 5 in einer Reihe, kein Scrollen */
   .lv-chips { flex-wrap: nowrap !important; overflow-x: visible !important; gap: 6px !important; }
@@ -3190,6 +3197,7 @@ body.gb-modal-open{overflow:hidden}
       <li><a href="#online-schalter" onclick="event.preventDefault();gbServiceOpen('fax')">Fax direkt online senden</a></li>
       <li><a href="infothek.html" class="nav-pill">Für Eltern</a></li>
     </ul>
+    <a href="#online-schalter" class="nav-tablet-fax" onclick="event.preventDefault();gbServiceOpen('fax')">Fax direkt online senden</a>
     <button class="burger" id="burger-btn" aria-expanded="false" aria-label="Menü öffnen" aria-controls="mob-nav">
       <span></span><span></span><span></span>
     </button>
@@ -3324,7 +3332,7 @@ body.gb-modal-open{overflow:hidden}
         <div class="team-body">
           <p class="team-rolle">Praxisinhaberin</p>
           <h3 class="team-name">Dr. med. Susanne Gandenberger-Bachem</h3>
-          <p class="team-text">Fachärztin für Kinder- und Jugendmedizin seit 1996 — Praxisinhaberin seit 2011.</p>
+          <p class="team-text">Fachärztin für Kinder- und Jugendmedizin.</p>
           <p class="team-personal">Mutter von drei Söhnen — in den Bergen, auf dem Rad oder am Wasser.</p>
         </div>
       </div>
@@ -3720,6 +3728,10 @@ body.gb-modal-open{overflow:hidden}
         </tbody>
       </table>
       <p class="oz-note">Außerhalb: <a href="tel:116117">116&nbsp;117</a></p>
+      <a href="https://maps.google.com/?q=Freischützstraße+9,+81927+München" target="_blank" rel="noopener noreferrer" class="map-btn map-btn--oz-col">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        In Google Maps öffnen
+      </a>
     </div>
     <div>
       <p class="k-col-head">Anfahrt</p>
