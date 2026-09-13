@@ -80,7 +80,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .nav-pill:hover{background:#EDE5D8!important;color:var(--ink)!important}
 .nav-cta{background:var(--acc);color:#fff;font-size:13px;font-weight:500;padding:9px 20px;border-radius:2px;text-decoration:none;letter-spacing:0.02em;transition:opacity 0.2s}
 .nav-cta:hover{opacity:0.85}
-.nav-cta-gruppe{display:flex;align-items:center;gap:8px}
+.nav-cta-gruppe{display:none}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;color:var(--ink)}
 .burger span{display:block;width:22px;height:1.5px;background:currentColor;transition:all 0.25s}
 .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -353,7 +353,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 
 .hero-v2 .hero-visual{padding:0;position:relative;display:flex;align-items:center;justify-content:center}
 .hero-tab-btns{display:none}
-.hero-tab-btns.gb-tabs-visible{display:flex;flex-direction:column;position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:999;gap:0;width:auto;align-items:stretch}
+.schaukel-deko{display:none}
 .hero-frame{position:relative;width:100%;max-width:480px;padding:0;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(28,43,51,0.13)}
 .hero-img-box{width:100%;aspect-ratio:4/5;height:auto;border-radius:0;overflow:hidden;position:relative;background:var(--bg-soft)}
 .hero-img-box img{width:100%;height:100%;object-fit:cover;object-position:center 15%;animation:hero-kenburns 14s ease-in-out infinite alternate;transform-origin:center 20%}@keyframes hero-kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,1%)}}
