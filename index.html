@@ -3203,6 +3203,9 @@ body.gb-modal-open{overflow:hidden}
   .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1D5F6E); opacity: 0.7; margin-bottom: 4px; }
   .ph-zurueck-card { display: flex !important; }
 }
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #gb-sig-canvas { height: 96px !important; }
+}
 </style>
 </head>
 <body>
@@ -4281,29 +4284,69 @@ body.gb-modal-open{overflow:hidden}
 // Signatur-Canvas
 var gbSigCanvas, gbSigCtx, gbSigDrawing = false;
 
-function gbInitSignatur(){
-  gbSigCanvas = document.getElementById('gb-sig-canvas');
-  if(!gbSigCanvas || gbSigCanvas._init) return;
-  gbSigCanvas._init = true;
+function gbSigResizieren(){
+  if(!gbSigCanvas) return;
   var dpr = window.devicePixelRatio || 1;
   var rect = gbSigCanvas.getBoundingClientRect();
-  gbSigCanvas.width = rect.width * dpr;
-  gbSigCanvas.height = rect.height * dpr;
+  if(rect.width < 10) return; // noch nicht sichtbar
+  var w = Math.round(rect.width * dpr);
+  var h = Math.round(rect.height * dpr);
+  // Inhalt sichern bevor Canvas zurückgesetzt wird
+  var backup = null;
+  if(gbSigCtx && gbSigCanvas.width > 0 && gbSigCanvas.height > 0){
+    try { backup = gbSigCtx.getImageData(0, 0, gbSigCanvas.width, gbSigCanvas.height); } catch(e){}
+  }
+  if(gbSigCanvas.width === w && gbSigCanvas.height === h && gbSigCtx){ return; }
+  gbSigCanvas.width = w;
+  gbSigCanvas.height = h;
   gbSigCtx = gbSigCanvas.getContext('2d');
+  gbSigCtx.setTransform(1,0,0,1,0,0);
   gbSigCtx.scale(dpr, dpr);
   gbSigCtx.strokeStyle = '#1B485A';
   gbSigCtx.lineWidth = 2.2;
   gbSigCtx.lineCap = 'round';
   gbSigCtx.lineJoin = 'round';
-  function px(e){ return e.clientX - gbSigCanvas.getBoundingClientRect().left; }
-  function py(e){ return e.clientY - gbSigCanvas.getBoundingClientRect().top; }
-  gbSigCanvas.addEventListener('mousedown',function(e){ gbSigDrawing=true; gbSigCtx.beginPath(); gbSigCtx.moveTo(px(e),py(e)); });
-  gbSigCanvas.addEventListener('mousemove',function(e){ if(!gbSigDrawing) return; gbSigCtx.lineTo(px(e),py(e)); gbSigCtx.stroke(); });
-  gbSigCanvas.addEventListener('mouseup',function(){ gbSigDrawing=false; });
-  gbSigCanvas.addEventListener('mouseleave',function(){ gbSigDrawing=false; });
-  gbSigCanvas.addEventListener('touchstart',function(e){ e.preventDefault(); gbSigDrawing=true; var t=e.touches[0]; gbSigCtx.beginPath(); gbSigCtx.moveTo(px(t),py(t)); },{passive:false});
-  gbSigCanvas.addEventListener('touchmove',function(e){ e.preventDefault(); if(!gbSigDrawing) return; var t=e.touches[0]; gbSigCtx.lineTo(px(t),py(t)); gbSigCtx.stroke(); },{passive:false});
-  gbSigCanvas.addEventListener('touchend',function(){ gbSigDrawing=false; });
+  // Inhalt wiederherstellen
+  if(backup){ gbSigCtx.putImageData(backup, 0, 0); }
+}
+function gbInitSignatur(){
+  gbSigCanvas = document.getElementById('gb-sig-canvas');
+  if(!gbSigCanvas) return;
+  // Event-Listener nur einmal anhängen
+  if(!gbSigCanvas._listenersOk){
+    gbSigCanvas._listenersOk = true;
+    gbSigCanvas.addEventListener('mousedown',function(e){
+      gbSigResizieren();
+      gbSigDrawing=true;
+      var r=gbSigCanvas.getBoundingClientRect();
+      gbSigCtx.beginPath(); gbSigCtx.moveTo(e.clientX-r.left, e.clientY-r.top);
+    });
+    gbSigCanvas.addEventListener('mousemove',function(e){
+      if(!gbSigDrawing) return;
+      var r=gbSigCanvas.getBoundingClientRect();
+      gbSigCtx.lineTo(e.clientX-r.left, e.clientY-r.top); gbSigCtx.stroke();
+    });
+    gbSigCanvas.addEventListener('mouseup',function(){ gbSigDrawing=false; });
+    gbSigCanvas.addEventListener('mouseleave',function(){ gbSigDrawing=false; });
+    gbSigCanvas.addEventListener('touchstart',function(e){
+      e.preventDefault(); gbSigResizieren();
+      gbSigDrawing=true;
+      var t=e.touches[0], r=gbSigCanvas.getBoundingClientRect();
+      gbSigCtx.beginPath(); gbSigCtx.moveTo(t.clientX-r.left, t.clientY-r.top);
+    },{passive:false});
+    gbSigCanvas.addEventListener('touchmove',function(e){
+      e.preventDefault(); if(!gbSigDrawing) return;
+      var t=e.touches[0], r=gbSigCanvas.getBoundingClientRect();
+      gbSigCtx.lineTo(t.clientX-r.left, t.clientY-r.top); gbSigCtx.stroke();
+    },{passive:false});
+    gbSigCanvas.addEventListener('touchend',function(){ gbSigDrawing=false; });
+  }
+  // Größe JEDES MAL neu setzen wenn Schritt sichtbar wird
+  gbSigResizieren();
+  if(gbSigCanvas.getBoundingClientRect().width < 10){
+    // Fallback: nochmal nach Paint
+    requestAnimationFrame(function(){ gbSigResizieren(); });
+  }
 }
 function gbClearSignatur(){
   if(gbSigCtx) gbSigCtx.clearRect(0,0,gbSigCanvas.width,gbSigCanvas.height);

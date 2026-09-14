@@ -314,7 +314,7 @@
 
   /* Swipe-Hinweis */
   .vs-swipe-hint { display: flex !important; align-items: center !important; gap: 8px !important; font-size: 12.5px !important; color: var(--ink2) !important; margin-top: 10px !important; opacity: 0.75 !important; }
-  #gb-sig-canvas { height: 76px !important; }
+  #gb-sig-canvas { height: 96px !important; }
 }
 
     /* App-Demo Sektion */
@@ -1143,8 +1143,16 @@ function gbSigResizieren(){
   var dpr = window.devicePixelRatio || 1;
   var rect = gbSigCanvas.getBoundingClientRect();
   if(rect.width < 10) return; // noch nicht sichtbar
-  gbSigCanvas.width = Math.round(rect.width * dpr);
-  gbSigCanvas.height = Math.round(rect.height * dpr);
+  var w = Math.round(rect.width * dpr);
+  var h = Math.round(rect.height * dpr);
+  // Inhalt sichern bevor Canvas zurückgesetzt wird
+  var backup = null;
+  if(gbSigCtx && gbSigCanvas.width > 0 && gbSigCanvas.height > 0){
+    try { backup = gbSigCtx.getImageData(0, 0, gbSigCanvas.width, gbSigCanvas.height); } catch(e){}
+  }
+  if(gbSigCanvas.width === w && gbSigCanvas.height === h && gbSigCtx){ return; }
+  gbSigCanvas.width = w;
+  gbSigCanvas.height = h;
   gbSigCtx = gbSigCanvas.getContext('2d');
   gbSigCtx.setTransform(1,0,0,1,0,0);
   gbSigCtx.scale(dpr, dpr);
@@ -1152,6 +1160,8 @@ function gbSigResizieren(){
   gbSigCtx.lineWidth = 2.2;
   gbSigCtx.lineCap = 'round';
   gbSigCtx.lineJoin = 'round';
+  // Inhalt wiederherstellen
+  if(backup){ gbSigCtx.putImageData(backup, 0, 0); }
 }
 function gbInitSignatur(){
   gbSigCanvas = document.getElementById('gb-sig-canvas');
