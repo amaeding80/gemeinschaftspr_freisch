@@ -294,8 +294,6 @@
   /* Hero Headline etwas kompakter */
   .vs-h1 { font-size: clamp(24px, 3.5vw, 36px) !important; }
 
-  /* CTA-Bereich (Videosprechstunde vereinbaren) ausblenden */
-  .vs-cta { display: none !important; }
 
   /* Schritte: 2-per-Seite Wisch-Karussell */
   .schritte { display: flex !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; gap: 0 !important; padding-bottom: 16px !important; margin-left: 0 !important; margin-right: 0 !important; }
@@ -380,6 +378,37 @@
       .phone-wrap{max-width:220px}
       .phone-screen{height:390px}
     }
+
+    /* Smartphone Querformat (Landscape) */
+    @media (orientation:landscape) and (max-height:500px){
+      /* Nav kompakt */
+      .haupt-nav{height:48px}
+      .nav-logo{font-size:12px}
+      .nav-logo span{display:none}
+      .nav-back{font-size:13px}
+      /* Hero kompakt */
+      .vs-hero{padding:12px var(--pad) 10px}
+      .vs-h1{font-size:clamp(18px,3.5vw,26px);margin-bottom:8px}
+      .vs-sub{font-size:13px;margin-bottom:12px}
+      .vs-eyebrow{margin-bottom:6px}
+      .vs-badges{gap:6px}
+      .vs-badge{font-size:11px;padding:4px 10px}
+      /* App-Bereich kompakt */
+      .app-bereich{padding:20px var(--pad)}
+      .app-h2{font-size:clamp(18px,3vw,24px);margin-bottom:6px}
+      .app-sub{font-size:13px;margin-bottom:16px}
+      .qr-zeile{display:none}
+      /* Anleitung kompakt */
+      .anleitung{padding:20px var(--pad)}
+      /* Schritte: horizontal wischen bleibt */
+      .schritt{padding:14px 16px}
+      /* App-Demo Sektion */
+      .app-demo{padding:20px var(--pad)}
+      /* CTA ausblenden */
+      .vs-cta{display:none}
+      /* Footer kompakt */
+      .footer-inner{flex-direction:row;flex-wrap:wrap;gap:10px}
+    }
     @media (max-height:600px) and (orientation:landscape){
       .app-popup-overlay{align-items:flex-start;padding:8px}
       .app-popup{flex-direction:row;flex-wrap:wrap;max-width:720px;padding:14px;gap:10px;max-height:98vh}
@@ -405,7 +434,7 @@
 
 <div class="vs-hero">
   <p class="vs-eyebrow">Videosprechstunde</p>
-  <h1 class="vs-h1">Manchmal reicht ein Blick<br>auf dem Bildschirm —<br><em>ohne Stau und Wartezimmer.</em></h1>
+  <h1 class="vs-h1">Manchmal reicht ein Blick —<br>von zu Hause, ohne Wartezimmer.</h1>
   <p class="vs-sub">App holen, Termin ausmachen — und wir schauen gemeinsam drauf.<span class="vs-sub-extra"> Einfach, sicher, ohne Anfahrt.</span></p>
   <div class="vs-badges">
     <span class="vs-badge">
@@ -655,9 +684,35 @@
 
 <div class="vs-cta" id="kontakt">
   <h2>Videosprechstunde vereinbaren</h2>
-  <p>Haben Sie Fragen oder möchten Sie einen Termin abstimmen? Rufen Sie uns an oder buchen Sie direkt online über Doctolib.</p>
-  <div class="vs-cta-btns" style="justify-content:center">
-
+  <div class="app-postit-outer" style="margin-top:8px">
+    <div class="zettel-static">
+      <div class="ft-zettel-clip"></div>
+      <div class="ft-zettel-head">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span class="ft-zettel-head-text">Termin vereinbaren</span>
+      </div>
+      <div class="ft-zettel-body">
+        <a href="https://www.doctolib.de/kinderarzt/munchen/bettina-gandenberger-bachem" target="_blank" rel="noopener" class="ft-zettel-row ft-zettel-row--termin">
+          <div class="ft-zettel-row-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="ft-zettel-row-text">
+            Gleich Termin finden
+            <span class="ft-zettel-row-sub">Doctolib · online buchen</span>
+          </div>
+        </a>
+        <a href="tel:+4989939487-3" class="ft-zettel-row ft-zettel-row--video">
+          <div class="ft-zettel-row-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l1.02-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="ft-zettel-row-text">
+            Anrufen
+            <span class="ft-zettel-row-sub">089 – 93 94 87 3</span>
+          </div>
+        </a>
+      </div>
+      <div class="ft-zettel-lines"></div>
+    </div>
   </div>
 </div>
 
