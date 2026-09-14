@@ -389,6 +389,12 @@
       .app-popup-close{top:6px;right:6px}
       .app-dots,.app-step-lbl,.app-nav-btns{flex-basis:calc(100% - 190px)}
     }
+
+/* Tablet Querformat: Nav-CTAs ausblenden */
+@media (min-width:768px) and (max-width:1366px) and (orientation:landscape) and (min-height:601px) {
+  .nav-cta-vid { display: none !important; }
+  .nav-cta { display: none !important; }
+}
 </style>
 </head>
 <body>

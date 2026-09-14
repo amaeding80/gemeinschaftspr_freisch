@@ -33,6 +33,12 @@
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .nav-inner picture { display: none !important; }
 }
+
+/* Tablet Querformat: Nav-CTAs ausblenden */
+@media (min-width:768px) and (max-width:1366px) and (orientation:landscape) and (min-height:601px) {
+  .nav-cta-vid { display: none !important; }
+  .nav-cta { display: none !important; }
+}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}

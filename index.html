@@ -354,6 +354,9 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .hero-v2 .hero-visual{padding:0;position:relative;display:flex;align-items:center;justify-content:center}
 .hero-tab-btns{display:none}
 .schaukel-deko{display:none}
+.hero-quer-col{display:none}
+.hero-quer-schaukel{max-width:80%;height:auto;max-height:160px;margin:0 auto;display:block}
+.btn-sekundaer-quer{font-size:14px;color:var(--primary);text-decoration:underline;text-underline-offset:3px;text-align:center;font-weight:500;display:block}
 .hero-frame{position:relative;width:100%;max-width:480px;padding:0;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(28,43,51,0.13)}
 .hero-img-box{width:100%;aspect-ratio:4/5;height:auto;border-radius:0;overflow:hidden;position:relative;background:var(--bg-soft)}
 .hero-img-box img{width:100%;height:100%;object-fit:cover;object-position:center 15%;animation:hero-kenburns 14s ease-in-out infinite alternate;transform-origin:center 20%}@keyframes hero-kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,1%)}}
@@ -3051,25 +3054,15 @@ body.gb-modal-open{overflow:hidden}
   .burger { display: none !important; }
   .nav-logo br { display: none !important; }
   .nav-logo span { display: inline !important; font-size: 13px !important; margin-left: 4px; }
+  /* C1b — Nav-CTAs weg im Querformat */
+  .nav-cta-vid { display: none !important; }
+  .nav-cta { display: none !important; }
 
   /* C2 — Widgets */
-  .ft-zettel {
-    display: block !important;
-    opacity: 0;
-    pointer-events: none;
-    left: 12px !important;
-    width: 180px !important;
-    overflow: hidden !important;
-  }
-  .ft-zettel.ft-sichtbar {
-    opacity: 1 !important;
-    pointer-events: all !important;
-  }
-  .ft-zettel-clip { display: none !important; }
+  .ft-zettel { display: none !important; }
   .gb-demo-bar { display: none !important; }
 
-  /* C3 — Hero: kein Foto, kein Blur-Hintergrund, plain wie Mobile */
-  .hero-v2 .hero-visual { display: none !important; }
+  /* C3 — Hero: 2-spaltig (Text links, Schaukel+Buttons rechts) */
   .hero-fisch { display: none !important; }
   .hero.hero-v2 {
     background: #F9F5F0 !important;
@@ -3078,14 +3071,27 @@ body.gb-modal-open{overflow:hidden}
   .hero.hero-v2::after { display: none !important; }
   .hero.hero-v2::before { display: none !important; }
   .hero-v2 .hero-inner {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
     padding: 0 !important;
     position: static !important;
     height: auto !important;
+    align-items: center !important;
   }
+  .hero-v2 .hero-visual {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 32px 28px !important;
+    border-left: 1px solid var(--border) !important;
+    min-height: 220px !important;
+  }
+  .hero-img-box { display: none !important; }
   .hero-copy {
     padding: 88px 40px 52px !important;
-    max-width: 680px !important;
+    max-width: none !important;
     background: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -3097,6 +3103,20 @@ body.gb-modal-open{overflow:hidden}
   }
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.5vw, 40px) !important; }
   .hero-sub { font-size: 16px !important; line-height: 1.55 !important; }
+  .hero-quer-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+  .hero-quer-col .btn-primaer {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+  }
 
   /* C3b — Kleiner Fisch-Badge im Eyebrow: wie Mobile zeigen */
   .fisch-mob-badge {
@@ -3107,27 +3127,8 @@ body.gb-modal-open{overflow:hidden}
     vertical-align: middle !important;
   }
 
-  /* C4 — Hero: beide Buttons sichtbar (Zeile) */
-  .hero-v2 .hero-btns,
-  .hero-v2 .hero-actions {
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 16px !important;
-  }
-  .hero-v2 .btn-sekundaer {
-    display: inline-flex !important;
-    border: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    color: var(--primary) !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    text-decoration: underline !important;
-    text-underline-offset: 3px !important;
-    min-height: auto !important;
-    align-items: center !important;
-  }
+  /* C4 — Hero-Buttons nur rechts (hero-quer-col), links ausgeblendet */
+  .hero-v2 .hero-btns { display: none !important; }
 
   /* C5 — Team: Fotos korrekte Größe (kein Oval) */
   .team-foto { border-radius: 12px !important; }
@@ -3293,6 +3294,11 @@ body.gb-modal-open{overflow:hidden}
             <img src="bilder/hero.jpg" alt="Dr. med. Heike Bachem mit Kind — Kinderarztpraxis Bogenhausen" loading="eager" fetchpriority="high">
           </picture>
         </div>
+      </div>
+      <div class="hero-quer-col">
+        <img src="bilder/schaukel.gif" alt="" aria-hidden="true" class="hero-quer-schaukel">
+        <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="btn-primaer" onclick="event.preventDefault();openTerminModalGB()">Gleich Termin finden</a>
+        <a href="videosprechstunde.html" class="btn-sekundaer-quer">zur Videosprechstunde</a>
       </div>
     </div>
   </div>
