@@ -921,17 +921,19 @@ document.addEventListener('keydown', function(e) {
 .gb-demo-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
 .gb-demo-btn.bestand{background:var(--primary);color:#fff}
 .gb-demo-btn.neu{background:var(--accent);color:#fff}
-.gb-overlay{padding:0;align-items:flex-end}
-.gb-box{border-radius:20px 20px 0 0;max-height:94vh;max-width:100%}
+@media(max-width:767px){.gb-overlay{padding:0;align-items:flex-end}.gb-box{border-radius:20px 20px 0 0;max-height:94vh;max-width:100%}}
 .gb-radio-grid{grid-template-columns:1fr}
 .gb-row2{grid-template-columns:1fr}
 .gb-demo-bar{display:none !important}
 .gb-sig-wrap{border:1.5px solid var(--border);border-radius:10px;
   overflow:hidden;background:#fafaf8;position:relative;margin-top:6px}
-.gb-sig-clear{position:absolute;top:6px;right:8px;background:none;
-  border:none;font-size:.7rem;color:var(--text-muted);cursor:pointer;
-  padding:2px 6px;border-radius:4px;font-family:var(--body)}
-.gb-sig-clear:hover{color:var(--accent)}
+.gb-sig-clear{position:absolute;top:8px;right:8px;
+  background:rgba(255,255,255,0.92);border:1px solid var(--border);
+  border-radius:7px;font-size:.78rem;font-weight:600;color:var(--text-muted);
+  cursor:pointer;padding:6px 12px;font-family:var(--body);
+  min-height:34px;display:flex;align-items:center;
+  box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.gb-sig-clear:hover{color:var(--accent);background:#fff}
 .gb-sig-hint{font-size:.69rem;color:var(--text-muted);margin-top:5px;text-align:center}
 #gb-sig-canvas{display:block;width:100%;height:110px;touch-action:none;cursor:crosshair}
 @media(max-width:600px){#gb-sig-canvas{height:88px}}
@@ -1185,6 +1187,7 @@ function gbInitSignatur(){
     gbSigCanvas.addEventListener('touchstart',function(e){
       e.preventDefault(); gbSigResizieren();
       gbSigDrawing=true;
+      var gbBody=document.getElementById('gb-body');if(gbBody)gbBody.style.overflow='hidden';
       var t=e.touches[0], r=gbSigCanvas.getBoundingClientRect();
       gbSigCtx.beginPath(); gbSigCtx.moveTo(t.clientX-r.left, t.clientY-r.top);
     },{passive:false});
@@ -1193,7 +1196,8 @@ function gbInitSignatur(){
       var t=e.touches[0], r=gbSigCanvas.getBoundingClientRect();
       gbSigCtx.lineTo(t.clientX-r.left, t.clientY-r.top); gbSigCtx.stroke();
     },{passive:false});
-    gbSigCanvas.addEventListener('touchend',function(){ gbSigDrawing=false; });
+    gbSigCanvas.addEventListener('touchend',function(){ gbSigDrawing=false; var gbBody=document.getElementById('gb-body');if(gbBody)gbBody.style.overflow=''; });
+    gbSigCanvas.addEventListener('touchcancel',function(){ gbSigDrawing=false; var gbBody=document.getElementById('gb-body');if(gbBody)gbBody.style.overflow=''; });
   }
   // Größe JEDES MAL neu setzen wenn Schritt sichtbar wird
   gbSigResizieren();
