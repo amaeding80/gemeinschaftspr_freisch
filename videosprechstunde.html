@@ -135,7 +135,7 @@
     .vs-tab-btns.vs-tabs-visible{display:flex}
     .vs-tab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:52px;min-height:60px;padding:10px 0;border-radius:12px 0 0 12px;text-decoration:none;cursor:pointer;border:none}
     .vs-tab-btn-label{font-size:9px;font-weight:600;letter-spacing:0.04em;color:#fff}
-    .vs-tab-btn-termin{background:var(--primary);color:#fff}
+    .vs-tab-btn-termin{background:#fff;color:var(--primary);border:2px solid var(--primary) !important}
 
     @media(max-width:767px){
   /* Schritte carousel */
@@ -691,7 +691,7 @@
         <span class="ft-zettel-head-text">Termin vereinbaren</span>
       </div>
       <div class="ft-zettel-body">
-        <a href="https://www.doctolib.de/kinderarzt/munchen/bettina-gandenberger-bachem" target="_blank" rel="noopener" class="ft-zettel-row ft-zettel-row--termin">
+        <button onclick="oeffneAppDemo()" class="ft-zettel-row ft-zettel-row--termin" style="width:100%;text-align:left;cursor:pointer;background:none">
           <div class="ft-zettel-row-icon">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
