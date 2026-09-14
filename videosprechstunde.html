@@ -127,6 +127,12 @@
     .footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
     .footer-links a:hover{color:#fff}
     .vs-zurueck-card,.ds-zurueck-card{display:none}
+    /* vs-seite: transparent auf Desktop + Mobile */
+    .vs-seite { display: contents; }
+    .vs-swipe-hint { display: none; }
+    /* Sidebar-Button global versteckt */
+    .vs-tab-btns { display: none; }
+
     @media(max-width:767px){
   /* Schritte carousel */
   .schritte{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad));padding-left:var(--pad);padding-right:var(--pad);padding-bottom:14px}
@@ -287,7 +293,101 @@
   .qr-zeile { gap: 32px !important; }
   /* Hero Headline etwas kompakter */
   .vs-h1 { font-size: clamp(24px, 3.5vw, 36px) !important; }
+
+  /* CTA-Bereich (Videosprechstunde vereinbaren) ausblenden */
+  .vs-cta { display: none !important; }
+
+  /* Schritte: 2-per-Seite Wisch-Karussell */
+  .schritte { display: flex !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; gap: 0 !important; padding-bottom: 16px !important; margin-left: 0 !important; margin-right: 0 !important; }
+  .schritte::-webkit-scrollbar { display: none !important; }
+  .vs-seite { display: flex !important; flex-direction: column !important; flex: 0 0 100% !important; scroll-snap-align: start !important; min-width: 0 !important; contents: unset !important; }
+  .vs-seite .schritt { flex: 1 !important; display: grid !important; grid-template-columns: 52px 1fr !important; gap: 16px !important; padding: 20px 16px !important; border-bottom: 0.5px solid var(--rule) !important; border-top: none !important; }
+  .vs-seite .schritt:last-of-type { border-bottom: none !important; }
+  .vs-zurueck-card { display: flex !important; align-items: center !important; justify-content: center !important; border: 0.5px solid var(--rule) !important; border-radius: 0 !important; min-height: 80px !important; cursor: pointer !important; background: var(--bg-soft) !important; }
+
+  /* Termin-Sidebar-Button */
+  .vs-tab-btns { display: none !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 0 !important; width: auto !important; align-items: stretch !important; }
+  .vs-tab-btns.vs-tabs-visible { display: flex !important; }
+  .vs-tab-btn { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 4px !important; width: 56px !important; min-height: 64px !important; padding: 10px 0 !important; border-radius: 12px 0 0 12px !important; text-decoration: none !important; cursor: pointer !important; border: none !important; }
+  .vs-tab-btn-label { font-size: 9px !important; font-weight: 600 !important; letter-spacing: 0.04em !important; }
+  .vs-tab-btn-termin { background: var(--primary, #1B485A) !important; color: #fff !important; }
+
+  /* Swipe-Hinweis */
+  .vs-swipe-hint { display: flex !important; align-items: center !important; gap: 8px !important; font-size: 12.5px !important; color: var(--ink2) !important; margin-top: 10px !important; opacity: 0.75 !important; }
 }
+
+    /* App-Demo Sektion */
+    .app-demo{background:var(--bg-soft);padding:clamp(32px,4vw,56px) var(--pad);text-align:center}
+    .app-demo-inner{max-width:640px;margin:0 auto}
+    .app-demo-sub{color:var(--ink2);font-size:15px;margin-bottom:28px;line-height:1.65}
+    .app-demo-btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;border:none;border-radius:10px;padding:15px 32px;font-size:15px;font-weight:600;cursor:pointer;transition:background 0.2s,transform 0.15s}
+    .app-demo-btn:hover{background:#1a404f;transform:translateY(-1px)}
+    /* App-Popup */
+    .app-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:9000;display:none;align-items:center;justify-content:center;padding:16px}
+    .app-popup-overlay.offen{display:flex}
+    .app-popup{position:relative;background:#1a1a2e;border-radius:20px;padding:24px 20px 20px;max-width:400px;width:100%;box-shadow:0 32px 80px rgba(0,0,0,0.6);display:flex;flex-direction:column;align-items:center;gap:16px;max-height:95vh;overflow-y:auto}
+    .app-popup-close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.12);border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;z-index:1}
+    .app-popup-close:hover{background:rgba(255,255,255,0.22)}
+    .phone-wrap{width:100%;max-width:260px}
+    .phone-frame{background:#111;border-radius:36px;padding:10px;box-shadow:0 0 0 2px #333,0 8px 32px rgba(0,0,0,0.5)}
+    .phone-screen{border-radius:28px;overflow:hidden;background:#EBF5EB;height:460px;position:relative}
+    .app-slides{display:flex;height:100%;transition:transform 0.35s cubic-bezier(0.4,0,0.2,1)}
+    .app-slide{flex:0 0 100%;height:100%;display:flex;flex-direction:column;overflow:hidden;font-family:-apple-system,'Helvetica Neue',sans-serif;font-size:13px}
+    .app-bar{background:#3D9B3D;color:#fff;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;font-size:12px;min-height:36px;flex-shrink:0}
+    .app-bar--home{font-size:13px;font-weight:500}
+    .app-sek-hdr{background:#D4EDDA;color:#3D9B3D;font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:6px 12px;flex-shrink:0}
+    .app-row{background:#fff;padding:10px 12px;border-bottom:0.5px solid #ddd;flex-shrink:0}
+    .app-row-title{font-size:13px;font-weight:500;color:#111}
+    .app-row-sub{font-size:12px;color:#888;margin-top:2px}
+    .app-row-f{display:flex;justify-content:space-between;align-items:center}
+    .app-row-ff{font-size:13px;color:#111}
+    .app-ph{font-size:12px;color:#aaa}
+    .app-arr{color:#aaa}
+    .app-plus{width:24px;height:24px;border-radius:50%;background:#3D9B3D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
+    .app-fld-wrap{padding:8px 12px;background:#fff;flex-shrink:0}
+    .app-fld{border:1.5px solid #3D9B3D;border-radius:4px;padding:8px;font-size:13px;color:#aaa;background:#fff}
+    .app-btn-g{margin:8px 12px;border:none;background:#3D9B3D;color:#fff;border-radius:6px;padding:10px;font-size:13px;font-weight:500;flex-shrink:0}
+    .app-btn-dis{background:#b0b0b0}
+    .app-hint{font-size:11px;color:#888;padding:4px 12px;flex-shrink:0}
+    .app-confirm{padding:8px 12px;font-size:12px;flex-shrink:0}
+    .app-link{text-align:center;padding:6px 12px;flex-shrink:0}
+    .app-gr{color:#3D9B3D}
+    .app-agb{display:flex;gap:10px;padding:10px 12px;align-items:flex-start;font-size:12px;color:#333;line-height:1.4;flex-shrink:0}
+    .app-radio{width:18px;height:18px;border-radius:50%;border:1.5px solid #ccc;flex-shrink:0;margin-top:1px}
+    .app-home-body{padding:12px;flex:1;overflow:hidden}
+    .app-home-name{font-size:13px;font-weight:600;color:#111;margin-bottom:2px}
+    .app-home-sub{font-size:11px;color:#888;margin-bottom:5px}
+    .app-home-addr{font-size:11.5px;color:#444;margin-bottom:4px}
+    .app-home-phone{font-size:12px;margin-bottom:8px}
+    .app-divider{height:0.5px;background:#ddd;margin:5px 0}
+    .app-vs-row{display:flex;align-items:center;gap:8px;padding:8px 0}
+    .app-tab-bar{background:#fff;border-top:0.5px solid #ddd;display:flex;padding:4px 0 2px;flex-shrink:0}
+    .app-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#888}
+    .app-tab svg{width:18px;height:18px}
+    .app-tab-on{color:#3D9B3D}
+    /* Dots + Nav */
+    .app-dots{display:flex;gap:8px;justify-content:center}
+    .app-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.3);border:none;cursor:pointer;padding:0;transition:background 0.2s,transform 0.2s}
+    .app-dot-on{background:#fff;transform:scale(1.3)}
+    .app-step-lbl{font-size:12px;color:rgba(255,255,255,0.65);text-align:center}
+    .app-nav-btns{display:flex;gap:12px;width:100%}
+    .app-nav-btn{flex:1;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:8px;padding:10px;font-size:14px;font-weight:500;cursor:pointer;transition:background 0.2s}
+    .app-nav-btn:hover{background:rgba(255,255,255,0.2)}
+    .app-nav-btn-next{background:#3D9B3D;border-color:#3D9B3D}
+    .app-nav-btn-next:hover{background:#328232}
+    @media (max-width:480px){
+      .app-popup{padding:20px 12px 16px;gap:12px}
+      .phone-wrap{max-width:220px}
+      .phone-screen{height:390px}
+    }
+    @media (max-height:600px) and (orientation:landscape){
+      .app-popup-overlay{align-items:flex-start;padding:8px}
+      .app-popup{flex-direction:row;flex-wrap:wrap;max-width:720px;padding:14px;gap:10px;max-height:98vh}
+      .phone-wrap{max-width:170px;flex-shrink:0}
+      .phone-screen{height:290px}
+      .app-popup-close{top:6px;right:6px}
+      .app-dots,.app-step-lbl,.app-nav-btns{flex-basis:calc(100% - 190px)}
+    }
 </style>
 </head>
 <body>
@@ -385,73 +485,170 @@
 
 <div class="anleitung" id="anleitung">
   <p class="sek-label">So funktioniert's</p>
-  <h2 class="sek-h2">In 4 Schritten zur Videosprechstunde</h2>
+  <h2 class="sek-h2">In 5 Schritten zur Videosprechstunde</h2>
   <div class="schritte">
-    <div class="schritt">
-      <div class="schritt-nr">1</div>
-      <div class="schritt-body">
-        <h3>App herunterladen &amp; installieren</h3>
-        <p>„Meine Pädiatrische Praxis" kostenlos im App Store (iPhone) oder Google Play (Android) herunterladen und installieren.</p>
+    <div class="vs-seite">
+      <div class="schritt">
+        <div class="schritt-nr">1</div>
+        <div class="schritt-body">
+          <h3>Freischaltung</h3>
+          <p>Nach Beendigung des Registrierungsvorgangs sind Sie auch automatisch für das Modul „Videosprechstunde" freigeschaltet.</p>
+        </div>
+      </div>
+      <div class="schritt">
+        <div class="schritt-nr">2</div>
+        <div class="schritt-body">
+          <h3>Termin buchen</h3>
+          <p>Der Termin für die Videosprechstunde wird in Doctolib gebucht.</p>
+        </div>
       </div>
     </div>
-    <div class="schritt">
-      <div class="schritt-nr">2</div>
-      <div class="schritt-body">
-        <h3>Termin vereinbaren</h3>
-        <p>Rufen Sie uns an (089 – 93 94 87 3) oder schicken Sie eine E-Mail — wir stimmen gemeinsam Tag und Uhrzeit ab.</p>
+    <div class="vs-seite">
+      <div class="schritt">
+        <div class="schritt-nr">3</div>
+        <div class="schritt-body">
+          <h3>Wartezimmer betreten</h3>
+          <p>Zum vereinbarten Zeitpunkt öffnen Sie die App und betreten über den Reiter „Service" und den Menüpunkt „Videosprechstunde" das Wartezimmer. Hierbei ist es aus technischen Gründen wichtig, dass die App geöffnet und das Handy aktiv bleibt. Idealerweise befinden Sie sich in einem WiFi-Netz, da das Datenvolumen hoch sein kann und die Verbindung dort meist besser ist.</p>
+        </div>
+      </div>
+      <div class="schritt">
+        <div class="schritt-nr">4</div>
+        <div class="schritt-body">
+          <h3>Auf die Ärztin warten</h3>
+          <p>Sie befinden sich nun im Wartezimmer und warten (wie in der Praxis) auf die Ärztin.</p>
+        </div>
       </div>
     </div>
-    <div class="schritt">
-      <div class="schritt-nr">3</div>
-      <div class="schritt-body">
-        <h3>Einladung erhalten</h3>
-        <p>Sie erhalten kurz vor dem Termin einen Link oder eine Benachrichtigung über die App — einfach darauf tippen, um den Videoanruf zu starten.</p>
+    <div class="vs-seite">
+      <div class="schritt">
+        <div class="schritt-nr">5</div>
+        <div class="schritt-body">
+          <h3>Anruf annehmen</h3>
+          <p>Den Anruf der Ärztin nehmen Sie durch Klick auf den grünen Button an. Das Videotelefonat beginnt.</p>
+        </div>
       </div>
-    </div>
-    <div class="schritt">
-      <div class="schritt-nr">4</div>
-      <div class="schritt-body">
-        <h3>Videoanruf starten</h3>
-        <p>Starten Sie den Anruf zur vereinbarten Zeit. Bitte kurz vorher prüfen, dass Kamera und Mikrofon der App freigegeben sind.</p>
-      </div>
-    </div>
-    <div class="vs-zurueck-card" onclick="document.querySelector('.schritte').scrollTo({left:0,behavior:'smooth'})" role="button" aria-label="Zum ersten Schritt">
-      <div class="vs-zurueck-inner">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        <span>Zurück</span>
+      <div class="vs-zurueck-card" onclick="document.querySelector('.schritte').scrollTo({left:0,behavior:'smooth'})" role="button" aria-label="Zum ersten Schritt">
+        <div class="vs-zurueck-inner">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Zurück</span>
+        </div>
       </div>
     </div>
   </div>
+  <div class="vs-swipe-hint" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    Wischen für weitere Schritte
+  </div>
 </div>
 
-<div class="datenschutz">
-  <div class="ds-inner">
-    <div class="ds-punkt">
-      <div class="ds-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+<div class="app-demo">
+  <div class="app-demo-inner">
+    <p class="sek-label">So funktioniert die Registrierung</p>
+    <h2 class="sek-h2">Die App — Schritt für Schritt</h2>
+    <p class="app-demo-sub">Einmal in wenigen Minuten einrichten, dann für jeden Videoanruf bereit. Hier sehen Sie wie es geht.</p>
+    <button class="app-demo-btn" onclick="oeffneAppDemo()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      App-Demo ansehen
+    </button>
+  </div>
+</div>
+
+<div class="app-popup-overlay" id="app-popup" role="dialog" aria-modal="true" aria-label="App-Demo: Registrierung" onclick="if(event.target===this)schliesseAppDemo()">
+  <div class="app-popup">
+    <button class="app-popup-close" onclick="schliesseAppDemo()" aria-label="Schließen">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="app-slides" id="app-slides">
+            <div class="app-slide">
+              <div class="app-bar"><span>← Zurück</span><span>Registrierung</span><span>Weiter</span></div>
+              <div class="app-sek-hdr">Ärztin oder Arzt bestätigen</div>
+              <div class="app-row">
+                <div class="app-row-title">Dr. med. Susanne Gandenberger-Bachem</div>
+                <div class="app-row-sub">Freischützstraße 9<br>81927 München</div>
+              </div>
+              <div class="app-sek-hdr">Weitere Ärztinnen / Ärzte in dieser Praxis</div>
+              <div class="app-row"><div class="app-row-title">Dr. med. Heike Boerschmann</div></div>
+              <div class="app-row"><div class="app-row-title">Dr. med. Jennifer Bichler (angest.)</div></div>
+            </div>
+            <div class="app-slide">
+              <div class="app-bar"><span>✕</span><span>Registrierung</span><span></span></div>
+              <div class="app-sek-hdr">E-Mail-Adresse zur Registrierung</div>
+              <div class="app-fld-wrap"><div class="app-fld">E-Mail Adresse</div></div>
+              <div class="app-btn-g app-btn-dis">Weiter</div>
+            </div>
+            <div class="app-slide">
+              <div class="app-bar"><span>← Zurück</span><span>Registrierung</span><span></span></div>
+              <div class="app-sek-hdr">E-Mail-Adresse bestätigen</div>
+              <div class="app-confirm"><span class="app-gr">Bestätigungscode gesendet an:<br><strong>ihre.email@beispiel.de</strong><br>Der Versand kann einen Moment dauern.</span></div>
+              <div class="app-fld-wrap"><div class="app-fld">Bestätigungscode</div></div>
+              <div class="app-btn-g app-btn-dis">Weiter</div>
+              <div class="app-link"><span class="app-gr" style="font-size:12px">Keine E-Mail erhalten?</span></div>
+            </div>
+            <div class="app-slide">
+              <div class="app-bar"><span>✕</span><span>Registrierung</span><span>Weiter</span></div>
+              <div class="app-sek-hdr">Meine Daten</div>
+              <div class="app-row app-row-f"><span>Vorname</span><span class="app-ph">Vorname</span></div>
+              <div class="app-row app-row-f"><span>Name</span><span class="app-ph">Nachname</span></div>
+              <div class="app-row app-row-f"><span>Mobilnummer</span><span class="app-ph">0123 000 00 00</span></div>
+            </div>
+            <div class="app-slide">
+              <div class="app-bar"><span>✕</span><span>Registrierung</span><span>Weiter</span></div>
+              <div class="app-sek-hdr">Login-Daten</div>
+              <div class="app-row app-row-ff">ihre.email@beispiel.de</div>
+              <div class="app-row app-row-f"><span class="app-ph">Passwort</span></div>
+              <div class="app-hint">Das Passwort muss mindestens 10 Zeichen lang sein.</div>
+              <div class="app-agb"><div class="app-radio"></div><span>Ich habe die <span class="app-gr">Datenschutzbestimmungen</span> und die <span class="app-gr">AGB- und Nutzungsbedingungen</span> für die PraxisApp mit Videosprechstunde gelesen und stimme diesen zu.</span></div>
+            </div>
+            <div class="app-slide">
+              <div class="app-bar"><span>✕</span><span>Registrierung</span><span></span></div>
+              <div class="app-sek-hdr">Patienten-Übersicht</div>
+              <div class="app-row app-row-f"><span>Patienten hinzufügen</span><div class="app-plus">+</div></div>
+              <div class="app-row app-row-f"><span>Ihr Kind, *Geburtsdatum</span><span class="app-arr">›</span></div>
+              <div class="app-btn-g" style="margin-top:auto">Registrierung abschließen</div>
+            </div>
+            <div class="app-slide">
+              <div class="app-bar app-bar--home"><span></span><span>Meine Praxis</span><span></span></div>
+              <div class="app-sek-hdr">Patienten-Übersicht</div>
+              <div class="app-home-body">
+                <div class="app-home-name">Dr. med. Susanne<br>Gandenberger-Bachem</div>
+                <div class="app-home-sub">Fachärztin für Kinder- und Jugendmedizin</div>
+                <div class="app-home-addr">Freischützstraße 9 · 81927 München</div>
+                <div class="app-home-phone"><span class="app-gr">📞 089 – 93 94 87 3</span></div>
+                <div class="app-divider"></div>
+                <div class="app-vs-row">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3D9B3D" stroke-width="2" aria-hidden="true"><path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+                  <span class="app-gr" style="font-weight:500">Videosprechstunde</span>
+                  <span class="app-arr" style="margin-left:auto">›</span>
+                </div>
+                <div class="app-divider"></div>
+              </div>
+              <div class="app-tab-bar">
+                <div class="app-tab app-tab-on"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span>Home</span></div>
+                <div class="app-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg><span>Nachrichten</span></div>
+                <div class="app-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Service</span></div>
+                <div class="app-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg><span>Einstellungen</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h3>Peer-to-Peer &amp; verschlüsselt</h3>
-      <p>Die Videoverbindung ist direkt (Peer-to-Peer) und Ende-zu-Ende verschlüsselt. Kein Dritter kann zuhören oder mitlesen.</p>
     </div>
-    <div class="ds-punkt">
-      <div class="ds-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <h3>Keine Aufzeichnung</h3>
-      <p>Videoinhalte werden nicht aufgezeichnet und nicht gespeichert. Das Gespräch bleibt ausschließlich zwischen Ihnen und der Ärztin.</p>
+    <div class="app-dots" id="app-dots">
+      <button class="app-dot app-dot-on" onclick="zeigeSlide(0)" aria-label="Schritt 1"></button>
+      <button class="app-dot" onclick="zeigeSlide(1)" aria-label="Schritt 2"></button>
+      <button class="app-dot" onclick="zeigeSlide(2)" aria-label="Schritt 3"></button>
+      <button class="app-dot" onclick="zeigeSlide(3)" aria-label="Schritt 4"></button>
+      <button class="app-dot" onclick="zeigeSlide(4)" aria-label="Schritt 5"></button>
+      <button class="app-dot" onclick="zeigeSlide(5)" aria-label="Schritt 6"></button>
+      <button class="app-dot" onclick="zeigeSlide(6)" aria-label="Schritt 7"></button>
     </div>
-    <div class="ds-punkt">
-      <div class="ds-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      </div>
-      <h3>Server in Deutschland</h3>
-      <p>Die Infrastruktur erfüllt die Anforderungen der DSGVO. Verarbeitung und Speicherung erfolgen ausschließlich in Deutschland.</p>
-    </div>
-    <div class="ds-zurueck-card" onclick="document.querySelector('.ds-inner').scrollTo({left:0,behavior:'smooth'})" role="button" aria-label="Zur ersten Kachel">
-      <div class="ds-zurueck-inner">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        <span>Zurück</span>
-      </div>
+    <div class="app-step-lbl" id="app-step-lbl">Schritt 1 von 7 — Ärztin bestätigen</div>
+    <div class="app-nav-btns">
+      <button class="app-nav-btn" id="app-prev" onclick="naviSlide(-1)">‹ Zurück</button>
+      <button class="app-nav-btn app-nav-btn-next" id="app-next" onclick="naviSlide(1)">Weiter ›</button>
     </div>
   </div>
 </div>
@@ -516,6 +713,75 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-e
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',schutz);}else{schutz();}
 })();
+</script>
+
+<div class="vs-tab-btns" id="vs-tab-btns">
+  <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="vs-tab-btn vs-tab-btn-termin" aria-label="Termin">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <span class="vs-tab-btn-label">Termin</span>
+  </a>
+</div>
+<script>
+// vs sidebar btn
+(function(){
+  var btn = document.getElementById('vs-tab-btns');
+  if(!btn) return;
+  function checkScroll(){
+    if(window.scrollY > 80){
+      btn.classList.add('vs-tabs-visible');
+    } else {
+      btn.classList.remove('vs-tabs-visible');
+    }
+  }
+  window.addEventListener('scroll', checkScroll, {passive:true});
+  checkScroll();
+})();
+</script>
+
+<script>
+// App-Demo Popup
+var akt = 0;
+var lbls = [
+  'Schritt 1 von 7 — Ärztin bestätigen',
+  'Schritt 2 von 7 — E-Mail eingeben',
+  'Schritt 3 von 7 — Code bestätigen',
+  'Schritt 4 von 7 — Persönliche Daten',
+  'Schritt 5 von 7 — Passwort & AGB',
+  'Schritt 6 von 7 — Patient hinzufügen',
+  'Schritt 7 von 7 — App bereit ✓'
+];
+function oeffneAppDemo() {
+  document.getElementById('app-popup').classList.add('offen');
+  document.body.style.overflow = 'hidden';
+  zeigeSlide(0);
+}
+function schliesseAppDemo() {
+  document.getElementById('app-popup').classList.remove('offen');
+  document.body.style.overflow = '';
+}
+function zeigeSlide(n) {
+  var slides = document.getElementById('app-slides');
+  var dots = document.querySelectorAll('.app-dot');
+  akt = n;
+  slides.style.transform = 'translateX(-' + (n * 100) + '%)';
+  dots.forEach(function(d, i) {
+    d.classList.toggle('app-dot-on', i === n);
+  });
+  document.getElementById('app-step-lbl').textContent = lbls[n];
+  document.getElementById('app-prev').style.opacity = n === 0 ? '0.35' : '1';
+  document.getElementById('app-next').textContent = n === 6 ? '✓ Fertig' : 'Weiter ›';
+}
+function naviSlide(r) {
+  var neu = akt + r;
+  if (neu < 0) return;
+  if (neu > 6) { schliesseAppDemo(); return; }
+  zeigeSlide(neu);
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') schliesseAppDemo();
+  if (e.key === 'ArrowRight' && document.getElementById('app-popup').classList.contains('offen')) naviSlide(1);
+  if (e.key === 'ArrowLeft' && document.getElementById('app-popup').classList.contains('offen')) naviSlide(-1);
+});
 </script>
 </body>
 </html>
