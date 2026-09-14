@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videosprechstunde Kinderarzt München Bogenhausen · PraxisApp herunterladen</title>
-  <meta name="description" content="Videosprechstunde in der Kinderpraxis Gandenberger-Bachem in München Bogenhausen. PraxisApp für iPhone und Android herunterladen — sicher, verschlüsselt, Server in Deutschland.">
+  <meta name="description" content="Videosprechstunde in der Kinderpraxis Gandenberger-Bachem in München Bogenhausen. PraxisApp für iPhone und Android herunterladen — sicher, ohne Anfahrt.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.die-familienpraxis.de/videosprechstunde.html">
   <meta property="og:title" content="Videosprechstunde · Kinderarzt München Bogenhausen">
@@ -38,7 +38,7 @@
         "name": "Ist die Videosprechstunde datenschutzkonform?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Die Verbindung ist Peer-to-Peer und Ende-zu-Ende verschlüsselt. Die Server stehen in Deutschland. Es werden keine Videodaten gespeichert."
+          "text": "Ja. Die Verbindung ist verschlüsselt. Es werden keine Videodaten gespeichert."
         }
       },
       {
@@ -79,8 +79,8 @@
     .nav-back:hover{color:var(--primary)}
     .vs-hero{padding:clamp(28px,4vw,52px) var(--pad) clamp(20px,2.5vw,36px);max-width:var(--max);margin:0 auto}
     .vs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-    .vs-h1{font-family:var(--head);font-size:clamp(24px,3vw,40px);color:var(--primary);line-height:1.15;margin-bottom:14px;font-weight:400}
-    .vs-h1 em{font-style:italic;color:var(--accent)}
+    .vs-h1{font-family:var(--head);font-size:clamp(24px,3vw,40px);color:var(--primary);line-height:1.15;margin-bottom:14px;font-weight:400;font-style:normal}
+    
     .vs-sub{font-size:14.5px;color:var(--ink2);max-width:580px;line-height:1.6;margin-bottom:20px}
     .vs-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0}
     .vs-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:0.5px solid var(--rule);border-radius:100px;padding:6px 14px;font-size:12.5px;font-weight:500;color:var(--primary)}
@@ -405,17 +405,9 @@
 
 <div class="vs-hero">
   <p class="vs-eyebrow">Videosprechstunde</p>
-  <h1 class="vs-h1">Manchmal reicht ein Blick<br>auf dem Bildschirm —<br><em>ohne Stau und Wartezimmer.</em></h1>
+  <h1 class="vs-h1">Manchmal reicht ein Blick —<br>von zu Hause, ohne Wartezimmer.</h1>
   <p class="vs-sub">App holen, Termin ausmachen — und wir schauen gemeinsam drauf.<span class="vs-sub-extra"> Einfach, sicher, ohne Anfahrt.</span></p>
   <div class="vs-badges">
-    <span class="vs-badge">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Ende-zu-Ende verschlüsselt
-    </span>
-    <span class="vs-badge">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      Server in Deutschland
-    </span>
     <span class="vs-badge">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
       Kostenlose App
@@ -657,8 +649,11 @@
   <h2>Videosprechstunde vereinbaren</h2>
   <p>Haben Sie Fragen oder möchten Sie einen Termin abstimmen? Rufen Sie uns an oder buchen Sie direkt online über Doctolib.</p>
   <div class="vs-cta-btns" style="justify-content:center">
-
-  </div>
+  <button class="btn-primaer" onclick="openTerminModalGB()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Termin anfragen
+  </button>
+</div>
 </div>
 
 <footer>
@@ -716,10 +711,10 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-e
 </script>
 
 <div class="vs-tab-btns" id="vs-tab-btns">
-  <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="vs-tab-btn vs-tab-btn-termin" aria-label="Termin">
+  <button class="vs-tab-btn vs-tab-btn-termin" onclick="openTerminModalGB()" aria-label="Termin">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     <span class="vs-tab-btn-label">Termin</span>
-  </a>
+  </button>
 </div>
 <script>
 function gbOpen(){ openTerminModalGB(); }
@@ -797,6 +792,799 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowRight' && document.getElementById('app-popup').classList.contains('offen')) naviSlide(1);
   if (e.key === 'ArrowLeft' && document.getElementById('app-popup').classList.contains('offen')) naviSlide(-1);
 });
+</script>
+
+<style>
+/* gb-modal */
+.gb-demo-bar{display:none !important}
+.gb-modal-open{overflow:hidden}
+.gb-overlay{display:none;position:fixed;inset:0;z-index:8000;
+  background:rgba(20,30,35,0.62);backdrop-filter:blur(5px);
+  align-items:center;justify-content:center;padding:16px}
+.gb-overlay.aktiv{display:flex}
+.gb-box{background:#fff;border-radius:24px;width:100%;max-width:520px;
+  max-height:92vh;display:flex;flex-direction:column;
+  box-shadow:0 32px 80px rgba(28,45,55,0.22);overflow:hidden}
+.gb-head{padding:22px 26px 14px;border-bottom:1px solid var(--border);flex-shrink:0}
+.gb-step-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:3px}
+.gb-title{font-size:1.4rem;font-weight:700;color:var(--primary);margin:0;
+  font-family:var(--kopf)}
+.gb-close{position:absolute;top:18px;right:20px;background:none;border:none;
+  cursor:pointer;color:var(--text-muted);font-size:1.4rem;
+  width:34px;height:34px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;transition:background .2s}
+.gb-close:hover{background:var(--border)}
+.gb-head{position:relative}
+.gb-dots{display:flex;gap:5px;margin-top:12px}
+.gb-dot{height:4px;flex:1;border-radius:2px;background:var(--border);transition:background .35s}
+.gb-dot.aktiv{background:var(--primary)}
+.gb-dot.done{background:var(--sage)}
+.gb-body{padding:22px 26px 20px;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.gb-foot{padding:12px 26px 16px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-shrink:0;background:#fff}
+.gb-radio-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.gb-radio-grid.single{grid-template-columns:1fr}
+.gb-radio{border:1.5px solid var(--border);border-radius:14px;padding:12px 14px;
+  cursor:pointer;display:flex;gap:10px;align-items:flex-start;
+  transition:border-color .2s,background .2s;background:#fff}
+.gb-radio:hover{border-color:var(--primary);background:var(--primary-lt)}
+.gb-radio.gewaehlt{border-color:var(--primary);background:var(--primary-lt)}
+.gb-radio-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);
+  flex-shrink:0;margin-top:2px;transition:border-color .2s,background .2s}
+.gb-radio.gewaehlt .gb-radio-dot{border-color:var(--primary);background:var(--primary)}
+.gb-rlbl{font-size:.87rem;font-weight:600;color:var(--text)}
+.gb-rdesc{font-size:.75rem;color:var(--text-muted);margin-top:2px}
+.gb-intro{font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:9px}
+.gb-slot-woche{margin-bottom:16px}
+.gb-slot-woche-lbl{font-size:.7rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--text-muted);margin-bottom:7px}
+.gb-slot-zeilen{display:flex;flex-wrap:wrap;gap:6px}
+.gb-slot{padding:5px 13px;border:1.5px solid var(--border);border-radius:8px;
+  font-size:.82rem;font-weight:600;cursor:pointer;transition:all .18s;
+  background:#fff;color:var(--text)}
+.gb-slot:hover{border-color:var(--primary);background:var(--primary-lt);color:var(--primary)}
+.gb-slot.belegt{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.gb-slot.gewaehlt{border-color:var(--primary);background:var(--primary);color:#fff}
+.gb-slot-hint{font-size:.73rem;color:var(--text-muted);margin-bottom:14px;
+  background:var(--accent-lt);padding:8px 12px;border-radius:8px}
+.gb-form-row{margin-bottom:12px}
+.gb-label{font-size:.78rem;font-weight:600;color:var(--text-muted);
+  display:block;margin-bottom:4px;letter-spacing:.03em}
+.gb-input{width:100%;padding:10px 13px;border:1.5px solid var(--border);
+  border-radius:10px;font-size:.9rem;color:var(--text);
+  font-family:var(--body);outline:none;transition:border-color .2s;background:#fff}
+.gb-input:focus{border-color:var(--primary)}
+.gb-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gb-dsgvo{display:flex;gap:10px;align-items:flex-start;margin-top:14px;
+  font-size:.78rem;color:var(--text-muted);line-height:1.4}
+.gb-dsgvo input{margin-top:2px;flex-shrink:0;accent-color:var(--primary)}
+.gb-anamnese-info{background:var(--sage-lt);border-radius:10px;padding:12px 14px;
+  font-size:.78rem;color:var(--text-muted);margin-bottom:14px;line-height:1.5}
+.gb-anamnese-info a{color:var(--primary)}
+.gb-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+.gb-check{display:flex;align-items:center;gap:7px;font-size:.82rem;
+  padding:7px 10px;border:1.5px solid var(--border);border-radius:8px;cursor:pointer}
+.gb-check input{accent-color:var(--primary)}
+.gb-textarea{width:100%;padding:9px 12px;border:1.5px solid var(--border);
+  border-radius:10px;font-size:.85rem;color:var(--text);
+  font-family:var(--body);resize:vertical;min-height:62px;
+  outline:none;transition:border-color .2s}
+.gb-textarea:focus{border-color:var(--primary)}
+.gb-skip-link{text-align:right;margin-bottom:8px}
+.gb-skip-link button{background:none;border:none;cursor:pointer;
+  font-size:.77rem;color:var(--text-muted);text-decoration:underline;
+  font-family:var(--body);padding:0}
+.gb-danke{text-align:center;padding:28px 0 10px}
+.gb-danke-icon{width:64px;height:64px;border-radius:50%;background:var(--primary-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.gb-danke h3{font-size:1.3rem;font-weight:700;color:var(--primary);margin-bottom:8px}
+.gb-danke p{font-size:.88rem;color:var(--text-muted);line-height:1.6;margin-bottom:18px}
+.gb-danke-box{background:var(--primary-lt);border-radius:12px;padding:14px 16px;
+  text-align:left;font-size:.82rem;color:var(--text)}
+.gb-danke-box-row{display:flex;gap:8px;padding:4px 0;
+  border-bottom:1px solid var(--border)}
+.gb-danke-box-row:last-child{border-bottom:none}
+.gb-danke-box-row span:first-child{color:var(--text-muted);min-width:100px}
+.gb-btn-back{background:none;border:none;font-size:.87rem;cursor:pointer;
+  color:var(--text-muted);padding:6px 10px;border-radius:8px;
+  font-family:var(--body);display:flex;align-items:center;gap:4px}
+.gb-btn-back:hover{background:var(--border)}
+.gb-btn-next{background:var(--primary);color:#fff;border:none;
+  padding:10px 22px;border-radius:10px;font-size:.9rem;font-weight:600;
+  cursor:pointer;font-family:var(--body);transition:background .2s}
+.gb-btn-next:hover{background:var(--primary-hover)}
+.gb-btn-next:disabled{opacity:.5;cursor:not-allowed}
+.gb-demo-bar{display:none!important}
+.gb-demo-bar{position:fixed;bottom:20px;right:20px;z-index:7900;
+  display:flex;flex-direction:column;gap:7px;align-items:flex-end;
+  background:rgba(28,43,51,0.82);backdrop-filter:blur(8px);
+  padding:10px 12px 10px;border-radius:14px;
+  box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.gb-demo-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);text-align:right;
+  margin-bottom:2px;padding-right:2px}
+.gb-demo-btn{padding:9px 16px;border-radius:999px;border:none;cursor:pointer;
+  font-size:.82rem;font-weight:700;font-family:var(--body);
+  display:flex;align-items:center;gap:6px;
+  box-shadow:0 4px 16px rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s}
+.gb-demo-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.gb-demo-btn.bestand{background:var(--primary);color:#fff}
+.gb-demo-btn.neu{background:var(--accent);color:#fff}
+.gb-overlay{padding:0;align-items:flex-end}
+.gb-box{border-radius:20px 20px 0 0;max-height:94vh;max-width:100%}
+.gb-radio-grid{grid-template-columns:1fr}
+.gb-row2{grid-template-columns:1fr}
+.gb-demo-bar{display:none !important}
+.gb-sig-wrap{border:1.5px solid var(--border);border-radius:10px;
+  overflow:hidden;background:#fafaf8;position:relative;margin-top:6px}
+.gb-sig-clear{position:absolute;top:6px;right:8px;background:none;
+  border:none;font-size:.7rem;color:var(--text-muted);cursor:pointer;
+  padding:2px 6px;border-radius:4px;font-family:var(--body)}
+.gb-sig-clear:hover{color:var(--accent)}
+.gb-sig-hint{font-size:.69rem;color:var(--text-muted);margin-top:5px;text-align:center}
+.gb-doctoli-badge{display:inline-flex;align-items:center;gap:5px;
+  font-size:.68rem;color:var(--text-muted);margin-top:6px}
+.gb-doctoli-dot{width:6px;height:6px;border-radius:50%;background:#0064D2}
+.gb-demo-bar { display: none !important; }
+.gb-demo-bar { display: none !important; }
+.gb-tabs-visible { display: flex !important; }
+.gb-demo-bar { display: none !important; }
+.gb-demo-bar { display: none !important; }
+.gb-demo-bar { display: none !important; }
+</style>
+<!-- TERMIN-MODAL -->
+<div class="gb-overlay" id="gb-modal" onclick="gbCloseOnBackdrop(event)">
+  <div class="gb-box">
+    <div class="gb-head">
+      <div class="gb-step-lbl" id="gb-step-lbl">Schritt 1 von 4</div>
+      <h3 class="gb-title" id="gb-title">Anliegen w&#228;hlen</h3>
+      <button class="gb-close" onclick="gbClose()" aria-label="Schlie&#223;en">&#10005;</button>
+      <div class="gb-dots" id="gb-dots">
+        <div class="gb-dot aktiv" id="gbd-1"></div>
+        <div class="gb-dot" id="gbd-1b" style="display:none"></div>
+        <div class="gb-dot" id="gbd-2"></div>
+        <div class="gb-dot" id="gbd-3"></div>
+        <div class="gb-dot" id="gbd-4"></div>
+      </div>
+    </div>
+    <div class="gb-body" id="gb-body">
+
+      <!-- Schritt 1: Patienttyp + Anliegen -->
+      <div id="gb-s1">
+        <p class="gb-intro">Sind Sie Neu- oder Bestandspatient?</p>
+        <div class="gb-radio-grid" id="rc-typ">
+          <div class="gb-radio" onclick="gbSelectRadio(this,'rc-typ')" data-val="bestand">
+            <div class="gb-radio-dot"></div>
+            <div>
+              <div class="gb-rlbl">Bestandspatient</div>
+              <div class="gb-rdesc">Ihr Kind war bereits bei uns in Behandlung.</div>
+            </div>
+          </div>
+          <div class="gb-radio" onclick="gbSelectRadio(this,'rc-typ')" data-val="neu">
+            <div class="gb-radio-dot"></div>
+            <div>
+              <div class="gb-rlbl">Neupatient</div>
+              <div class="gb-rdesc">Ihr Kind kommt zum ersten Mal zu uns.</div>
+            </div>
+          </div>
+        </div>
+        <p class="gb-intro" style="margin-top:4px">Was ist der Grund Ihres Besuchs?</p>
+        <div class="gb-radio-grid" id="rc-anliegen">
+          <div class="gb-radio" onclick="gbSelectRadio(this,'rc-anliegen')" data-val="vorsorge">
+            <div class="gb-radio-dot"></div>
+            <div>
+              <div class="gb-rlbl">Vorsorge (U1&#x2013;U9)</div>
+              <div class="gb-rdesc">Entwicklungscheck &amp; Fr&#252;herkennung</div>
+            </div>
+          </div>
+          <div class="gb-radio" onclick="gbSelectRadio(this,'rc-anliegen')" data-val="impfung">
+            <div class="gb-radio-dot"></div>
+            <div>
+              <div class="gb-rlbl">Impfung</div>
+              <div class="gb-rdesc">Erstimpfung oder Auffrischung</div>
+            </div>
+          </div>
+          <div class="gb-radio" onclick="gbSelectRadio(this,'rc-anliegen')" data-val="krank">
+            <div class="gb-radio-dot"></div>
+            <div>
+              <div class="gb-rlbl">Erkrankung / Akutfall</div>
+              <div class="gb-rdesc">Fieber, Infekt, akute Beschwerden</div>
+            </div>
+          </div>
+          <div class="gb-radio" onclick="gbSelectRadio(this,'rc-anliegen')" data-val="j1">
+            <div class="gb-radio-dot"></div>
+            <div>
+              <div class="gb-rlbl">J1 Jugendcheck</div>
+              <div class="gb-rdesc">Gesundheitsuntersuchung 12&#x2013;14 Jahre</div>
+            </div>
+          </div>
+          <div class="gb-radio" onclick="gbSelectRadio(this,'rc-anliegen')" data-val="sonstiges">
+            <div class="gb-radio-dot"></div>
+            <div>
+              <div class="gb-rlbl">Sonstiges</div>
+              <div class="gb-rdesc">Attest, Befund, R&#252;ckruf</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schritt 1b: Anamnese (nur Neupatient) -->
+      <div id="gb-s1b" style="display:none">
+        <div class="gb-anamnese-info">
+          Diese Angaben helfen uns, Ihr Kind beim ersten Besuch optimal zu versorgen.
+          Sie k&#246;nnen den Bogen auch vor Ort ausf&#252;llen.
+        </div>
+        <div class="gb-skip-link">
+          <button onclick="gbAnamneseUeberspringen()" type="button">Bogen vor Ort ausf&#252;llen &mdash; direkt weiter &rarr;</button>
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Name des Kindes</label>
+          <input class="gb-input" id="an-kind-name" placeholder="Vorname Nachname">
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Geburtsdatum des Kindes</label>
+          <input class="gb-input" type="date" id="an-kind-geb">
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Bekannte Allergien / Unvertr&#228;glichkeiten</label>
+          <textarea class="gb-textarea" id="an-allergien" placeholder="z.&#x202F;B. Erdnüsse, Laktose … oder: keine bekannt"></textarea>
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Vorerkrankungen</label>
+          <div class="gb-check-grid" id="an-checks">
+            <label class="gb-check"><input type="checkbox" id="an-asthma"> Asthma</label>
+            <label class="gb-check"><input type="checkbox" id="an-diab"> Diabetes</label>
+            <label class="gb-check"><input type="checkbox" id="an-herz"> Herzfehler</label>
+            <label class="gb-check"><input type="checkbox" id="an-epil"> Epilepsie</label>
+            <label class="gb-check"><input type="checkbox" id="an-haut"> Hauterkrankung</label>
+            <label class="gb-check"><input type="checkbox" id="an-keine"> Keine bekannt</label>
+          </div>
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Aktuelle Dauermedikation</label>
+          <textarea class="gb-textarea" id="an-medis" placeholder="z.&#x202F;B. Salbutamol, Insulin … oder: keine"></textarea>
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Kurze Beschreibung (Anlass des ersten Besuchs)</label>
+          <textarea class="gb-textarea" id="an-anliegen" placeholder="z.&#x202F;B. Vorsorge U6, Impfpass prüfen, Hautausschlag …" style="min-height:58px"></textarea>
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Unterschrift (Richtigkeit der Angaben bestätigen)</label>
+          <div class="gb-sig-wrap">
+            <canvas id="gb-sig-canvas"></canvas>
+            <button class="gb-sig-clear" onclick="gbClearSignatur()" type="button">Löschen</button>
+          </div>
+          <p class="gb-sig-hint">Mit Finger (Touchscreen) oder Maus unterschreiben — einfache elektronische Signatur gem. eIDAS.</p>
+        </div>
+      </div>
+
+      <!-- Schritt 2: Termin w&#228;hlen (Doctolib-ready Demo) -->
+      <div id="gb-s2" style="display:none">
+        <div class="gb-slot-hint">
+          &#127358; Demo-Ansicht — Termine werden nach Doctolib-Verbindung live geladen.
+          <div class="gb-doctoli-badge"><span class="gb-doctoli-dot"></span> Doctolib-Integration vorbereitet</div>
+        </div>
+        <div id="gb-slots-container"></div>
+      </div>
+
+      <!-- Schritt 3: Kontaktdaten -->
+      <div id="gb-s3" style="display:none">
+        <div class="gb-row2">
+          <div class="gb-form-row">
+            <label class="gb-label">Vorname (Erziehungsberechtigte:r)</label>
+            <input class="gb-input" id="gb-vorname" placeholder="Maria">
+          </div>
+          <div class="gb-form-row">
+            <label class="gb-label">Nachname</label>
+            <input class="gb-input" id="gb-nachname" placeholder="Mustermann">
+          </div>
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Name des Kindes</label>
+          <input class="gb-input" id="gb-kind" placeholder="Lena Mustermann">
+        </div>
+        <div class="gb-row2">
+          <div class="gb-form-row">
+            <label class="gb-label">Telefon</label>
+            <input class="gb-input" id="gb-tel" type="tel" placeholder="+49&#x202F;89&#x202F;…">
+          </div>
+          <div class="gb-form-row">
+            <label class="gb-label">E-Mail</label>
+            <input class="gb-input" id="gb-email" type="email" placeholder="max@beispiel.de">
+          </div>
+        </div>
+        <div class="gb-form-row">
+          <label class="gb-label">Krankenkasse</label>
+          <input class="gb-input" id="gb-kasse" placeholder="z.&#x202F;B. AOK, TK, Barmer …">
+        </div>
+        <div class="gb-dsgvo">
+          <input type="checkbox" id="gb-dsgvo">
+          <label for="gb-dsgvo">Ich habe die <a href="#datenschutz" style="color:var(--primary)">Datenschutzerkl&#228;rung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</label>
+        </div>
+        <input type="text" name="hp_name" id="hp_name" style="display:none" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- Schritt 4: Danke -->
+      <div id="gb-s4" style="display:none">
+        <div class="gb-danke">
+          <div class="gb-danke-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B485A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Anfrage gesendet!</h3>
+          <p>Wir haben Ihre Terminanfrage erhalten und melden uns <strong>innerhalb eines Werktages</strong> zur Best&#228;tigung. Bitte pr&#252;fen Sie auch Ihren Spam-Ordner.</p>
+          <div class="gb-danke-box" id="gb-summary"></div>
+        </div>
+      </div>
+
+    </div><!-- /gb-body -->
+    <div class="gb-foot" id="gb-foot">
+      <button class="gb-btn-back" id="gb-back" onclick="gbBack()" style="visibility:hidden">&#x2190; Zur&#252;ck</button>
+      <button class="gb-btn-next" id="gb-next" onclick="gbNext()">Weiter &#x2192;</button>
+    </div>
+  </div>
+</div>
+<script>
+// Signatur-Canvas
+var gbSigCanvas, gbSigCtx, gbSigDrawing = false;
+
+function gbInitSignatur(){
+  gbSigCanvas = document.getElementById('gb-sig-canvas');
+  if(!gbSigCanvas || gbSigCanvas._init) return;
+  gbSigCanvas._init = true;
+  var dpr = window.devicePixelRatio || 1;
+  var rect = gbSigCanvas.getBoundingClientRect();
+  gbSigCanvas.width = rect.width * dpr;
+  gbSigCanvas.height = rect.height * dpr;
+  gbSigCtx = gbSigCanvas.getContext('2d');
+  gbSigCtx.scale(dpr, dpr);
+  gbSigCtx.strokeStyle = '#1B485A';
+  gbSigCtx.lineWidth = 2.2;
+  gbSigCtx.lineCap = 'round';
+  gbSigCtx.lineJoin = 'round';
+  function px(e){ return e.clientX - gbSigCanvas.getBoundingClientRect().left; }
+  function py(e){ return e.clientY - gbSigCanvas.getBoundingClientRect().top; }
+  gbSigCanvas.addEventListener('mousedown',function(e){ gbSigDrawing=true; gbSigCtx.beginPath(); gbSigCtx.moveTo(px(e),py(e)); });
+  gbSigCanvas.addEventListener('mousemove',function(e){ if(!gbSigDrawing) return; gbSigCtx.lineTo(px(e),py(e)); gbSigCtx.stroke(); });
+  gbSigCanvas.addEventListener('mouseup',function(){ gbSigDrawing=false; });
+  gbSigCanvas.addEventListener('mouseleave',function(){ gbSigDrawing=false; });
+  gbSigCanvas.addEventListener('touchstart',function(e){ e.preventDefault(); gbSigDrawing=true; var t=e.touches[0]; gbSigCtx.beginPath(); gbSigCtx.moveTo(px(t),py(t)); },{passive:false});
+  gbSigCanvas.addEventListener('touchmove',function(e){ e.preventDefault(); if(!gbSigDrawing) return; var t=e.touches[0]; gbSigCtx.lineTo(px(t),py(t)); gbSigCtx.stroke(); },{passive:false});
+  gbSigCanvas.addEventListener('touchend',function(){ gbSigDrawing=false; });
+}
+function gbClearSignatur(){
+  if(gbSigCtx) gbSigCtx.clearRect(0,0,gbSigCanvas.width,gbSigCanvas.height);
+}
+function gbSignaturLeer(){
+  if(!gbSigCanvas||!gbSigCtx) return true;
+  var d = gbSigCtx.getImageData(0,0,gbSigCanvas.width,gbSigCanvas.height).data;
+  for(var i=3;i<d.length;i+=4){ if(d[i]>0) return false; }
+  return true;
+}
+function gbDemoSignatur(delay){
+  gbDemoTimer.push(setTimeout(function(){
+    gbInitSignatur();
+    if(!gbSigCtx) return;
+    // scroll zum Canvas damit er sichtbar ist
+    var canvas = document.getElementById('gb-sig-canvas');
+    if(canvas) canvas.scrollIntoView({behavior:'smooth', block:'center'});
+    var w = gbSigCanvas.getBoundingClientRect().width;
+    var h = gbSigCanvas.getBoundingClientRect().height;
+    gbSigCtx.beginPath();
+    gbSigCtx.moveTo(w*0.12, h*0.6);
+    setTimeout(function(){
+      var pts = [[0.2,0.35],[0.28,0.65],[0.36,0.35],[0.44,0.6],
+                 [0.52,0.4],[0.6,0.62],[0.7,0.38],[0.78,0.58],[0.86,0.45]];
+      pts.forEach(function(p){ gbSigCtx.lineTo(w*p[0], h*p[1]); });
+      gbSigCtx.stroke();
+    }, 650);
+  }, delay));
+}
+
+// ── Kinderpraxis Gandenberger-Bachem — Termin-Wizard ──
+// DOCTOLIB-INTEGRATION:
+// Schritt 2 (Termin wählen) ist als Demo mit statischen Slots gebaut.
+// Für die Live-Verbindung: ersetze buildGbSlots() durch einen
+// fetch()-Aufruf zur Doctolib-API. Alle anderen Schritte bleiben unverändert.
+// Doctolib API-Doku: https://integrations.doctolib.com/
+// Benötigte Parameter: practitioner_id, visit_motive_id
+// Nach Verbindung laufen Terminbestätigungen automatisch über Doctolib.
+
+var gbStep = 1;
+var gbAnamneseAktiv = false;
+var gbSelectedSlot = null;
+
+var gbTitles = ['Anliegen wählen','Anamnesebogen','Termin wählen','Ihre Kontaktdaten','Bestätigung'];
+
+var gbTageKurz = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+var gbMonateKurz = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+
+function gbNaechsterTag(wochentag, offsetWochen){
+  var heute = new Date();
+  var diff = (wochentag - heute.getDay() + 7) % 7 || 7;
+  diff += (offsetWochen||0)*7;
+  var d = new Date(heute);
+  d.setDate(heute.getDate()+diff);
+  return d;
+}
+function gbFormatDatum(d){
+  return gbTageKurz[d.getDay()]+', '+d.getDate()+'. '+gbMonateKurz[d.getMonth()];
+}
+
+// Demo-Slot-Daten (werden durch Doctolib-API ersetzt)
+var gbSlotDaten = [
+  {wochentag:1,offset:0,zeiten:['08:30','09:00','10:30','11:00'],labelIdx:0},
+  {wochentag:2,offset:0,zeiten:['08:00','09:30','14:00','15:30'],labelIdx:1},
+  {wochentag:3,offset:0,zeiten:['08:30','10:00','11:30'],labelIdx:2},
+  {wochentag:4,offset:0,zeiten:['09:00','10:30','12:00','12:30'],labelIdx:3},
+  {wochentag:5,offset:0,zeiten:['08:00','09:30','10:00','11:00'],labelIdx:4},
+  {wochentag:1,offset:1,zeiten:['09:00','10:00','11:00'],labelIdx:5}
+];
+var gbBelegtSample = ['09:00','10:00','14:00']; // simuliert belegte Slots
+
+function buildGbSlots(){
+  // DOCTOLIB: Ersetze diesen Block mit fetch() zur Doctolib-API
+  var container = document.getElementById('gb-slots-container');
+  if(!container) return;
+  container.innerHTML = '';
+  gbSlotDaten.forEach(function(s){
+    var d = gbNaechsterTag(s.wochentag, s.offset);
+    var datum = gbFormatDatum(d);
+    var div = document.createElement('div');
+    div.className = 'gb-slot-woche';
+    div.innerHTML = '<div class="gb-slot-woche-lbl">'+datum+'</div><div class="gb-slot-zeilen" id="sl-'+s.labelIdx+'"></div>';
+    container.appendChild(div);
+    var zeilen = div.querySelector('.gb-slot-zeilen');
+    s.zeiten.forEach(function(z){
+      var belegt = gbBelegtSample.indexOf(z) !== -1 && s.labelIdx < 2;
+      var btn = document.createElement('button');
+      btn.className = 'gb-slot' + (belegt ? ' belegt' : '');
+      btn.textContent = z+' Uhr';
+      btn.disabled = belegt;
+      if(!belegt){
+        btn.onclick = function(){
+          document.querySelectorAll('.gb-slot').forEach(function(b){b.classList.remove('gewaehlt')});
+          btn.classList.add('gewaehlt');
+          gbSelectedSlot = datum + ' · ' + z + ' Uhr';
+        };
+      }
+      zeilen.appendChild(btn);
+    });
+  });
+}
+
+function gbSelectRadio(el, gruppeId){
+  document.querySelectorAll('#'+gruppeId+' .gb-radio').forEach(function(r){r.classList.remove('gewaehlt')});
+  el.classList.add('gewaehlt');
+}
+function gbGetRadio(gruppeId){
+  var sel = document.querySelector('#'+gruppeId+' .gb-radio.gewaehlt');
+  return sel ? sel.dataset.val : null;
+}
+
+function gbUpdateStep(){
+  var isNeu = gbGetRadio('rc-typ') === 'neu';
+  var total = isNeu ? 5 : 4;
+
+  // Dots
+  var dot1b = document.getElementById('gbd-1b');
+  if(dot1b) dot1b.style.display = isNeu ? '' : 'none';
+  [1,2,3,4].forEach(function(i){
+    var d = document.getElementById('gbd-'+i);
+    if(!d) return;
+    d.classList.remove('aktiv','done');
+    if(gbAnamneseAktiv){
+      if(i===1) d.classList.add('done');
+    } else {
+      if(i===gbStep) d.classList.add('aktiv');
+      else if(i<gbStep) d.classList.add('done');
+    }
+  });
+  if(dot1b){
+    dot1b.classList.remove('aktiv','done');
+    if(gbAnamneseAktiv) dot1b.classList.add('aktiv');
+    else if(isNeu && gbStep>1) dot1b.classList.add('done');
+  }
+
+  // Panels
+  ['1','1b','2','3','4'].forEach(function(s){
+    var el = document.getElementById('gb-s'+s);
+    if(el) el.style.display = 'none';
+  });
+  if(gbAnamneseAktiv){
+    document.getElementById('gb-s1b').style.display = '';
+    setTimeout(gbInitSignatur, 60);
+  } else {
+    var p = document.getElementById('gb-s'+gbStep);
+    if(p) p.style.display = '';
+    if(gbStep===2) buildGbSlots();
+  }
+
+  // Label + Titel
+  var stepLabel = document.getElementById('gb-step-lbl');
+  var stepTitle = document.getElementById('gb-title');
+  if(gbAnamneseAktiv){
+    stepLabel.textContent = 'Schritt 2 von '+total;
+    stepTitle.textContent = 'Anamnesebogen';
+  } else {
+    var anzeige = (isNeu && gbStep>1) ? gbStep+1 : gbStep;
+    stepLabel.textContent = 'Schritt '+anzeige+' von '+total;
+    stepTitle.textContent = gbAnamneseAktiv ? 'Anamnesebogen' : (['Anliegen wählen','Termin wählen','Ihre Kontaktdaten','Bestätigung'][gbStep-1]||'');
+  }
+
+  // Foot
+  var back = document.getElementById('gb-back');
+  var next = document.getElementById('gb-next');
+  var foot = document.getElementById('gb-foot');
+  back.style.visibility = (gbStep>1||gbAnamneseAktiv) ? 'visible' : 'hidden';
+  if(gbStep===4 && !gbAnamneseAktiv){
+    foot.style.display = 'none';
+    gbBuildSummary();
+  } else {
+    foot.style.display = 'flex';
+    next.textContent = (gbStep===3 && !gbAnamneseAktiv) ? 'Termin anfragen ✓' : 'Weiter →';
+  }
+}
+
+function gbNext(){
+  if(gbStep===1 && !gbAnamneseAktiv){
+    if(!gbGetRadio('rc-typ')){ alert('Bitte Neu- oder Bestandspatient wählen.'); return; }
+    if(!gbGetRadio('rc-anliegen')){ alert('Bitte Ihr Anliegen wählen.'); return; }
+    if(gbGetRadio('rc-typ')==='neu'){ gbAnamneseAktiv=true; gbUpdateStep(); return; }
+  }
+  if(gbAnamneseAktiv){
+    if(gbSignaturLeer()){ alert('Bitte den Anamnesebogen unterschreiben.'); return; }
+    gbAnamneseAktiv=false; gbStep=2; gbUpdateStep(); return;
+  }
+  if(gbStep===2 && !gbSelectedSlot){ alert('Bitte einen Termin wählen.'); return; }
+  if(gbStep===3){
+    var vn = document.getElementById('gb-vorname').value.trim();
+    var nn = document.getElementById('gb-nachname').value.trim();
+    var tel = document.getElementById('gb-tel').value.trim();
+    var ds = document.getElementById('gb-dsgvo').checked;
+    var hp = document.getElementById('hp_name').value;
+    if(hp){ return; } // Honeypot
+    if(!vn||!nn){ alert('Bitte Namen eingeben.'); return; }
+    if(!tel){ alert('Bitte Telefonnummer eingeben.'); return; }
+    if(!ds){ alert('Bitte Datenschutz bestätigen.'); return; }
+    // DOCTOLIB: Hier den fetch() zur Doctolib-API einbauen
+    // Nach Doctolib-Verbindung: Buchung direkt an Doctolib senden
+    // und Bestätigungs-E-Mail läuft automatisch über Doctolib
+  }
+  gbStep = Math.min(gbStep+1,4);
+  gbUpdateStep();
+}
+
+function gbBack(){
+  if(gbAnamneseAktiv){ gbAnamneseAktiv=false; gbStep=1; gbUpdateStep(); return; }
+  if(gbStep===2 && gbGetRadio('rc-typ')==='neu'){ gbAnamneseAktiv=true; gbUpdateStep(); return; }
+  gbStep = Math.max(gbStep-1,1);
+  gbUpdateStep();
+}
+
+function gbAnamneseUeberspringen(){
+  gbAnamneseAktiv=false; gbStep=2; gbUpdateStep();
+}
+
+function gbBuildSummary(){
+  var anliegen = {
+    vorsorge:'Vorsorge (U1–U9)', impfung:'Impfung',
+    krank:'Erkrankung / Akutfall', j1:'J1 Jugendcheck', sonstiges:'Sonstiges'
+  };
+  var typ = {bestand:'Bestandspatient', neu:'Neupatient'};
+  var rows = [
+    ['Patienttyp', typ[gbGetRadio('rc-typ')]||'—'],
+    ['Anliegen', anliegen[gbGetRadio('rc-anliegen')]||'—'],
+    ['Termin', gbSelectedSlot||'—'],
+    ['Erziehungsber.', (document.getElementById('gb-vorname').value+' '+document.getElementById('gb-nachname').value).trim()||'—'],
+    ['Kind', document.getElementById('gb-kind').value||'—'],
+    ['Telefon', document.getElementById('gb-tel').value||'—'],
+  ];
+  var html = rows.map(function(r){
+    return '<div class="gb-danke-box-row"><span>'+r[0]+'</span><span><strong>'+r[1]+'</strong></span></div>';
+  }).join('');
+  document.getElementById('gb-summary').innerHTML = html;
+}
+
+function openTerminModalGB(vorauswahl){
+  gbStep=1; gbAnamneseAktiv=false; gbSelectedSlot=null;
+  document.querySelectorAll('.gb-radio').forEach(function(r){r.classList.remove('gewaehlt')});
+  ['gb-vorname','gb-nachname','gb-kind','gb-tel','gb-email','gb-kasse',
+   'an-kind-name','an-allergien','an-medis'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.value='';
+  });
+  ['an-asthma','an-diab','an-herz','an-epil','an-haut','an-keine'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.checked=false;
+  });
+  var ds=document.getElementById('gb-dsgvo'); if(ds) ds.checked=false;
+  var hp=document.getElementById('hp_name'); if(hp) hp.value='';
+  // Signatur-Canvas zurücksetzen
+  if(gbSigCtx) gbSigCtx.clearRect(0,0,gbSigCanvas.width,gbSigCanvas.height);
+  if(gbSigCanvas) gbSigCanvas._init=false; gbSigCtx=null;
+  if(vorauswahl){
+    var el=document.querySelector('#rc-typ .gb-radio[data-val="'+vorauswahl+'"]');
+    if(el) gbSelectRadio(el,'rc-typ');
+  }
+  document.getElementById('gb-foot').style.display='flex';
+  document.getElementById('gb-modal').classList.add('aktiv');
+  document.body.classList.add('gb-modal-open');
+  gbUpdateStep();
+}
+
+function gbClose(){
+  gbDemoStop();
+  document.getElementById('gb-modal').classList.remove('aktiv');
+  document.body.classList.remove('gb-modal-open');
+}
+function gbCloseOnBackdrop(e){
+  if(e.target===document.getElementById('gb-modal')) gbClose();
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') gbClose();
+});
+
+// ── Auto-Demo ──
+var gbDemoTimer = [];
+
+function gbDemoStop(){
+  gbDemoTimer.forEach(clearTimeout);
+  gbDemoTimer = [];
+  // Demo-Badge entfernen
+  var badge = document.getElementById('gb-demo-badge');
+  if(badge) badge.remove();
+}
+
+function gbDemoTick(fn, ms){
+  gbDemoTimer.push(setTimeout(fn, ms));
+}
+
+function gbDemoSelect(gruppeId, val, delay){
+  gbDemoTick(function(){
+    var el = document.querySelector('#'+gruppeId+' .gb-radio[data-val="'+val+'"]');
+    if(el){ gbSelectRadio(el, gruppeId); }
+  }, delay);
+}
+
+function gbDemoFill(id, val, delay){
+  gbDemoTick(function(){
+    var el = document.getElementById(id);
+    if(el){ el.value = val; }
+  }, delay);
+}
+
+function gbDemoCheck(id, delay){
+  gbDemoTick(function(){
+    var el = document.getElementById(id);
+    if(el) el.checked = true;
+  }, delay);
+}
+
+function gbDemoWeiter(delay){
+  gbDemoTick(function(){ gbNext(); }, delay);
+}
+
+function gbShowDemoBadge(){
+  var old = document.getElementById('gb-demo-badge');
+  if(old) old.remove();
+  var b = document.createElement('div');
+  b.id = 'gb-demo-badge';
+  b.style.cssText = 'position:absolute;top:14px;left:50%;transform:translateX(-50%);'+
+    'background:var(--accent);color:#fff;font-size:10px;font-weight:700;'+
+    'letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;'+
+    'pointer-events:none;z-index:10';
+  b.textContent = '● DEMO LÄUFT';
+  var head = document.querySelector('.gb-head');
+  if(head){ head.style.position='relative'; head.appendChild(b); }
+}
+
+function gbDemoBestand(){
+  gbDemoStop();
+  openTerminModalGB();
+  gbShowDemoBadge();
+  var t = 0;
+  // Schritt 1: Patienttyp + Anliegen wählen
+  t+=700;  gbDemoSelect('rc-typ','bestand',t);
+  t+=700;  gbDemoSelect('rc-anliegen','vorsorge',t);
+  t+=1000; gbDemoWeiter(t);
+  // Schritt 2: Termin-Slot wählen (kurz warten, dann klicken)
+  t+=1200; gbDemoTick(function(){
+    var slots = document.querySelectorAll('.gb-slot:not(.belegt)');
+    if(slots[2]){ slots[2].click(); }
+  }, t);
+  t+=1000; gbDemoWeiter(t);
+  // Schritt 3: Kontaktdaten
+  t+=600;  gbDemoFill('gb-vorname','Maria',t);
+  t+=400;  gbDemoFill('gb-nachname','Bergmann',t);
+  t+=400;  gbDemoFill('gb-kind','Lena Bergmann',t);
+  t+=400;  gbDemoFill('gb-tel','+49 89 4567890',t);
+  t+=400;  gbDemoFill('gb-email','m.bergmann@email.de',t);
+  t+=400;  gbDemoFill('gb-kasse','TK',t);
+  t+=500;  gbDemoCheck('gb-dsgvo',t);
+  t+=800;  gbDemoWeiter(t);
+  // Schritt 4: Danke-Screen — Demo-Badge nach 3s entfernen
+  t+=3000; gbDemoTick(gbDemoStop, t);
+}
+
+function gbDemoNeu(){
+  gbDemoStop();
+  openTerminModalGB();
+  gbShowDemoBadge();
+  var t = 0;
+  // Schritt 1
+  t+=700;  gbDemoSelect('rc-typ','neu',t);
+  t+=700;  gbDemoSelect('rc-anliegen','impfung',t);
+  t+=1000; gbDemoWeiter(t);
+  // Schritt 1b: Anamnese
+  t+=700;  gbDemoFill('an-kind-name','Jonas Müller',t);
+  t+=500;  gbDemoFill('an-kind-geb','2019-03-15',t);
+  t+=500;  gbDemoFill('an-allergien','Hausstaub (leicht)',t);
+  t+=500;  gbDemoCheck('an-keine',t);
+  t+=500;  gbDemoFill('an-medis','keine',t);
+  t+=500;  gbDemoFill('an-anliegen','Erste Vorsorge, Impfpass prüfen',t);
+  t+=700;  gbDemoSignatur(t);
+  t+=900;  gbDemoWeiter(t);
+  // Schritt 2: Slot
+  t+=1200; gbDemoTick(function(){
+    var slots = document.querySelectorAll('.gb-slot:not(.belegt)');
+    if(slots[1]){ slots[1].click(); }
+  }, t);
+  t+=1000; gbDemoWeiter(t);
+  // Schritt 3: Kontaktdaten
+  t+=600;  gbDemoFill('gb-vorname','Klaus',t);
+  t+=400;  gbDemoFill('gb-nachname','Müller',t);
+  t+=400;  gbDemoFill('gb-kind','Jonas Müller',t);
+  t+=400;  gbDemoFill('gb-tel','+49 89 1234567',t);
+  t+=400;  gbDemoFill('gb-email','k.mueller@email.de',t);
+  t+=400;  gbDemoFill('gb-kasse','AOK Bayern',t);
+  t+=500;  gbDemoCheck('gb-dsgvo',t);
+  t+=800;  gbDemoWeiter(t);
+  // Ende
+  t+=3000; gbDemoTick(gbDemoStop, t);
+}
+
+// "Termin finden" Buttons im Hero etc. verbinden
+document.addEventListener('DOMContentLoaded',function(){
+  // Demo-Bar ausblenden sobald echter Betrieb (kein Flag gesetzt → Demo sichtbar)
+  // Alle externen Doctolib-Links in der Nav/Hero durch Modal ersetzen
+  document.querySelectorAll('a[href*="doctolib"]').forEach(function(a){
+    // nur wenn es ein primärer CTA-Button ist
+    if(a.classList.contains('btn-primaer')||a.classList.contains('btn-termin')){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        openTerminModalGB();
+      });
+    }
+  });
+});
+
+// Tablet Hochformat: Sidebar-Buttons erst nach dem Scrollen zeigen
+(function() {
+  var mq = window.matchMedia('(min-width:768px) and (max-width:1024px) and (orientation:portrait)');
+  function initScroll() {
+    if (!mq.matches) return;
+    var hero = document.querySelector('.hero.hero-v2');
+    var btns = document.querySelector('.hero-tab-btns');
+    if (!hero || !btns) return;
+    function checkHero() {
+      var rect = hero.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        btns.classList.add('gb-tabs-visible');
+      } else {
+        btns.classList.remove('gb-tabs-visible');
+      }
+    }
+    checkHero();
+    window.addEventListener('scroll', checkHero, { passive: true });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScroll);
+  } else {
+    initScroll();
+  }
+  mq.addEventListener('change', function() {
+    var btns = document.querySelector('.hero-tab-btns');
+    if (btns) btns.classList.remove('gb-tabs-visible');
+    initScroll();
+  });
+})();
 </script>
 </body>
 </html>
