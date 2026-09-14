@@ -131,7 +131,11 @@
     .vs-seite { display: contents; }
     .vs-swipe-hint { display: none; }
     /* Sidebar-Button global versteckt */
-    .vs-tab-btns { display: none; }
+    .vs-tab-btns{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:999;display:none;flex-direction:column;gap:0;width:auto;align-items:stretch}
+    .vs-tab-btns.vs-tabs-visible{display:flex}
+    .vs-tab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:52px;min-height:60px;padding:10px 0;border-radius:12px 0 0 12px;text-decoration:none;cursor:pointer;border:none}
+    .vs-tab-btn-label{font-size:9px;font-weight:600;letter-spacing:0.04em;color:#fff}
+    .vs-tab-btn-termin{background:var(--primary);color:#fff}
 
     @media(max-width:767px){
   /* Schritte carousel */
@@ -303,12 +307,7 @@
   .vs-seite .schritt:last-of-type { border-bottom: none !important; }
   .vs-zurueck-card { display: flex !important; align-items: center !important; justify-content: center !important; border: 0.5px solid var(--rule) !important; border-radius: 0 !important; min-height: 80px !important; cursor: pointer !important; background: var(--bg-soft) !important; }
 
-  /* Termin-Sidebar-Button */
-  .vs-tab-btns { display: none !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 0 !important; width: auto !important; align-items: stretch !important; }
-  .vs-tab-btns.vs-tabs-visible { display: flex !important; }
-  .vs-tab-btn { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 4px !important; width: 56px !important; min-height: 64px !important; padding: 10px 0 !important; border-radius: 12px 0 0 12px !important; text-decoration: none !important; cursor: pointer !important; border: none !important; }
-  .vs-tab-btn-label { font-size: 9px !important; font-weight: 600 !important; letter-spacing: 0.04em !important; }
-  .vs-tab-btn-termin { background: var(--primary, #1B485A) !important; color: #fff !important; }
+  /* Termin-Sidebar-Button: global gesetzt */
 
   /* Swipe-Hinweis */
   .vs-swipe-hint { display: flex !important; align-items: center !important; gap: 8px !important; font-size: 12.5px !important; color: var(--ink2) !important; margin-top: 10px !important; opacity: 0.75 !important; }
@@ -698,18 +697,9 @@
           </div>
           <div class="ft-zettel-row-text">
             Gleich Termin finden
-            <span class="ft-zettel-row-sub">Doctolib · online buchen</span>
           </div>
         </a>
-        <a href="tel:+4989939487-3" class="ft-zettel-row ft-zettel-row--video">
-          <div class="ft-zettel-row-icon">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l1.02-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div class="ft-zettel-row-text">
-            Anrufen
-            <span class="ft-zettel-row-sub">089 – 93 94 87 3</span>
-          </div>
-        </a>
+
       </div>
       <div class="ft-zettel-lines"></div>
     </div>
