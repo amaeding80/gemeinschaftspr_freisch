@@ -1462,6 +1462,24 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-fisch { display: none !important; }
+  /* C3b — Schaukel: top-left, pendel wie Fisch im Hochformat */
+  .schaukel-deko {
+    display: block !important;
+    position: fixed !important;
+    top: 48px !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 110px !important;
+    height: auto !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+    transform-origin: 50% 0% !important;
+    animation: schaukel-c 4s ease-in-out infinite !important;
+  }
+  @keyframes schaukel-c {
+    0%, 100% { transform: rotate(11deg); }
+    50% { transform: rotate(2deg); }
+  }
   .hero-frame { display: none !important; }
   .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
 
@@ -3289,6 +3307,11 @@ body.gb-modal-open{overflow:hidden}
     flex-direction: column !important;
   }
   .ph-item:nth-child(even) { border: 0.5px solid var(--border) !important; }
+  /* Kacheln 1 + 3: blauer Akzent-Strich links */
+  .ph-list > .ph-item:nth-child(1),
+  .ph-list > .ph-item:nth-child(3) {
+    border-left: 3px solid var(--primary, #1B485A) !important;
+  }
   .ph-item:nth-child(3n) { border: 0.5px solid var(--border) !important; }
 
   /* Kein Accordion — Button ist nur visueller Container */
@@ -3311,7 +3334,7 @@ body.gb-modal-open{overflow:hidden}
     order: -1 !important;
     display: inline-block !important;
     align-self: flex-start !important;
-    font-size: 10px !important;
+    font-size: 12px !important;
     font-weight: 500 !important;
     background: rgba(27,72,90,0.09) !important;
     color: var(--primary, #1B485A) !important;
@@ -3327,7 +3350,7 @@ body.gb-modal-open{overflow:hidden}
     color: var(--ink) !important;
   }
   .ph-small {
-    font-size: 11px !important;
+    font-size: 12px !important;
     color: var(--ink2) !important;
     display: block !important;
     margin-top: 2px !important;
@@ -3355,14 +3378,15 @@ body.gb-modal-open{overflow:hidden}
     gap: 4px !important;
   }
   .ph-tag {
-    font-size: 10px !important;
+    font-size: 11px !important;
     padding: 2px 7px !important;
     border-radius: 20px !important;
     white-space: nowrap !important;
     line-height: 1.5 !important;
   }
 
-  .ph-zurueck-card {
+  /* C13b — 6. Kachel U&J: höhere Spezifität schlägt @media(min-width:768px){display:none} */
+  .ph-list > .ph-zurueck-card {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -3372,21 +3396,22 @@ body.gb-modal-open{overflow:hidden}
     padding: 14px !important;
     background: rgba(27,72,90,0.06) !important;
     border: 0.5px solid rgba(27,72,90,0.2) !important;
+    border-left: 3px solid var(--primary, #1B485A) !important;
     border-radius: 12px !important;
   }
-  .ph-zurueck-inner { display: none !important; }
-  .ph-zurueck-card::before {
+  .ph-list > .ph-zurueck-card .ph-zurueck-inner { display: none !important; }
+  .ph-list > .ph-zurueck-card::before {
     content: "Was bedeuten U und J?" !important;
     display: block !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
     color: var(--primary, #1B485A) !important;
     margin-bottom: 10px !important;
   }
-  .ph-zurueck-card::after {
+  .ph-list > .ph-zurueck-card::after {
     content: "U2\2013 U9 \B7 Vorsorge von Geburt bis Schulalter\A U10/U11 \B7 Gesundheits-Check Grundschule\A J1/J2 \B7 Jugendvorsorge, auf Wunsch ohne Eltern" !important;
     white-space: pre !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     color: var(--ink2, rgba(0,0,0,0.5)) !important;
     line-height: 1.9 !important;
     display: block !important;
