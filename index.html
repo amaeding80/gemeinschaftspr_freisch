@@ -3145,6 +3145,77 @@ body.gb-modal-open{overflow:hidden}
   .footer-anfahrt { display: none !important; }
   footer { padding-top: 40px !important; padding-bottom: 28px !important; }
   .footer-bottom { padding-top: 16px !important; gap: 8px !important; }
+
+  /* C9 — Nav: schmaler im Querformat */
+  .nav-inner { height: 60px !important; }
+  .nav-inner picture img { height: 60px !important; }
+
+  /* C10 — Hero: lv-chips horizontal scrollen statt umbrechen */
+  .lv-chips {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding-bottom: 4px !important;
+    width: 100% !important;
+  }
+  .lv-chips::-webkit-scrollbar { display: none; }
+  .lv-chip { flex-shrink: 0 !important; }
+  .hero-copy { padding: 68px 36px 40px !important; }
+
+  /* C11 — Team Ärztinnen: 3-spaltig, kompaktere Fotos */
+  .team-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    flex-direction: unset !important;
+  }
+  .team-karte {
+    flex: unset !important;
+    max-width: unset !important;
+    scroll-snap-align: unset !important;
+  }
+  .team-foto { border-radius: 12px !important; }
+
+  /* C12 — Einblicke-Bilder: komplett ausblenden */
+  .einblicke-strip { display: none !important; }
+  .ek-swipe-hint { display: none !important; }
+
+  /* C13 — Leistungen: 2-spaltig nebeneinander, kein Karussell */
+  .ph-list {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    gap: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 0 !important;
+    border-top: 0.5px solid var(--border) !important;
+  }
+  .ph-page { display: contents !important; }
+  .ph-item {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    scroll-snap-align: unset !important;
+    border-radius: 0 !important;
+    border-right: 0.5px solid var(--border) !important;
+    border-bottom: 0.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+  .ph-item:nth-child(even) { border-right: none !important; }
+  .ph-zurueck-card {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    border-radius: 0 !important;
+    min-height: 80px !important;
+    border-top: 0.5px solid var(--border) !important;
+    border-right: none !important;
+  }
+  .ph-swipe-hint { display: none !important; }
 }
 
 
