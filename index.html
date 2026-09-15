@@ -1462,24 +1462,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-fisch { display: none !important; }
-  /* C3b — Schaukel: top-left, pendel wie Fisch im Hochformat */
-  .schaukel-deko {
-    display: block !important;
-    position: fixed !important;
-    top: 48px !important;
-    left: 0 !important;
-    right: auto !important;
-    width: 110px !important;
-    height: auto !important;
-    z-index: 10 !important;
-    pointer-events: none !important;
-    transform-origin: 50% 0% !important;
-    animation: schaukel-c 4s ease-in-out infinite !important;
-  }
-  @keyframes schaukel-c {
-    0%, 100% { transform: rotate(11deg); }
-    50% { transform: rotate(2deg); }
-  }
+
   .hero-frame { display: none !important; }
   .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
 
@@ -3090,6 +3073,24 @@ body.gb-modal-open{overflow:hidden}
 
   /* C3 — Hero: Text links, Bild rechts */
   .hero-fisch { display: none !important; }
+  /* C3b — Schaukel: oben links, andersrum gespiegelt, Pendel wie Fisch im Hochformat */
+  .schaukel-deko {
+    display: block !important;
+    position: fixed !important;
+    top: 48px !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 110px !important;
+    height: auto !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+    transform-origin: 50% 0% !important;
+    animation: schaukel-c 4s ease-in-out infinite !important;
+  }
+  @keyframes schaukel-c {
+    0%, 100% { transform: scaleX(-1) rotate(-11deg); }
+    50%       { transform: scaleX(-1) rotate(-2deg); }
+  }
   .hero.hero-v2 {
     background: #F9F5F0 !important;
     background-image: none !important;
@@ -3176,7 +3177,7 @@ body.gb-modal-open{overflow:hidden}
   .footer-anfahrt { display: none !important; }
   .footer-col:nth-child(2) { display: none !important; }
   .footer-col-links { column-count: 1; }
-  .footer-praxis-name { font-size: 0 !important; }
+  .footer-praxis-name { font-size: 0 !important; line-height: 0 !important; }
   .footer-praxis-name::before {
     content: "Gemeinschaftspraxis Kinder- und Jugendmedizin" !important;
     display: block !important;
@@ -3188,6 +3189,11 @@ body.gb-modal-open{overflow:hidden}
   }
   footer { padding-top: 28px !important; padding-bottom: 20px !important; }
   .footer-bottom { padding-top: 12px !important; gap: 8px !important; flex-wrap: wrap !important; }
+  /* C8b — Footer Lesbarkeit */
+  .footer-praxis-name::before { font-size: 15px !important; }
+  .footer-adresse { font-size: 13px !important; color: rgba(255,255,255,0.75) !important; line-height: 1.6 !important; }
+  footer a { font-size: 13px !important; }
+  .footer-bottom { font-size: 12px !important; }
 
   /* C9 — Nav: kompakt + grünes Männchen weg */
   .nav-inner { height: 60px !important; }
@@ -3307,9 +3313,10 @@ body.gb-modal-open{overflow:hidden}
     flex-direction: column !important;
   }
   .ph-item:nth-child(even) { border: 0.5px solid var(--border) !important; }
-  /* Kacheln 1 + 3: blauer Akzent-Strich links */
+  /* Kacheln 1, 3, 5: blauer Akzent-Strich links */
   .ph-list > .ph-item:nth-child(1),
-  .ph-list > .ph-item:nth-child(3) {
+  .ph-list > .ph-item:nth-child(3),
+  .ph-list > .ph-item:nth-child(5) {
     border-left: 3px solid var(--primary, #1B485A) !important;
   }
   .ph-item:nth-child(3n) { border: 0.5px solid var(--border) !important; }
@@ -3396,25 +3403,51 @@ body.gb-modal-open{overflow:hidden}
     padding: 14px !important;
     background: rgba(27,72,90,0.06) !important;
     border: 0.5px solid rgba(27,72,90,0.2) !important;
-    border-left: 3px solid var(--primary, #1B485A) !important;
     border-radius: 12px !important;
   }
   .ph-list > .ph-zurueck-card .ph-zurueck-inner { display: none !important; }
-  .ph-list > .ph-zurueck-card::before {
-    content: "Was bedeuten U und J?" !important;
-    display: block !important;
+  .uj-card-inner {
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .uj-card-title {
     font-size: 13px !important;
+    font-weight: 700 !important;
+    color: var(--primary, #1B485A) !important;
+    margin: 0 0 2px !important;
+    line-height: 1.3 !important;
+  }
+  .uj-card-intro {
+    font-size: 11px !important;
+    color: var(--ink2, rgba(0,0,0,0.45)) !important;
+    line-height: 1.5 !important;
+    margin: 0 0 6px !important;
+  }
+  .uj-card-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+  .uj-card-list li {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+  }
+  .uj-kz {
+    font-size: 11px !important;
     font-weight: 600 !important;
     color: var(--primary, #1B485A) !important;
-    margin-bottom: 10px !important;
+    line-height: 1.3 !important;
   }
-  .ph-list > .ph-zurueck-card::after {
-    content: "U2\2013 U9 \B7 Vorsorge von Geburt bis Schulalter\A U10/U11 \B7 Gesundheits-Check Grundschule\A J1/J2 \B7 Jugendvorsorge, auf Wunsch ohne Eltern" !important;
-    white-space: pre !important;
-    font-size: 12px !important;
+  .uj-tx {
+    font-size: 11px !important;
     color: var(--ink2, rgba(0,0,0,0.5)) !important;
-    line-height: 1.9 !important;
-    display: block !important;
+    line-height: 1.4 !important;
   }
   .uj-glossar { display: none !important; }
   .ph-swipe-hint { display: none !important; }
@@ -4049,10 +4082,16 @@ body.gb-modal-open{overflow:hidden}
         </div>
       </div>
 
-      <div class="ph-item ph-zurueck-card" onclick="document.querySelector('.ph-list').scrollTo({left:0,behavior:'smooth'})">
-        <div class="ph-zurueck-inner">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-          <span>Zurück</span>
+      <div class="ph-item ph-zurueck-card">
+        <div class="uj-card-inner">
+          <p class="uj-card-title">Was bedeuten U und J?</p>
+          <p class="uj-card-intro">U und J sind Vorsorge-Termine beim Kinderarzt.<br>U = Untersuchung für Kinder. J = Untersuchung für Jugendliche.</p>
+          <ul class="uj-card-list">
+            <li><span class="uj-kz">U2–U9</span><span class="uj-tx">erste Wochen bis Kita und Schulstart</span></li>
+            <li><span class="uj-kz">U10 / U11</span><span class="uj-tx">Grundschule (etwa 7–10 Jahre)</span></li>
+            <li><span class="uj-kz">J1 · 12–14 J.</span><span class="uj-tx">Körper, Gefühle, Alltag</span></li>
+            <li><span class="uj-kz">J2 · 16–17 J.</span><span class="uj-tx">du kannst auch allein kommen</span></li>
+          </ul>
         </div>
       </div>
 
