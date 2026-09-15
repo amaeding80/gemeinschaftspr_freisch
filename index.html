@@ -3063,13 +3063,8 @@ body.gb-modal-open{overflow:hidden}
     margin-left: 0 !important;
     letter-spacing: -0.01em !important;
   }
-  /* C1b — Nav-CTAs: beim Scrollen einblenden (.quer-scrolled via JS) */
+  /* C1b — Nav-CTAs: im Querformat ausblenden */
   .nav-cta-gruppe { display: none !important; }
-  .nav-cta-gruppe.quer-scrolled {
-    display: flex !important;
-    gap: 8px !important;
-    align-items: center !important;
-  }
 
   /* C2 — Widgets */
   .ft-zettel { display: none !important; }
@@ -3157,32 +3152,13 @@ body.gb-modal-open{overflow:hidden}
   /* C5 — "Was uns ausmacht": Detailfoto etwas kleiner */
   .wua-detail { width: 28% !important; }
 
-  /* C8 — Footer: Tablet Querformat — schmal und smart */
-  footer { padding: 22px var(--pad) 0 !important; }
-  .footer-cols {
-    grid-template-columns: 2fr 1fr 1fr !important;
-    gap: 28px !important;
-    margin-bottom: 14px !important;
-    align-items: start !important;
-  }
+  /* C8 — Footer: wie Tablet Hochformat */
+  .footer-cols { grid-template-columns: 1fr !important; gap: 20px !important; }
   .footer-notfall { display: none !important; }
   .footer-anfahrt { display: none !important; }
-  .footer-praxis-name { font-size: 13px !important; margin-bottom: 5px !important; line-height: 1.4 !important; }
-  .footer-adresse { font-size: 12px !important; margin-bottom: 0 !important; line-height: 1.5 !important; }
-  .footer-col-h { margin-bottom: 8px !important; padding-bottom: 6px !important; }
-  .footer-col-links { gap: 0 !important; }
-  .footer-col-links li { margin-bottom: 5px !important; }
-  .footer-col-links a { font-size: 12px !important; }
-  .footer-bottom {
-    padding: 10px var(--pad) 14px !important;
-    gap: 12px !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-  .footer-copy-full .footer-lang { display: none !important; }
-  .footer-bottom p { font-size: 11px !important; }
-  .footer-pe { font-size: 11px !important; }
+  .footer-col-links { column-count: 2; }
+  footer { padding-top: 28px !important; padding-bottom: 20px !important; }
+  .footer-bottom { padding-top: 12px !important; gap: 8px !important; flex-wrap: wrap !important; }
 
   /* C9 — Nav: kompakt + grünes Männchen weg */
   .nav-inner { height: 60px !important; }
@@ -3229,11 +3205,11 @@ body.gb-modal-open{overflow:hidden}
     border-radius: 0 !important;
   }
   .team-foto {
-    width: 100% !important;
+    width: 80% !important;
     height: auto !important;
     aspect-ratio: 1/1 !important;
     border-radius: 12px !important;
-    margin-bottom: 1.2rem !important;
+    margin: 0 auto 1.2rem !important;
     flex-shrink: unset !important;
   }
   .team-body { flex: unset !important; min-width: unset !important; }
@@ -3308,6 +3284,49 @@ body.gb-modal-open{overflow:hidden}
   .ph-bi-inner { padding: 0 16px 20px !important; }
   .ph-zurueck-card { display: none !important; }
   .ph-swipe-hint { display: none !important; }
+
+  /* C14 — Sidebar-Buttons: fix rechts wie im Hochformat */
+  .hero-tab-btns {
+    display: none !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    right: 0 !important;
+    top: 62% !important;
+    transform: translateY(-50%) !important;
+    z-index: 999 !important;
+    gap: 5px !important;
+    width: auto !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+  }
+  .hero-tab-btns.gb-tabs-visible { display: flex !important; }
+  .hero-tab-btn {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    width: 52px !important;
+    height: 52px !important;
+    max-width: none !important;
+    padding: 0 !important;
+    border-radius: 12px 0 0 12px !important;
+    text-decoration: none !important;
+    font-size: 0 !important;
+    cursor: pointer !important;
+    border: none !important;
+  }
+  .hero-tab-btn svg { width: 24px !important; height: 24px !important; flex-shrink: 0 !important; }
+  .hero-tab-btn-termin {
+    background: var(--primary,#1B485A) !important;
+    color: #fff !important;
+    border-bottom: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  .hero-tab-btn-video {
+    background: var(--bg,#FAF7F2) !important;
+    color: var(--primary,#1B485A) !important;
+    box-shadow: 0 0 0 1.5px var(--primary,#1B485A) inset !important;
+  }
 }
 
 
@@ -4119,24 +4138,6 @@ body.gb-modal-open{overflow:hidden}
 })();
 </script>
 
-<script>
-// Tablet Querformat: Nav-CTAs (Videosprechstunde + Termin) nach Scroll einblenden
-(function(){
-  var gruppe = document.querySelector('.nav-cta-gruppe');
-  if (!gruppe) return;
-  var mq = window.matchMedia('(min-width: 768px) and (max-width: 1366px) and (orientation: landscape) and (min-height: 601px)');
-  function checkQuerScroll() {
-    if (mq.matches) {
-      gruppe.classList.toggle('quer-scrolled', (window.scrollY || window.pageYOffset) > 120);
-    } else {
-      gruppe.classList.remove('quer-scrolled');
-    }
-  }
-  window.addEventListener('scroll', checkQuerScroll, {passive:true});
-  window.addEventListener('resize', checkQuerScroll, {passive:true});
-  checkQuerScroll();
-})();
-</script>
 
 
 
@@ -4974,6 +4975,34 @@ document.addEventListener('DOMContentLoaded',function(){
     var btns = document.querySelector('.hero-tab-btns');
     if (btns) btns.classList.remove('gb-tabs-visible');
     initScroll();
+  });
+})();
+</script>
+
+<script>
+// Tablet Querformat: Sidebar-Buttons nach Hero einblenden
+(function(){
+  var mqQ = window.matchMedia('(min-width: 768px) and (max-width: 1366px) and (orientation: landscape) and (min-height: 601px)');
+  function initQuerScroll() {
+    if (!mqQ.matches) return;
+    var hero = document.querySelector('.hero.hero-v2');
+    var btns = document.querySelector('.hero-tab-btns');
+    if (!hero || !btns) return;
+    function checkQ() {
+      btns.classList.toggle('gb-tabs-visible', hero.getBoundingClientRect().bottom < 0);
+    }
+    checkQ();
+    window.addEventListener('scroll', checkQ, {passive:true});
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initQuerScroll);
+  } else {
+    initQuerScroll();
+  }
+  mqQ.addEventListener('change', function() {
+    var btns = document.querySelector('.hero-tab-btns');
+    if (btns) btns.classList.remove('gb-tabs-visible');
+    initQuerScroll();
   });
 })();
 </script>
