@@ -3152,12 +3152,22 @@ body.gb-modal-open{overflow:hidden}
   /* C5 — "Was uns ausmacht": Detailfoto etwas kleiner */
   .wua-detail { width: 28% !important; }
 
-  /* C8 — Footer: wie Tablet Hochformat */
-  .footer-cols { grid-template-columns: 1fr !important; gap: 20px !important; }
+  /* C8 — Footer: Adresse links, Rechtliches rechts */
+  .footer-cols { grid-template-columns: 1fr 1fr !important; gap: 24px !important; align-items: start !important; }
   .footer-notfall { display: none !important; }
   .footer-anfahrt { display: none !important; }
   .footer-col:nth-child(2) { display: none !important; }
-  .footer-col-links { column-count: 2; }
+  .footer-col-links { column-count: 1; }
+  .footer-praxis-name { font-size: 0 !important; }
+  .footer-praxis-name::before {
+    content: "Gemeinschaftspraxis Kinder- und Jugendmedizin" !important;
+    display: block !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: rgba(255,255,255,0.90) !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px !important;
+  }
   footer { padding-top: 28px !important; padding-bottom: 20px !important; }
   .footer-bottom { padding-top: 12px !important; gap: 8px !important; flex-wrap: wrap !important; }
 
@@ -3352,7 +3362,36 @@ body.gb-modal-open{overflow:hidden}
     line-height: 1.5 !important;
   }
 
-  .ph-zurueck-card { display: none !important; }
+  .ph-zurueck-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    cursor: default !important;
+    pointer-events: none !important;
+    padding: 14px !important;
+    background: rgba(27,72,90,0.06) !important;
+    border: 0.5px solid rgba(27,72,90,0.2) !important;
+    border-radius: 12px !important;
+  }
+  .ph-zurueck-inner { display: none !important; }
+  .ph-zurueck-card::before {
+    content: "Was bedeuten U und J?" !important;
+    display: block !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: var(--primary, #1B485A) !important;
+    margin-bottom: 10px !important;
+  }
+  .ph-zurueck-card::after {
+    content: "U2\2013 U9 \B7 Vorsorge von Geburt bis Schulalter\A U10/U11 \B7 Gesundheits-Check Grundschule\A J1/J2 \B7 Jugendvorsorge, auf Wunsch ohne Eltern" !important;
+    white-space: pre !important;
+    font-size: 11px !important;
+    color: var(--ink2, rgba(0,0,0,0.5)) !important;
+    line-height: 1.9 !important;
+    display: block !important;
+  }
+  .uj-glossar { display: none !important; }
   .ph-swipe-hint { display: none !important; }
 
   /* C14 — Sidebar-Buttons: fix rechts wie im Hochformat */
