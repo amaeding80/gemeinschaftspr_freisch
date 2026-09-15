@@ -3144,12 +3144,32 @@ body.gb-modal-open{overflow:hidden}
   /* C5 — "Was uns ausmacht": Detailfoto etwas kleiner */
   .wua-detail { width: 28% !important; }
 
-  /* C8 — Footer: kompakt */
-  .footer-cols { grid-template-columns: 1fr 1fr 1fr !important; gap: 20px !important; }
+  /* C8 — Footer: Tablet Querformat — schmal und smart */
+  footer { padding: 22px var(--pad) 0 !important; }
+  .footer-cols {
+    grid-template-columns: 2fr 1fr 1fr !important;
+    gap: 28px !important;
+    margin-bottom: 14px !important;
+    align-items: start !important;
+  }
   .footer-notfall { display: none !important; }
   .footer-anfahrt { display: none !important; }
-  footer { padding-top: 36px !important; padding-bottom: 24px !important; }
-  .footer-bottom { padding-top: 14px !important; gap: 8px !important; }
+  .footer-praxis-name { font-size: 13px !important; margin-bottom: 5px !important; line-height: 1.4 !important; }
+  .footer-adresse { font-size: 12px !important; margin-bottom: 0 !important; line-height: 1.5 !important; }
+  .footer-col-h { margin-bottom: 8px !important; padding-bottom: 6px !important; }
+  .footer-col-links { gap: 0 !important; }
+  .footer-col-links li { margin-bottom: 5px !important; }
+  .footer-col-links a { font-size: 12px !important; }
+  .footer-bottom {
+    padding: 10px var(--pad) 14px !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .footer-copy-full .footer-lang { display: none !important; }
+  .footer-bottom p { font-size: 11px !important; }
+  .footer-pe { font-size: 11px !important; }
 
   /* C9 — Nav: kompakt + grünes Männchen weg */
   .nav-inner { height: 60px !important; }
