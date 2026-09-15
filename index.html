@@ -3089,8 +3089,8 @@ body.gb-modal-open{overflow:hidden}
     animation: schaukel-c 4s ease-in-out infinite !important;
   }
   @keyframes schaukel-c {
-    0%, 100% { transform: scaleX(-1) rotate(-11deg); }
-    50%       { transform: scaleX(-1) rotate(-2deg); }
+    0%, 100% { transform: rotate(-11deg); }
+    50%       { transform: rotate(-2deg); }
   }
   .hero.hero-v2 {
     background: #F9F5F0 !important;
@@ -3160,13 +3160,14 @@ body.gb-modal-open{overflow:hidden}
   /* Schaukel-Spalte weg */
   .hero-quer-col { display: none !important; }
 
-  /* C3b — Kleiner Fisch-Badge im Eyebrow */
+  /* C3b — Kleiner Fisch-Badge im Eyebrow: aus (kein Fisch im Tablet-Querformat-Hero) */
   .fisch-mob-badge {
-    display: inline-flex !important;
-    width: 44px !important;
-    height: 44px !important;
-    margin-left: 8px !important;
-    vertical-align: middle !important;
+    display: none !important;
+  }
+
+  /* C3c — Eyebrow-Text "Familienpraxis · Bogenhausen" im Hero ausblenden */
+  .hero-tag {
+    display: none !important;
   }
 
   /* C5 — "Was uns ausmacht": Detailfoto etwas kleiner */
