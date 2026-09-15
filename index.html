@@ -3256,6 +3256,38 @@ body.gb-modal-open{overflow:hidden}
   .team-personal { display: block !important; font-size: 12px !important; }
   .team-carousel-hint { display: none !important; }
 
+  /* C11a — Team-Rollen & Text im Tablet-Querformat (nur hier!):
+     Jennifer Bichler = angestellte Ärztin, Heike Boerschmann = Praxisinhaberin ohne Datumszusatz */
+  .team-grid .team-karte:nth-child(2) .team-rolle { font-size: 0 !important; }
+  .team-grid .team-karte:nth-child(2) .team-rolle::before {
+    content: "Angestellte Ärztin im Team" !important;
+    display: block !important;
+    font-size: 11px !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: var(--acc) !important;
+    margin-bottom: 5px !important;
+  }
+  .team-grid .team-karte:nth-child(3) .team-rolle { font-size: 0 !important; }
+  .team-grid .team-karte:nth-child(3) .team-rolle::before {
+    content: "Praxisinhaberin" !important;
+    display: block !important;
+    font-size: 11px !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: var(--acc) !important;
+    margin-bottom: 5px !important;
+  }
+  .team-grid .team-karte:nth-child(3) .team-text { font-size: 0 !important; line-height: 0 !important; }
+  .team-grid .team-karte:nth-child(3) .team-text::before {
+    content: "Fachärztin für Kinder- und Jugendmedizin." !important;
+    display: block !important;
+    font-size: 13px !important;
+    line-height: 1.72 !important;
+    color: var(--ink2) !important;
+    font-weight: 300 !important;
+  }
+
   /* C11b — MFA Praxisteam: alle Karten sichtbar, Foto + Name gestapelt */
   .mfa-grid {
     display: flex !important;
