@@ -943,6 +943,59 @@ document.addEventListener('keydown', function(e) {
 .gb-sig-hint{font-size:.69rem;color:var(--text-muted);margin-top:5px;text-align:center}
 #gb-sig-canvas{display:block;width:100%;height:110px;touch-action:none;cursor:crosshair}
 @media(max-width:600px){#gb-sig-canvas{height:88px}}
+
+/* Neu: Kind/Eltern, Akte-Abruf, Kurz-Check, Heute+Alter, Stimmungs-Check-in */
+.gb-section-card{border:1.5px solid var(--border);border-radius:16px;
+  padding:16px 16px 14px;margin-bottom:16px;background:#fcfbf9}
+.gb-section-card:last-child{margin-bottom:0}
+.gb-section-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.gb-section-ico{width:34px;height:34px;border-radius:10px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:var(--primary-lt)}
+.gb-section-ico.fisch{background:var(--accent-lt)}
+.gb-section-ico img{width:100%;height:100%;object-fit:contain;padding:4px;display:block}
+.gb-section-title{font-size:.95rem;font-weight:700;color:var(--text);font-family:var(--kopf)}
+.gb-section-sub{font-size:.73rem;color:var(--text-muted);margin-top:1px}
+.gb-heute-textarea{min-height:70px}
+.gb-heute-hint{font-size:.72rem;color:var(--text-muted);margin-top:5px}
+.gb-age-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.gb-age-pill{padding:9px 16px;border:1.5px solid var(--border);border-radius:999px;
+  font-size:.82rem;font-weight:600;cursor:pointer;transition:all .18s;
+  background:#fff;color:var(--text)}
+.gb-age-pill:hover{border-color:var(--primary);background:var(--primary-lt)}
+.gb-age-pill.gewaehlt{border-color:var(--primary);background:var(--primary);color:#fff}
+.gb-age-note{font-size:.7rem;color:var(--text-muted);margin-top:9px;
+  background:var(--accent-lt);padding:8px 11px;border-radius:8px;line-height:1.4}
+.gb-mood-row{display:flex;justify-content:space-between;gap:6px}
+.gb-mood-opt{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;
+  padding:12px 4px 10px;border:1.5px solid var(--border);border-radius:14px;
+  cursor:pointer;transition:all .18s;background:#fff}
+.gb-mood-opt:hover{border-color:var(--primary);background:var(--primary-lt)}
+.gb-mood-opt.gewaehlt{border-color:var(--primary);background:var(--primary-lt);
+  box-shadow:0 0 0 2px var(--primary) inset}
+.gb-mood-emoji{font-size:1.7rem;line-height:1}
+.gb-mood-lbl{font-size:.65rem;font-weight:600;color:var(--text-muted);text-align:center;line-height:1.2}
+.gb-mood-opt.gewaehlt .gb-mood-lbl{color:var(--primary)}
+.gb-lookup-spinner{display:none;align-items:center;gap:10px;justify-content:center;
+  padding:14px 0 4px;font-size:.82rem;color:var(--text-muted);font-weight:600}
+.gb-lookup-spinner.aktiv{display:flex}
+.gb-spin{width:16px;height:16px;border-radius:50%;border:2.5px solid var(--border);
+  border-top-color:var(--primary);animation:gbspin .7s linear infinite}
+@keyframes gbspin{to{transform:rotate(360deg)}}
+.gb-kv-row{display:flex;justify-content:space-between;gap:10px;font-size:.85rem;
+  padding:8px 0;border-bottom:1px solid var(--border)}
+.gb-kv-row:last-child{border-bottom:none}
+.gb-kv-row span:first-child{color:var(--text-muted)}
+.gb-kv-row span:last-child{font-weight:600;text-align:right}
+.gb-update-link{background:none;border:none;cursor:pointer;color:var(--primary);
+  font-size:.78rem;font-weight:600;text-decoration:underline;font-family:var(--body);
+  padding:0;margin-top:10px}
+.gb-update-form{margin-top:14px;padding-top:14px;border-top:1.5px dashed var(--border);display:none}
+.gb-update-form.offen{display:block}
+.gb-badge-ok{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;
+  color:var(--sage);background:var(--sage-lt);padding:4px 10px;border-radius:999px;margin-bottom:10px}
+@media(max-width:600px){.gb-mood-lbl{display:none}}
+
 .gb-doctoli-badge{display:inline-flex;align-items:center;gap:5px;
   font-size:.68rem;color:var(--text-muted);margin-top:6px}
 .gb-doctoli-dot{width:6px;height:6px;border-radius:50%;background:#0064D2}
@@ -960,13 +1013,7 @@ document.addEventListener('keydown', function(e) {
       <div class="gb-step-lbl" id="gb-step-lbl">Schritt 1 von 4</div>
       <h3 class="gb-title" id="gb-title">Anliegen w&#228;hlen</h3>
       <button class="gb-close" onclick="gbClose()" aria-label="Schlie&#223;en">&#10005;</button>
-      <div class="gb-dots" id="gb-dots">
-        <div class="gb-dot aktiv" id="gbd-1"></div>
-        <div class="gb-dot" id="gbd-1b" style="display:none"></div>
-        <div class="gb-dot" id="gbd-2"></div>
-        <div class="gb-dot" id="gbd-3"></div>
-        <div class="gb-dot" id="gbd-4"></div>
-      </div>
+      <div class="gb-dots" id="gb-dots"></div>
     </div>
     <div class="gb-body" id="gb-body">
 
@@ -1024,6 +1071,224 @@ document.addEventListener('keydown', function(e) {
             <div>
               <div class="gb-rlbl">Sonstiges</div>
               <div class="gb-rdesc">Attest, Befund, R&#252;ckruf</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neu (Neupatient): Kind + Eltern -->
+      <div id="gb-s-kind-eltern" style="display:none">
+        <div class="gb-skip-link">
+          <button type="button" onclick="gbAnamneseUeberspringen()">Anamnesebogen vor Ort ausfüllen &mdash; direkt weiter &rarr;</button>
+        </div>
+        <div class="gb-section-card">
+          <div class="gb-section-head">
+            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div>
+              <div class="gb-section-title">Kind</div>
+              <div class="gb-section-sub">Angaben zum Kind / Patient:in</div>
+            </div>
+          </div>
+          <div class="gb-form-row">
+            <label class="gb-label">Name des Kindes</label>
+            <input class="gb-input" id="ik-name" placeholder="Vorname Nachname">
+          </div>
+          <div class="gb-row2">
+            <div class="gb-form-row">
+              <label class="gb-label">Geburtsdatum</label>
+              <input class="gb-input" type="date" id="ik-geb">
+            </div>
+            <div class="gb-form-row">
+              <label class="gb-label">Krankenkasse</label>
+              <input class="gb-input" id="ik-kasse" placeholder="z.&#x202F;B. AOK, TK &#8230;">
+            </div>
+          </div>
+          <div class="gb-form-row">
+            <label class="gb-label">Anschrift</label>
+            <input class="gb-input" id="ik-anschrift" placeholder="Straße, PLZ, Ort">
+          </div>
+          <div class="gb-form-row" style="margin-bottom:0">
+            <label class="gb-label">Hauptversicherte Person</label>
+            <input class="gb-input" id="ik-hauptvers" placeholder="z.&#x202F;B. Mutter">
+          </div>
+        </div>
+
+        <div class="gb-section-card">
+          <div class="gb-section-head">
+            <div class="gb-section-ico fisch"><img src="bilder/fisch-transparent.webp" alt="" loading="lazy"></div>
+            <div>
+              <div class="gb-section-title">Eltern / Erziehungsberechtigte</div>
+              <div class="gb-section-sub">Damit wir immer die richtige Person erreichen</div>
+            </div>
+          </div>
+          <div class="gb-row2">
+            <div class="gb-form-row">
+              <label class="gb-label">Mutter / Elternteil 1 &#8212; Name</label>
+              <input class="gb-input" id="ie-name1" placeholder="Vorname Nachname">
+            </div>
+            <div class="gb-form-row">
+              <label class="gb-label">Beruf</label>
+              <input class="gb-input" id="ie-beruf1" placeholder="optional">
+            </div>
+          </div>
+          <div class="gb-row2">
+            <div class="gb-form-row">
+              <label class="gb-label">Vater / Elternteil 2 &#8212; Name</label>
+              <input class="gb-input" id="ie-name2" placeholder="optional">
+            </div>
+            <div class="gb-form-row">
+              <label class="gb-label">Beruf</label>
+              <input class="gb-input" id="ie-beruf2" placeholder="optional">
+            </div>
+          </div>
+          <div class="gb-row2">
+            <div class="gb-form-row">
+              <label class="gb-label">Handy</label>
+              <input class="gb-input" type="tel" id="ie-handy" placeholder="+49&#x202F;89&#x202F;&#8230;">
+            </div>
+            <div class="gb-form-row">
+              <label class="gb-label">Festnetz</label>
+              <input class="gb-input" type="tel" id="ie-festnetz" placeholder="optional">
+            </div>
+          </div>
+          <div class="gb-form-row">
+            <label class="gb-check" style="width:fit-content">
+              <input type="checkbox" id="ie-erreichbar"> Tagsüber gut erreichbar
+            </label>
+          </div>
+          <div class="gb-form-row">
+            <label class="gb-label">E-Mail</label>
+            <input class="gb-input" type="email" id="ie-email" placeholder="max@beispiel.de">
+          </div>
+          <div class="gb-form-row" style="margin-bottom:0">
+            <label class="gb-label">Weitere Erziehungsberechtigte</label>
+            <input class="gb-input" id="ie-weitere" placeholder="z.&#x202F;B. Großeltern, Pflegeeltern &#8212; optional">
+          </div>
+        </div>
+      </div>
+
+      <!-- Neu (Bestandspatient): Akte finden -->
+      <div id="gb-s-lookup" style="display:none">
+        <div class="gb-section-card" style="margin-bottom:0">
+          <div class="gb-section-head">
+            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div>
+              <div class="gb-section-title">Ihre Akte finden</div>
+              <div class="gb-section-sub">Kurz bestätigen, dann laden wir Ihre Daten</div>
+            </div>
+          </div>
+          <div class="gb-row2">
+            <div class="gb-form-row">
+              <label class="gb-label">Nachname (Kind)</label>
+              <input class="gb-input" id="lk-nachname" placeholder="Mustermann">
+            </div>
+            <div class="gb-form-row">
+              <label class="gb-label">Geburtsdatum (Kind)</label>
+              <input class="gb-input" type="date" id="lk-geb">
+            </div>
+          </div>
+          <div class="gb-form-row" style="margin-bottom:0">
+            <label class="gb-label">Handynummer (hinterlegt)</label>
+            <input class="gb-input" type="tel" id="lk-handy" placeholder="+49&#x202F;89&#x202F;&#8230;">
+          </div>
+          <div class="gb-lookup-spinner" id="gb-lookup-spinner"><div class="gb-spin"></div> Daten werden geladen &#8230;</div>
+        </div>
+      </div>
+
+      <!-- Neu (Bestandspatient): Kurz bestätigen -->
+      <div id="gb-s-kurzcheck" style="display:none">
+        <div class="gb-section-card">
+          <div class="gb-section-head">
+            <div class="gb-section-ico fisch"><img src="bilder/fisch-transparent.webp" alt="" loading="lazy"></div>
+            <div>
+              <div class="gb-section-title">Ihre Daten bei uns</div>
+              <div class="gb-section-sub">Gefunden &#8212; bitte kurz bestätigen</div>
+            </div>
+          </div>
+          <div class="gb-badge-ok">&#10003; Akte gefunden</div>
+          <!-- Demo-Platzhalter: nach Anbindung der echten Patientenkartei stehen hier die echten Daten -->
+          <div class="gb-kv-row"><span>Kind</span><span>Lena Mustermann, 09.03.2019</span></div>
+          <div class="gb-kv-row"><span>Erziehungsberechtigte:r</span><span>Maria Mustermann</span></div>
+          <div class="gb-kv-row"><span>Kontakt</span><span>+49 89 12345678</span></div>
+          <div class="gb-kv-row"><span>Krankenkasse</span><span>AOK Bayern</span></div>
+          <button class="gb-update-link" id="gb-update-toggle" type="button" onclick="gbToggleUpdateForm()">&#9998; Etwas hat sich geändert &#8212; Angaben aktualisieren</button>
+          <div class="gb-update-form" id="gb-update-form">
+            <div class="gb-row2">
+              <div class="gb-form-row">
+                <label class="gb-label">Neue Telefonnummer</label>
+                <input class="gb-input" type="tel" id="uk-tel" placeholder="+49&#x202F;&#8230;">
+              </div>
+              <div class="gb-form-row">
+                <label class="gb-label">Neue E-Mail</label>
+                <input class="gb-input" type="email" id="uk-email" placeholder="optional">
+              </div>
+            </div>
+            <div class="gb-form-row" style="margin-bottom:0">
+              <label class="gb-label">Neue Anschrift / Krankenkasse</label>
+              <input class="gb-input" id="uk-adresse" placeholder="nur ausfüllen, was sich geändert hat">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neu (beide): Heute am wichtigsten + Alter -->
+      <div id="gb-s-heute-alter" style="display:none">
+        <div class="gb-section-card">
+          <div class="gb-section-head">
+            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div>
+              <div class="gb-section-title">Heute am wichtigsten</div>
+              <div class="gb-section-sub">Ein Satz reicht &#8212; warum seid ihr da?</div>
+            </div>
+          </div>
+          <textarea class="gb-textarea gb-heute-textarea" id="ha-heute" placeholder="z.&#x202F;B. Husten seit 3 Tagen, Fieber gestern Abend &#8230;"></textarea>
+          <div class="gb-heute-hint">Das hilft uns, uns vor dem Termin schon kurz vorzubereiten.</div>
+        </div>
+
+        <div class="gb-section-card">
+          <div class="gb-section-head">
+            <div class="gb-section-ico fisch"><img src="bilder/fisch-transparent.webp" alt="" loading="lazy"></div>
+            <div>
+              <div class="gb-section-title">Alter</div>
+              <div class="gb-section-sub">Damit wir die richtigen Fragen zeigen</div>
+            </div>
+          </div>
+          <div class="gb-age-grid" id="ha-alter-grid">
+            <div class="gb-age-pill" onclick="gbPickAge(this)">Baby / Klein</div>
+            <div class="gb-age-pill" onclick="gbPickAge(this)">Kita</div>
+            <div class="gb-age-pill" onclick="gbPickAge(this)">Grundschule</div>
+            <div class="gb-age-pill" onclick="gbPickAge(this)">12&#8211;14</div>
+            <div class="gb-age-pill" onclick="gbPickAge(this)">16&#8211;17</div>
+          </div>
+          <div class="gb-age-note">Bitte ankreuzen &#8212; in der finalen Version werden danach nur noch die passenden Fragen-Blöcke angezeigt.</div>
+        </div>
+      </div>
+
+      <!-- Neu (beide): Wie geht's dir gerade -->
+      <div id="gb-s-mood" style="display:none">
+        <div class="gb-section-card" style="margin-bottom:0">
+          <div class="gb-section-head">
+            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div>
+              <div class="gb-section-title">Wie geht's dir gerade?</div>
+              <div class="gb-section-sub">Fürs Kind oder für dich als Jugendliche&#183;r &#8212; einfach ankreuzen (freiwillig)</div>
+            </div>
+          </div>
+          <div class="gb-mood-row" id="mood-grid">
+            <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="sehr-gut">
+              <div class="gb-mood-emoji">&#128516;</div><div class="gb-mood-lbl">Sehr gut</div>
+            </div>
+            <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="gut">
+              <div class="gb-mood-emoji">&#128578;</div><div class="gb-mood-lbl">Gut</div>
+            </div>
+            <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="geht-so">
+              <div class="gb-mood-emoji">&#128528;</div><div class="gb-mood-lbl">Geht so</div>
+            </div>
+            <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="nicht-so-gut">
+              <div class="gb-mood-emoji">&#128577;</div><div class="gb-mood-lbl">Nicht so gut</div>
+            </div>
+            <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="schlecht">
+              <div class="gb-mood-emoji">&#128546;</div><div class="gb-mood-lbl">Schlecht</div>
             </div>
           </div>
         </div>
@@ -1251,10 +1516,91 @@ function gbDemoSignatur(delay){
 // Nach Verbindung laufen Terminbestätigungen automatisch über Doctolib.
 
 var gbStep = 1;
-var gbAnamneseAktiv = false;
+var gbSub = null;      // null | 'kind-eltern' | 'lookup' | 'kurzcheck' | 'heute-alter' | 'mood' | 'anamnese'
+var gbSubIdx = -1;
 var gbSelectedSlot = null;
+var gbAlterWert = null;
+var gbMoodWert = null;
 
 var gbTitles = ['Anliegen wählen','Anamnesebogen','Termin wählen','Ihre Kontaktdaten','Bestätigung'];
+
+var gbSubPanelId = {
+  'kind-eltern':'gb-s-kind-eltern',
+  'lookup':'gb-s-lookup',
+  'kurzcheck':'gb-s-kurzcheck',
+  'heute-alter':'gb-s-heute-alter',
+  'mood':'gb-s-mood',
+  'anamnese':'gb-s1b'
+};
+var gbSubTitle = {
+  'kind-eltern':'Wer kommt zu uns?',
+  'lookup':'Ihre Akte finden',
+  'kurzcheck':'Kurz bestätigen',
+  'heute-alter':'Kurz & knapp',
+  'mood':'Kurzer Check-in',
+  'anamnese':'Anamnesebogen'
+};
+
+function gbCurrentSubFlow(){
+  return gbGetRadio('rc-typ')==='bestand'
+    ? ['lookup','kurzcheck','heute-alter','mood']
+    : ['kind-eltern','heute-alter','mood','anamnese'];
+}
+
+function gbPick(el, groupSel, storeFn){
+  document.querySelectorAll(groupSel+' .gewaehlt').forEach(function(i){ i.classList.remove('gewaehlt'); });
+  el.classList.add('gewaehlt');
+  if(storeFn) storeFn(el);
+}
+function gbPickAge(el){ gbPick(el, '#ha-alter-grid', function(e){ gbAlterWert = e.textContent.trim(); }); }
+function gbPickMood(el){ gbPick(el, '#mood-grid', function(e){ gbMoodWert = e.dataset.val; }); }
+
+function gbToggleUpdateForm(){
+  var f = document.getElementById('gb-update-form');
+  if(!f) return;
+  var offen = f.classList.toggle('offen');
+  var btn = document.getElementById('gb-update-toggle');
+  if(btn) btn.innerHTML = offen
+    ? '&#10005; Aktualisierung schließen'
+    : '&#9998; Etwas hat sich geändert &#8212; Angaben aktualisieren';
+}
+
+function gbValidateSub(sub){
+  function pruefen(ids){
+    for(var i=0;i<ids.length;i++){
+      var el = document.getElementById(ids[i]);
+      if(el && !el.value.trim()){ el.focus(); return false; }
+    }
+    return true;
+  }
+  if(sub==='kind-eltern'){
+    if(!pruefen(['ik-name','ik-geb','ik-kasse','ik-anschrift','ik-hauptvers'])){
+      alert('Bitte alle Pflichtfelder zum Kind ausfüllen.'); return false;
+    }
+    if(!pruefen(['ie-name1','ie-handy','ie-email'])){
+      alert('Bitte Name, Handynummer und E-Mail eines Erziehungsberechtigten angeben.'); return false;
+    }
+    return true;
+  }
+  if(sub==='lookup'){
+    if(!pruefen(['lk-nachname','lk-geb','lk-handy'])){
+      alert('Bitte Nachname, Geburtsdatum und Handynummer angeben, damit wir Ihre Akte finden können.');
+      return false;
+    }
+    return true;
+  }
+  if(sub==='heute-alter'){
+    var ha = document.getElementById('ha-heute');
+    if(!ha.value.trim()){ alert('Bitte kurz beschreiben, worum es heute geht.'); ha.focus(); return false; }
+    if(!gbAlterWert){ alert('Bitte das Alter auswählen.'); return false; }
+    return true;
+  }
+  if(sub==='anamnese'){
+    if(gbSignaturLeer()){ alert('Bitte den Anamnesebogen unterschreiben.'); return false; }
+    return true;
+  }
+  return true; // 'kurzcheck', 'mood' — keine Pflichtfelder
+}
 
 var gbTageKurz = ['So','Mo','Di','Mi','Do','Fr','Sa'];
 var gbMonateKurz = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
@@ -1323,78 +1669,96 @@ function gbGetRadio(gruppeId){
 }
 
 function gbUpdateStep(){
-  var isNeu = gbGetRadio('rc-typ') === 'neu';
-  var total = isNeu ? 5 : 4;
+  var subFlow = gbCurrentSubFlow();
+  var total = subFlow.length + 4; // Anliegen + Sub-Schritte + Termin + Kontakt + Bestätigung
 
-  // Dots
-  var dot1b = document.getElementById('gbd-1b');
-  if(dot1b) dot1b.style.display = isNeu ? '' : 'none';
-  [1,2,3,4].forEach(function(i){
-    var d = document.getElementById('gbd-'+i);
-    if(!d) return;
-    d.classList.remove('aktiv','done');
-    if(gbAnamneseAktiv){
-      if(i===1) d.classList.add('done');
-    } else {
-      if(i===gbStep) d.classList.add('aktiv');
-      else if(i<gbStep) d.classList.add('done');
-    }
-  });
-  if(dot1b){
-    dot1b.classList.remove('aktiv','done');
-    if(gbAnamneseAktiv) dot1b.classList.add('aktiv');
-    else if(isNeu && gbStep>1) dot1b.classList.add('done');
-  }
-
-  // Panels
-  ['1','1b','2','3','4'].forEach(function(s){
-    var el = document.getElementById('gb-s'+s);
+  // Panels: alles verstecken, dann den richtigen Schritt zeigen
+  ['gb-s1','gb-s2','gb-s3','gb-s4','gb-s-kind-eltern','gb-s-lookup',
+   'gb-s-kurzcheck','gb-s-heute-alter','gb-s-mood','gb-s1b'].forEach(function(id){
+    var el = document.getElementById(id);
     if(el) el.style.display = 'none';
   });
-  if(gbAnamneseAktiv){
-    document.getElementById('gb-s1b').style.display = '';
-    setTimeout(gbInitSignatur, 60);
+
+  var stepLabel = document.getElementById('gb-step-lbl');
+  var stepTitle = document.getElementById('gb-title');
+  var currentIndex;
+
+  if(gbSub){
+    var panel = document.getElementById(gbSubPanelId[gbSub]);
+    if(panel) panel.style.display = '';
+    stepTitle.textContent = gbSubTitle[gbSub];
+    currentIndex = 1 + gbSubIdx;
+    if(gbSub==='anamnese') setTimeout(gbInitSignatur, 60);
   } else {
     var p = document.getElementById('gb-s'+gbStep);
     if(p) p.style.display = '';
     if(gbStep===2) buildGbSlots();
+    stepTitle.textContent = (['Anliegen wählen','Termin wählen','Ihre Kontaktdaten','Bestätigung'][gbStep-1])||'';
+    currentIndex = (gbStep===1) ? 0 : (subFlow.length + gbStep - 1);
   }
+  stepLabel.textContent = 'Schritt '+(currentIndex+1)+' von '+total;
 
-  // Label + Titel
-  var stepLabel = document.getElementById('gb-step-lbl');
-  var stepTitle = document.getElementById('gb-title');
-  if(gbAnamneseAktiv){
-    stepLabel.textContent = 'Schritt 2 von '+total;
-    stepTitle.textContent = 'Anamnesebogen';
-  } else {
-    var anzeige = (isNeu && gbStep>1) ? gbStep+1 : gbStep;
-    stepLabel.textContent = 'Schritt '+anzeige+' von '+total;
-    stepTitle.textContent = gbAnamneseAktiv ? 'Anamnesebogen' : (['Anliegen wählen','Termin wählen','Ihre Kontaktdaten','Bestätigung'][gbStep-1]||'');
+  // Punkte dynamisch aufbauen (Anzahl hängt vom gewählten Pfad ab)
+  var dotsWrap = document.getElementById('gb-dots');
+  if(dotsWrap){
+    dotsWrap.innerHTML = '';
+    for(var i=0;i<total;i++){
+      var d = document.createElement('div');
+      d.className = 'gb-dot' + (i<currentIndex ? ' done' : (i===currentIndex ? ' aktiv' : ''));
+      dotsWrap.appendChild(d);
+    }
   }
 
   // Foot
   var back = document.getElementById('gb-back');
   var next = document.getElementById('gb-next');
   var foot = document.getElementById('gb-foot');
-  back.style.visibility = (gbStep>1||gbAnamneseAktiv) ? 'visible' : 'hidden';
-  if(gbStep===4 && !gbAnamneseAktiv){
+  back.style.visibility = (gbStep>1||gbSub) ? 'visible' : 'hidden';
+  if(gbStep===4 && !gbSub){
     foot.style.display = 'none';
     gbBuildSummary();
   } else {
     foot.style.display = 'flex';
-    next.textContent = (gbStep===3 && !gbAnamneseAktiv) ? 'Termin anfragen ✓' : 'Weiter →';
+    next.disabled = false;
+    next.textContent = (gbStep===3 && !gbSub) ? 'Termin anfragen ✓' : 'Weiter →';
   }
 }
 
 function gbNext(){
-  if(gbStep===1 && !gbAnamneseAktiv){
+  if(gbStep===1 && !gbSub){
     if(!gbGetRadio('rc-typ')){ alert('Bitte Neu- oder Bestandspatient wählen.'); return; }
     if(!gbGetRadio('rc-anliegen')){ alert('Bitte Ihr Anliegen wählen.'); return; }
-    if(gbGetRadio('rc-typ')==='neu'){ gbAnamneseAktiv=true; gbUpdateStep(); return; }
+    var flow0 = gbCurrentSubFlow();
+    gbSubIdx = 0; gbSub = flow0[0];
+    gbUpdateStep();
+    return;
   }
-  if(gbAnamneseAktiv){
-    if(gbSignaturLeer()){ alert('Bitte den Anamnesebogen unterschreiben.'); return; }
-    gbAnamneseAktiv=false; gbStep=2; gbUpdateStep(); return;
+  if(gbSub){
+    if(!gbValidateSub(gbSub)) return;
+    if(gbSub==='lookup'){
+      // Simuliert das Laden der hinterlegten Patientendaten
+      var spinner = document.getElementById('gb-lookup-spinner');
+      var nextBtn = document.getElementById('gb-next');
+      if(spinner) spinner.classList.add('aktiv');
+      if(nextBtn) nextBtn.disabled = true;
+      setTimeout(function(){
+        if(spinner) spinner.classList.remove('aktiv');
+        if(nextBtn) nextBtn.disabled = false;
+        gbSubIdx++;
+        gbSub = gbCurrentSubFlow()[gbSubIdx];
+        gbUpdateStep();
+      }, 700);
+      return;
+    }
+    var flow = gbCurrentSubFlow();
+    gbSubIdx++;
+    if(gbSubIdx < flow.length){
+      gbSub = flow[gbSubIdx];
+      gbUpdateStep();
+    } else {
+      gbSub = null; gbSubIdx = -1; gbStep = 2; gbUpdateStep();
+    }
+    return;
   }
   if(gbStep===2 && !gbSelectedSlot){ alert('Bitte einen Termin wählen.'); return; }
   if(gbStep===3){
@@ -1416,14 +1780,30 @@ function gbNext(){
 }
 
 function gbBack(){
-  if(gbAnamneseAktiv){ gbAnamneseAktiv=false; gbStep=1; gbUpdateStep(); return; }
-  if(gbStep===2 && gbGetRadio('rc-typ')==='neu'){ gbAnamneseAktiv=true; gbUpdateStep(); return; }
+  if(gbSub){
+    var flow = gbCurrentSubFlow();
+    if(gbSubIdx>0){
+      gbSubIdx--;
+      gbSub = flow[gbSubIdx];
+      gbUpdateStep();
+    } else {
+      gbSub = null; gbSubIdx = -1; gbStep = 1; gbUpdateStep();
+    }
+    return;
+  }
+  if(gbStep===2 && gbGetRadio('rc-typ')){
+    var flow2 = gbCurrentSubFlow();
+    gbSubIdx = flow2.length - 1;
+    gbSub = flow2[gbSubIdx];
+    gbUpdateStep();
+    return;
+  }
   gbStep = Math.max(gbStep-1,1);
   gbUpdateStep();
 }
 
 function gbAnamneseUeberspringen(){
-  gbAnamneseAktiv=false; gbStep=2; gbUpdateStep();
+  gbSub = null; gbSubIdx = -1; gbStep = 2; gbUpdateStep();
 }
 
 function gbBuildSummary(){
@@ -1440,6 +1820,8 @@ function gbBuildSummary(){
     ['Kind', document.getElementById('gb-kind').value||'—'],
     ['Telefon', document.getElementById('gb-tel').value||'—'],
   ];
+  var ha = document.getElementById('ha-heute');
+  if(ha && ha.value.trim()){ rows.push(['Anlass heute', ha.value.trim()]); }
   var html = rows.map(function(r){
     return '<div class="gb-danke-box-row"><span>'+r[0]+'</span><span><strong>'+r[1]+'</strong></span></div>';
   }).join('');
@@ -1447,15 +1829,25 @@ function gbBuildSummary(){
 }
 
 function openTerminModalGB(vorauswahl){
-  gbStep=1; gbAnamneseAktiv=false; gbSelectedSlot=null;
+  gbStep=1; gbSub=null; gbSubIdx=-1; gbSelectedSlot=null; gbAlterWert=null; gbMoodWert=null;
   document.querySelectorAll('.gb-radio').forEach(function(r){r.classList.remove('gewaehlt')});
+  document.querySelectorAll('.gb-age-pill').forEach(function(r){r.classList.remove('gewaehlt')});
+  document.querySelectorAll('.gb-mood-opt').forEach(function(r){r.classList.remove('gewaehlt')});
   ['gb-vorname','gb-nachname','gb-kind','gb-tel','gb-email','gb-kasse',
-   'an-kind-name','an-allergien','an-medis'].forEach(function(id){
+   'an-kind-name','an-allergien','an-medis','an-anliegen',
+   'ik-name','ik-geb','ik-kasse','ik-anschrift','ik-hauptvers',
+   'ie-name1','ie-beruf1','ie-name2','ie-beruf2','ie-handy','ie-festnetz','ie-email','ie-weitere',
+   'lk-nachname','lk-geb','lk-handy','ha-heute',
+   'uk-tel','uk-email','uk-adresse'].forEach(function(id){
     var el=document.getElementById(id); if(el) el.value='';
   });
-  ['an-asthma','an-diab','an-herz','an-epil','an-haut','an-keine'].forEach(function(id){
+  ['an-asthma','an-diab','an-herz','an-epil','an-haut','an-keine','ie-erreichbar'].forEach(function(id){
     var el=document.getElementById(id); if(el) el.checked=false;
   });
+  var uf=document.getElementById('gb-update-form'); if(uf) uf.classList.remove('offen');
+  var ut=document.getElementById('gb-update-toggle');
+  if(ut) ut.innerHTML = '&#9998; Etwas hat sich geändert &#8212; Angaben aktualisieren';
+  var sp=document.getElementById('gb-lookup-spinner'); if(sp) sp.classList.remove('aktiv');
   var ds=document.getElementById('gb-dsgvo'); if(ds) ds.checked=false;
   var hp=document.getElementById('hp_name'); if(hp) hp.value='';
   // Signatur-Canvas zurücksetzen
@@ -1537,6 +1929,19 @@ function gbShowDemoBadge(){
   if(head){ head.style.position='relative'; head.appendChild(b); }
 }
 
+function gbDemoPickAge(idx, delay){
+  gbDemoTick(function(){
+    var pill = document.querySelectorAll('#ha-alter-grid .gb-age-pill')[idx];
+    if(pill) gbPickAge(pill);
+  }, delay);
+}
+function gbDemoPickMood(idx, delay){
+  gbDemoTick(function(){
+    var opt = document.querySelectorAll('#mood-grid .gb-mood-opt')[idx];
+    if(opt) gbPickMood(opt);
+  }, delay);
+}
+
 function gbDemoBestand(){
   gbDemoStop();
   openTerminModalGB();
@@ -1546,13 +1951,28 @@ function gbDemoBestand(){
   t+=700;  gbDemoSelect('rc-typ','bestand',t);
   t+=700;  gbDemoSelect('rc-anliegen','vorsorge',t);
   t+=1000; gbDemoWeiter(t);
-  // Schritt 2: Termin-Slot wählen (kurz warten, dann klicken)
+  // Akte finden
+  t+=600;  gbDemoFill('lk-nachname','Bergmann',t);
+  t+=400;  gbDemoFill('lk-geb','2018-07-22',t);
+  t+=400;  gbDemoFill('lk-handy','+49 89 4567890',t);
+  t+=800;  gbDemoWeiter(t); // löst intern die 700ms „Laden“-Animation aus
+  t+=1300; // Puffer, damit das Kurzcheck-Panel schon sichtbar ist
+  // Kurz bestätigen (keine Eingabe nötig)
+  t+=800;  gbDemoWeiter(t);
+  // Heute am wichtigsten + Alter
+  t+=600;  gbDemoFill('ha-heute','Kontrolle nach Mittelohrentzündung',t);
+  t+=500;  gbDemoPickAge(1,t);
+  t+=900;  gbDemoWeiter(t);
+  // Wie geht's dir gerade (freiwillig)
+  t+=600;  gbDemoPickMood(0,t);
+  t+=800;  gbDemoWeiter(t);
+  // Termin-Slot wählen
   t+=1200; gbDemoTick(function(){
     var slots = document.querySelectorAll('.gb-slot:not(.belegt)');
     if(slots[2]){ slots[2].click(); }
   }, t);
   t+=1000; gbDemoWeiter(t);
-  // Schritt 3: Kontaktdaten
+  // Kontaktdaten
   t+=600;  gbDemoFill('gb-vorname','Maria',t);
   t+=400;  gbDemoFill('gb-nachname','Bergmann',t);
   t+=400;  gbDemoFill('gb-kind','Lena Bergmann',t);
@@ -1561,7 +1981,7 @@ function gbDemoBestand(){
   t+=400;  gbDemoFill('gb-kasse','TK',t);
   t+=500;  gbDemoCheck('gb-dsgvo',t);
   t+=800;  gbDemoWeiter(t);
-  // Schritt 4: Danke-Screen — Demo-Badge nach 3s entfernen
+  // Danke-Screen — Demo-Badge nach 3s entfernen
   t+=3000; gbDemoTick(gbDemoStop, t);
 }
 
@@ -1574,22 +1994,40 @@ function gbDemoNeu(){
   t+=700;  gbDemoSelect('rc-typ','neu',t);
   t+=700;  gbDemoSelect('rc-anliegen','impfung',t);
   t+=1000; gbDemoWeiter(t);
-  // Schritt 1b: Anamnese
-  t+=700;  gbDemoFill('an-kind-name','Jonas Müller',t);
-  t+=500;  gbDemoFill('an-kind-geb','2019-03-15',t);
-  t+=500;  gbDemoFill('an-allergien','Hausstaub (leicht)',t);
+  // Kind
+  t+=600;  gbDemoFill('ik-name','Jonas Müller',t);
+  t+=400;  gbDemoFill('ik-geb','2019-03-15',t);
+  t+=400;  gbDemoFill('ik-kasse','AOK Bayern',t);
+  t+=400;  gbDemoFill('ik-anschrift','Musterstr. 12, 81675 München',t);
+  t+=400;  gbDemoFill('ik-hauptvers','Mutter',t);
+  // Eltern
+  t+=500;  gbDemoFill('ie-name1','Sabine Müller',t);
+  t+=400;  gbDemoFill('ie-beruf1','Lehrerin',t);
+  t+=400;  gbDemoFill('ie-handy','+49 89 1234567',t);
+  t+=400;  gbDemoCheck('ie-erreichbar',t);
+  t+=400;  gbDemoFill('ie-email','s.mueller@email.de',t);
+  t+=900;  gbDemoWeiter(t);
+  // Heute am wichtigsten + Alter
+  t+=600;  gbDemoFill('ha-heute','Erste Vorsorge, Impfpass prüfen',t);
+  t+=500;  gbDemoPickAge(2,t);
+  t+=900;  gbDemoWeiter(t);
+  // Wie geht's dir gerade (freiwillig)
+  t+=600;  gbDemoPickMood(1,t);
+  t+=800;  gbDemoWeiter(t);
+  // Anamnesebogen (bestehend): Allergien, Vorerkrankungen, Unterschrift
+  t+=700;  gbDemoFill('an-allergien','Hausstaub (leicht)',t);
   t+=500;  gbDemoCheck('an-keine',t);
   t+=500;  gbDemoFill('an-medis','keine',t);
   t+=500;  gbDemoFill('an-anliegen','Erste Vorsorge, Impfpass prüfen',t);
   t+=700;  gbDemoSignatur(t);
   t+=900;  gbDemoWeiter(t);
-  // Schritt 2: Slot
+  // Termin-Slot wählen
   t+=1200; gbDemoTick(function(){
     var slots = document.querySelectorAll('.gb-slot:not(.belegt)');
     if(slots[1]){ slots[1].click(); }
   }, t);
   t+=1000; gbDemoWeiter(t);
-  // Schritt 3: Kontaktdaten
+  // Kontaktdaten
   t+=600;  gbDemoFill('gb-vorname','Klaus',t);
   t+=400;  gbDemoFill('gb-nachname','Müller',t);
   t+=400;  gbDemoFill('gb-kind','Jonas Müller',t);
