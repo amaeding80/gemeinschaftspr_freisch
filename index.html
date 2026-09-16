@@ -2398,6 +2398,8 @@ body.gb-modal-open{overflow:hidden}
     border:0.5px solid var(--border,#e8e4de) !important;
   }
   .ph-zurueck-card .ph-btn,.ph-zurueck-card .ph-body{display:none !important}
+  /* U&J-Glossar-Kachel gehört nur ins Tablet-Querformat (Block C), hier ausblenden */
+  .uj-tile{display:none !important}
   .ph-zurueck-inner{
     display:flex;
     flex-direction:column;
@@ -2684,6 +2686,8 @@ body.gb-modal-open{overflow:hidden}
   /* A5 — Widgets: ausblenden */
   .gb-demo-bar { display: none !important; }
   .ft-zettel { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+  /* A5b — U&J-Glossar-Kachel gehört nur ins Tablet-Querformat (Block C), hier ausblenden */
+  .uj-tile { display: none !important; }
 
   /* A6 — Sections: kompaktes Padding */
   .haltung, .team, .phasen, .digitalservices, .elternbereich, .kontakt {
@@ -4124,7 +4128,7 @@ body.gb-modal-open{overflow:hidden}
         </div>
       </div>
 
-      <div class="ph-item ph-zurueck-card">
+      <div class="ph-item ph-zurueck-card uj-tile">
         <div class="uj-card-inner">
           <p class="uj-card-title">Was bedeuten U und J?</p>
           <p class="uj-card-intro">U und J sind Vorsorge-Termine beim Kinderarzt.<br>U = Untersuchung für Kinder. J = Untersuchung für Jugendliche.</p>
