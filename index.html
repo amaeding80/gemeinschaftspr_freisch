@@ -4936,14 +4936,6 @@ body.gb-modal-open{overflow:hidden}
           <button onclick="gbAnamneseUeberspringen()" type="button">Bogen vor Ort ausf&#252;llen &mdash; direkt weiter &rarr;</button>
         </div>
         <div class="gb-form-row">
-          <label class="gb-label">Name des Kindes</label>
-          <input class="gb-input" id="an-kind-name" placeholder="Vorname Nachname">
-        </div>
-        <div class="gb-form-row">
-          <label class="gb-label">Geburtsdatum des Kindes</label>
-          <input class="gb-input" type="date" id="an-kind-geb">
-        </div>
-        <div class="gb-form-row">
           <label class="gb-label">Bekannte Allergien / Unvertr&#228;glichkeiten</label>
           <textarea class="gb-textarea" id="an-allergien" placeholder="z.&#x202F;B. Erdnüsse, Laktose … oder: keine bekannt"></textarea>
         </div>
@@ -5469,7 +5461,7 @@ function openTerminModalGB(vorauswahl){
   document.querySelectorAll('.gb-age-pill').forEach(function(r){r.classList.remove('gewaehlt')});
   document.querySelectorAll('.gb-mood-opt').forEach(function(r){r.classList.remove('gewaehlt')});
   ['gb-vorname','gb-nachname','gb-kind','gb-tel','gb-email','gb-kasse',
-   'an-kind-name','an-allergien','an-medis','an-anliegen',
+   'an-allergien','an-medis','an-anliegen',
    'ik-name','ik-geb','ik-kasse','ik-anschrift','ik-hauptvers',
    'ie-name1','ie-beruf1','ie-name2','ie-beruf2','ie-handy','ie-festnetz','ie-email','ie-weitere',
    'lk-nachname','lk-geb','lk-handy','ha-heute',
