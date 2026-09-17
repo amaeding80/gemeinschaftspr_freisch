@@ -163,7 +163,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 
 /* ── MFA Team ── */
 .mfa-divider{width:100%;margin:clamp(32px,4vw,48px) auto 0;padding-top:clamp(24px,3vw,36px);border-top:0.5px solid var(--rule);display:flex;align-items:center;justify-content:center;gap:16px;padding-left:14%}
-.mfa-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
+.mfa-label{font-size:12px;letter-spacing:0.02em;text-transform:none;color:var(--ink2);white-space:nowrap}
 .mfa-page{display:contents}
 .mfa-grid{width:100%;margin:clamp(20px,2.5vw,28px) auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;padding-left:14%}
 @media(max-width:1023px){.mfa-grid{grid-template-columns:repeat(3,1fr)}}
@@ -1311,7 +1311,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 @media (min-width: 1025px) {
   .mfa-grid {
     display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     overflow-x: visible !important;
     flex: unset !important;
     flex-wrap: unset !important;
@@ -1322,9 +1322,14 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     width: auto !important;
     min-width: 0 !important;
   }
+  /* Freischütz Step: MFA-Kacheln weicher — Kreis statt App-Kachel, kein Rahmen mehr */
   .mfa-foto {
     width: 180px !important;
     height: 180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-radius: 50% !important;
+    border: none !important;
   }
   .team-grid {
     display: grid !important;
@@ -1688,7 +1693,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .team-carousel-hint { display: none !important; }
   .team-body { padding: 0 4px !important; }
   .team-rolle { font-size: 11px !important; margin-bottom: 4px !important; }
-  .team-name { font-size: 10px !important; line-height: 1.2 !important; margin-bottom: 6px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; display: block !important; }
+  .team-name { font-size: 10px !important; line-height: 1.2 !important; margin-bottom: 6px !important; white-space: normal !important; overflow: visible !important; text-overflow: unset !important; display: block !important; }
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
