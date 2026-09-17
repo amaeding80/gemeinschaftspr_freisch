@@ -1340,10 +1340,6 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .team-carousel-hint, .mfa-carousel-hint { display: none !important; }
 
   /* Freischütz Step 4a — Bildausschnitte angleichen (Gesicht im Kasten ähnlich groß) */
-  .team-grid .team-karte:first-child .team-foto img {
-    transform: scale(1.9);
-    transform-origin: 64% 29%;
-  }
   .team-grid .team-karte:nth-child(2) .team-foto img {
     object-position: center 25% !important;
     transform: scale(0.88);
@@ -1358,6 +1354,11 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     display: block;
     font-size: clamp(17px, 1.6vw, 21px);
   }
+
+  /* Freischütz Step: nicht drei Klone — Text der äußeren Karten leicht links/rechts ausgerichtet,
+     Grid/Fotos unangetastet */
+  .team-grid .team-karte:first-child .team-body { text-align: left; }
+  .team-grid .team-karte:nth-child(3) .team-body { text-align: right; }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -3397,6 +3398,11 @@ body.gb-modal-open{overflow:hidden}
   .team-personal { display: block !important; font-size: 12px !important; }
   .team-carousel-hint { display: none !important; }
 
+  /* Freischütz Step: nicht drei Klone — Text der äußeren Karten leicht links/rechts ausgerichtet,
+     Grid/Fotos unangetastet */
+  .team-grid .team-karte:first-child .team-body { text-align: left !important; }
+  .team-grid .team-karte:nth-child(3) .team-body { text-align: right !important; }
+
   /* C11a — Team-Rollen & Text im Tablet-Querformat (nur hier!):
      Jennifer Bichler = angestellte Ärztin, Heike Boerschmann = Praxisinhaberin ohne Datumszusatz */
   .team-grid .team-karte:nth-child(2) .team-rolle { font-size: 0 !important; }
@@ -3797,7 +3803,7 @@ body.gb-modal-open{overflow:hidden}
         Kinderarztpraxis —
         <span class="h1-s2">von der Vorsorge bis zur Jugend.</span>
       </h1>
-      <p class="hero-sub">Erste Untersuchung, Impfen, Jugendcheck — bei uns mit Ruhe und klarem Blick.</p>
+      <p class="hero-sub">Erste Untersuchung, Impfen, Jugendcheck — und Zeit für Ihre Fragen.</p>
       <div class="hero-btns">
         <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="btn-primaer" onclick="event.preventDefault();openTerminModalGB()">Gleich Termin finden</a>
         <a href="videosprechstunde.html" class="btn-sekundaer">zur Videosprechstunde</a>
@@ -4638,7 +4644,7 @@ body.gb-modal-open{overflow:hidden}
 
 <!-- DEMO-LEISTE -->
 <div class="gb-demo-bar" id="gb-demo-bar">
-  <div class="gb-demo-label">DEMO-MODUS</div>
+  <div class="gb-demo-label">Demo — so könnte die Anmeldung aussehen</div>
   <button class="gb-demo-btn bestand" onclick="gbDemoBestand()">&#9654; Bestandspatient</button>
   <button class="gb-demo-btn neu" onclick="gbDemoNeu()">&#9654; Neupatient + Anamnese</button>
 </div>
