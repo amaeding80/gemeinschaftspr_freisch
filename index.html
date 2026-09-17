@@ -155,7 +155,6 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .team-body{padding:0 .5rem;x,2vw,26px);display:flex;flex-direction:column;flex:1}
 .team-rolle{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
 .team-name{font-family:var(--head);font-size:clamp(17px,1.6vw,21px);font-weight:700;color:var(--primary);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.2}
-.team-name-fit{display:inline-block}
 .team-text{font-size:15px;line-height:1.72;color:var(--ink2);font-weight:300;margin-bottom:0}
 .team-langs{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .team-personal{font-size:14px;line-height:1.65;color:var(--ink2);font-weight:300;margin-top:auto;padding-top:14px;border-top:0.5px solid var(--rule)}
@@ -1351,14 +1350,13 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     transform-origin: center 28%;
   }
 
-  /* Susanne: gleiche Schriftgröße wie die anderen Ärztinnen, trotzdem einzeilig
-     (Text optisch leicht gestaucht statt kleiner — Schriftgröße bleibt identisch) */
-  .team-grid .team-karte:first-child .team-name-fit {
-    white-space: nowrap;
-    position: relative;
-    left: 50%;
-    letter-spacing: -1px;
-    transform: translateX(-50%) scaleX(0.70);
+  /* Susanne: gleiche Schriftgröße wie die anderen Ärztinnen, Vorname abgekürzt statt gestaucht —
+     Bild/Grid bleibt unangetastet (kein transform/scale auf .team-name selbst) */
+  .team-grid .team-karte:first-child .team-name { font-size: 0; }
+  .team-grid .team-karte:first-child .team-name::before {
+    content: "Dr. med. S. Gandenberger-Bachem";
+    display: block;
+    font-size: clamp(17px, 1.6vw, 21px);
   }
 }
 
@@ -3386,13 +3384,13 @@ body.gb-modal-open{overflow:hidden}
   }
   .team-body { flex: unset !important; min-width: unset !important; }
   .team-name { font-size: 15px !important; line-height: 1.25 !important; margin-bottom: 5px !important; }
-  /* Susanne: gleiche Schriftgröße wie die anderen, optisch gestaucht statt verkleinert */
-  .team-grid .team-karte:nth-child(1) .team-name-fit {
-    white-space: nowrap;
-    position: relative;
-    left: 50%;
-    letter-spacing: -0.3px;
-    transform: translateX(-50%) scaleX(0.78);
+  /* Susanne: gleiche Schriftgröße wie die anderen, Vorname abgekürzt statt gestaucht */
+  .team-grid .team-karte:nth-child(1) .team-name { font-size: 0 !important; }
+  .team-grid .team-karte:nth-child(1) .team-name::before {
+    content: "Dr. med. S. Gandenberger-Bachem" !important;
+    display: block !important;
+    font-size: 15px !important;
+    line-height: 1.25 !important;
   }
   .team-rolle { font-size: 11px !important; margin-bottom: 5px !important; }
   .team-text { font-size: 13px !important; }
@@ -3673,20 +3671,6 @@ body.gb-modal-open{overflow:hidden}
   }
 }
 
-/* Susanne-Name Sicherheitsfallback für sehr schmale Tablet-Quer-Fenster (<1024px breit,
-   auf echten Geräten praktisch nicht vorkommend) — Stauchung 0.78 würde hier überlaufen,
-   also Zeilenumbruch statt Überlauf zulassen */
-@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) and (min-height: 601px) {
-  .team-grid .team-karte:nth-child(1) .team-name-fit {
-    white-space: normal;
-    position: static;
-    left: auto;
-    letter-spacing: normal;
-    transform: none;
-  }
-}
-
-
 /* ─────────────────────────────────────────────────────────────────────────
    BLOCK D — NEST HUB  ~1024×600
    Eigene Welt — nicht «ist doch iPad quer»
@@ -3920,7 +3904,7 @@ body.gb-modal-open{overflow:hidden}
         </div>
         <div class="team-body">
           <p class="team-rolle">Praxisinhaberin</p>
-          <h3 class="team-name"><span class="team-name-fit">Dr. med. Susanne Gandenberger-Bachem</span></h3>
+          <h3 class="team-name">Dr. med. Susanne Gandenberger-Bachem</h3>
           <p class="team-text">Fachärztin für Kinder- und Jugendmedizin.</p>
           <p class="team-personal">Mutter von drei Söhnen — in den Bergen, auf dem Rad oder am Wasser.</p>
         </div>
