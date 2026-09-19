@@ -3771,10 +3771,10 @@ body.gb-modal-open{overflow:hidden}
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="#online-schalter">Online Eltern-Schalter</a></li>
-      <li><a href="#online-schalter" onclick="event.preventDefault();gbServiceOpen('fax')">Fax direkt online senden</a></li>
+      <li><a href="#online-schalter" data-sfx-trigger>Fax direkt online senden</a></li>
       <li><a href="infothek.html" class="nav-pill">Für Eltern</a></li>
     </ul>
-    <a href="#online-schalter" class="nav-tablet-fax" onclick="event.preventDefault();gbServiceOpen('fax')">Fax direkt online senden</a>
+    <a href="#online-schalter" class="nav-tablet-fax" data-sfx-trigger>Fax direkt online senden</a>
     <div class="nav-cta-gruppe">
       <a href="videosprechstunde.html" class="nav-cta-vid" style="font-size:13px;font-weight:500;color:var(--ink2);text-decoration:none;padding:8px 14px;border:1px solid var(--rule);border-radius:2px;white-space:nowrap;transition:color .2s">Videosprechstunde</a>
       <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="nav-cta" onclick="event.preventDefault();openTerminModalGB()">Termin finden</a>
@@ -3791,7 +3791,7 @@ body.gb-modal-open{overflow:hidden}
   <a href="#leistungen">Leistungen</a>
   <a href="#kontakt">Kontakt</a>
   <a href="#online-schalter">Online Eltern-Schalter</a>
-  <a href="#online-schalter" onclick="event.preventDefault();gbServiceOpen('fax')">Fax direkt online senden</a>
+  <a href="#online-schalter" data-sfx-trigger>Fax direkt online senden</a>
   <a href="infothek.html">Für Eltern</a>
   <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="mob-cta" onclick="event.preventDefault();openTerminModalGB()">Gleich Termin finden</a>
 </div>
@@ -4339,7 +4339,7 @@ body.gb-modal-open{overflow:hidden}
       </div>
       <div class="k-block">
         <p class="k-lbl">Fax</p>
-        <p class="k-val sm" style="font-size:13px;font-weight:400">089 – 93 94 87 40</p>
+        <p class="k-val sm" style="font-size:13px;font-weight:400"><a href="#online-schalter" data-sfx-trigger>089 – 93 94 87 40</a></p>
       </div>
       <div class="k-block">
         <p class="k-lbl">E-Mail</p>
