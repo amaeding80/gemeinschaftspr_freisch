@@ -5873,17 +5873,28 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-e
 </script>
 <!-- SofortFax Live-Widget -->
 <script src="https://sofortfax.de/widget.js"
-        data-fax="01805237077000"
-        data-name="Gemeinschaftspraxis">
+        data-fax="08993948740"
+        data-name="Gemeinschaftspraxis Bogenhausen"
+        data-color="#124357"
+        data-test="0">
 </script>
 
 <!-- Button zum Oeffnen (Test-Button fuers Wochenende) -->
 <button data-sfx-trigger>Fax senden</button>
 
 <style>
-/* sofortfax-widget: aeussere Huelle ans Praxis-Design angepasst -- das Formular selbst liegt in einem iframe von sofortfax.de und ist von hier aus nicht stylebar */
+/* sofortfax-widget: aeussere Huelle ans Praxis-Design angepasst -- das Formular selbst liegt in einem iframe von sofortfax.de und ist von hier aus nicht stylebar (Farben/Schrift innen kommen von sofortfax.de) */
 #sfx-overlay{background:rgba(27,72,90,.55)!important}
 #sfx-frame-wrap{border-radius:24px!important;box-shadow:0 20px 40px -10px rgba(28,45,55,.35)!important}
-@media(max-width:440px){#sfx-frame-wrap{border-radius:0!important}}
+
+/* tablet hochformat/quer -- etwas grosszuegiger als die 400px vom widget-default */
+@media(min-width:768px) and (max-width:1023px){
+  #sfx-frame-wrap{max-width:440px!important;height:85vh!important;max-height:760px!important}
+}
+
+/* smartphone -- vollflaechig, passend zum breakpoint der restlichen seite (statt 440px vom widget) */
+@media(max-width:767px){
+  #sfx-frame-wrap{width:100%!important;max-width:100%!important;height:100vh!important;max-height:100vh!important;border-radius:0!important;box-shadow:none!important}
+}
 </style>
 </body>
