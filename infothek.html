@@ -80,7 +80,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .info-hero-text{max-width:640px}
 .info-hero-text{}
 .info-label-row{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.info-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--primary)}
+.info-label{display:block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:18px}
 .info-fisch{width:48px;height:48px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--bg2)}
 .info-fisch img{width:100%;height:100%;object-fit:cover}
 .info-h1{font-family:var(--head);font-size:clamp(30px,3.8vw,52px);font-weight:300;letter-spacing:-.03em;line-height:1.1;color:var(--ink);margin-bottom:6px}
@@ -97,9 +97,14 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .info-hero-foto-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Aktuelle Empfehlung — voll breit */
-.info-empf{background:var(--white);padding:clamp(40px,5vw,64px) var(--pad) 0}
+.info-empf{background:var(--white);padding:clamp(40px,5vw,64px) var(--pad) 0;position:relative;overflow:hidden}
+.info-empf-deko{position:absolute;right:-40px;bottom:-30px;width:340px;height:340px;opacity:.35;pointer-events:none;z-index:0}
+.info-empf-deko svg{width:100%;height:100%;stroke:var(--rule);fill:none;stroke-width:1}
+@media(max-width:1023px){.info-empf-deko{display:none}}
 .info-empf-inner{max-width:var(--max);margin:0 auto}
-.empf-box{background:var(--accent-lt);border-left:3px solid var(--accent);padding:clamp(22px,3vw,36px)}
+.empf-box{background:var(--accent-lt);border-left:3px solid var(--accent);padding:clamp(22px,3vw,36px);position:relative;z-index:1}
+.empf-ort{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:12px}
+.empf-ort-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
 .empf-kw{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .empf-titel{font-family:var(--head);font-size:clamp(17px,1.8vw,22px);font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.3}
 .empf-text{font-size:14px;line-height:1.75;color:var(--ink2);font-weight:300;max-width:640px}
@@ -207,8 +212,10 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 
 <!-- Aktuelle Empfehlung — volle Breite, menschliche Stimme zuerst -->
 <div class="info-empf">
+  <div class="info-empf-deko" aria-hidden="true"><svg viewBox="0 0 300 300"><path d="M270 20 C 200 60, 170 140, 230 220 C 180 200, 120 230, 60 290"/><path d="M255 60 C 200 90, 185 150, 220 210"/><line x1="30" y1="270" x2="80" y2="220"/><line x1="10" y1="250" x2="45" y2="215"/></svg></div>
   <div class="info-empf-inner">
     <div class="empf-box">
+      <span class="empf-ort"><span class="empf-ort-dot" aria-hidden="true"></span>Hof</span>
       <p class="empf-kw">Impfempfehlung · Januar 2025</p>
       <p class="empf-titel">Meningokokken B — jetzt auch für Kinder bis 5 Jahre empfohlen</p>
       <p class="empf-text">Die STIKO empfiehlt nun auch den Impfschutz gegen Meningokokken B für alle Säuglinge und Kinder bis zum 5. Geburtstag. Sprechen Sie uns gerne auf einen Impftermin an.</p>
