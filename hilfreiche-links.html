@@ -102,18 +102,20 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .page-h1{font-family:var(--head);font-size:clamp(28px,3.5vw,48px);font-weight:300;letter-spacing:-.03em;line-height:1.12;color:var(--ink);margin-bottom:12px}.h1-accent{display:block;width:40px;height:3px;background:var(--accent);margin-bottom:20px}
 .page-sub{font-size:clamp(14px,1.3vw,17px);line-height:1.8;color:var(--ink2);font-weight:300;max-width:600px}
 .links-content{padding:clamp(52px,6vw,80px) var(--pad);background:var(--white)}
-.links-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.5vw,32px)}
-.link-card.blau{border:2px solid var(--primary)}
-.link-card{background:var(--bg);border:0.5px solid var(--rule);border-radius:12px;padding:clamp(24px,3vw,36px)}
-.link-card-icon{width:44px;height:44px;background:var(--primary-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.link-card-icon svg{width:20px;height:20px;stroke:var(--primary);fill:none;stroke-width:1.5}
-.link-card-h{font-family:var(--head);font-size:clamp(16px,1.5vw,20px);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:8px;position:relative;padding-bottom:14px}.link-card-h::after{content:'';position:absolute;bottom:0;left:0;width:32px;height:2px;background:var(--primary)}
-.link-card-desc{font-size:14px;line-height:1.7;color:var(--ink2);font-weight:300;margin-bottom:20px;padding-bottom:16px;border-bottom:0.5px solid var(--rule)}
+.links-sections{max-width:var(--max);margin:0 auto}
+.link-section{padding:clamp(26px,3vw,38px) 0;border-bottom:0.5px solid var(--rule)}
+.link-section:last-child{border-bottom:none}
+.link-section-notfall{background:var(--accent-lt);border-left:3px solid var(--accent);border-bottom:none;padding:clamp(24px,3vw,36px);margin-bottom:clamp(30px,3.5vw,40px)}
+.link-section-h{font-family:var(--head);font-size:clamp(17px,1.8vw,21px);font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:6px}
+.link-section-desc{font-size:14px;line-height:1.7;color:var(--ink2);font-weight:300;margin-bottom:14px}
+.link-section-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,56px)}
+.link-section-pair .link-section{border-bottom:none;padding:0}
 .link-list{list-style:none;display:flex;flex-direction:column;gap:0}
 .link-list li{border-bottom:0.5px solid var(--rule)}
 .link-list li:last-child{border-bottom:none}
 .link-list a{display:flex;align-items:flex-start;gap:10px;padding:11px 0;font-size:14px;color:var(--ink);text-decoration:none;font-weight:400;transition:color .2s;line-height:1.4}
 .link-list a:hover{color:#123340}
+.link-list a.link-tel{font-size:16px;font-weight:500;padding:13px 0}
 .link-ext-icon{width:13px;height:13px;stroke:var(--primary);fill:none;stroke-width:1.5;flex-shrink:0;transition:stroke .2s;margin-top:3px}
 .link-list a:hover .link-ext-icon{stroke:#123340}
 .link-name{display:flex;flex-direction:column;gap:2px}
@@ -133,19 +135,22 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 .footer-links a{font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:rgba(255,255,255,.7)}
 @media(max-width:767px){
-  .links-grid{grid-template-columns:1fr}
+  .link-section-pair{grid-template-columns:1fr;gap:28px}
+  .link-section-pair .link-section{padding-bottom:24px;border-bottom:0.5px solid var(--rule)}
+  .link-section-pair .link-section:last-child{border-bottom:none;padding-bottom:0}
   .links-cta-inner{flex-direction:column;align-items:flex-start}
   .link-list a{padding:14px 0;font-size:15px}
   .link-sub{font-size:13px}
 }
 @media(max-width:1024px) and (orientation:portrait){
-  .links-grid{grid-template-columns:1fr}
+  .link-section-pair{grid-template-columns:1fr;gap:28px}
+  .link-section-pair .link-section{padding-bottom:24px;border-bottom:0.5px solid var(--rule)}
+  .link-section-pair .link-section:last-child{border-bottom:none;padding-bottom:0}
   .link-list a{padding:13px 0}
 }
 @media(orientation:landscape) and (max-width:950px) and (max-height:480px){
   .page-hero{padding:18px var(--pad) 14px}
   .page-h1{font-size:1.2rem}
-  .links-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px}
 }
 </style>
 </head>
@@ -187,19 +192,22 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 </div>
 
 <div class="links-content">
-  <div class="links-grid">
+  <div class="links-sections">
 
-    <div class="link-card blau">
-      <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-      </div>
-      <h2 class="link-card-h">Notfall &amp; Bereitschaft</h2>
-      <p class="link-card-desc">Wenn's nicht bis morgen warten kann.</p>
+    <div class="link-section link-section-notfall">
+      <h2 class="link-section-h">Notfall &amp; Bereitschaft</h2>
+      <p class="link-section-desc">Wenn's nicht bis morgen warten kann.</p>
       <ul class="link-list">
         <li>
-          <a href="https://www.116117.de" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <a href="tel:116117" class="link-tel">
+            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
             <span class="link-name">Bereitschaftsdienst 116 117<span class="link-sub">Ärztlicher Bereitschaftsdienst — auch in München</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:08919240" class="link-tel">
+            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+            <span class="link-name">Giftnotruf München: 089 19240<span class="link-sub">Giftinformationszentrale</span></span>
           </a>
         </li>
         <li>
@@ -211,13 +219,16 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
       </ul>
     </div>
 
-    <div class="link-card">
-      <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      </div>
-      <h2 class="link-card-h">Impfen &amp; Vorsorge</h2>
-      <p class="link-card-desc">Impfkalender, Vorsorge-Erinnerung, RKI und Reisemedizin — zum ruhigen Nachlesen zuhause.</p>
+    <div class="link-section">
+      <h2 class="link-section-h">Impfen &amp; Vorsorge</h2>
+      <p class="link-section-desc">Impfkalender, Vorsorge-Erinnerung, RKI und Reisemedizin — zum ruhigen Nachlesen zuhause.</p>
       <ul class="link-list">
+        <li>
+          <a href="https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Impfkalender.html" target="_blank" rel="noopener noreferrer">
+            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span class="link-name">STIKO-Impfkalender<span class="link-sub">Robert Koch Institut — offizieller Impfkalender</span></span>
+          </a>
+        </li>
         <li>
           <a href="https://www.kinderaerzte-im-netz.de/mediathek/vorsorge-und-impferinnerung/" target="_blank" rel="noopener noreferrer">
             <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -248,75 +259,85 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
             <span class="link-name">Bundeszentrale für gesundheitliche Aufklärung<span class="link-sub">Broschüren, Beratung &amp; Aufklärung</span></span>
           </a>
         </li>
-      </ul>
-    </div>
-
-    <div class="link-card">
-      <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      </div>
-      <h2 class="link-card-h">Stillen &amp; Ernährung</h2>
-      <p class="link-card-desc">Wenn das Stillen Fragen aufwirft oder die Beikost startet.</p>
-      <ul class="link-list">
         <li>
-          <a href="https://www.stillen-info.de" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.paedexpert.de" target="_blank" rel="noopener noreferrer">
             <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">stillen-info.de<span class="link-sub">Fragen rund ums Stillen</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.fke-do.de/" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">Forschungsinstitut für Kinderernährung<span class="link-sub">Wissenschaftliche Infos zur Beikost &amp; Ernährung</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.anad-pathways.de" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">ANAD Pathways<span class="link-sub">Essstörungen — Adipositas, Magersucht, Bulimie</span></span>
+            <span class="link-name">PädExpert<span class="link-sub">Telemedizin für Kinder</span></span>
           </a>
         </li>
       </ul>
     </div>
 
-    <div class="link-card blau">
-      <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <div class="link-section-pair">
+
+      <div class="link-section">
+        <h2 class="link-section-h">Stillen &amp; Ernährung</h2>
+        <p class="link-section-desc">Wenn das Stillen Fragen aufwirft oder die Beikost startet.</p>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.stillen-info.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">stillen-info.de<span class="link-sub">Fragen rund ums Stillen</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.fke-do.de/" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">Forschungsinstitut für Kinderernährung<span class="link-sub">Wissenschaftliche Infos zur Beikost &amp; Ernährung</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.anad-pathways.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">ANAD Pathways<span class="link-sub">Essstörungen — Adipositas, Magersucht, Bulimie</span></span>
+            </a>
+          </li>
+        </ul>
       </div>
-      <h2 class="link-card-h">Jugend &amp; Beratung</h2>
-      <p class="link-card-desc">Wenn die Kids größer werden und neue Fragen kommen.</p>
-      <ul class="link-list">
-        <li>
-          <a href="https://www.loveline.de" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">loveline.de<span class="link-sub">Verhütung &amp; Sexualität für Jugendliche</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.wildwasser.de" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">Wildwasser e.V.<span class="link-sub">Beratung bei sexuellem Missbrauch</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.imma.de" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">imma e.V.<span class="link-sub">Kontakt- und Informationsstelle für Mädchen</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.kmdd.de" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">Keine Macht den Drogen<span class="link-sub">Prävention &amp; Aufklärung</span></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.condrobs.de" target="_blank" rel="noopener noreferrer">
-            <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="link-name">Condrobs e.V.<span class="link-sub">Prävention und Suchthilfe München</span></span>
-          </a>
-        </li>
-      </ul>
+
+      <div class="link-section">
+        <h2 class="link-section-h">Jugend &amp; Beratung</h2>
+        <p class="link-section-desc">Wenn die Kids größer werden und neue Fragen kommen.</p>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.loveline.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">loveline.de<span class="link-sub">Verhütung &amp; Sexualität für Jugendliche</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.wildwasser.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">Wildwasser e.V.<span class="link-sub">Beratung bei sexuellem Missbrauch</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.imma.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">imma e.V.<span class="link-sub">Kontakt- und Informationsstelle für Mädchen</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kmdd.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">Keine Macht den Drogen<span class="link-sub">Prävention &amp; Aufklärung</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.condrobs.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">Condrobs e.V.<span class="link-sub">Prävention und Suchthilfe München</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kinderschutzbund.de" target="_blank" rel="noopener noreferrer">
+              <svg class="link-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="link-name">Deutscher Kinderschutzbund<span class="link-sub">Kinderschutz &amp; Beratung</span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
