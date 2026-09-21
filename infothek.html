@@ -59,13 +59,25 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;height:72px}
 .nav-logo{font-family:var(--head);font-size:18px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
 .nav-logo span{color:var(--primary)}
-.nav-back{display:flex;align-items:center;gap:7px;font-size:16px;color:var(--ink2);text-decoration:none;letter-spacing:.01em;transition:color .2s}
-.nav-back:hover{color:var(--ink)}
-.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{font-size:15px;font-weight:400;color:var(--ink2);text-decoration:none;letter-spacing:.01em;padding:4px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.aktiv{color:var(--ink);font-weight:500;border-bottom-color:var(--primary)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;color:var(--ink)}
+.burger span{display:block;width:22px;height:1.5px;background:currentColor;transition:all .25s}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-nav{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--bg);z-index:190;padding:20px var(--pad);gap:2px;overflow-y:auto}
+.mob-nav.offen{display:flex}
+.mob-nav a{font-size:17px;color:var(--ink);text-decoration:none;padding:16px 4px;border-bottom:0.5px solid var(--rule);min-height:48px;display:flex;align-items:center}
+.mob-nav a.aktiv{color:var(--primary);font-weight:500}
+@media(max-width:1024px){.nav-links{display:none}.burger{display:flex}}
 
 /* Hero — zwei Spalten */
 .info-hero{background:var(--bg);padding:clamp(48px,6vw,80px) var(--pad);border-bottom:0.5px solid var(--rule)}
-.info-hero-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:clamp(36px,5vw,72px);align-items:center}
+.info-hero-inner{max-width:var(--max);margin:0 auto}
+.info-hero-text{max-width:640px}
 .info-hero-text{}
 .info-label-row{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .info-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--primary)}
@@ -87,11 +99,11 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 /* Aktuelle Empfehlung — voll breit */
 .info-empf{background:var(--white);padding:clamp(40px,5vw,64px) var(--pad) 0}
 .info-empf-inner{max-width:var(--max);margin:0 auto}
-.empf-box{background:var(--accent-lt);border-left:3px solid var(--accent);padding:clamp(22px,3vw,36px) clamp(22px,3vw,36px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+.empf-box{background:var(--accent-lt);border-left:3px solid var(--accent);padding:clamp(22px,3vw,36px)}
 .empf-kw{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .empf-titel{font-family:var(--head);font-size:clamp(17px,1.8vw,22px);font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.3}
 .empf-text{font-size:14px;line-height:1.75;color:var(--ink2);font-weight:300;max-width:640px}
-.empf-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--white);background:var(--accent);padding:2px 8px;border-radius:3px;align-self:start;white-space:nowrap;margin-top:4px}
+.empf-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--white);background:var(--accent);padding:3px 10px;border-radius:3px;white-space:nowrap;margin-top:16px}
 
 /* Karten-Grid — 3 Spalten */
 .info-content{padding:clamp(36px,4vw,56px) var(--pad) clamp(52px,6vw,80px);background:var(--white)}
@@ -110,6 +122,7 @@ body{overflow-x:hidden;font-family:'DM Sans',system-ui,sans-serif;font-weight:30
 
 /* Merkblätter Placeholder */
 .merkbl-hint{font-size:13px;line-height:1.7;color:var(--ink2);font-style:italic;font-weight:300;margin-top:6px;padding:14px 16px;background:var(--bg2);border-radius:6px}
+.merkbl-platzhalter{margin-top:4px;min-height:130px;background:var(--bg2);border:0.5px solid var(--rule);border-radius:6px}
 
 /* Hilfreiche Links Kachel */
 .info-col-cta{display:inline-flex;align-items:center;gap:5px;margin-top:18px;font-size:14px;font-weight:500;color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
@@ -133,33 +146,24 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 
 /* Responsive */
 @media(max-width:767px){
-  .info-hero-inner{grid-template-columns:1fr;gap:28px}
-  .info-hero-foto{order:1}
-  .info-hero-foto-wrap{height:180px}
-  .info-hero-foto-wrap img{object-position:center 15%}
   .info-grid{grid-template-columns:1fr}
-  .empf-box{grid-template-columns:1fr}
   .info-footer-inner{flex-direction:column;align-items:flex-start}
-  /* nav: zwei Zeilen */
-  .nav{background:#FAF7F2}
-  .nav-inner{flex-direction:column;align-items:flex-start;height:auto;padding-top:10px;padding-bottom:8px;gap:4px}
-  .nav-logo{font-size:13px}
-  .nav-back{min-height:44px;font-size:14px;display:flex;align-items:center}
+  .nav-inner{height:60px}
 }
-@media(max-width:1023px) and (min-width:768px){
-  .info-hero-inner{grid-template-columns:1fr 300px}
-  .info-hero-foto-wrap{height:260px}
+@media(max-width:1024px) and (min-width:768px){
+  .info-grid{grid-template-columns:1fr 1fr}
+}
+/* Nest Hub & aehnliche breite, flache Querformat-Displays (1024x600, 1280x800) */
+@media (orientation:landscape) and (min-width:1000px) and (max-width:1366px) and (max-height:840px){
+  .nav-links{display:flex}
+  .burger{display:none}
   .info-grid{grid-template-columns:1fr 1fr}
 }
 @media(orientation:landscape) and (max-width:950px) and (max-height:480px){
-  .info-hero-inner{grid-template-columns:1fr;gap:16px}
-  .info-hero-foto{display:none}
   .info-h1{font-size:1.3rem}
   .info-grid{grid-template-columns:repeat(2,1fr) !important;gap:14px}
 }
 @media(min-width:768px) and (max-width:1024px) and (orientation:portrait){
-  .info-hero-inner{grid-template-columns:1fr 280px}
-  .info-hero-foto-wrap{height:240px}
   .info-grid{grid-template-columns:1fr !important;gap:20px;max-width:600px}
   .info-col{padding:clamp(20px,3vw,32px)}
 }
@@ -170,34 +174,33 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Familienpraxis <span>Gandenberger-Bachem</span></a>
-    <a href="index.html" class="nav-back">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Zurück zur Website
-    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="index.html#leistungen">Praxis</a></li>
+      <li><a href="infothek.html" class="aktiv">Für Eltern</a></li>
+      <li><a href="index.html#team">Team</a></li>
+    </ul>
+    <button class="burger" id="info-burger-btn" aria-expanded="false" aria-label="Menü öffnen" aria-controls="info-mob-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<div class="mob-nav" id="info-mob-nav" hidden aria-hidden="true">
+  <a href="index.html">Start</a>
+  <a href="index.html#leistungen">Praxis</a>
+  <a href="infothek.html" class="aktiv">Für Eltern</a>
+  <a href="index.html#team">Team</a>
+</div>
 
 <div class="info-hero">
   <div class="info-hero-inner">
     <div class="info-hero-text">
-      <div class="info-label-row">
-        <span class="info-label">Nur für unsere Familien</span>
-        <div class="info-fisch" aria-hidden="true">
-          <img src="bilder/fisch-mobile.webp" alt="" loading="eager">
-        </div>
-      </div>
-      <h1 class="info-h1">Freischütz erklärt</h1>
+      <span class="info-label">Freischütz erklärt</span>
+      <h1 class="info-h1">Eltern Campus</h1>
       <span class="info-h1-accent" aria-hidden="true"></span>
       <p class="info-sub">Merkblätter, Dosierungen und Links, die wir selbst nutzen.</p>
       <p class="info-team-hint">Von Heike, Susanne und dem Team.</p>
-    </div>
-    <div class="info-hero-foto">
-      <div class="info-hero-foto-wrap">
-        <picture>
-          <source srcset="bilder/susanne-lotta-schneei.webp" type="image/webp">
-          <img src="bilder/Susanne, Lotta, Schneei.jpg" alt="Susanne, Lotta und Schneei in der Praxis" loading="eager" fetchpriority="high">
-        </picture>
-      </div>
     </div>
   </div>
 </div>
@@ -206,11 +209,9 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
 <div class="info-empf">
   <div class="info-empf-inner">
     <div class="empf-box">
-      <div>
-        <p class="empf-kw">Impfempfehlung · Januar 2025</p>
-        <p class="empf-titel">Meningokokken B — jetzt auch für Kinder bis 5 Jahre empfohlen</p>
-        <p class="empf-text">Die STIKO empfiehlt nun auch den Impfschutz gegen Meningokokken B für alle Säuglinge und Kinder bis zum 5. Geburtstag. Sprechen Sie uns gerne auf einen Impftermin an.</p>
-      </div>
+      <p class="empf-kw">Impfempfehlung · Januar 2025</p>
+      <p class="empf-titel">Meningokokken B — jetzt auch für Kinder bis 5 Jahre empfohlen</p>
+      <p class="empf-text">Die STIKO empfiehlt nun auch den Impfschutz gegen Meningokokken B für alle Säuglinge und Kinder bis zum 5. Geburtstag. Sprechen Sie uns gerne auf einen Impftermin an.</p>
       <span class="empf-tag">Aktuell</span>
     </div>
   </div>
@@ -225,6 +226,7 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
       </div>
       <h2 class="info-col-h">Merkblätter &amp; Dosierungen</h2>
+      <div class="merkbl-platzhalter" aria-hidden="true"></div>
     </div>
 
     <div class="info-col">
@@ -268,6 +270,29 @@ footer{background:var(--ink);padding:clamp(24px,3vw,40px) var(--pad)}
   </div>
 </footer>
 
+<script>
+// mobil-menu auf/zu
+var burger=document.getElementById('info-burger-btn');
+var mobNav=document.getElementById('info-mob-nav');
+if(burger&&mobNav){
+  burger.addEventListener('click', function(){
+    var offen=mobNav.classList.toggle('offen');
+    burger.classList.toggle('open',offen);
+    burger.setAttribute('aria-expanded',offen?'true':'false');
+    mobNav.hidden=!offen;
+    mobNav.setAttribute('aria-hidden',offen?'false':'true');
+  });
+  mobNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobNav.classList.remove('offen');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      mobNav.hidden=true;
+      mobNav.setAttribute('aria-hidden','true');
+    });
+  });
+}
+</script>
 <script>
 var j=document.getElementById("jahr");
 if(j)j.textContent=new Date().getFullYear();
