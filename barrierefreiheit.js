@@ -94,7 +94,7 @@
 
   // ---------- Icons (schlichte Strich-Icons) ----------
   var ic = {
-    person: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></svg>',
+    person: '<svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><path d="M12 8v6M12 10.3l-5 2.7M12 10.3l5 2.7M12 14l-3.5 6M12 14l3.5 6"/></svg>',
     schliessen: '<svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>',
     reset: '<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 1 3 6.7"/><polyline points="3 16 3 21 8 21"/></svg>',
     ausblenden: '<svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg>',
@@ -367,7 +367,17 @@
   }
 
   // erst hier starten - alle Variablen/Funktionen sind jetzt initialisiert
-  document.addEventListener('DOMContentLoaded', anhaengen);
-  if(document.readyState !== 'loading') anhaengen();
+  // schutz gegen doppelten start: bei defer-Skripten ist readyState beim
+  // Ausfuehren oft schon nicht mehr 'loading', ABER DOMContentLoaded feuert
+  // gleich danach trotzdem noch - ohne diese Sperre wuerde anhaengen() (und
+  // damit verdrahten()) zweimal laufen und jeder Klick doppelt zaehlen
+  var gestartet = false;
+  function starteEinmal(){
+    if(gestartet) return;
+    gestartet = true;
+    anhaengen();
+  }
+  document.addEventListener('DOMContentLoaded', starteEinmal);
+  if(document.readyState !== 'loading') starteEinmal();
 
 })();
