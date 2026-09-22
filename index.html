@@ -276,6 +276,19 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .nav-cta{display:none}
   .nav-cta-gruppe{display:none}
   .burger{display:flex}
+  /* Logo kompakt/einzeilig - Handy Hoch/Quer + Tablet Hochformat (ueberall
+     wo das Burger-Menue aktiv ist), gleiche Werte wie die bestehende
+     Tablet-Querformat-Regel weiter unten im Dokument */
+  .nav-logo{font-size:0 !important}
+  .nav-logo br{display:none !important}
+  .nav-logo span{
+    display:inline-block !important;
+    font-size:15px !important;
+    font-weight:500 !important;
+    color:var(--ink) !important;
+    margin-left:0 !important;
+    letter-spacing:-0.01em !important;
+  }
 }
 @media(orientation:landscape) and (max-height:600px){
   .hero.hero-v2{min-height:auto}
@@ -287,7 +300,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 /* ── Hero V2 · Editorial, warm, trustworthy ── */
 
 .nav-inner{height:82px;max-width:var(--max)}
-.nav-logo{font-size:20px}
+.nav-logo{font-size:17px}
 .nav-links{gap:16px}
 .nav-cta{background:var(--accent);border-radius:999px;padding:11px 22px}
 
@@ -3686,6 +3699,27 @@ body.gb-modal-open{overflow:hidden}
     background: var(--bg,#FAF7F2) !important;
     color: var(--primary,#1B485A) !important;
     box-shadow: 0 0 0 1.5px var(--primary,#1B485A) inset !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLOCK C2 — Nav-Logo Umbruch-Luecke schliessen (Hochformat-Fenster 1024-1366px)
+   Block C oben deckt nur orientation:landscape ab. Bei einem schmalen,
+   eher hohen Browserfenster in diesem Breitenbereich griff keine der
+   Kompakt-Regeln, wodurch "Kinder- und Jugendmedizin" ein zweites Mal
+   umgebrochen ist (3 Zeilen statt 2). Gleiche Werte wie Block C, nur ohne
+   die Landscape-Bedingung.
+   ───────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .nav-logo { font-size: 0 !important; }
+  .nav-logo br { display: none !important; }
+  .nav-logo span {
+    display: inline-block !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: var(--ink) !important;
+    margin-left: 0 !important;
+    letter-spacing: -0.01em !important;
   }
 }
 
