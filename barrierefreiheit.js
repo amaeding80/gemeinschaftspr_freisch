@@ -69,7 +69,7 @@
   + '.pxa-foot{padding:10px 18px;background:#FAF7F2;border-top:1px solid #E8E1D7;font-size:11px;color:#576A75;text-align:center}'
   + '.pxa-reveal{position:fixed;bottom:20px;left:20px;background:#1B485A;color:#fff;border:none;border-radius:999px;padding:10px 16px;font-size:13px;cursor:pointer;z-index:99997;display:none;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(0,0,0,.22)}'
   + '.pxa-reveal.pxa-zeigen{display:inline-flex}'
-  + '@media(max-width:480px){.pxa-panel{left:12px;bottom:78px;width:calc(100vw - 24px)}.pxa-btn{left:12px}}'
+  + '@media(max-width:480px){.pxa-panel{left:12px;bottom:70px;width:calc(100vw - 24px)}.pxa-btn{left:12px;width:44px;height:44px}.pxa-btn svg{width:21px;height:21px}.pxa-reveal{left:12px;padding:8px 14px;font-size:12px}}'
   // ---- Effekt-Klassen auf html ----
   + 'html.pxa-links-links main,html.pxa-links-links body{text-align:left !important}'
   + 'html.pxa-lesbare-schrift body,html.pxa-lesbare-schrift body *{font-family:Verdana,Arial,"Helvetica Neue",sans-serif !important;letter-spacing:.02em !important;word-spacing:.05em !important}'
@@ -170,7 +170,7 @@
         optHtml('struktur', ic.struktur, 'Seitenstruktur', '') +
       '</div></div>' +
     '</div>' +
-    '<div class="pxa-foot">Familienpraxis Gandenberger-Bachem</div>';
+    '<div class="pxa-foot">Familienpraxis Kinder- und Jugendmedizin Gandenberger-Bachem</div>';
 
   function anhaengen(){
     // als Geschwister von <body> anhaengen (nicht als Kind) - so bleibt das
@@ -207,11 +207,28 @@
       });
     });
 
+    // nicht reagieren wenn die Beruehrung/Maus gerade ueber dem Widget
+    // selbst ist (Panel, Button, Einblenden) - sonst springt die Maske beim
+    // Bedienen der eigenen Buttons (z.B. Schliessen oben im Panel) dorthin
+    function istImWidget(el){
+      return !!(el && el.closest && (el.closest('.pxa-panel') || el.closest('.pxa-btn') || el.closest('.pxa-reveal')));
+    }
     // Lesemaske folgt der Maus
     document.addEventListener('mousemove', function(e){
-      if(!state.lesemaske) return;
+      if(!state.lesemaske || istImWidget(e.target)) return;
       positioniereMaske(e.clientY);
     });
+    // Lesemaske folgt dem Finger - ohne das gibt es auf Handy/Tablet gar
+    // kein mousemove und die Maske bleibt einfach stehen wo sie zuerst
+    // (oder gar nicht) positioniert wurde
+    document.addEventListener('touchmove', function(e){
+      if(!state.lesemaske || istImWidget(e.target)) return;
+      if(e.touches && e.touches[0]) positioniereMaske(e.touches[0].clientY);
+    }, {passive:true});
+    document.addEventListener('touchstart', function(e){
+      if(!state.lesemaske || istImWidget(e.target)) return;
+      if(e.touches && e.touches[0]) positioniereMaske(e.touches[0].clientY);
+    }, {passive:true});
 
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape' && panel.classList.contains('pxa-offen')) panelToggle(false);
@@ -331,6 +348,10 @@
     if(state.kontrast === 2) html.classList.add('pxa-kontrast-hell');
 
     if(!state.lesemaske) entferneMaske();
+    // beim Einschalten sofort in der Bildschirmmitte zeigen, nicht erst
+    // warten bis sich Maus/Finger bewegt (auf Handy kommt sonst evtl. nie
+    // ein erstes mousemove und die Maske haengt ganz oben / gar nicht)
+    else if(!document.querySelector('.pxa-maske-band')) positioniereMaske(window.innerHeight/2);
 
     struktur(!!state.struktur);
 
