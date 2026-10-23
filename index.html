@@ -5933,6 +5933,25 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-e
 .lv-chip.lv-chip-zurueck .lv-chip-name{font-size:12px !important;font-weight:400 !important;opacity:.65;white-space:nowrap}
 .mfa-zurueck-card,.srv-zurueck-card,.ek-zurueck-card{background:transparent !important;border:0 !important;box-shadow:none !important;font-size:12px !important;font-weight:400 !important;opacity:.65}
 .ph-zurueck-link{font-size:12px !important;font-weight:400 !important;opacity:.65 !important}
+
+/* Termin-Popup: Kopf mit X immer sichtbar, Hoehe nach sichtbarem Bereich (iOS-Leisten) */
+.gb-overlay{height:100vh;height:100dvh;overscroll-behavior:contain}
+.gb-box{max-height:92vh;max-height:92dvh}
+.gb-head{position:sticky;top:0;z-index:5;background:#fff;padding-right:64px}
+.gb-close{z-index:6;width:44px;height:44px;top:12px;right:12px;background:var(--bg-soft,#F7F1E8);color:var(--text,#2b2f33)}
+.gb-body{min-height:0;overscroll-behavior:contain}
+.gb-foot{flex-shrink:0}
+@media(max-width:767px){
+  .gb-overlay{align-items:flex-end;padding-top:env(safe-area-inset-top)}
+  .gb-box{max-height:calc(100vh - 16px);max-height:calc(100dvh - 16px - env(safe-area-inset-top))}
+  .gb-foot{padding-bottom:calc(16px + env(safe-area-inset-bottom))}
+}
+
+/* Termin-Auswahl im Dock: immer ganz im Bildschirm */
+@media(max-width:767px){
+  .dock-termin-popover{width:auto;min-width:200px;max-width:calc(100vw - 28px);right:max(14px,env(safe-area-inset-right));box-sizing:border-box}
+  .dock-pop-row{white-space:nowrap}
+}
 </style>
 <script src="barrierefreiheit.js?v=4" defer></script>
 </body>
