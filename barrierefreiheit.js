@@ -37,9 +37,9 @@
 
   // ---------- Styles ----------
   var css = ''
-  + '.pxa-btn{position:fixed;bottom:20px;left:20px;width:52px;height:52px;border-radius:50%;background:#1E6AA0;border:none;cursor:pointer;z-index:99997;box-shadow:0 4px 16px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;transition:transform .2s}'
+  + '.pxa-btn{position:fixed;bottom:20px;left:20px;width:52px;height:52px;border-radius:50%;background:#F7F1E8;border:1px solid #E6DACA;cursor:pointer;z-index:99997;box-shadow:0 4px 16px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;transition:transform .2s}'
   + '.pxa-btn:hover{transform:scale(1.06)}'
-  + '.pxa-btn svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.6}'
+  + '.pxa-btn svg{width:26px;height:26px;stroke:#1E6AA0;fill:none;stroke-width:1.6}'
   + '.pxa-panel{position:fixed;bottom:84px;left:20px;width:min(360px,calc(100vw - 40px));max-height:min(680px,calc(100vh - 120px));background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.28);z-index:99998;display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}'
   + '.pxa-panel.pxa-offen{display:flex}'
   + '.pxa-head{background:#1E6AA0;color:#fff;padding:16px 18px;display:flex;align-items:center;gap:10px}'
