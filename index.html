@@ -5,32 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Familienpraxis Kinder- und Jugendmedizin · München Bogenhausen</title>
 <meta name="description" content="Kinder- und Jugendmedizin in München Bogenhausen. Drei Ärztinnen begleiten Ihr Kind von der U2 bis zur J2 — persönlich, mit Zeit und Erfahrung seit 1998. Freischützstraße 9, 81927 München.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow"><!-- nur Vorschau, live wieder index -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Familienpraxis Kinder- und Jugendmedizin · München Bogenhausen">
 <meta property="og:description" content="Drei Ärztinnen begleiten Ihr Kind von der U2 bis zur J2 — persönlich, mit Zeit und Erfahrung seit 1998. Freischützstraße 9, 81927 München.">
-<meta property="og:image" content="hero.webp">
+<meta property="og:image" content="bilder/hero.webp">
 <meta property="og:locale" content="de_DE">
-<meta name="theme-color" content="#124357">
+<meta name="theme-color" content="#175A8A">
 <link rel="preload" as="image" href="bilder/hero.webp" type="image/webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/pjs/fonts.css">
 <style>
-/* ── Reset ── */
+/* Reset */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}em{font-style:normal}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--petrol);outline-offset:3px}
 [hidden]{display:none!important}
 img,svg{max-width:100%;height:auto;display:block}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
-/* ── Tokens ── */
+/* Tokens */
 :root{
   --bg:#FAF7F2;
   --bg-card:#FFFFFF;
   --bg-soft:#F2EBE1;
-  --primary:#1B485A;
-  --primary-hover:#0A2E3D;
+  --primary:#1E6AA0;
+  --primary-hover:#175A8A;
   --accent:#D97352;
   --accent-hover:#C56344;
   --accent-lt:#F9EFEA;
@@ -41,8 +39,8 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
   --border:#E8E1D7;
   --radius-card:24px;
   --radius-badge:999px;
-  --primary-hover:#123340;
-  --primary-lt:#EFF5F7;
+  --primary-hover:#175A8A;
+  --primary-lt:#E4F2FB;
   --accent-hover:#C46242;
   --max:1120px;
   --pad:clamp(20px,5vw,60px);
@@ -68,7 +66,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
   --terracotta:var(--accent);
 }
 
-/* ── Nav ── */
+/* Nav */
 .haupt-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;box-shadow:0 1px 0 var(--rule)}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad) 0 4px;display:flex;align-items:center;justify-content:space-between;height:88px}
 .nav-logo{font-family:var(--head);font-size:18px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
@@ -90,7 +88,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .mob-nav a{font-family:var(--head);font-size:22px;font-weight:400;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--rule);padding:18px 0;display:block}
 .mob-nav .mob-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:500;background:var(--acc);color:#fff;text-align:center;padding:14px;margin-top:8px;letter-spacing:0.02em}
 
-/* ── Hero ── */
+/* Hero */
 .hero{background:var(--bg);padding:clamp(36px,4.5vw,60px) var(--pad) clamp(32px,4vw,52px)}
 .hero-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px);align-items:center}
 .hero-h1{font-family:var(--head);font-size:clamp(32px,4.2vw,58px);font-weight:700;line-height:1.18;letter-spacing:-0.02em;color:var(--primary);margin-bottom:20px}
@@ -112,7 +110,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .hero-badge-val{font-family:var(--head);font-size:22px;font-weight:300;color:var(--ink);letter-spacing:-0.02em}
 .hero-badge-lbl{font-size:14px;color:var(--ink2);letter-spacing:0.04em}
 
-/* ── Quick Info ── */
+/* Quick Info */
 .quickbar{background:var(--acc);padding:18px var(--pad)}
 .quickbar-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .qi-item{display:flex;align-items:center;gap:12px}
@@ -122,19 +120,19 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .qi-label{font-size:12px;color:rgba(255,255,255,0.9);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:2px}
 .qi-val{font-size:13px;font-weight:500;color:#fff}
 
-/* ── Vertrauen Bar ── */
+/* Vertrauen Bar */
 .vbar{background:var(--white);border-bottom:0.5px solid var(--rule);padding:14px var(--pad)}
 .vbar-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:32px;justify-content:center;flex-wrap:wrap}
 .vbar-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);letter-spacing:0.02em}
 .vbar-dot{width:5px;height:5px;border-radius:50%;background:var(--acc);flex-shrink:0}
 
-/* ── Section Shared ── */
+/* Section Shared */
 .sek-inner{max-width:var(--max);margin:0 auto}
 .sek-label{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
 .sek-h2{font-family:var(--head);font-size:clamp(26px,3vw,42px);font-weight:700;letter-spacing:-0.02em;line-height:1.18;color:var(--primary);margin-bottom:16px}
 .sek-sub{font-size:clamp(14px,1.3vw,16px);color:var(--ink2);line-height:1.8;font-weight:300;max-width:560px}
 
-/* ── Haltung / Werte ── */
+/* Haltung / Werte */
 .haltung{padding:clamp(60px,7vw,96px) var(--pad);background:var(--white);border-bottom:0.5px solid var(--rule)}
 .haltung-head{margin-bottom:clamp(40px,5vw,60px)}
 .haltung-editorial{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start}.haltung-right-list{display:flex;flex-direction:column;gap:0}.haltung-item{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--border)}.haltung-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
@@ -143,7 +141,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .haltung-h3{font-family:var(--head);font-size:clamp(17px,1.6vw,22px);font-weight:600;color:var(--primary);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.2}
 .haltung-p{font-size:16px;line-height:1.78;color:var(--ink2);font-weight:300}
 
-/* ── Team ── */
+/* Team */
 .team{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
 .team-head{margin-bottom:clamp(40px,5vw,60px)}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem}
@@ -161,7 +159,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .team-lang{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;padding:3px 8px;border:0.5px solid var(--rule);color:var(--ink2)}
 
 
-/* ── MFA Team ── */
+/* MFA Team */
 .mfa-divider{width:100%;margin:clamp(32px,4vw,48px) auto 0;padding-top:clamp(24px,3vw,36px);border-top:0.5px solid var(--rule);display:flex;align-items:center;justify-content:center;gap:16px;padding-left:14%}
 .mfa-label{font-size:12px;letter-spacing:0.02em;text-transform:none;color:var(--ink2);white-space:nowrap}
 .mfa-page{display:contents}
@@ -174,7 +172,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .mfa-name{font-family:var(--head);font-size:15px;font-weight:400;color:var(--ink);letter-spacing:-0.01em;margin-bottom:3px}
 .mfa-role{font-size:12px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink2)}
 
-/* ── Leistungen Accordion ── */
+/* Leistungen Accordion */
 .phasen{padding:clamp(60px,7vw,96px) var(--pad);background:var(--white);border-bottom:0.5px solid var(--rule)}
 .phasen-head{margin-bottom:clamp(40px,5vw,60px)}
 .ph-list{display:flex;flex-direction:column;gap:0;border-top:0.5px solid var(--rule)}
@@ -210,7 +208,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
 .ph-ext-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--acc);text-decoration:none;letter-spacing:0.01em;margin-top:6px}
 .ph-ext-link:hover{text-decoration:underline}
 
-/* ── Kontakt + Anfahrt (kombiniert) ── */
+/* Kontakt + Anfahrt (kombiniert) */
 .kontakt-bereich{padding:clamp(40px,5vw,60px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
 .kontakt-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(24px,4vw,56px)}
 .k-col-head{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:18px;padding-bottom:10px;border-bottom:0.5px solid var(--rule)}
@@ -243,7 +241,7 @@ body{overflow-x:hidden;font-family:var(--body);font-weight:400;background:var(--
   .praxis-karte--gross .praxis-bild-wrap{aspect-ratio:4/3}.kontakt-grid{grid-template-columns:1fr}}
 
 
-/* ── Footer ── */
+/* Footer */
 footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .footer-i{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .footer-logo{font-family:var(--head);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);letter-spacing:-0.01em}
@@ -252,7 +250,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .footer-links a:hover{color:rgba(255,255,255,0.9)}
 .footer-copy{font-size:14px;color:rgba(255,255,255,0.6);letter-spacing:0.02em}
 
-/* ── Praxis-Fakten Strip ── */
+/* Praxis-Fakten Strip */
 .praxis-fakten{padding:clamp(48px,5.5vw,72px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
 .pf-raster{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,40px);margin-bottom:32px}
 .pf-item{display:flex;flex-direction:column;gap:14px}
@@ -297,7 +295,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 }
 
 
-/* ── Hero V2 · Editorial, warm, trustworthy ── */
+/* Hero V2 · Editorial, warm, trustworthy */
 
 .nav-inner{height:82px;max-width:var(--max)}
 .nav-logo{font-size:17px}
@@ -404,23 +402,23 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .hero-v2 .hero-img-wrap{height:55vw;border-radius:12px}
 }
 
-/* ── Mobile ≤480px: Hero-Buttons untereinander (nur Smartphones) ── */
+/* Mobile ≤480px: Hero-Buttons untereinander (nur Smartphones) */
 @media(max-width:480px){
   .hero-v2 .hero-btns{flex-direction:column;align-items:stretch}
 }
-/* ── Mob-Nav Höhenkorrektur auf Mobile ── */
+/* Mob-Nav Höhenkorrektur auf Mobile */
 @media(max-width:767px){
   .mob-nav{inset:84px 0 0}
 }
 
-/* ── Akut-Banner ── */
+/* Akut-Banner */
 .akut-bar{margin-top:98px;background:rgba(217,115,82,0.10);border-bottom:1px solid rgba(217,115,82,0.22);padding:11px var(--pad);text-align:center}
 .akut-bar p{font-size:13px;color:var(--text-muted);letter-spacing:0.02em;line-height:1.5}
 .akut-bar a{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(217,115,82,.4);white-space:nowrap}
 .akut-bar a:hover{border-bottom-color:var(--accent)}
 @media(max-width:767px){.akut-bar{margin-top:84px;padding:12px 15px}.akut-bar p{font-size:12px;line-height:1.4}}
 
-/* ── Kontakt CTA-Boxes ── */
+/* Kontakt CTA-Boxes */
 .kontakt-cta{max-width:var(--max);margin:0 auto clamp(40px,5vw,60px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
 .kcta-box{padding:clamp(24px,3vw,36px);border:0.5px solid var(--rule)}
 .kcta-box.kcta-online{background:var(--petrol)}
@@ -440,7 +438,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .kcta-btn:hover{opacity:.82}
 @media(max-width:767px){.kontakt-cta{grid-template-columns:1fr}}
 
-/* ── Digitale Services ── */
+/* Digitale Services */
 .digitalservices{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg2);border-bottom:0.5px solid var(--rule)}
 .ds-head{margin-bottom:clamp(40px,5vw,56px)}
 .ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
@@ -455,7 +453,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 @media(max-width:767px){.ds-grid{grid-template-columns:1fr}}
 /* ds-grid Tablet: per pointer:coarse Block geregelt */
 
-/* ── Elternbereich ── */
+/* Elternbereich */
 .elternbereich{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg);border-bottom:0.5px solid var(--rule)}
 .eltern-inner{max-width:var(--max);margin:0 auto}
 
@@ -491,7 +489,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 @media(max-width:767px){.eltern-grid{grid-template-columns:1fr}}
 @media(max-width:1023px) and (min-width:768px){.eltern-grid{grid-template-columns:1fr 1fr}}
 
-/* ── Sprachen-Bar ── */
+/* Sprachen-Bar */
 .lang-bar{height:34px;display:flex;align-items:center;background:#fff;border-bottom:0.5px solid var(--rule);padding:0 var(--pad)}
 .lang-bar-inner{width:100%;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .lang-bar-left{display:flex;align-items:center;gap:16px}
@@ -508,7 +506,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 @media(max-width:767px){.lang-bar{height:28px}.lang-bar-inner{gap:6px}.lang-item,.opening-status{font-size:0.8rem;min-height:44px;display:flex;align-items:center}.lang-sep{font-size:0.7rem}}
 @media(max-width:480px){.lang-bar{padding:0 16px;height:26px}.lang-bar-inner{gap:6px}.lang-item,.opening-status{font-size:0.76rem}}
 
-/* ── USP-Strip (ersetzt vbar) ── */
+/* USP-Strip (ersetzt vbar) */
 .usp-strip{background:#fff;border-bottom:0.5px solid var(--rule);padding:clamp(20px,2.5vw,34px) var(--pad)}
 .usp-strip-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,52px)}
 .usp-item{padding-left:18px;border-left:2px solid var(--acc-lt)}
@@ -516,12 +514,12 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .usp-text{font-size:13px;line-height:1.7;color:var(--ink2);font-weight:300}
 @media(max-width:767px){.usp-strip-inner{grid-template-columns:1fr;gap:14px}}
 
-/* ── Hero-Akut-Hinweis ── */
+/* Hero-Akut-Hinweis */
 .hero-akut-hint{font-size:12px;color:var(--ink2);margin-top:10px;font-weight:300;line-height:1.5}
 
 
 
-/* ── U/J Glossar ── */
+/* U/J Glossar */
 .uj-glossar{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:clamp(18px,2.5vw,28px) clamp(20px,3vw,36px);margin-bottom:32px}
 .leis-galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
 .leis-gal-item img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;display:block}
@@ -533,7 +531,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .wua-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,36,.82) 0%,rgba(10,22,36,.60) 42%,rgba(10,22,36,.18) 68%,transparent 88%);z-index:1}
 .wua-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:clamp(48px,6vw,72px) var(--pad);width:100%}
 .wua-bild{}
-.wua-detail{position:absolute;bottom:-20px;right:-20px;width:38%;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(27,72,90,.18);border:3px solid #fff}
+.wua-detail{position:absolute;bottom:-20px;right:-20px;width:38%;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(30,106,160,.18);border:3px solid #fff}
 .wua-detail img{width:100%;display:block;aspect-ratio:2/3;object-fit:cover}
 .wua-h2{font-family:var(--kopf);font-size:clamp(24px,2.8vw,38px);font-weight:700;line-height:1.18;color:#fff;margin:12px 0 28px;letter-spacing:-0.02em}
 .wua-statements{display:flex;flex-direction:column;gap:28px;margin-bottom:32px}
@@ -564,7 +562,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .uj-item{display:flex;align-items:baseline;gap:14px}
 .uj-kuerzel{font-family:var(--kopf);font-size:13px;font-weight:700;color:var(--primary);min-width:72px;flex-shrink:0}
 .uj-text{font-size:14px;color:var(--text-muted);line-height:1.6}
-/* ── Info-Kacheln (Sprechzeiten / Telefon / Akut) ── */
+/* Info-Kacheln (Sprechzeiten / Telefon / Akut) */
 .info-kacheln{padding:clamp(32px,4vw,52px) var(--pad);background:var(--bg-card);border-bottom:1px solid var(--border)}
 .info-kacheln-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
 .info-kachel{padding:clamp(22px,2.5vw,32px);background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border)}
@@ -582,7 +580,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 @media(max-width:767px){.info-kacheln-grid{grid-template-columns:1fr;gap:12px}}
 @media(max-width:1024px) and (orientation:portrait){.info-kacheln-grid{grid-template-columns:1fr}}
 
-/* ── Philosophie-Sektion ── */
+/* Philosophie-Sektion */
 .philosophie{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg-soft);border-bottom:1px solid var(--border)}
 .philosophie-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
 .philosophie-bild{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;background:var(--border)}
@@ -594,7 +592,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 @media(max-width:767px){.philosophie-inner{grid-template-columns:1fr}}
 @media(max-width:1024px) and (orientation:portrait){.philosophie-inner{grid-template-columns:1fr}}
 
-/* ── Footer erweitert ── */
+/* Footer erweitert */
 .footer-cols{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(24px,4vw,56px);margin-bottom:clamp(32px,4vw,48px)}
 .footer-col-h{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px;padding-bottom:10px;border-bottom:0.5px solid rgba(255,255,255,0.1)}
 .footer-col{display:flex;flex-direction:column;gap:0}
@@ -635,7 +633,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
    SMARTPHONE-OPTIMIERUNG — Conversion + Wärme + Daumen
    ═══════════════════════════════════════════════════════ */
 
-/* ── Sticky Bottom Action Bar ── */
+/* Sticky Bottom Action Bar */
 .mobil-dock{
   display:none;
   position:fixed;bottom:0;left:0;right:0;
@@ -676,7 +674,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 /* Wisch-Hinweise nur auf Smartphone */
 .team-carousel-hint,.mfa-carousel-hint{display:none}
 
-/* ── PORTRAIT (Hochformat) ≤ 767px ── */
+/* PORTRAIT (Hochformat) ≤ 767px */
 @media(max-width:767px){
   /* Sticky Bar einschalten */
   .mobil-dock{display:block}
@@ -722,8 +720,8 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     display:flex;align-items:center;justify-content:center;flex-shrink:0;
     background:var(--bg-soft,#F5F0EB);
   }
-  .dock-pop-row .dock-pop-ico svg{width:16px;height:16px;stroke:var(--petrol,#1D5F6E);fill:none}
-  .dock-pop-row.dock-pop-termin .dock-pop-ico{background:var(--petrol,#1D5F6E)}
+  .dock-pop-row .dock-pop-ico svg{width:16px;height:16px;stroke:var(--petrol,#1E6AA0);fill:none}
+  .dock-pop-row.dock-pop-termin .dock-pop-ico{background:var(--petrol,#1E6AA0)}
   .dock-pop-row.dock-pop-termin .dock-pop-ico svg{stroke:#fff}
   .dock-pop-divider{height:1px;background:var(--border,#e8e4de);margin:2px 6px}
 
@@ -738,7 +736,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   /* Body padding — kein Inhalt unter der Bar */
   body{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))}
 
-  /* ── HERO MOBILE: Bild als echter Hintergrund ── */
+  /* HERO MOBILE: Bild als echter Hintergrund */
 
   .hero.hero-v2{
     background-image:url('bilder/hero.webp') !important;
@@ -845,9 +843,9 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
     font-weight:600;
     border-radius:10px;
     min-height:48px;
-    background:#1B485A;
+    background:#1E6AA0;
     color:#fff;
-    box-shadow:0 3px 10px rgba(27,72,90,0.18);
+    box-shadow:0 3px 10px rgba(30,106,160,0.18);
     margin-bottom:10px;
   }
   .hero-v2 .btn-primaer:active{ background:#133649; transform:scale(0.98) }
@@ -1002,7 +1000,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .hero-eyebrow-group{ display:flex;align-items:center;gap:10px;margin-bottom:10px; }
 }
 
-/* ── LANDSCAPE (Querformat) ≤ 900px Breite, ≤ 500px Höhe ── */
+/* LANDSCAPE (Querformat) ≤ 900px Breite, ≤ 500px Höhe */
 @media(orientation:landscape) and (max-width:900px) and (max-height:530px){
   /* body padding kleiner — mehr Platz zum Lesen */
   body{padding-bottom:0}
@@ -1041,7 +1039,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   }
 }
 
-/* ── Portrait-spezifisch: ≤ 480px (kleine Smartphones) ── */
+/* Portrait-spezifisch: ≤ 480px (kleine Smartphones) */
 @media(max-width:480px){
   .pf-raster{grid-template-columns:1fr}
   /* hero-copy padding NICHT überschreiben — kommt aus dem 767px-Block */
@@ -1051,7 +1049,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
    MOBILE FIX v2 — Team · MFA · Footer · Landscape
    ═══════════════════════════════════════════════ */
 
-/* ── Team-Karussell: saubere Basis ── */
+/* Team-Karussell: saubere Basis */
 @media(max-width:767px){
   /* Carousel reset (überschreibt altes grid) */
   .team-grid{
@@ -1104,7 +1102,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .mfa-name{font-size:13px}
   .mfa-role{font-size:12px}
 
-  /* ── Footer Mobile: gestapelt + zentriert ── */
+  /* Footer Mobile: gestapelt + zentriert */
   footer{padding:36px 22px calc(28px + env(safe-area-inset-bottom,0px))}
   .footer-muenchen{display:none}
   .footer-i{
@@ -1145,7 +1143,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   }
 }
 
-/* ── Landscape: Team + MFA + Footer ── */
+/* Landscape: Team + MFA + Footer */
 @media(orientation:landscape) and (max-width:900px) and (max-height:530px){
   /* Team: kleinere Karten im Landscape-Karussell */
   .team-grid{
@@ -1181,13 +1179,13 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .footer-copy{font-size:14px}
 }
 
-/* ── Kleines Landscape (z.B. SE): body padding = 0 ── */
+/* Kleines Landscape (z.B. SE): body padding = 0 */
 @media(orientation:landscape) and (max-height:430px){
   body{padding-bottom:0}
   .mobil-dock{display:none}
 }
 
-/* ── SMARTPHONE QUERFORMAT – nur Smartphones (max-height:480px) ── */
+/* SMARTPHONE QUERFORMAT – nur Smartphones (max-height:480px) */
 @media(orientation:landscape) and (max-width:950px) and (max-height:480px){
 
   /* 1. Notfall-Banner kompakter */
@@ -1381,7 +1379,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 
-  /* ── Hero: weißes Card-Design wie Mobile ── */
+  /* Hero: weißes Card-Design wie Mobile */
   .hero.hero-v2 {
     background: #F9F5F0 !important;
     background-image: none !important;
@@ -1438,14 +1436,14 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .hero-v2 .hero-actions { flex-direction: column; align-items: stretch; gap: 8px; }
   .hero-btn-p { text-align: center; padding: 15px 24px; font-size: 15px; border-radius: 999px; min-height: 50px; display: flex; align-items: center; justify-content: center; }
 
-  /* ── Online-Services: alle 3 nebeneinander ── */
+  /* Online-Services: alle 3 nebeneinander */
   .ds-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
   .ds-card { padding: 18px 14px !important; }
   .ds-h3 { font-size: 0.95rem !important; }
   .ds-p { font-size: 0.82rem !important; line-height: 1.45 !important; }
   .ds-btn { font-size: 12px !important; padding: 10px 12px !important; }
 
-  /* ── Ärztinnen: horizontales Wisch-Karussell ── */
+  /* Ärztinnen: horizontales Wisch-Karussell */
   .team-grid {
     display: flex !important;
     grid-template-columns: unset !important;
@@ -1469,7 +1467,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   }
   .team-foto { width: 90px !important; aspect-ratio:1/1 !important; }
 
-  /* ── Praxisteam: Karussell + kleinere Bilder ── */
+  /* Praxisteam: Karussell + kleinere Bilder */
   .mfa-grid {
     display: flex !important;
     grid-template-columns: unset !important;
@@ -1496,14 +1494,14 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .mfa-name { font-size: 12px !important; }
   .mfa-role { font-size: 10px !important; }
 
-  /* ── Wisch-Hinweise einblenden ── */
+  /* Wisch-Hinweise einblenden */
   .team-carousel-hint { display: flex !important; }
   .mfa-carousel-hint  { display: flex !important; }
 
-  /* ── Nav: Maskottchen ausblenden ── */
+  /* Nav: Maskottchen ausblenden */
   .nav-inner picture { display: none !important; }
 
-  /* ── Hero: 2-Spalten-Layout ── */
+  /* Hero: 2-Spalten-Layout */
   .hero.hero-v2 {
     background: var(--bg,#FAF7F2) !important;
     background-image: none !important;
@@ -1544,16 +1542,16 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   }
   .hero-v2 .hero-h1 { font-size: clamp(26px, 3.8vw, 36px) !important; line-height: 1.18 !important; }
   .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
-  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1E6AA0) !important; border: 1.5px solid var(--primary,#1E6AA0) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-primaer::after { display: none !important; content: none !important; }
-  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1E6AA0) !important; border: 1.5px solid var(--primary,#1E6AA0) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-fisch { display: none !important; }
 
   .hero-frame { display: none !important; }
   .hero-usp-badge, .welcome-badge, .fisch-mob-badge { display: none !important; }
 
-  /* ── Hero Icon-Buttons (nur Tablet Portrait) ── */
+  /* Hero Icon-Buttons (nur Tablet Portrait) */
   .hero-tab-btns {
     display: flex !important;
     flex-direction: column;
@@ -1582,18 +1580,18 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   }
   .hero-tab-btn svg { width: 34px; height: 34px; flex-shrink: 0; }
   .hero-tab-btn-termin {
-    background: var(--primary,#1B485A);
+    background: var(--primary,#1E6AA0);
     color: #fff;
-    box-shadow: 0 8px 28px rgba(27,72,90,0.22);
+    box-shadow: 0 8px 28px rgba(30,106,160,0.22);
   }
   .hero-tab-btn-video {
     background: var(--bg,#FAF7F2);
-    color: var(--primary,#1B485A);
-    border: 1.5px solid var(--primary,#1B485A) !important;
-    box-shadow: 0 4px 14px rgba(27,72,90,0.10);
+    color: var(--primary,#1E6AA0);
+    border: 1.5px solid var(--primary,#1E6AA0) !important;
+    box-shadow: 0 4px 14px rgba(30,106,160,0.10);
   }
 
-  /* ── Öffnungszeiten: 3-spaltig, kein Carousel ── */
+  /* Öffnungszeiten: 3-spaltig, kein Carousel */
   .oz-swipe-hint { display: none !important; }
   .kontakt-grid {
     display: grid !important;
@@ -1621,7 +1619,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
    ══════════════════════════════════════════════════════════════ */
 @media (min-width: 768px) and (orientation: landscape) and (min-height: 600px) and (pointer: coarse) {
 
-  /* ── Hero: weißes Card-Design wie Mobile ── */
+  /* Hero: weißes Card-Design wie Mobile */
   .hero.hero-v2 {
     background: #F9F5F0 !important;
     background-image: none !important;
@@ -1678,14 +1676,14 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .hero-v2 .hero-actions { flex-direction: row; gap: 12px; }
   .hero-btn-p { padding: 13px 24px; font-size: 14px; border-radius: 999px; min-height: 48px; }
 
-  /* ── Online-Services: alle 3 nebeneinander ── */
+  /* Online-Services: alle 3 nebeneinander */
   .ds-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
   .ds-card { padding: 20px 16px !important; }
   .ds-h3 { font-size: 1rem !important; }
   .ds-p { font-size: 0.85rem !important; }
   .ds-btn { font-size: 13px !important; padding: 11px 14px !important; }
 
-  /* ── Ärztinnen: 3-spaltiges Grid, volle Breite, kein Wischhinweis ── */
+  /* Ärztinnen: 3-spaltiges Grid, volle Breite, kein Wischhinweis */
   .team-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -1710,7 +1708,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .team-text { font-size: 12px !important; line-height: 1.55 !important; margin-bottom: 0 !important; }
   .team-personal { display: none !important; }
 
-  /* ── Praxisteam: 5-spaltiges Grid, volle Breite, kein Wischhinweis ── */
+  /* Praxisteam: 5-spaltiges Grid, volle Breite, kein Wischhinweis */
   .mfa-grid {
     display: grid !important;
     grid-template-columns: repeat(5, 1fr) !important;
@@ -1736,7 +1734,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
   .mfa-carousel-hint { display: none !important; }
 }
 
-/* ── Praxisgalerie ── */
+/* Praxisgalerie */
 .praxisgalerie{padding:clamp(60px,7vw,96px) var(--pad);background:var(--bg-soft);border-bottom:0.5px solid var(--rule)}
 .praxis-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(18px,2.5vw,28px);margin-top:clamp(32px,4vw,48px)}
 .praxis-karte{background:var(--white);border-radius:16px;border:1px solid var(--rule);overflow:hidden;display:flex;flex-direction:column;transition:transform 0.3s ease,box-shadow 0.3s ease}
@@ -1774,7 +1772,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .lv-label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);white-space:nowrap;flex-shrink:0}
 .lv-chips{display:flex;gap:8px;flex-wrap:wrap}
 .lv-chip{display:flex;flex-direction:column;background:#fff;border:0.5px solid var(--border);border-radius:10px;padding:9px 14px;text-decoration:none;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
-.lv-chip:hover{border-color:var(--primary);box-shadow:0 2px 10px rgba(27,72,90,.10)}
+.lv-chip:hover{border-color:var(--primary);box-shadow:0 2px 10px rgba(30,106,160,.10)}
 .lv-chip-name{font-size:13px;font-weight:600;color:var(--primary);line-height:1.3}
 .lv-chip-sub{font-size:11px;color:var(--ink2);margin-top:2px;line-height:1.3}
 
@@ -1782,9 +1780,9 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .srv-list{display:flex;flex-direction:column;gap:8px;max-width:700px;margin:0 auto;text-align:left}
 .srv-slide{display:flex;flex-direction:column;gap:8px}
 .srv-row{display:flex;align-items:center;gap:16px;padding:15px 20px;background:#fff;border:1px solid var(--border);border-left:3px solid transparent;border-radius:12px;cursor:pointer;transition:all .2s ease;text-decoration:none}
-.srv-row:hover{border-color:#1B485A;border-left-color:var(--accent);box-shadow:0 4px 16px rgba(27,72,90,.09);transform:translateX(2px)}
+.srv-row:hover{border-color:#1E6AA0;border-left-color:var(--accent);box-shadow:0 4px 16px rgba(30,106,160,.09);transform:translateX(2px)}
 .srv-row:hover .srv-arrow{transform:translateX(4px);color:var(--accent)}
-.srv-row:hover .srv-ri{background:var(--primary,#1B485A)}
+.srv-row:hover .srv-ri{background:var(--primary,#1E6AA0)}
 .srv-row:hover .srv-ri svg{stroke:#fff}
 .srv-ri{width:42px;height:42px;border-radius:10px;background:#EEF5F3;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
 .srv-ri svg{width:19px;height:19px;stroke:#6B8E85;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
@@ -1801,28 +1799,28 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 #gs-overlay.aktiv{display:flex}
 .gs-box{background:#fff;border-radius:20px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.18);display:flex;flex-direction:column}
 .gs-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 0;flex-shrink:0}
-.gs-title{font-size:17px;font-weight:700;color:#1B485A}
+.gs-title{font-size:17px;font-weight:700;color:#1E6AA0}
 .gs-close{background:none;border:none;cursor:pointer;font-size:22px;color:#aaa;line-height:1;padding:4px}
 .gs-body{padding:20px 24px 0;flex:1}
 .gs-body label{display:block;font-size:12px;font-weight:600;color:#6B8E85;letter-spacing:.04em;margin-bottom:5px;margin-top:14px;text-transform:uppercase}
 .gs-body label:first-child{margin-top:0}
-.gs-body input,.gs-body select,.gs-body textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-family:var(--body);font-size:14px;color:#1B485A;background:#FAF7F2;outline:none;transition:border .2s}
-.gs-body input:focus,.gs-body select:focus,.gs-body textarea:focus{border-color:#1B485A;background:#fff}
+.gs-body input,.gs-body select,.gs-body textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-family:var(--body);font-size:14px;color:#1E6AA0;background:#FAF7F2;outline:none;transition:border .2s}
+.gs-body input:focus,.gs-body select:focus,.gs-body textarea:focus{border-color:#1E6AA0;background:#fff}
 .gs-body textarea{resize:vertical;min-height:80px}
 .gs-body .gs-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .gs-body .gs-hint{font-size:12px;color:#9B9186;margin-top:6px;line-height:1.4}
 .gs-foot{padding:20px 24px 24px;display:flex;gap:10px;flex-shrink:0}
-.gs-btn-senden{flex:1;padding:13px;background:#1B485A;color:#fff;border:none;border-radius:999px;font-size:14px;font-weight:700;font-family:var(--body);cursor:pointer;transition:background .2s}
+.gs-btn-senden{flex:1;padding:13px;background:#1E6AA0;color:#fff;border:none;border-radius:999px;font-size:14px;font-weight:700;font-family:var(--body);cursor:pointer;transition:background .2s}
 .gs-btn-senden:hover{background:#26607E}
 .gs-hp{display:none!important}
 .gs-danke{display:none;text-align:center;padding:32px 24px}
 .gs-danke.aktiv{display:block}
 .gs-danke-icon{width:56px;height:56px;border-radius:50%;background:var(--primary-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.gs-danke h3{font-size:20px;font-weight:700;color:#1B485A;margin-bottom:8px}
+.gs-danke h3{font-size:20px;font-weight:700;color:#1E6AA0;margin-bottom:8px}
 .gs-danke p{font-size:14px;color:#9B9186;line-height:1.6}
 /* online-service-mid */
 .online-service-mid{padding:clamp(40px,5vw,72px) var(--pad);background:var(--bg-soft);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
-    /* ── Fisch Hero ── */
+    /* Fisch Hero */
     .hero-fisch{position:fixed;top:42px;right:0;width:112px;z-index:10;pointer-events:none;transform-origin:50% 0%;animation:fisch-pendel 4s ease-in-out infinite;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15))}
     .hero-fisch img{width:100%;height:auto;display:block}
     @keyframes fisch-pendel{0%,100%{transform:rotate(-11deg)}50%{transform:rotate(-2deg)}}
@@ -1867,7 +1865,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 .ft-zettel-lines::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(to bottom,transparent,transparent 28px,rgba(0,0,0,.04) 28px,rgba(0,0,0,.04) 29px)}
 @media(max-width:767px){.ft-zettel{display:none}}
 
-    /* ── Einblicke Bento — Weg durch die Praxis ── */
+    /* Einblicke Bento — Weg durch die Praxis */
     .einblicke-strip{padding:clamp(36px,4.5vw,64px) var(--pad);background:var(--bg)}
     .einblicke-karten{display:flex;flex-direction:column;gap:9px}
     .ek-row{display:grid;gap:9px}
@@ -1951,7 +1949,7 @@ footer{background:var(--primary);padding:clamp(48px,5vw,72px) var(--pad)}
 
 
   
-/* ── Termin-Wizard Modal ── */
+/* Termin-Wizard Modal */
 body.gb-modal-open{overflow:hidden}
 .gb-overlay{display:none;position:fixed;inset:0;z-index:8000;
   background:rgba(20,30,35,0.62);backdrop-filter:blur(5px);
@@ -2155,7 +2153,7 @@ body.gb-modal-open{overflow:hidden}
 .gb-doctoli-dot{width:6px;height:6px;border-radius:50%;background:#0064D2}
 
 
-/* ── MOBILE HOCHFORMAT ≤767px — Hero GB ── */
+/* MOBILE HOCHFORMAT ≤767px — Hero GB */
 .akut-mob-strip{display:none}
 .hero-akut-mob{display:none}
 .fisch-mob-badge{display:none}
@@ -2262,10 +2260,10 @@ body.gb-modal-open{overflow:hidden}
 }
 </script>
 <style>
-/* ── MOBILE PORTRAIT FIXES v14 ── */
+/* MOBILE PORTRAIT FIXES v14 */
 @media(max-width:767px){
 
-  /* ── MFA Praxisteam: 2 Fotos nebeneinander, wischbar ── */
+  /* MFA Praxisteam: 2 Fotos nebeneinander, wischbar */
   .mfa-grid{
     display:flex !important;
     flex-wrap:nowrap !important;
@@ -2324,7 +2322,7 @@ body.gb-modal-open{overflow:hidden}
     border:0.5px solid var(--border,#e8e4de) !important;
     flex-direction:column;
     gap:6px;
-    color:var(--petrol,#1D5F6E);
+    color:var(--petrol,#1E6AA0);
     font-size:11px;
     font-weight:500;
     text-align:center;
@@ -2332,7 +2330,7 @@ body.gb-modal-open{overflow:hidden}
   }
   .mfa-role{font-size:11.5px !important}
 
-  /* ── Team Ärztinnen: kompaktes Wisch-Karussell ── */
+  /* Team Ärztinnen: kompaktes Wisch-Karussell */
   .team-grid{
     display:flex !important;
     flex-direction:row !important;
@@ -2379,7 +2377,7 @@ body.gb-modal-open{overflow:hidden}
   .team-carousel-hint{display:flex !important}
   .mfa-carousel-hint{display:flex !important}
 
-  /* ── Was uns ausmacht ── */
+  /* Was uns ausmacht */
   .was-uns-ausmacht{min-height:auto}
   .wua-bg-img{object-position:center 40%}
   .wua-overlay{background:linear-gradient(to bottom,rgba(5,15,25,.88) 0%,rgba(5,15,25,.80) 60%,rgba(5,15,25,.70) 100%) !important}
@@ -2391,13 +2389,13 @@ body.gb-modal-open{overflow:hidden}
   .wua-postkarte{padding:10px 12px;gap:10px}
   .wua-pk-sub{font-size:11px;overflow-wrap:anywhere;word-break:break-word}
 
-  /* ── Wir begleiten: Chips in einer Zeile wischbar ── */
+  /* Wir begleiten: Chips in einer Zeile wischbar */
   .lv-chips{flex-wrap:nowrap !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none !important;padding-bottom:6px}
   .lv-chips::-webkit-scrollbar{display:none}
   .lv-chip{flex-shrink:0 !important;padding:8px 14px !important;font-size:13px !important}
   .lv-chip-sub{display:none !important}
 
-  /* ── Online-Elternschalter: 2 Kacheln pro Slide, wischbar ── */
+  /* Online-Elternschalter: 2 Kacheln pro Slide, wischbar */
   .online-service-mid{padding:36px 20px}
   .srv-list{
     display:flex !important;
@@ -2464,7 +2462,7 @@ body.gb-modal-open{overflow:hidden}
   a.srv-row .srv-desc{display:block !important;font-size:13px !important}
   a.srv-row .srv-right{display:flex !important;margin-left:auto}
   /* Swipe-Hint + Zurück-Karte für Online-Schalter */
-  .srv-swipe-hint{display:flex !important;align-items:center;gap:6px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.7;margin-top:8px;justify-content:center}
+  .srv-swipe-hint{display:flex !important;align-items:center;gap:6px;font-size:12px;color:var(--petrol,#1E6AA0);opacity:0.7;margin-top:8px;justify-content:center}
   .srv-zurueck-card{
     display:flex !important;
     flex:0 0 80px !important;
@@ -2480,14 +2478,14 @@ body.gb-modal-open{overflow:hidden}
     border:0.5px solid var(--border,#e8e4de) !important;
     flex-direction:column;
     gap:6px;
-    color:var(--petrol,#1D5F6E);
+    color:var(--petrol,#1E6AA0);
     font-size:11px;
     font-weight:500;
     text-align:center;
     padding:8px 4px;
   }
 
-  /* ── Leistungen: Wisch-Karussell + Accordion bleibt klickbar ── */
+  /* Leistungen: Wisch-Karussell + Accordion bleibt klickbar */
   .ph-list{
     display:flex !important;
     flex-direction:row !important;
@@ -2520,7 +2518,7 @@ body.gb-modal-open{overflow:hidden}
   .ph-bi{padding:0 16px 20px !important}
   .ph-bi-inner{padding:0 !important}
   /* Swipe-Hint für Leistungen */
-  .ph-swipe-hint{display:flex !important;align-items:center;gap:6px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.7;margin-bottom:4px}
+  .ph-swipe-hint{display:flex !important;align-items:center;gap:6px;font-size:12px;color:var(--petrol,#1E6AA0);opacity:0.7;margin-bottom:4px}
   /* Zurück-Karte: nur auf Mobile */
   .ph-zurueck-card{
     display:flex !important;
@@ -2544,12 +2542,12 @@ body.gb-modal-open{overflow:hidden}
     flex-direction:column;
     align-items:center;
     gap:8px;
-    color:var(--petrol,#1D5F6E);
+    color:var(--petrol,#1E6AA0);
     font-size:13px;
     font-weight:500;
   }
 
-  /* ── Einblicke: horizontales Wisch-Karussell ── */
+  /* Einblicke: horizontales Wisch-Karussell */
   .einblicke-karten{
     display:flex !important;
     flex-direction:row !important;
@@ -2593,17 +2591,17 @@ body.gb-modal-open{overflow:hidden}
     border:0.5px solid var(--border,#e8e4de) !important;
     flex-direction:column;
     gap:6px;
-    color:var(--petrol,#1D5F6E);
+    color:var(--petrol,#1E6AA0);
     font-size:11px;
     font-weight:500;
   }
   /* Swipe-Hints allgemein */
-  .lv-wischen-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.65;margin-top:4px}
+  .lv-wischen-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1E6AA0);opacity:0.65;margin-top:4px}
   .lv-chip-zurueck{display:flex !important;flex-shrink:0 !important}
-  .ek-swipe-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.65;margin-top:6px}
-  .oz-swipe-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1D5F6E);opacity:0.65;margin-top:0;margin-bottom:10px}
+  .ek-swipe-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1E6AA0);opacity:0.65;margin-top:6px}
+  .oz-swipe-hint{display:flex !important;align-items:center;gap:5px;font-size:12px;color:var(--petrol,#1E6AA0);opacity:0.65;margin-top:0;margin-bottom:10px}
 
-  /* ── Öffnungszeiten + Kontakt: 1-spaltig, kompakt ── */
+  /* Öffnungszeiten + Kontakt: 1-spaltig, kompakt */
   .kontakt-grid{display:flex !important;flex-direction:row !important;overflow-x:auto !important;scroll-snap-type:x mandatory !important;-webkit-overflow-scrolling:touch;gap:0 !important;margin-left:-22px !important;margin-right:-22px !important;padding-left:0 !important;padding-right:0 !important;scrollbar-width:none;padding-bottom:12px !important}
   .kontakt-grid::-webkit-scrollbar{display:none}
   .kontakt-grid>div{flex:0 0 100vw !important;scroll-snap-align:start !important;padding:0 22px !important;box-sizing:border-box !important;min-width:0;word-break:break-word}
@@ -2616,7 +2614,7 @@ body.gb-modal-open{overflow:hidden}
   .k-val{font-size:13px !important}
   .map-btn{font-size:12.5px !important}
 
-  /* ── Footer: 2-zeilig, ultra-schlank ── */
+  /* Footer: 2-zeilig, ultra-schlank */
   footer{padding:12px 20px calc(10px + env(safe-area-inset-bottom,0px)) !important}
   /* Alle Spalten weg außer Rechtliches */
   .footer-col:nth-child(1){display:none !important}
@@ -2878,8 +2876,8 @@ body.gb-modal-open{overflow:hidden}
     height: 44px !important;
     min-height: 0 !important;
     border-radius: 50% !important;
-    background: #1B485A !important;
-    box-shadow: 0 3px 12px rgba(27,72,90,.35) !important;
+    background: #1E6AA0 !important;
+    box-shadow: 0 3px 12px rgba(30,106,160,.35) !important;
     padding: 0 !important;
     font-size: 0 !important;
     line-height: 0 !important;
@@ -3080,7 +3078,7 @@ body.gb-modal-open{overflow:hidden}
   .nav-inner picture { display: none !important; }
 
   /* Hero: 1-spaltig, kein Hintergrundbild */
-  .hero.hero-v2 { background: var(--bg,#FAF7F2) !important; background-image: none !important; padding: 0 !important; height: auto; min-height: 0; overflow: hidden; border-left: 6px solid var(--primary,#1B485A) !important; }
+  .hero.hero-v2 { background: var(--bg,#FAF7F2) !important; background-image: none !important; padding: 0 !important; height: auto; min-height: 0; overflow: hidden; border-left: 6px solid var(--primary,#1E6AA0) !important; }
   .hero.hero-v2::after { display: none !important; }
   .hero.hero-v2::before { display: none !important; }
   .hero-v2 .hero-inner { display: block !important; padding: clamp(32px,5vw,52px) clamp(24px,4vw,40px) clamp(40px,5vw,60px) !important; position: relative !important; height: auto !important; }
@@ -3096,9 +3094,9 @@ body.gb-modal-open{overflow:hidden}
 
   /* Standard-Buttons + Deko + Zettel-Widget verstecken */
   .hero-v2 .hero-btns { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 10px !important; align-items: center !important; margin-top: 22px !important; }
-  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-primaer { background: transparent !important; color: var(--primary,#1E6AA0) !important; border: 1.5px solid var(--primary,#1E6AA0) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-primaer::after { display: none !important; content: none !important; }
-  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
+  .hero-v2 .hero-btns .btn-sekundaer { background: transparent !important; color: var(--primary,#1E6AA0) !important; border: 1.5px solid var(--primary,#1E6AA0) !important; box-shadow: none !important; padding: 10px 18px !important; font-size: 14px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 0 !important; border-radius: 999px !important; text-decoration: none !important; }
   .hero-v2 .hero-btns .btn-sekundaer::after { display: none !important; content: none !important; }
   .hero-v2 .hero-actions { display: none !important; }
   .hero-frame { display: none !important; }
@@ -3108,15 +3106,15 @@ body.gb-modal-open{overflow:hidden}
   /* Nav: Blauer Streifen bis Header, Logo-Abstand, Fax-Button rechts */
   .haupt-nav { border-left: none !important; }
   .nav-logo { padding-left: 16px !important; }
-  .nav-tablet-fax { display: inline-flex !important; align-items: center !important; font-size: 11px !important; font-weight: 500 !important; color: var(--primary,#1B485A) !important; border: 1.5px solid var(--primary,#1B485A) !important; padding: 6px 10px !important; border-radius: 6px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; margin-left: auto !important; margin-right: 10px !important; }
+  .nav-tablet-fax { display: inline-flex !important; align-items: center !important; font-size: 11px !important; font-weight: 500 !important; color: var(--primary,#1E6AA0) !important; border: 1.5px solid var(--primary,#1E6AA0) !important; padding: 6px 10px !important; border-radius: 6px !important; text-decoration: none !important; white-space: nowrap !important; flex-shrink: 0 !important; margin-left: auto !important; margin-right: 10px !important; }
 
   /* Sidebar-Buttons: fix rechts, weiter unten */
   .hero-tab-btns { display: none !important; flex-direction: column !important; position: fixed !important; right: 0 !important; top: 65% !important; transform: translateY(-50%) !important; z-index: 999 !important; gap: 6px !important; width: auto !important; align-items: stretch !important; overflow: visible !important; }
   .hero-tab-btns.gb-tabs-visible { display: flex !important; }
   .hero-tab-btn { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 0 !important; width: 56px !important; height: 56px !important; max-width: none !important; padding: 0 !important; border-radius: 12px 0 0 12px !important; text-decoration: none !important; font-size: 0 !important; cursor: pointer !important; border: none !important; transition: opacity 0.18s !important; }
   .hero-tab-btn svg { width: 26px !important; height: 26px !important; flex-shrink: 0 !important; }
-  .hero-tab-btn-termin { background: var(--primary,#1B485A) !important; color: #fff !important; box-shadow: none !important; border-bottom: 1px solid rgba(255,255,255,0.15) !important; }
-  .hero-tab-btn-video { background: var(--bg,#FAF7F2) !important; color: var(--primary,#1B485A) !important; box-shadow: 0 0 0 1.5px var(--primary,#1B485A) inset !important; }
+  .hero-tab-btn-termin { background: var(--primary,#1E6AA0) !important; color: #fff !important; box-shadow: none !important; border-bottom: 1px solid rgba(255,255,255,0.15) !important; }
+  .hero-tab-btn-video { background: var(--bg,#FAF7F2) !important; color: var(--primary,#1E6AA0) !important; box-shadow: 0 0 0 1.5px var(--primary,#1E6AA0) inset !important; }
 
   /* Öffnungszeiten: 3-spaltig, kein Carousel */
   .oz-swipe-hint { display: none !important; }
@@ -3145,7 +3143,7 @@ body.gb-modal-open{overflow:hidden}
   .team-personal { display: block !important; font-size: 13px !important; line-height: 1.6 !important; color: var(--ink2) !important; margin-top: 14px !important; padding-top: 14px !important; border-top: 0.5px solid var(--rule) !important; }
 
   /* lv-strip: "Wir begleiten von Anfang an" — alle Chips auf einen Blick */
-  .lv-strip { border-left: 6px solid var(--primary,#1B485A) !important; padding-left: clamp(24px,4vw,40px) !important; padding-right: clamp(24px,4vw,40px) !important; padding-top: 14px !important; padding-bottom: 14px !important; }
+  .lv-strip { border-left: 6px solid var(--primary,#1E6AA0) !important; padding-left: clamp(24px,4vw,40px) !important; padding-right: clamp(24px,4vw,40px) !important; padding-top: 14px !important; padding-bottom: 14px !important; }
   .lv-inner { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
   .lv-label { text-align: left !important; white-space: nowrap !important; }
   .lv-chips { display: flex !important; flex-wrap: wrap !important; overflow-x: visible !important; gap: 8px !important; padding-bottom: 0 !important; width: 100% !important; }
@@ -3161,12 +3159,12 @@ body.gb-modal-open{overflow:hidden}
   .ph-page { display: flex !important; flex-direction: column !important; flex: 0 0 100% !important; scroll-snap-align: start !important; min-width: 0 !important; min-height: 200px !important; }
   .ph-item { flex: 1 !important; display: flex !important; flex-direction: column !important; max-width: unset !important; width: 100% !important; scroll-snap-align: unset !important; border-radius: 0 !important; }
   .ph-zurueck-card { display: flex !important; flex: 1 !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; background: var(--bg-soft,#F5F0EB) !important; border-top: 0.5px solid var(--border,#e8e4de) !important; }
-  .ph-zurueck-link { display: block !important; text-align: left !important; padding: 14px 16px 6px !important; font-size: 14px !important; color: var(--petrol,#1D5F6E) !important; cursor: pointer !important; opacity: 0.8 !important; }
+  .ph-zurueck-link { display: block !important; text-align: left !important; padding: 14px 16px 6px !important; font-size: 14px !important; color: var(--petrol,#1E6AA0) !important; cursor: pointer !important; opacity: 0.8 !important; }
   /* Schaukel-Deko: rechts im Hero */
   .hero-v2 { overflow: visible !important; }
   .schaukel-deko { display: block !important; position: absolute !important; right: 12px !important; top: 30px !important; width: 220px !important; height: auto !important; transform: scaleX(-1) !important; pointer-events: none !important; z-index: 5 !important; }
   .
-  .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1D5F6E); opacity: 0.7; margin-bottom: 4px; }
+  .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1E6AA0); opacity: 0.7; margin-bottom: 4px; }
 
   /* MFA: alle Karten sichtbar, zentriert, kein Karussell */
   .mfa-grid { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; overflow-x: visible !important; scroll-snap-type: none !important; gap: 16px !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 0 !important; }
@@ -3523,7 +3521,7 @@ body.gb-modal-open{overflow:hidden}
   .ph-list > .ph-item:nth-child(1),
   .ph-list > .ph-item:nth-child(3),
   .ph-list > .ph-item:nth-child(5) {
-    border-left: 3px solid var(--primary, #1B485A) !important;
+    border-left: 3px solid var(--primary, #1E6AA0) !important;
   }
   .ph-item:nth-child(3n) { border: 0.5px solid var(--border) !important; }
 
@@ -3549,8 +3547,8 @@ body.gb-modal-open{overflow:hidden}
     align-self: flex-start !important;
     font-size: 12px !important;
     font-weight: 500 !important;
-    background: rgba(27,72,90,0.09) !important;
-    color: var(--primary, #1B485A) !important;
+    background: rgba(30,106,160,0.09) !important;
+    color: var(--primary, #1E6AA0) !important;
     border-radius: 20px !important;
     padding: 2px 9px !important;
     margin-bottom: 7px !important;
@@ -3607,8 +3605,8 @@ body.gb-modal-open{overflow:hidden}
     cursor: default !important;
     pointer-events: none !important;
     padding: 14px !important;
-    background: rgba(27,72,90,0.06) !important;
-    border: 0.5px solid rgba(27,72,90,0.2) !important;
+    background: rgba(30,106,160,0.06) !important;
+    border: 0.5px solid rgba(30,106,160,0.2) !important;
     border-radius: 12px !important;
   }
   .ph-list > .ph-zurueck-card .ph-zurueck-inner { display: none !important; }
@@ -3621,7 +3619,7 @@ body.gb-modal-open{overflow:hidden}
   .uj-card-title {
     font-size: 13px !important;
     font-weight: 700 !important;
-    color: var(--primary, #1B485A) !important;
+    color: var(--primary, #1E6AA0) !important;
     margin: 0 0 2px !important;
     line-height: 1.3 !important;
   }
@@ -3647,7 +3645,7 @@ body.gb-modal-open{overflow:hidden}
   .uj-kz {
     font-size: 11px !important;
     font-weight: 600 !important;
-    color: var(--primary, #1B485A) !important;
+    color: var(--primary, #1E6AA0) !important;
     line-height: 1.3 !important;
   }
   .uj-tx {
@@ -3691,14 +3689,14 @@ body.gb-modal-open{overflow:hidden}
   }
   .hero-tab-btn svg { width: 24px !important; height: 24px !important; flex-shrink: 0 !important; }
   .hero-tab-btn-termin {
-    background: var(--primary,#1B485A) !important;
+    background: var(--primary,#1E6AA0) !important;
     color: #fff !important;
     border-bottom: 1px solid rgba(255,255,255,0.15) !important;
   }
   .hero-tab-btn-video {
     background: var(--bg,#FAF7F2) !important;
-    color: var(--primary,#1B485A) !important;
-    box-shadow: 0 0 0 1.5px var(--primary,#1B485A) inset !important;
+    color: var(--primary,#1E6AA0) !important;
+    box-shadow: 0 0 0 1.5px var(--primary,#1E6AA0) inset !important;
   }
 }
 
@@ -3779,7 +3777,7 @@ body.gb-modal-open{overflow:hidden}
 }
 /* B2-Override: Swipe-Hint + Zurück bei Tablet Hochformat wieder einblenden */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1D5F6E); opacity: 0.7; margin-bottom: 4px; }
+  .ph-swipe-hint { display: flex !important; align-items: center; gap: 6px; font-size: 12px; color: var(--petrol,#1E6AA0); opacity: 0.7; margin-bottom: 4px; }
   .ph-zurueck-card { display: flex !important; }
   /* Team jetzt auch Karussell hier — Wisch-Hinweis wieder zeigen */
   .team-carousel-hint { display: flex !important; }
@@ -3787,28 +3785,228 @@ body.gb-modal-open{overflow:hidden}
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   #gb-sig-canvas { height: 96px !important; }
 }
+
+/* Nachbesserungen Okt 2026 */
+.heute-pill{display:none !important}
+.oz-tr.heute .heute-pill{display:inline-block !important}
+.hero-h1,.hero-h1 .h1-s2{padding-left:0 !important;margin-left:0 !important;text-indent:0 !important}
+.hero-h1 .h1-s2{display:block}
+.hero,.hero-v2{overflow:hidden}
+.akut-mob-strip a{color:var(--accent,#D97352);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+.ek-karte img{object-fit:contain !important;background:var(--bg-soft,#f5efe6)}
+.ek-karte{position:relative}
+.akut-mob-strip p{font-size:13px !important}
+/* Team-Fotos alle gleich */
+.team-grid .team-karte .team-foto{border:1px solid var(--border);border-radius:16px;padding:0 !important;background:var(--bg-soft)}
+.team-grid .team-karte:nth-child(2) .team-foto img{transform:none !important}
+@media(min-width:768px){.team-grid .team-karte .team-body{text-align:center !important}}
+.team-grid .team-karte .team-foto img{padding:0 !important;border:0 !important;border-radius:0 !important;width:100% !important;height:100% !important;object-fit:cover !important}
+/* Swipe-Punkte */
+.swipe-nav{display:none;align-items:center;justify-content:center;gap:6px;margin-top:10px}
+.swipe-nav button{width:44px;height:44px;border:1px solid var(--rule,#ddd);border-radius:50%;background:#fff;color:var(--petrol,#1E6AA0);font-size:18px;cursor:pointer}
+.swipe-nav .sw-dots{display:flex;gap:6px;padding:0 8px}
+.swipe-nav .sw-dots span{width:8px;height:8px;border-radius:50%;background:var(--rule,#ccc)}
+.swipe-nav .sw-dots span.akt{background:var(--petrol,#1E6AA0);width:18px;border-radius:4px}
+
+@media(max-width:1023px){
+  .nav-inner{padding-inline:20px !important}
+  .nav-inner picture.nav-logo-bild{display:flex !important;margin-left:0 !important}
+  .btn-primaer,.btn-sekundaer,.hero-btns .btn-sekundaer,.kcta-btn,.nav-logo{min-height:44px !important;display:inline-flex !important;align-items:center;justify-content:center}
+  .nav-logo-bild img{height:44px !important}
+  .burger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .lv-chip{min-height:44px}
+  .footer-bottom a,.footer-col-links a,.k-val a,.oz-note a,.ph-ext-link,.map-btn{display:inline-flex;align-items:center;min-height:44px}
+  .hero-tag{margin-top:12px}
+  .k-val a{white-space:normal !important;overflow-wrap:anywhere}
+}
+@media(min-width:768px) and (max-width:1023px){
+  .hero.hero-v2{padding-top:104px !important}/* Label sass unterm Header */
+  .team-grid+.swipe-nav{display:flex}
+  .team-carousel-hint{display:none !important}
+}
+@media(max-width:767px){
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .mobil-dock{padding-bottom:env(safe-area-inset-bottom)}
+  .pxa-btn,.pxa-reveal{bottom:calc(84px + env(safe-area-inset-bottom)) !important}
+  /* Team untereinander */
+  .team-carousel-hint{display:none !important}
+  .team-grid{display:flex !important;flex-direction:column !important;overflow:visible !important;gap:2rem !important;padding:0 !important;margin:0 !important;scroll-snap-type:none !important}
+  .team-grid .team-karte{flex:none !important;width:100% !important;max-width:none !important;flex-direction:column !important;padding:0 !important;border:0 !important;background:transparent !important;box-shadow:none !important}
+  .team-grid .team-karte .team-foto{border-radius:16px !important;margin:0 0 1rem !important}
+  .team-grid .team-karte .team-foto{aspect-ratio:4/5 !important;width:100% !important;height:auto !important}
+  .team-grid .team-karte .team-body{text-align:left !important}
+  .team-grid .team-karte:first-child .team-name{font-size:inherit !important}
+  .team-grid .team-karte:first-child .team-name::before{content:none !important}
+  /* Leistungen + Kontakt untereinander */
+  .ph-swipe-hint,.oz-swipe-hint{display:none !important}
+  .ph-list{display:flex !important;flex-direction:column !important;overflow:visible !important;scroll-snap-type:none !important;padding:0 !important}
+  .ph-list .ph-item{flex:none !important;width:100% !important;max-width:none !important;margin-inline:0 !important;box-sizing:border-box}
+  .ph-list{margin-inline:0 !important;width:100% !important}
+  .ph-list .uj-tile{display:block !important;width:100% !important;flex:none !important}/* war nur per Wischen erreichbar */
+  .team-grid .team-karte .team-body{padding-inline:0 !important}
+  /* Kontakt bleibt Wischreihe, naechste Spalte angeschnitten */
+  .kontakt-grid>div{flex:0 0 86vw !important;padding:0 18px 0 22px !important}
+  .oz-table{width:100%}
+  .k-val a{white-space:normal !important;word-break:break-all}
+  .lv-chips{flex-wrap:nowrap !important;overflow-x:auto !important;scroll-snap-type:x proximity}
+  .lv-chips .lv-chip{flex:0 0 auto !important;scroll-snap-align:start}
+  /* Barrierefrei-Knopf klein, unten links ueber der Leiste */
+  .pxa-btn{width:40px !important;height:40px !important;left:12px !important}
+  .pxa-btn svg{width:20px;height:20px}
+  /* Rest-Swipes: Folgekarte anschneiden */
+  .swipe-nav{display:flex}
+  .lv-wischen-hint,.srv-swipe-hint,.ek-swipe-hint,.mfa-carousel-hint{display:none !important}
+  .lv-chip-zurueck,.srv-zurueck-card,.ek-zurueck-card,.mfa-zurueck-card{display:none !important}
+  .srv-list .srv-slide,.einblicke-karten .ek-row{flex:0 0 84% !important}
+  .mfa-grid .mfa-page{flex:0 0 84% !important}
+}
+
+/* Fotos ganz zeigen statt beschneiden */
+.team-foto img,.team-grid .team-karte .team-foto img,.mfa-foto img,.pe-kachel img,.leis-gal-item img,.wua-detail img,.philosophie-bild img,.praxis-bild-wrap img,.team-card img{object-fit:contain !important;object-position:center !important;background:var(--bg-soft)}
+.schaukel-deko,.hero-quer-schaukel,img[src*="schaukel"]{max-width:130px !important;height:auto !important}
+/* Klickflaechen mind. 44px */
+.akut-mob-strip a,footer a,.k-val a,.haupt-nav a,.nav-links a,.app-badge,.app-badges a,.burger,.nav-burger,a[href*="maps"]{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+.haupt-nav a{gap:.3em}
+.haupt-nav a{gap:.3em}
+@media(min-width:1024px){.hero-fisch{right:16px !important}}
+@media(min-width:768px) and (max-width:1024px){
+  .hero.hero-v2,.lv-strip{border-left:0 !important}
+  .team-grid{display:grid !important;grid-template-columns:1fr 1fr !important;gap:20px !important;overflow:visible !important}
+  .team-grid>*{width:auto !important;min-width:0 !important;flex:none !important}
+  .team-grid + .swipe-nav{display:none !important}
+}
+@media(max-width:767px){
+  .mfa-grid{display:grid !important;grid-template-columns:1fr 1fr !important;gap:14px !important;overflow:visible !important}
+  .mfa-grid>*{width:auto !important;min-width:0 !important;flex:none !important}
+}
+.kcta-btn,.ph-ext-link,a[href^="tel"],a[href^="mailto"],.btn-primaer{min-height:44px;display:inline-flex;align-items:center}
+/* MFA: schlichtes Raster, keine Karussell-Reste */
+section .mfa-grid,section .mfa-grid.mfa-grid{display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:20px !important;width:100% !important;max-width:100% !important;margin:0 !important;padding:0 !important;transform:none !important;overflow:visible !important;scroll-snap-type:none !important}
+section .mfa-grid .mfa-page{display:contents !important}
+section .mfa-grid .mfa-card{width:auto !important;min-width:0 !important;max-width:none !important;flex:none !important;margin:0 !important;transform:none !important}
+section .mfa-grid .mfa-foto{width:100% !important;max-width:220px !important;aspect-ratio:1/1 !important;height:auto !important;margin:0 auto .7rem !important;border-radius:50% !important}
+section .mfa-grid .mfa-foto img{width:100% !important;height:100% !important}
+.mfa-divider{padding-left:0 !important;padding-right:0 !important;margin-left:0 !important;margin-right:0 !important;transform:none !important;justify-content:center !important;text-align:center !important}
+.mfa-zurueck-card,.mfa-carousel-hint,.mfa-grid + .swipe-nav{display:none !important}
+@media(max-width:599px){section .mfa-grid,section .mfa-grid.mfa-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px !important}}
+/* Handy quer */
+@media(max-height:500px) and (orientation:landscape){
+  .hero.hero-v2{padding-top:12px !important;min-height:0 !important}
+  .team-foto{width:100% !important;height:auto !important;aspect-ratio:4/5 !important;max-height:280px !important}
+  .team-foto,.team-grid .team-karte .team-foto{width:100% !important;height:auto !important;aspect-ratio:4/5 !important;max-height:280px !important}
+  .hero-btns .btn-primaer{min-height:44px !important;height:auto !important;padding-top:10px !important;padding-bottom:10px !important}
+  .pxa-btn{width:40px !important;height:40px !important;left:auto !important;right:12px !important;bottom:auto !important;top:110px !important}
+}
+
+/* Barrierefrei-Knopf klein in die Ecke */
+.pxa-btn{width:44px !important;height:44px !important;left:0 !important;border-radius:0 22px 22px 0 !important;right:auto !important;top:auto !important;bottom:calc(12px + env(safe-area-inset-bottom,0px)) !important}
+body:has(.mobil-dock.dock-sichtbar) .pxa-btn{bottom:calc(76px + env(safe-area-inset-bottom,0px)) !important}
+.lv-chip,.hero-btns .btn-sekundaer,.btn-sekundaer-quer{min-height:44px !important;display:inline-flex !important;flex-direction:column;justify-content:center}
+.hero-btns .btn-sekundaer,.btn-sekundaer-quer{flex-direction:row;align-items:center;justify-content:flex-start}
+.lv-chips .lv-chip-zurueck{display:none !important}
+/* Platz fuer den Knopf, damit er nichts verdeckt */
+@media(min-width:768px){:root{--pad:clamp(48px,5vw,60px)}}
+.swipe-nav{padding-left:52px !important}
+@media(max-width:767px){.lv-strip .lv-chips,.lv-strip .lv-label{padding-left:36px !important;scroll-padding-left:36px}}
+
+/* Aerztinnen: Kachel so hoch wie das Foto */
+.team-grid .team-karte .team-foto,.team-foto{aspect-ratio:auto !important;height:auto !important;max-height:none !important;background:none !important}
+.team-grid .team-karte .team-foto img,.team-foto img{position:static !important;height:auto !important;width:100% !important;object-fit:contain !important;display:block}
+.team-grid{align-items:start !important}
+@media(max-width:767px){
+  .team-grid{display:grid !important;grid-template-columns:1fr 1fr !important;gap:14px !important;overflow:visible !important}
+  .team-grid>*{width:auto !important;min-width:0 !important;flex:none !important;margin:0 !important}
+  .team-grid>.team-karte:first-child{grid-column:1/-1}
+  .team-grid + .swipe-nav{display:none !important}
+  .team-karte h3,.team-karte .team-name{font-size:16px !important}
+}
+
+/* MFA Schrift */
+.mfa-label{font-size:15px !important;color:var(--ink) !important;font-weight:600}
+.mfa-intro{text-align:center;font-size:14px;color:var(--ink2);margin:6px 0 20px}
+section .mfa-grid .mfa-name{font-size:15px !important;font-weight:600 !important;color:var(--ink) !important}
+section .mfa-grid .mfa-role{font-size:12.5px !important;text-transform:none !important;letter-spacing:.04em !important;color:var(--ink2) !important}
+
+/* Helles Himmelblau fuer Flaechen, dunkles Blau bleibt fuer Text/Buttons */
+:root{--himmel:#5DB3E3;--himmel-lt:#E4F2FB;--himmel-mid:#CBE6F6;--primary-lt:#E4F2FB;--accent-lt:#F9EFEA}
+.lv-strip{background:var(--himmel-mid) !important;border-bottom-color:#B5DBF1 !important}
+.lv-chip{background:#fff !important;border-color:#A9D5EE !important}
+.lv-chip:hover{border-color:var(--himmel) !important}
+#leistungen.phasen,.kontakt-bereich,.hero.hero-v2{background:var(--himmel-lt) !important}
+.sek-label,.lv-label{color:#1E6AA0 !important}
+.hero.hero-v2 .hero-tag{border:1px solid #A9D5EE !important;background:#fff !important}
+.hero.hero-v2 .hero-inner,.hero.hero-v2 .hero-copy,.hero.hero-v2 .hero-visual{background:transparent !important;background-image:none !important}
+.hero.hero-v2 .hero-img-box{border-color:#fff !important;box-shadow:0 12px 30px -14px rgba(93,179,227,.7) !important}
+.mfa-divider{border-top-color:var(--himmel-mid) !important}
+section .mfa-grid .mfa-foto{background:var(--himmel-lt) !important}
+.swipe-nav button{border-color:#A9D5EE !important}
+.dock-inner svg,.k-ico svg,.kontakt-grid svg{color:#2C86BF}
+/* Hero Handy/Tablet (bis iPad quer): Foto oben, alles linksbuendig */
+.hero-akut-zeile{display:none}
+@media(max-width:1199px){
+  .hero.hero-v2{background:#E4F2FB !important;padding:16px 20px 22px !important;min-height:0 !important;height:auto !important;border-left:0 !important;overflow:hidden !important}
+  .hero.hero-v2 .hero-inner{display:flex !important;flex-direction:column !important;align-items:stretch !important;gap:0 !important;padding:0 !important;max-width:none !important;min-height:0 !important}
+  .hero.hero-v2 .hero-copy,.hero.hero-v2 .hero-visual,.hero.hero-v2 .hero-eyebrow-group{display:contents !important}
+  .hero.hero-v2 .hero-fisch,.hero.hero-v2 .hero-quer-col,.hero.hero-v2 .fisch-mob-badge,.hero-tab-btns,.hero.hero-v2 .schaukel-deko{display:none !important}
+  .hero.hero-v2 .hero-tag{order:1;align-self:flex-start;width:max-content !important;max-width:100%;margin:0 0 12px !important;background:#fff !important}
+  .hero.hero-v2 .hero-frame{order:2;display:block !important;position:relative !important;inset:auto !important;width:100% !important;max-width:100% !important;height:auto !important;margin:0 0 16px !important;padding:0 !important;transform:none !important;box-shadow:none !important;background:none !important}
+  .hero.hero-v2 .hero-img-box{position:relative !important;inset:auto !important;width:100% !important;height:auto !important;aspect-ratio:4/3 !important;overflow:hidden !important;transform:none !important;border-radius:20px !important;border:4px solid #fff !important;box-shadow:0 10px 28px -12px rgba(30,106,160,.35) !important}
+  .hero.hero-v2 .hero-img-box img{position:static !important;display:block !important;width:100% !important;height:100% !important;object-fit:cover !important;object-position:50% 40% !important;animation:none !important;transform:none !important}
+  .hero.hero-v2 .hero-h1{order:3;font-size:clamp(30px,8vw,44px) !important;line-height:1.12 !important;margin:0 0 8px !important;text-align:left !important}
+  .hero.hero-v2 .h1-s2{display:block !important;font-size:.66em !important;margin-top:4px}
+  .hero.hero-v2 .hero-sub{order:4;margin:0 0 14px !important;font-size:15px !important;text-align:left !important}
+  .hero.hero-v2 .hero-btns{order:5;display:flex !important;flex-wrap:wrap;gap:6px 16px !important;align-items:center !important;justify-content:flex-start !important;margin:0 !important}
+  .hero.hero-v2 .hero-btns .btn-primaer{display:inline-flex !important;justify-content:center;background:var(--primary) !important;color:#fff !important;border-color:var(--primary) !important;min-height:48px !important;padding:12px 24px !important}
+  .hero-akut-zeile{order:6;display:block;margin:6px 0 0;font-size:14px;color:var(--ink2);text-align:left}
+  .hero-akut-zeile a{color:var(--primary);font-weight:700;display:inline-flex;align-items:center;min-height:44px}
+}
+@media(max-width:767px){
+  .hero.hero-v2 .hero-btns .btn-primaer{flex:1 1 100%;width:100% !important}
+  .hero.hero-v2 .hero-btns .btn-sekundaer{padding-left:0 !important;margin:0 !important;justify-content:flex-start !important;text-align:left !important;width:auto !important}
+}
+@media(min-width:768px) and (max-width:1199px){
+  .hero.hero-v2{padding:96px var(--pad) 28px !important}
+  .hero.hero-v2 .hero-img-box{aspect-ratio:3/2 !important;max-height:420px}
+  .hero.hero-v2 .hero-img-box img{object-position:50% 36% !important}/* Koepfe nicht anschneiden */
+}
+@media(min-width:1024px) and (max-width:1199px){
+  .hero.hero-v2 .hero-inner{display:grid !important;grid-template-columns:1fr 48%;column-gap:40px;align-items:center}
+  .hero.hero-v2 .hero-frame{grid-column:2;grid-row:1/span 6;margin:0 !important}
+  .hero.hero-v2{display:block !important}
+  .hero.hero-v2 .hero-inner{width:100% !important;max-width:1120px !important;margin:0 auto !important}
+  .hero.hero-v2 .hero-img-box{max-height:none}
+  .hero.hero-v2 .hero-h1{font-size:40px !important}
+  .hero.hero-v2 .hero-tag{display:inline-block !important}
+  .hero.hero-v2 .hero-tag,.hero.hero-v2 .hero-h1,.hero.hero-v2 .hero-sub,.hero.hero-v2 .hero-btns,.hero-akut-zeile{grid-column:1}
+}
+@media(max-height:500px) and (orientation:landscape){
+  .hero.hero-v2{padding:12px 24px 16px 56px !important}
+  .hero.hero-v2 .hero-inner{display:grid !important;grid-template-columns:1fr 40%;column-gap:24px}
+  .hero.hero-v2 .hero-frame{grid-column:2;grid-row:1/span 6;margin:0 !important;align-self:center}
+  .hero.hero-v2 .hero-img-box{aspect-ratio:4/3 !important}
+  .hero.hero-v2 .hero-img-box img{object-position:50% 40% !important}
+  .hero.hero-v2 .hero-tag,.hero.hero-v2 .hero-h1,.hero.hero-v2 .hero-sub,.hero.hero-v2 .hero-btns,.hero-akut-zeile{grid-column:1}
+  .hero.hero-v2 .hero-h1{font-size:28px !important}
+}
 </style>
 </head>
 <body>
 <div id="status-display" hidden aria-hidden="true"></div>
 
 
-<!-- ── Nav ── -->
+<!-- Nav -->
 <nav class="haupt-nav" aria-label="Hauptnavigation">
   <div class="nav-inner">
-    <picture style="display:flex;align-items:center;flex-shrink:0;margin-left:-120px">
+    <picture class="nav-logo-bild" style="display:flex;align-items:center;flex-shrink:0;margin-left:-120px">
         <source srcset="bilder/maennlein-weibein-transparent.webp" type="image/webp">
-        <img src="bilder/maennlein-weibein-transparent.png" alt="" loading="eager" style="height:80px;width:auto;margin-right:10px">
+        <img src="bilder/maennlein-weibein-transparent.webp" alt="" loading="eager" style="height:80px;width:auto;margin-right:10px">
       </picture><a href="#" class="nav-logo">Familienpraxis<br><span style="font-size:13px;font-weight:400;letter-spacing:0;color:var(--ink2)">Kinder- und Jugendmedizin</span></a>
     <ul class="nav-links">
       <li><a href="#team">Team</a></li>
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#online-schalter">Online Eltern-Schalter</a></li>
-      <li><a href="#online-schalter" data-sfx-trigger>Fax direkt online senden</a></li>
       <li><a href="infothek.html" class="nav-pill">Für Eltern</a></li>
     </ul>
-    <a href="#online-schalter" class="nav-tablet-fax" data-sfx-trigger>Fax direkt online senden</a>
     <div class="nav-cta-gruppe">
       <a href="videosprechstunde.html" class="nav-cta-vid" style="font-size:13px;font-weight:500;color:var(--ink2);text-decoration:none;padding:8px 14px;border:1px solid var(--rule);border-radius:2px;white-space:nowrap;transition:color .2s">Videosprechstunde</a>
       <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="nav-cta" onclick="event.preventDefault();openTerminModalGB()">Termin finden</a>
@@ -3819,13 +4017,11 @@ body.gb-modal-open{overflow:hidden}
   </div>
 </nav>
 
-<!-- ── Mobile Nav ── -->
+<!-- Mobile Nav -->
 <div class="mob-nav" id="mob-nav" hidden aria-hidden="true">
   <a href="#team">Team</a>
   <a href="#leistungen">Leistungen</a>
   <a href="#kontakt">Kontakt</a>
-  <a href="#online-schalter">Online Eltern-Schalter</a>
-  <a href="#online-schalter" data-sfx-trigger>Fax direkt online senden</a>
   <a href="infothek.html">Für Eltern</a>
   <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="mob-cta" onclick="event.preventDefault();openTerminModalGB()">Gleich Termin finden</a>
 </div>
@@ -3833,7 +4029,7 @@ body.gb-modal-open{overflow:hidden}
 <main>
 
 <!-- HERO -->
-<div class="akut-mob-strip"><p>Akut? Bitte anrufen — Nummer unten.</p></div>
+<div class="akut-mob-strip"><p>Akut? <a href="tel:+498993948730">089 93 94 87 3</a> · nachts/Wochenende <a href="tel:116117">116 117</a></p></div>
 
 <section class="hero hero-v2">
   <div class="hero-inner">
@@ -3847,28 +4043,27 @@ body.gb-modal-open{overflow:hidden}
           </picture>
         </span>
       </div>
-      <h1 class="hero-h1">
-        Kinderarztpraxis —
-        <span class="h1-s2">von der Vorsorge bis zur Jugend.</span>
+      <h1 class="hero-h1">Kinderarztpraxis —<span class="h1-s2">von der Vorsorge bis zur Jugend.</span>
       </h1>
       <p class="hero-sub">Erste Untersuchung, Impfen, Jugendcheck — und Zeit für Ihre Fragen.</p>
       <div class="hero-btns">
         <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="btn-primaer" onclick="event.preventDefault();openTerminModalGB()">Gleich Termin finden</a>
         <a href="videosprechstunde.html" class="btn-sekundaer">zur Videosprechstunde</a>
       </div>
+      <p class="hero-akut-zeile">Akut: <a href="tel:+498993948730">089 93 94 87 3</a></p>
     </div>
     <div class="hero-visual">
       <div class="hero-fisch" aria-hidden="true">
         <picture>
           <source srcset="bilder/fisch-transparent.webp" type="image/webp">
-          <img src="bilder/Fisch_im_Mobile-removebg.png" alt="">
+          <img src="bilder/fisch-transparent.webp" alt="">
         </picture>
       </div>
       <div class="hero-frame">
         <div class="hero-img-box">
           <picture>
             <source srcset="bilder/hero.webp" type="image/webp">
-            <img src="bilder/hero.jpg" alt="Dr. med. Heike Bachem mit Kind — Kinderarztpraxis Bogenhausen" loading="eager" fetchpriority="high">
+            <img src="bilder/hero.webp" alt="Dr. med. Heike Boerschmann mit Kind — Kinderarztpraxis Bogenhausen" loading="eager" fetchpriority="high">
           </picture>
         </div>
       </div>
@@ -3911,7 +4106,7 @@ body.gb-modal-open{overflow:hidden}
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-3">
         <span class="lv-chip-name">Kindergarten</span>
-        <span class="lv-chip-sub">U7/U8 · Allergie · KiGa-U</span>
+        <span class="lv-chip-sub">U7–U8 · Allergie · KiGa-U</span>
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-3">
         <span class="lv-chip-name">Kind</span>
@@ -3919,14 +4114,14 @@ body.gb-modal-open{overflow:hidden}
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-4">
         <span class="lv-chip-name">Schulkind</span>
-        <span class="lv-chip-sub">U10/U11 · Lunge · Sport</span>
+        <span class="lv-chip-sub">U10–U11 · Lunge · Sport</span>
       </a>
       <a href="#leistungen" class="lv-chip" data-open="ph-btn-5">
         <span class="lv-chip-name">Jugendliche</span>
-        <span class="lv-chip-sub">J1/J2 · vertraulich · Reise</span>
+        <span class="lv-chip-sub">J1–J2 · vertraulich · Reise</span>
       </a>
       <button class="lv-chip lv-chip-zurueck" onclick="document.querySelector('.lv-chips').scrollTo({left:0,behavior:'smooth'})" aria-label="Zurück">
-        <span class="lv-chip-name" style="color:var(--petrol,#1D5F6E)">← Zurück</span>
+        <span class="lv-chip-name" style="color:var(--petrol,#1E6AA0)">← Zurück</span>
       </button>
     </div>
     <p class="lv-wischen-hint" aria-hidden="true">
@@ -3953,7 +4148,7 @@ body.gb-modal-open{overflow:hidden}
         <div class="team-foto">
           <picture>
             <source srcset="bilder/susanne-schreibtisch.webp" type="image/webp">
-            <img src="bilder/Susanne Schreibtisch.jpg" alt="Dr. med. Susanne Gandenberger-Bachem" loading="lazy" style="object-position:90% 20%">
+            <img src="bilder/susanne-schreibtisch.webp" alt="Dr. med. Susanne Gandenberger-Bachem" loading="lazy" style="object-position:90% 20%">
           </picture>
         </div>
         <div class="team-body">
@@ -3968,7 +4163,7 @@ body.gb-modal-open{overflow:hidden}
         <div class="team-foto">
           <picture>
             <source srcset="bilder/jennifer-bichler.webp" type="image/webp">
-            <img src="bilder/Jennifer Bichler.jpg" alt="Dr. med. Jennifer Bichler" loading="lazy" style="object-position:center 20%">
+            <img src="bilder/jennifer-bichler.webp" alt="Dr. med. Jennifer Bichler" loading="lazy" style="object-position:center 20%">
           </picture>
         </div>
         <div class="team-body">
@@ -3997,6 +4192,7 @@ body.gb-modal-open{overflow:hidden}
     </div>
 
     <div class="mfa-divider"><span class="mfa-label">Medizinische Fachangestellte</span></div>
+    <p class="mfa-intro">Ihre erste Stimme am Telefon und am Empfang.</p>
     <p class="mfa-carousel-hint">
       <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Bitte nach rechts wischen
@@ -4021,14 +4217,13 @@ body.gb-modal-open{overflow:hidden}
 <!-- WAS UNS AUSMACHT -->
 <div class="was-uns-ausmacht" id="haltung">
   <picture class="wua-bg-pic">
-    <source srcset="bilder/zwei%20Puppen%20mit%20Stethoskop.webp" type="image/webp">
-    <img class="wua-bg-img" src="bilder/zwei%20Puppen%20mit%20Stethoskop.jpg" alt="" loading="lazy">
+    <img class="wua-bg-img" src="bilder/zwei-puppen-stethoskop.webp" alt="" loading="lazy">
   </picture>
   <div class="wua-overlay"></div>
   <div class="wua-inner">
     <div class="wua-text">
       <p class="sek-label">Was uns ausmacht</p>
-      <h2 class="wua-h2">Das Wichtigste ist.</h2>
+      <h2 class="wua-h2">Das ist uns wichtig.</h2>
       <p class="wua-intro">Wenn Ihr Kind krank ist oder Sie unsicher sind, nehmen wir uns Zeit — für Ihr Kind, für Ihre Fragen und für Entscheidungen, die Sie mittragen können.</p>
       <a href="mailto:termine-kinderpraxis@die-familienpraxis.de" class="wua-post-link" title="Schick uns Post">
         <div class="wua-postkarte">
@@ -4059,11 +4254,6 @@ body.gb-modal-open{overflow:hidden}
         <button class="srv-row" onclick="gbServiceOpen('rezept')">
           <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6M9 16h6M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 8h6"/></svg></div>
           <div class="srv-body"><div class="srv-name">Rezept anfordern</div></div>
-          <div class="srv-right"><span class="srv-arrow">›</span></div>
-        </button>
-        <button class="srv-row" data-sfx-trigger>
-          <div class="srv-ri"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg></div>
-          <div class="srv-body"><div class="srv-name">Fax direkt online senden</div></div>
           <div class="srv-right"><span class="srv-arrow">›</span></div>
         </button>
       </div>
@@ -4104,13 +4294,13 @@ body.gb-modal-open{overflow:hidden}
     <div class="einblicke-karten">
       <div class="ek-row ek-row-1">
         <div class="ek-karte ek-cover" data-motif="wartezimmer">
-          <img src="bilder/einblicke/02-wartezimmer-buecher.jpg" alt="Wartezimmer" loading="lazy">
+          <img src="bilder/einblicke/02-wartezimmer-buecher.webp" alt="Wartezimmer" loading="lazy">
           <span class="ek-label">Warten</span>
         </div>
         <div class="ek-karte ek-contain" data-motif="hoertest">
           <picture>
             <source srcset="bilder/pic_3.webp" type="image/webp">
-            <img src="bilder/pic_3.png" alt="Kind beim Hörtest" loading="lazy">
+            <img src="bilder/pic_3.webp" alt="Kind beim Hörtest" loading="lazy">
           </picture>
           <span class="ek-label">Hören prüfen</span>
         </div>
@@ -4119,18 +4309,18 @@ body.gb-modal-open{overflow:hidden}
         <div class="ek-karte ek-contain" data-motif="ekg">
           <picture>
             <source srcset="bilder/pic_5.webp" type="image/webp">
-            <img src="bilder/pic_5.png" alt="EKG Untersuchung" loading="lazy">
+            <img src="bilder/pic_5.webp" alt="EKG Untersuchung" loading="lazy">
           </picture>
           <span class="ek-label">Herz hören</span>
         </div>
         <div class="ek-karte ek-cover" data-motif="sprechzimmer">
-          <img src="bilder/einblicke/03-sprechzimmer-spielzeug.jpg" alt="Sprechzimmer" loading="lazy">
+          <img src="bilder/einblicke/03-sprechzimmer-spielzeug.webp" alt="Sprechzimmer" loading="lazy">
           <span class="ek-label">Untersuchungszimmer</span>
         </div>
         <div class="ek-karte ek-contain" data-motif="mikroskop">
           <picture>
             <source srcset="bilder/pic_2.webp" type="image/webp">
-            <img src="bilder/pic_2.png" alt="Diagnose am Mikroskop" loading="lazy">
+            <img src="bilder/pic_2.webp" alt="Diagnose am Mikroskop" loading="lazy">
           </picture>
           <span class="ek-label">unter dem Mikroskop</span>
         </div>
@@ -4187,8 +4377,8 @@ body.gb-modal-open{overflow:hidden}
       <div class="ph-item">
         <button class="ph-btn" id="ph-btn-2" aria-expanded="false" aria-controls="ph2">
           <div class="ph-left"><div class="ph-name-group">
-            <span class="ph-name">Das Kleinkind</span>
-            <span class="ph-age">Baby &amp; Kleinkind · erstes Lebensjahr</span>
+            <span class="ph-name">Das Baby</span>
+            <span class="ph-age">erstes Lebensjahr</span>
             <small class="ph-small">U3–U6 — Impfungen, Entwicklung, Ernährung.</small>
           </div></div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -4204,7 +4394,7 @@ body.gb-modal-open{overflow:hidden}
               <span class="ph-tag">Hör- &amp; Sehtests</span>
             </div>
             <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="btn-primaer ph-termin" onclick="event.preventDefault();openTerminModalGB()">Gleich Termin finden</a>
-            <a class="ph-ext-link" href="http://www.kinderaerzte-im-netz.de/mediathek/vorsorge-und-impferinnerung/" target="_blank" rel="noopener noreferrer">
+            <a class="ph-ext-link" href="https://www.kinderaerzte-im-netz.de/mediathek/vorsorge-und-impferinnerung/" target="_blank" rel="noopener noreferrer">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               Kostenloser Erinnerungsservice für Vorsorge- &amp; Impftermine
             </a>
@@ -4216,7 +4406,7 @@ body.gb-modal-open{overflow:hidden}
         <button class="ph-btn" id="ph-btn-3" aria-expanded="false" aria-controls="ph3">
           <div class="ph-left"><div class="ph-name-group">
             <span class="ph-name">Das Kindergartenkind</span>
-            <span class="ph-age">Kleinkind &amp; Kindergarten</span>
+            <span class="ph-age">Kleinkind bis Schulstart</span>
             <small class="ph-small">U7–U9 — Sprache, Motorik, Kindergartenuntersuchung.</small>
           </div></div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
@@ -4240,14 +4430,14 @@ body.gb-modal-open{overflow:hidden}
           <div class="ph-left"><div class="ph-name-group">
             <span class="ph-name">Das Schulkind</span>
             <span class="ph-age">Grundschule</span>
-            <small class="ph-small">U10 &amp; U11 — Sport, ADHS, Schulgesundheit.</small>
+            <small class="ph-small">U10–U11 — Sport, ADHS, Schulgesundheit.</small>
           </div></div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="ph-body" id="ph4" role="region" aria-labelledby="ph-btn-4" aria-hidden="true">
           <div class="ph-bi"><div class="ph-bi-inner">
             <div class="ph-tags">
-              <span class="ph-tag">Vorsorgeuntersuchungen U10 &amp; U11</span>
+              <span class="ph-tag">Vorsorgeuntersuchungen U10–U11</span>
               <span class="ph-tag">Lungenfunktion, Pulsoximetrie, EKG</span>
               <span class="ph-tag">Hörtests (Tympanometrie, Audiometrie)</span>
               <span class="ph-tag">Sehtests (Lea, Stereo, Farb, Autorefraktometrie)</span>
@@ -4263,16 +4453,16 @@ body.gb-modal-open{overflow:hidden}
       <div class="ph-item">
         <button class="ph-btn" id="ph-btn-5" aria-expanded="false" aria-controls="ph5">
           <div class="ph-left"><div class="ph-name-group">
-            <span class="ph-name">Das Jugend-Alter</span>
-            <span class="ph-age">Jugendliche</span>
-            <small class="ph-small">J1 &amp; J2 — auf Wunsch auch vertraulich ohne Eltern.</small>
+            <span class="ph-name">Die Jugendlichen</span>
+            <span class="ph-age">12 bis 17 Jahre</span>
+            <small class="ph-small">J1–J2 — auf Wunsch auch vertraulich ohne Eltern.</small>
           </div></div>
           <svg class="ph-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="ph-body" id="ph5" role="region" aria-labelledby="ph-btn-5" aria-hidden="true">
           <div class="ph-bi"><div class="ph-bi-inner">
             <div class="ph-tags">
-              <span class="ph-tag">Jugendvorsorge J1 &amp; J2</span>
+              <span class="ph-tag">Jugendvorsorge J1–J2</span>
               <span class="ph-tag">Vertrauliche Jugendsprechstunde (ohne Eltern möglich)</span>
               <span class="ph-tag">Jugendgesundheits- &amp; Jugendarbeitsschutzuntersuchung</span>
               <span class="ph-tag">Reiseberatung &amp; Reiseimpfungen</span>
@@ -4293,7 +4483,7 @@ body.gb-modal-open{overflow:hidden}
           <p class="uj-card-intro">U und J sind Vorsorge-Termine beim Kinderarzt.<br>U = Untersuchung für Kinder. J = Untersuchung für Jugendliche.</p>
           <ul class="uj-card-list">
             <li><span class="uj-kz">U2–U9</span><span class="uj-tx">erste Wochen bis Kita und Schulstart</span></li>
-            <li><span class="uj-kz">U10 / U11</span><span class="uj-tx">Grundschule (etwa 7–10 Jahre)</span></li>
+            <li><span class="uj-kz">U10–U11</span><span class="uj-tx">Grundschule (etwa 7–10 Jahre)</span></li>
             <li><span class="uj-kz">J1 · 12–14 J.</span><span class="uj-tx">Körper, Gefühle, Alltag</span></li>
             <li><span class="uj-kz">J2 · 16–17 J.</span><span class="uj-tx">du kannst auch allein kommen</span></li>
           </ul>
@@ -4326,17 +4516,16 @@ body.gb-modal-open{overflow:hidden}
     </div>
   </div>
 
-  <p class="oz-swipe-hint" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Bitte nach rechts wischen</p>
   <div class="kontakt-grid">
     <div>
       <p class="k-col-head">Öffnungszeiten</p>
       <table class="oz-table" aria-label="Öffnungszeiten">
         <tbody>
-          <tr class="oz-tr" id="oz-mo"><th scope="row">Montag</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
-          <tr class="oz-tr" id="oz-di"><th scope="row">Dienstag</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
-          <tr class="oz-tr" id="oz-mi"><th scope="row">Mittwoch</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
-          <tr class="oz-tr" id="oz-do"><th scope="row">Donnerstag</th><td>09–12 · 15–18<span class="heute-pill">Heute</span></td></tr>
-          <tr class="oz-tr" id="oz-fr"><th scope="row">Freitag</th><td>09–12<span class="heute-pill">Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-mo"><th scope="row">Montag</th><td>09–12 · 15–18<span class="heute-pill" hidden>Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-di"><th scope="row">Dienstag</th><td>09–12 · 15–18<span class="heute-pill" hidden>Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-mi"><th scope="row">Mittwoch</th><td>09–12 · 15–18<span class="heute-pill" hidden>Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-do"><th scope="row">Donnerstag</th><td>09–12 · 15–18<span class="heute-pill" hidden>Heute</span></td></tr>
+          <tr class="oz-tr" id="oz-fr"><th scope="row">Freitag</th><td>09–12<span class="heute-pill" hidden>Heute</span></td></tr>
         </tbody>
       </table>
       <p class="oz-note">Außerhalb: <a href="tel:116117">116&nbsp;117</a></p>
@@ -4373,7 +4562,7 @@ body.gb-modal-open{overflow:hidden}
       </div>
       <div class="k-block">
         <p class="k-lbl">Fax</p>
-        <p class="k-val sm" style="font-size:13px;font-weight:400"><a href="#online-schalter" data-sfx-trigger>089 – 93 94 87 40</a></p>
+        <p class="k-val sm" style="font-size:13px;font-weight:400">089 – 93 94 87 40</p>
       </div>
       <div class="k-block">
         <p class="k-lbl">E-Mail</p>
@@ -4443,7 +4632,7 @@ body.gb-modal-open{overflow:hidden}
   if(j)j.textContent=new Date().getFullYear();
   var map=[null,"oz-mo","oz-di","oz-mi","oz-do","oz-fr",null,null];
   var id=map[new Date().getDay()];
-  if(id){var el=document.getElementById(id);if(el)el.classList.add("heute");}
+  if(id){var el=document.getElementById(id);if(el){el.classList.add("heute");var hp=el.querySelector(".heute-pill");if(hp)hp.hidden=false;}}
   var burgerBtn=document.getElementById("burger-btn");
   var mobNav=document.getElementById("mob-nav");
   function openMob(){mobNav.removeAttribute("hidden");mobNav.setAttribute("aria-hidden","false");burgerBtn.setAttribute("aria-expanded","true");burgerBtn.setAttribute("aria-label","Menü schließen");burgerBtn.classList.add("open");document.body.style.overflow="hidden";var first=mobNav.querySelector("a");if(first)first.focus();}
@@ -4522,7 +4711,7 @@ body.gb-modal-open{overflow:hidden}
 <script>
 (function(){
   var bar=document.getElementById('mobil-dock');
-  function updateStickyBar(){var s=window.scrollY||window.pageYOffset;if(s>120){bar.classList.add('dock-sichtbar');}else{bar.classList.remove('dock-sichtbar');}}
+  function updateStickyBar(){var hb=document.querySelector('.hero-btns .btn-primaer'),grenze=hb?hb.getBoundingClientRect().bottom+(window.scrollY||0)-60:120;var s=window.scrollY||window.pageYOffset;if(s>grenze){bar.classList.add('dock-sichtbar');}else{bar.classList.remove('dock-sichtbar');}}
   if(bar){window.addEventListener('scroll',updateStickyBar,{passive:true});updateStickyBar();}
 })();
 </script>
@@ -4690,12 +4879,6 @@ body.gb-modal-open{overflow:hidden}
 })();
 </script>
 
-<!-- DEMO-LEISTE -->
-<div class="gb-demo-bar" id="gb-demo-bar">
-  <div class="gb-demo-label">Demo — so könnte die Anmeldung aussehen</div>
-  <button class="gb-demo-btn bestand" onclick="gbDemoBestand()">&#9654; Bestandspatient</button>
-  <button class="gb-demo-btn neu" onclick="gbDemoNeu()">&#9654; Neupatient + Anamnese</button>
-</div>
 
 <!-- TERMIN-MODAL -->
 <div class="gb-overlay" id="gb-modal" onclick="gbCloseOnBackdrop(event)">
@@ -4774,7 +4957,7 @@ body.gb-modal-open{overflow:hidden}
         </div>
         <div class="gb-section-card">
           <div class="gb-section-head">
-            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div class="gb-section-ico"><img src="bilder/schaukel.gif" alt="" loading="lazy"></div>
             <div>
               <div class="gb-section-title">Kind</div>
               <div class="gb-section-sub">Angaben zum Kind / Patient:in</div>
@@ -4862,7 +5045,7 @@ body.gb-modal-open{overflow:hidden}
       <div id="gb-s-lookup" style="display:none">
         <div class="gb-section-card" style="margin-bottom:0">
           <div class="gb-section-head">
-            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div class="gb-section-ico"><img src="bilder/schaukel.gif" alt="" loading="lazy"></div>
             <div>
               <div class="gb-section-title">Ihre Akte finden</div>
               <div class="gb-section-sub">Kurz bestätigen, dann laden wir Ihre Daten</div>
@@ -4926,7 +5109,7 @@ body.gb-modal-open{overflow:hidden}
       <div id="gb-s-heute-alter" style="display:none">
         <div class="gb-section-card">
           <div class="gb-section-head">
-            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div class="gb-section-ico"><img src="bilder/schaukel.gif" alt="" loading="lazy"></div>
             <div>
               <div class="gb-section-title">Heute am wichtigsten</div>
               <div class="gb-section-sub">Ein Satz reicht &#8212; warum sind Sie da?</div>
@@ -4959,7 +5142,7 @@ body.gb-modal-open{overflow:hidden}
       <div id="gb-s-mood" style="display:none">
         <div class="gb-section-card" style="margin-bottom:0">
           <div class="gb-section-head">
-            <div class="gb-section-ico"><img src="bilder/schaukel_transparent.png" alt="" loading="lazy"></div>
+            <div class="gb-section-ico"><img src="bilder/schaukel.gif" alt="" loading="lazy"></div>
             <div>
               <div class="gb-section-title">Wie geht es gerade?</div>
               <div class="gb-section-sub">Für Ihr Kind &#8212; oder für Sie selbst als Jugendliche&#183;r (freiwillig)</div>
@@ -4967,19 +5150,19 @@ body.gb-modal-open{overflow:hidden}
           </div>
           <div class="gb-mood-row" id="mood-grid">
             <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="sehr-gut">
-              <div class="gb-mood-emoji">&#128516;</div><div class="gb-mood-lbl">Sehr gut</div>
+              <div class="gb-mood-emoji"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r=".9" fill="currentColor"/><circle cx="15" cy="10" r=".9" fill="currentColor"/><path d="M8 14c1.2 2 6.8 2 8 0"/></svg></div><div class="gb-mood-lbl">Sehr gut</div>
             </div>
             <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="gut">
-              <div class="gb-mood-emoji">&#128578;</div><div class="gb-mood-lbl">Gut</div>
+              <div class="gb-mood-emoji"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r=".9" fill="currentColor"/><circle cx="15" cy="10" r=".9" fill="currentColor"/><path d="M8.5 14.5c1.2 1.2 5.8 1.2 7 0"/></svg></div><div class="gb-mood-lbl">Gut</div>
             </div>
             <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="geht-so">
-              <div class="gb-mood-emoji">&#128528;</div><div class="gb-mood-lbl">Geht so</div>
+              <div class="gb-mood-emoji"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r=".9" fill="currentColor"/><circle cx="15" cy="10" r=".9" fill="currentColor"/><path d="M8.5 15h7"/></svg></div><div class="gb-mood-lbl">Geht so</div>
             </div>
             <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="nicht-so-gut">
-              <div class="gb-mood-emoji">&#128577;</div><div class="gb-mood-lbl">Nicht so gut</div>
+              <div class="gb-mood-emoji"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r=".9" fill="currentColor"/><circle cx="15" cy="10" r=".9" fill="currentColor"/><path d="M8.5 16c1.2-1.2 5.8-1.2 7 0"/></svg></div><div class="gb-mood-lbl">Nicht so gut</div>
             </div>
             <div class="gb-mood-opt" onclick="gbPickMood(this)" data-val="schlecht">
-              <div class="gb-mood-emoji">&#128546;</div><div class="gb-mood-lbl">Schlecht</div>
+              <div class="gb-mood-emoji"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r=".9" fill="currentColor"/><circle cx="15" cy="10" r=".9" fill="currentColor"/><path d="M8 17c1.2-2 6.8-2 8 0"/></svg></div><div class="gb-mood-lbl">Schlecht</div>
             </div>
           </div>
         </div>
@@ -5030,7 +5213,7 @@ body.gb-modal-open{overflow:hidden}
       <!-- Schritt 2: Termin w&#228;hlen (Doctolib-ready Demo) -->
       <div id="gb-s2" style="display:none">
         <div class="gb-slot-hint">
-          &#127358; Demo-Ansicht — Termine werden nach Doctolib-Verbindung live geladen.
+          Demo-Ansicht — Termine werden nach Doctolib-Verbindung live geladen.
           <div class="gb-doctoli-badge"><span class="gb-doctoli-dot"></span> Doctolib-Integration vorbereitet</div>
         </div>
         <div id="gb-slots-container"></div>
@@ -5076,7 +5259,7 @@ body.gb-modal-open{overflow:hidden}
       <!-- Schritt 4: Danke -->
       <div id="gb-s4" style="display:none">
         <div class="gb-danke">
-          <div class="gb-danke-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B485A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="gb-danke-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E6AA0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Anfrage gesendet!</h3>
           <p>Wir haben Ihre Terminanfrage erhalten und melden uns <strong>innerhalb eines Werktages</strong> zur Best&#228;tigung. Bitte pr&#252;fen Sie auch Ihren Spam-Ordner.</p>
           <div class="gb-danke-box" id="gb-summary"></div>
@@ -5115,7 +5298,7 @@ function gbSigResizieren(){
   gbSigCtx = gbSigCanvas.getContext('2d');
   gbSigCtx.setTransform(1,0,0,1,0,0);
   gbSigCtx.scale(dpr, dpr);
-  gbSigCtx.strokeStyle = '#1B485A';
+  gbSigCtx.strokeStyle = '#1E6AA0';
   gbSigCtx.lineWidth = 2.2;
   gbSigCtx.lineCap = 'round';
   gbSigCtx.lineJoin = 'round';
@@ -5172,26 +5355,6 @@ function gbSignaturLeer(){
   for(var i=3;i<d.length;i+=4){ if(d[i]>0) return false; }
   return true;
 }
-function gbDemoSignatur(delay){
-  gbDemoTimer.push(setTimeout(function(){
-    gbInitSignatur();
-    if(!gbSigCtx) return;
-    // scroll zum Canvas damit er sichtbar ist
-    var canvas = document.getElementById('gb-sig-canvas');
-    if(canvas) canvas.scrollIntoView({behavior:'smooth', block:'center'});
-    var w = gbSigCanvas.getBoundingClientRect().width;
-    var h = gbSigCanvas.getBoundingClientRect().height;
-    gbSigCtx.beginPath();
-    gbSigCtx.moveTo(w*0.12, h*0.6);
-    setTimeout(function(){
-      var pts = [[0.2,0.35],[0.28,0.65],[0.36,0.35],[0.44,0.6],
-                 [0.52,0.4],[0.6,0.62],[0.7,0.38],[0.78,0.58],[0.86,0.45]];
-      pts.forEach(function(p){ gbSigCtx.lineTo(w*p[0], h*p[1]); });
-      gbSigCtx.stroke();
-    }, 650);
-  }, delay));
-}
-
 // ── Kinderpraxis Gandenberger-Bachem — Termin-Wizard ──
 // DOCTOLIB-INTEGRATION:
 // Schritt 2 (Termin wählen) ist als Demo mit statischen Slots gebaut.
@@ -5550,7 +5713,6 @@ function openTerminModalGB(vorauswahl){
 }
 
 function gbClose(){
-  gbDemoStop();
   document.getElementById('gb-modal').classList.remove('aktiv');
   document.body.classList.remove('gb-modal-open');
 }
@@ -5560,171 +5722,6 @@ function gbCloseOnBackdrop(e){
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape') gbClose();
 });
-
-// ── Auto-Demo ──
-var gbDemoTimer = [];
-
-function gbDemoStop(){
-  gbDemoTimer.forEach(clearTimeout);
-  gbDemoTimer = [];
-  // Demo-Badge entfernen
-  var badge = document.getElementById('gb-demo-badge');
-  if(badge) badge.remove();
-}
-
-function gbDemoTick(fn, ms){
-  gbDemoTimer.push(setTimeout(fn, ms));
-}
-
-function gbDemoSelect(gruppeId, val, delay){
-  gbDemoTick(function(){
-    var el = document.querySelector('#'+gruppeId+' .gb-radio[data-val="'+val+'"]');
-    if(el){ gbSelectRadio(el, gruppeId); }
-  }, delay);
-}
-
-function gbDemoFill(id, val, delay){
-  gbDemoTick(function(){
-    var el = document.getElementById(id);
-    if(el){ el.value = val; }
-  }, delay);
-}
-
-function gbDemoCheck(id, delay){
-  gbDemoTick(function(){
-    var el = document.getElementById(id);
-    if(el) el.checked = true;
-  }, delay);
-}
-
-function gbDemoWeiter(delay){
-  gbDemoTick(function(){ gbNext(); }, delay);
-}
-
-function gbShowDemoBadge(){
-  var old = document.getElementById('gb-demo-badge');
-  if(old) old.remove();
-  var b = document.createElement('div');
-  b.id = 'gb-demo-badge';
-  b.style.cssText = 'position:absolute;top:14px;left:50%;transform:translateX(-50%);'+
-    'background:var(--accent);color:#fff;font-size:10px;font-weight:700;'+
-    'letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;'+
-    'pointer-events:none;z-index:10';
-  b.textContent = '● DEMO LÄUFT';
-  var head = document.querySelector('.gb-head');
-  if(head){ head.style.position='relative'; head.appendChild(b); }
-}
-
-function gbDemoPickAge(idx, delay){
-  gbDemoTick(function(){
-    var pill = document.querySelectorAll('#ha-alter-grid .gb-age-pill')[idx];
-    if(pill) gbPickAge(pill);
-  }, delay);
-}
-function gbDemoPickMood(idx, delay){
-  gbDemoTick(function(){
-    var opt = document.querySelectorAll('#mood-grid .gb-mood-opt')[idx];
-    if(opt) gbPickMood(opt);
-  }, delay);
-}
-
-function gbDemoBestand(){
-  gbDemoStop();
-  openTerminModalGB();
-  gbShowDemoBadge();
-  var t = 0;
-  // Schritt 1: Patienttyp + Anliegen wählen
-  t+=700;  gbDemoSelect('rc-typ','bestand',t);
-  t+=700;  gbDemoSelect('rc-anliegen','vorsorge',t);
-  t+=1000; gbDemoWeiter(t);
-  // Akte finden
-  t+=600;  gbDemoFill('lk-nachname','Bergmann',t);
-  t+=400;  gbDemoFill('lk-geb','2018-07-22',t);
-  t+=400;  gbDemoFill('lk-handy','+49 89 4567890',t);
-  t+=800;  gbDemoWeiter(t); // löst intern die 700ms „Laden“-Animation aus
-  t+=1300; // Puffer, damit das Kurzcheck-Panel schon sichtbar ist
-  // Kurz bestätigen (keine Eingabe nötig)
-  t+=800;  gbDemoWeiter(t);
-  // Heute am wichtigsten + Alter
-  t+=600;  gbDemoFill('ha-heute','Kontrolle nach Mittelohrentzündung',t);
-  t+=500;  gbDemoPickAge(1,t);
-  t+=900;  gbDemoWeiter(t);
-  // Wie geht's dir gerade (freiwillig)
-  t+=600;  gbDemoPickMood(0,t);
-  t+=800;  gbDemoWeiter(t);
-  // Termin-Slot wählen
-  t+=1200; gbDemoTick(function(){
-    var slots = document.querySelectorAll('.gb-slot:not(.belegt)');
-    if(slots[2]){ slots[2].click(); }
-  }, t);
-  t+=1000; gbDemoWeiter(t);
-  // Kontaktdaten
-  t+=600;  gbDemoFill('gb-vorname','Maria',t);
-  t+=400;  gbDemoFill('gb-nachname','Bergmann',t);
-  t+=400;  gbDemoFill('gb-kind','Lena Bergmann',t);
-  t+=400;  gbDemoFill('gb-tel','+49 89 4567890',t);
-  t+=400;  gbDemoFill('gb-email','m.bergmann@email.de',t);
-  t+=400;  gbDemoFill('gb-kasse','TK',t);
-  t+=500;  gbDemoCheck('gb-dsgvo',t);
-  t+=800;  gbDemoWeiter(t);
-  // Danke-Screen — Demo-Badge nach 3s entfernen
-  t+=3000; gbDemoTick(gbDemoStop, t);
-}
-
-function gbDemoNeu(){
-  gbDemoStop();
-  openTerminModalGB();
-  gbShowDemoBadge();
-  var t = 0;
-  // Schritt 1
-  t+=700;  gbDemoSelect('rc-typ','neu',t);
-  t+=700;  gbDemoSelect('rc-anliegen','impfung',t);
-  t+=1000; gbDemoWeiter(t);
-  // Kind
-  t+=600;  gbDemoFill('ik-name','Jonas Müller',t);
-  t+=400;  gbDemoFill('ik-geb','2019-03-15',t);
-  t+=400;  gbDemoFill('ik-kasse','AOK Bayern',t);
-  t+=400;  gbDemoFill('ik-anschrift','Musterstr. 12, 81675 München',t);
-  t+=400;  gbDemoFill('ik-hauptvers','Mutter',t);
-  // Eltern
-  t+=500;  gbDemoFill('ie-name1','Sabine Müller',t);
-  t+=400;  gbDemoFill('ie-beruf1','Lehrerin',t);
-  t+=400;  gbDemoFill('ie-handy','+49 89 1234567',t);
-  t+=400;  gbDemoCheck('ie-erreichbar',t);
-  t+=400;  gbDemoFill('ie-email','s.mueller@email.de',t);
-  t+=900;  gbDemoWeiter(t);
-  // Heute am wichtigsten + Alter
-  t+=600;  gbDemoFill('ha-heute','Erste Vorsorge, Impfpass prüfen',t);
-  t+=500;  gbDemoPickAge(2,t);
-  t+=900;  gbDemoWeiter(t);
-  // Wie geht's dir gerade (freiwillig)
-  t+=600;  gbDemoPickMood(1,t);
-  t+=800;  gbDemoWeiter(t);
-  // Anamnesebogen (bestehend): Allergien, Vorerkrankungen, Unterschrift
-  t+=700;  gbDemoFill('an-allergien','Hausstaub (leicht)',t);
-  t+=500;  gbDemoCheck('an-keine',t);
-  t+=500;  gbDemoFill('an-medis','keine',t);
-  t+=500;  gbDemoFill('an-anliegen','Erste Vorsorge, Impfpass prüfen',t);
-  t+=700;  gbDemoSignatur(t);
-  t+=900;  gbDemoWeiter(t);
-  // Termin-Slot wählen
-  t+=1200; gbDemoTick(function(){
-    var slots = document.querySelectorAll('.gb-slot:not(.belegt)');
-    if(slots[1]){ slots[1].click(); }
-  }, t);
-  t+=1000; gbDemoWeiter(t);
-  // Kontaktdaten
-  t+=600;  gbDemoFill('gb-vorname','Klaus',t);
-  t+=400;  gbDemoFill('gb-nachname','Müller',t);
-  t+=400;  gbDemoFill('gb-kind','Jonas Müller',t);
-  t+=400;  gbDemoFill('gb-tel','+49 89 1234567',t);
-  t+=400;  gbDemoFill('gb-email','k.mueller@email.de',t);
-  t+=400;  gbDemoFill('gb-kasse','AOK Bayern',t);
-  t+=500;  gbDemoCheck('gb-dsgvo',t);
-  t+=800;  gbDemoWeiter(t);
-  // Ende
-  t+=3000; gbDemoTick(gbDemoStop, t);
-}
 
 // "Termin finden" Buttons im Hero etc. verbinden
 document.addEventListener('DOMContentLoaded',function(){
@@ -5802,7 +5799,7 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 
-<!-- ── Online Eltern-Schalter Modal ── -->
+<!-- Online Eltern-Schalter Modal -->
 <div id="gs-overlay" role="dialog" aria-modal="true" aria-labelledby="gs-modal-title">
   <div class="gs-box" id="gs-modal">
     <div class="gs-head">
@@ -5816,7 +5813,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
     </div>
     <div class="gs-danke" id="gs-danke">
-      <div class="gs-danke-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B485A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="gs-danke-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E6AA0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>Vielen Dank!</h3>
       <p id="gs-danke-text">Ihre Anfrage ist bei uns eingegangen.<br>Wir melden uns schnellstmöglich.</p>
     </div>
@@ -5905,30 +5902,32 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-e
   window.addEventListener('scroll', chk, {passive: true});
 })();
 </script>
-<!-- SofortFax Live-Widget -->
-<script src="https://sofortfax.de/widget.js"
-        data-fax="08993948740"
-        data-name="Die Familienpraxis|Dres. Boerschmann, Gandenberger-Bachem, Gleixner|Kinder- und Jugendmedizin"
-        data-color="#124357">
+<script>
+// Punkte + Pfeile unter den Wisch-Reihen (nur mobil sichtbar)
+(function(){
+  ['.lv-chips','.team-grid','.srv-list','.einblicke-karten','.kontakt-grid'].forEach(function(sel){
+    var box=document.querySelector(sel); if(!box) return;
+    var nav=document.createElement('div'); nav.className='swipe-nav';
+    nav.innerHTML='<button type="button" aria-label="Zurück">&#8249;</button><div class="sw-dots" aria-hidden="true"></div><button type="button" aria-label="Weiter">&#8250;</button>';
+    box.parentNode.insertBefore(nav,box.nextSibling);
+    var dots=nav.querySelector('.sw-dots'),n=0;
+    function bau(){
+      var seiten=Math.max(1,Math.ceil(box.scrollWidth/box.clientWidth-0.05));
+      if(seiten===n) return; n=seiten; dots.innerHTML='';
+      for(var i=0;i<n;i++) dots.appendChild(document.createElement('span'));
+      nav.style.display=n>1?'':'none'; mark();
+    }
+    function mark(){
+      var max=box.scrollWidth-box.clientWidth, i=max>0?Math.round(box.scrollLeft/max*(n-1)):0;
+      [].forEach.call(dots.children,function(d,k){d.className=k===i?'akt':''});
+    }
+    var b=nav.querySelectorAll('button');
+    b[0].onclick=function(){box.scrollBy({left:-box.clientWidth*0.8,behavior:'smooth'})};
+    b[1].onclick=function(){box.scrollBy({left:box.clientWidth*0.8,behavior:'smooth'})};
+    box.addEventListener('scroll',mark,{passive:true});
+    window.addEventListener('resize',bau); bau();
+  });
+})();
 </script>
-
-<!-- Button zum Oeffnen (Test-Button fuers Wochenende) -->
-<button data-sfx-trigger>Fax senden</button>
-
-<style>
-/* sofortfax-widget: aeussere Huelle ans Praxis-Design angepasst -- das Formular selbst liegt in einem iframe von sofortfax.de und ist von hier aus nicht stylebar (Farben/Schrift innen kommen von sofortfax.de) */
-#sfx-overlay{background:rgba(27,72,90,.55)!important}
-#sfx-frame-wrap{border-radius:24px!important;box-shadow:0 20px 40px -10px rgba(28,45,55,.35)!important}
-
-/* tablet hochformat/quer -- etwas grosszuegiger als die 400px vom widget-default */
-@media(min-width:768px) and (max-width:1023px){
-  #sfx-frame-wrap{max-width:440px!important;height:85vh!important;max-height:760px!important}
-}
-
-/* smartphone -- vollflaechig, passend zum breakpoint der restlichen seite (statt 440px vom widget) */
-@media(max-width:767px){
-  #sfx-frame-wrap{width:100%!important;max-width:100%!important;height:100vh!important;max-height:100vh!important;border-radius:0!important;box-shadow:none!important}
-}
-</style>
 <script src="barrierefreiheit.js" defer></script>
 </body>
