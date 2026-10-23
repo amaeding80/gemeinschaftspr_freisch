@@ -49,6 +49,12 @@
   + '.pxa-icon-btn{width:30px;height:30px;border:none;background:transparent;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;opacity:.85}'
   + '.pxa-icon-btn:hover{background:rgba(255,255,255,.15);opacity:1}'
   + '.pxa-icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.6}'
+  // Schliessen-X gut sichtbar, Kopf scrollt nicht mit
+  + '.pxa-head{flex-shrink:0;padding-right:10px}'
+  + '.pxa-icon-btn.pxa-zu{width:44px;height:44px;background:#F7F1E8;color:#1E6AA0;opacity:1;border-radius:10px;margin-left:4px}'
+  + '.pxa-icon-btn.pxa-zu:hover,.pxa-icon-btn.pxa-zu:focus-visible{background:#fff}'
+  + '.pxa-icon-btn.pxa-zu svg{width:22px;height:22px;stroke-width:2.4}'
+  + '.pxa-panel{max-height:min(680px,calc(100dvh - 120px))}'
   + '.pxa-body{overflow-y:auto;padding:16px 18px 22px}'
   + '.pxa-sektion{margin-bottom:18px}'
   + '.pxa-sektion:last-child{margin-bottom:0}'
@@ -71,7 +77,9 @@
   + '.pxa-reveal.pxa-zeigen{display:inline-flex}'
   + '@media(max-width:480px){.pxa-panel{left:12px;bottom:70px;width:calc(100vw - 24px)}.pxa-btn{left:12px;width:44px;height:44px}.pxa-btn svg{width:21px;height:21px}.pxa-reveal{left:12px;padding:8px 14px;font-size:12px}}'
   // Handy: Button ueber die untere Leiste schieben
-  + '@media(max-width:767px) and (min-height:431px){.pxa-btn,.pxa-reveal{bottom:calc(68px + env(safe-area-inset-bottom,0px))}.pxa-panel{bottom:calc(124px + env(safe-area-inset-bottom,0px))}}'
+  + '@media(max-width:767px) and (min-height:431px){.pxa-btn,.pxa-reveal{bottom:calc(68px + env(safe-area-inset-bottom,0px))}.pxa-panel{bottom:calc(124px + env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 140px - env(safe-area-inset-bottom,0px))}}'
+  // Querformat Handy: Panel volle Hoehe nutzen
+  + '@media(max-height:430px){.pxa-panel{bottom:12px;max-height:calc(100dvh - 24px)}}'
   // ---- Effekt-Klassen auf html ----
   + 'html.pxa-links-links main,html.pxa-links-links body{text-align:left !important}'
   + 'html.pxa-lesbare-schrift body,html.pxa-lesbare-schrift body *{font-family:Verdana,Arial,"Helvetica Neue",sans-serif !important;letter-spacing:.02em !important;word-spacing:.05em !important}'
@@ -150,7 +158,7 @@
     '<div class="pxa-head-btns">' +
       '<button class="pxa-icon-btn" data-action="verstecken" aria-label="Widget ausblenden">' + ic.ausblenden + '</button>' +
       '<button class="pxa-icon-btn" data-action="reset" aria-label="Einstellungen zurücksetzen">' + ic.reset + '</button>' +
-      '<button class="pxa-icon-btn" data-action="schliessen" aria-label="Schließen">' + ic.schliessen + '</button>' +
+      '<button class="pxa-icon-btn pxa-zu" data-action="schliessen" aria-label="Schließen">' + ic.schliessen + '</button>' +
     '</div></div>' +
     '<div class="pxa-body">' +
       '<div class="pxa-sektion"><p class="pxa-sektion-h">Text</p><div class="pxa-grid">' +
@@ -234,6 +242,10 @@
 
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape' && panel.classList.contains('pxa-offen')) panelToggle(false);
+    });
+    // Tippen neben das Panel schliesst es
+    document.addEventListener('click', function(e){
+      if(panel.classList.contains('pxa-offen') && !istImWidget(e.target)) panelToggle(false);
     });
   }
 
