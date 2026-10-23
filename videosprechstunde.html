@@ -66,7 +66,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
-    :root{--bg:#F7F1E8;--bg-soft:#F7F1E8;--primary:#1E6AA0;--accent:#AE5229;--ink:#1C2B33;--ink2:#576A75;--rule:#E6DACA;--head:'DM Serif Display',serif;--body:'Plus Jakarta Sans',sans-serif;--pad:clamp(20px,5vw,80px);--max:1120px}
+    :root{--bg:#F7F1E8;--bg-soft:#F7F1E8;--primary:#1E6AA0;--accent:#AE5229;--ink:#1C2B33;--ink2:#3D4A52;--rule:#E6DACA;--head:'DM Serif Display',serif;--body:'Plus Jakarta Sans',sans-serif;--pad:clamp(20px,5vw,80px);--max:1120px}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;overflow-x:hidden}
     body{font-family:var(--body);background:var(--bg);color:var(--ink);overflow-x:hidden;font-size:16px;line-height:1.6}
@@ -124,7 +124,7 @@
     .footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
     .footer-name{font-family:var(--head);font-size:15px;color:#fff;font-weight:400}
     .footer-links{display:flex;gap:20px;flex-wrap:wrap}
-    .footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+    .footer-links a{color:rgba(255,255,255,.88);text-decoration:none;transition:color 0.2s}
     .footer-links a:hover{color:#fff}
     .vs-zurueck-card,.ds-zurueck-card{display:none}
     /* vs-seite: transparent auf Desktop + Mobile */
@@ -182,7 +182,7 @@
     .zettel-static .ft-zettel-row-sub{font-size:10.5px;color:var(--ink2);font-weight:400;margin-top:1px}
     .zettel-static .ft-zettel-lines{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:inherit}
     .zettel-static .ft-zettel-lines::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(to bottom,transparent,transparent 28px,rgba(0,0,0,.04) 28px,rgba(0,0,0,.04) 29px)}
-.footer-pe{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.55);text-decoration:none;font-size:12px;letter-spacing:0.01em;border:0.5px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px 10px 3px 6px;transition:border-color .2s,color .2s}.footer-pe:hover{border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.85)!important}.footer-pe-dot{width:6px;height:6px;border-radius:50%;background:#c47a5a;flex-shrink:0;opacity:0.85}
+.footer-pe{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.88);text-decoration:none;font-size:12px;letter-spacing:0.01em;border:0.5px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px 10px 3px 6px;transition:border-color .2s,color .2s}.footer-pe:hover{border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.85)!important}.footer-pe-dot{width:6px;height:6px;border-radius:50%;background:#c47a5a;flex-shrink:0;opacity:0.85}
 
     /* App-Postit */
     .app-layout{display:grid;grid-template-columns:1fr auto;gap:clamp(32px,4vw,64px);align-items:center}
@@ -848,7 +848,7 @@ document.addEventListener('keydown', function(e) {
 <style>
 /* gb-modal */
 :root {
-  --text-muted: #576A75;
+  --text-muted: #3D4A52;
   --primary-hover: #175A8A;
   --text: #1C2B33;
   --sage-lt: #F7F1E8;
