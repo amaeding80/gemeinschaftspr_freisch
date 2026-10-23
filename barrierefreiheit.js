@@ -70,6 +70,8 @@
   + '.pxa-reveal{position:fixed;bottom:20px;left:20px;background:#1E6AA0;color:#fff;border:none;border-radius:999px;padding:10px 16px;font-size:13px;cursor:pointer;z-index:99997;display:none;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(0,0,0,.22)}'
   + '.pxa-reveal.pxa-zeigen{display:inline-flex}'
   + '@media(max-width:480px){.pxa-panel{left:12px;bottom:70px;width:calc(100vw - 24px)}.pxa-btn{left:12px;width:44px;height:44px}.pxa-btn svg{width:21px;height:21px}.pxa-reveal{left:12px;padding:8px 14px;font-size:12px}}'
+  // Handy: Button ueber die untere Leiste schieben
+  + '@media(max-width:767px) and (min-height:431px){.pxa-btn,.pxa-reveal{bottom:calc(68px + env(safe-area-inset-bottom,0px))}.pxa-panel{bottom:calc(124px + env(safe-area-inset-bottom,0px))}}'
   // ---- Effekt-Klassen auf html ----
   + 'html.pxa-links-links main,html.pxa-links-links body{text-align:left !important}'
   + 'html.pxa-lesbare-schrift body,html.pxa-lesbare-schrift body *{font-family:Verdana,Arial,"Helvetica Neue",sans-serif !important;letter-spacing:.02em !important;word-spacing:.05em !important}'
