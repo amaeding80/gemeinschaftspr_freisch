@@ -4559,12 +4559,54 @@ body.gb-modal-open{overflow:hidden}
 
 
 
-<div id="ft-zettel" class="ft-zettel" aria-label="Termin vereinbaren">
-  <div class="ft-zettel-clip"></div>
-  <div class="ft-zettel-lines"></div>
+<style>
+/* Termin-Karte v2: Schalter = Klasse ft-zettel--v2 am aside (entfernen -> alter Zettel) */
+.ft-zettel--v2{width:210px}
+.ft-zettel--v2 .ft-zettel-head{padding:6px 4px 6px 14px}
+.ft-zettel--v2 .ft-zettel-head-text{font-size:12px;flex:1}
+.ft-zettel-zu{width:44px;height:44px;min-width:44px;border:none;background:transparent;color:#fff;font-size:20px;line-height:1;cursor:pointer;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.ft-zettel-zu:hover,.ft-zettel-zu:focus-visible{background:rgba(255,255,255,.18)}
+.ft-zettel-zu:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.ft-zettel-v2body{display:none}
+.ft-zettel--v2 .ft-zettel-body{display:none}
+.ft-zettel--v2 .ft-zettel-v2body{display:block;padding:14px 14px 12px;position:relative}
+.ft-zettel-btn{display:block;text-align:center;white-space:nowrap;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:11px 10px;border-radius:999px;text-decoration:none;box-shadow:0 3px 10px rgba(174,82,41,.25);transition:filter .15s}
+.ft-zettel-btn:hover{filter:brightness(1.08)}
+.ft-zettel-link{display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;margin-top:4px;white-space:nowrap;font-size:13px;font-weight:600;color:var(--primary);text-decoration:underline;text-underline-offset:3px}
+.ft-zettel-btn:focus-visible,.ft-zettel-link:focus-visible,.ft-reiter:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+/* versteckt = wirklich weg (kein Tab-Fokus) */
+.ft-zettel:not(.ft-sichtbar){visibility:hidden}
+.ft-zettel.ft-eingeklappt{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+/* Kalender-Reiter (eingeklappte Karte) */
+.ft-reiter{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:290;width:48px;height:56px;border:none;border-radius:0 14px 14px 0;background:var(--accent);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:2px 6px 20px rgba(0,0,0,.18)}
+.ft-reiter.ft-reiter-an{display:flex}
+/* Karte erst ab 1560px, darunter rechte Leiste */
+@media (max-width:1559px){
+  .ft-zettel,.ft-reiter{display:none!important}
+}
+/* rechte Leiste: bewusst angedockt statt abgeschnitten */
+@media (min-width:768px) and (max-width:1559px){
+  .hero-tab-btns.gb-tabs-visible{display:flex!important;flex-direction:column!important;position:fixed!important;right:0!important;top:62%!important;transform:translateY(-50%)!important;z-index:999!important;gap:6px!important;width:auto!important;padding:7px 0 7px 7px!important;background:#fff!important;border-radius:16px 0 0 16px!important;box-shadow:-4px 6px 22px rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.05)!important}
+  .hero-tab-btns.gb-tabs-visible .hero-tab-btn{width:48px!important;height:48px!important;border-radius:12px 0 0 12px!important;font-size:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+  .hero-tab-btns.gb-tabs-visible .hero-tab-btn svg{width:22px!important;height:22px!important}
+}
+/* Demo-Fenster: im Team-/Kontakt-Bereich eingeklappt */
+.gb-demo-auf{display:none;border:none;cursor:pointer;background:transparent;color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;min-height:44px;padding:0 6px;font-family:var(--body)}
+.gb-demo-bar.gb-demo-eingeklappt{padding:4px 10px}
+.gb-demo-bar.gb-demo-eingeklappt .gb-demo-label,.gb-demo-bar.gb-demo-eingeklappt .gb-demo-btn{display:none}
+.gb-demo-bar.gb-demo-eingeklappt .gb-demo-auf{display:block}
+</style>
+<aside id="ft-zettel" class="ft-zettel ft-zettel--v2" aria-label="Termin vereinbaren">
+  <div class="ft-zettel-clip" aria-hidden="true"></div>
+  <div class="ft-zettel-lines" aria-hidden="true"></div>
   <div class="ft-zettel-head">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-    <div class="ft-zettel-head-text">Ihr nächster Termin</div>
+    <div class="ft-zettel-head-text">Termin buchen</div>
+    <button type="button" class="ft-zettel-zu" id="ft-zettel-zu" aria-label="Termin-Karte schließen">&times;</button>
+  </div>
+  <div class="ft-zettel-v2body">
+    <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="ft-zettel-btn" onclick="event.preventDefault();openTerminModalGB()">Online-Termin (Doctolib)</a>
+    <a href="videosprechstunde.html" class="ft-zettel-link">Videosprechstunde</a>
   </div>
   <div class="ft-zettel-body">
     <a href="https://www.doctolib.de/praxis/muenchen/fachaerztinnen-fuer-kinder-und-jugendmedizin/booking/new-patient" target="_blank" rel="noopener noreferrer" class="ft-zettel-row ft-zettel-row--termin" onclick="event.preventDefault();openTerminModalGB()">
@@ -4586,7 +4628,8 @@ body.gb-modal-open{overflow:hidden}
       </div>
     </a>
   </div>
-</div>
+</aside>
+<button type="button" class="ft-reiter" id="ft-reiter" aria-label="Termin buchen öffnen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></button>
 <script>
 // terminzettel: sichtbar ab team-grid, kurz weg bei Schick-uns-Post, weg beim Footer
 (function(){
@@ -4599,17 +4642,79 @@ body.gb-modal-open{overflow:hidden}
     var vh = window.innerHeight;
     function top(el){ return el ? el.getBoundingClientRect().top : 9999; }
     function bot(el){ return el ? el.getBoundingClientRect().bottom : 9999; }
-    // ab Ärztefotos aktiv
-    var aktiv = top(teamGrid) < vh * 0.85;
+    // ab Ende Hero aktiv
+    var hero = document.querySelector('.hero-v2');
+    var aktiv = hero ? bot(hero) < 0 : top(teamGrid) < vh * 0.85;
     // kurz ausblenden während Schick-uns-Post-Button sichtbar ist
     var postSichtbar = postBtn && top(postBtn) < vh * 0.85 && bot(postBtn) > 0;
     // ab Footer ausblenden
     var footerSichtbar = footer && top(footer) < vh * 0.6;
     zettel.classList.toggle('ft-sichtbar', aktiv && !postSichtbar && !footerSichtbar);
+    if(window.ftZettelStatus) window.ftZettelStatus();
   }
   window.addEventListener('scroll', pruefe, {passive:true});
   window.addEventListener('resize', pruefe, {passive:true});
   pruefe();
+})();
+</script>
+<script>
+// Termin-Karte: im Team/Kontakt einklappen, Schließen merken, Reiter öffnet wieder
+(function(){
+  var zettel = document.getElementById('ft-zettel');
+  var reiter = document.getElementById('ft-reiter');
+  var zuBtn  = document.getElementById('ft-zettel-zu');
+  if(!zettel || !reiter) return;
+  var KEY = 'ftZettelZu';
+  var imBereich = {};
+  var manuellAuf = false;
+  function zu(){ try{ return sessionStorage.getItem(KEY) === '1'; }catch(e){ return false; } }
+  function bereichAktiv(){ return Object.keys(imBereich).some(function(k){ return imBereich[k]; }); }
+  function status(){
+    var sichtbar = zettel.classList.contains('ft-sichtbar');
+    var einklappen = zu() || (bereichAktiv() && !manuellAuf);
+    zettel.classList.toggle('ft-eingeklappt', einklappen);
+    var offen = sichtbar && !einklappen;
+    if(offen){ zettel.removeAttribute('inert'); zettel.removeAttribute('aria-hidden'); }
+    else { zettel.setAttribute('inert',''); zettel.setAttribute('aria-hidden','true'); }
+    reiter.classList.toggle('ft-reiter-an', sichtbar && einklappen);
+  }
+  window.ftZettelStatus = status;
+  zuBtn.addEventListener('click', function(){
+    try{ sessionStorage.setItem(KEY,'1'); }catch(e){}
+    manuellAuf = false; status(); reiter.focus();
+  });
+  reiter.addEventListener('click', function(){
+    try{ sessionStorage.removeItem(KEY); }catch(e){}
+    manuellAuf = true; status();
+    var b = zettel.querySelector('.ft-zettel-btn'); if(b) b.focus();
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(en){ imBereich[en.target.id] = en.isIntersecting; });
+      if(!bereichAktiv()) manuellAuf = false;
+      status();
+      var demo = document.getElementById('gb-demo-bar');
+      if(demo) demo.classList.toggle('gb-demo-eingeklappt', imBereich.team === true && !demo.dataset.offen);
+      if(demo && !imBereich.team) delete demo.dataset.offen;
+    }, {rootMargin:'-20% 0px -20% 0px'});
+    ['team','kontakt'].forEach(function(id){ var el = document.getElementById(id); if(el) io.observe(el); });
+  }
+  status();
+})();
+
+// Rechte Leiste auch auf Desktop unter 1560px nach dem Hero zeigen
+(function(){
+  var mq = window.matchMedia('(min-width:768px) and (max-width:1559px)');
+  var hero = document.querySelector('.hero.hero-v2');
+  var btns = document.querySelector('.hero-tab-btns');
+  if(!hero || !btns) return;
+  function pruef(){
+    if(!mq.matches){ return; }
+    btns.classList.toggle('gb-tabs-visible', hero.getBoundingClientRect().bottom < 0);
+  }
+  window.addEventListener('scroll', pruef, {passive:true});
+  mq.addEventListener('change', function(){ btns.classList.remove('gb-tabs-visible'); pruef(); });
+  pruef();
 })();
 </script>
 
@@ -4692,6 +4797,7 @@ body.gb-modal-open{overflow:hidden}
 
 <!-- DEMO-LEISTE -->
 <div class="gb-demo-bar" id="gb-demo-bar">
+  <button type="button" class="gb-demo-auf" onclick="var d=document.getElementById('gb-demo-bar');d.dataset.offen='1';d.classList.remove('gb-demo-eingeklappt')" aria-label="Demo-Anmeldung aufklappen">Demo</button>
   <div class="gb-demo-label">Demo — so könnte die Anmeldung aussehen</div>
   <button class="gb-demo-btn bestand" onclick="gbDemoBestand()">&#9654; Bestandspatient</button>
   <button class="gb-demo-btn neu" onclick="gbDemoNeu()">&#9654; Neupatient + Anamnese</button>
