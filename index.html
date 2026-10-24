@@ -3880,13 +3880,15 @@ body.gb-modal-open{overflow:hidden}
     </div>
   </div>
   <div class="hero-tab-btns" aria-label="Schnellzugriff">
-    <a href="#" class="hero-tab-btn hero-tab-btn-termin" onclick="event.preventDefault();openTerminModalGB()" aria-label="Gleich Termin finden">
+    <a href="#" class="hero-tab-btn hero-tab-btn-termin" onclick="event.preventDefault();openTerminModalGB()" aria-label="Termin buchen" title="Termin buchen">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       Termin finden
+      <span class="hero-tab-kurz" aria-hidden="true">Termin</span>
     </a>
-    <a href="videosprechstunde.html" class="hero-tab-btn hero-tab-btn-video" aria-label="Zur Videosprechstunde">
+    <a href="videosprechstunde.html" class="hero-tab-btn hero-tab-btn-video" aria-label="Zur Videosprechstunde" title="Videosprechstunde">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
       Videosprechstunde
+      <span class="hero-tab-kurz" aria-hidden="true">Video</span>
     </a>
   </div>
   <img class="schaukel-deko" src="bilder/schaukel.gif" alt="" aria-hidden="true">
@@ -4595,6 +4597,23 @@ body.gb-modal-open{overflow:hidden}
 .gb-demo-bar.gb-demo-eingeklappt{padding:4px 10px}
 .gb-demo-bar.gb-demo-eingeklappt .gb-demo-label,.gb-demo-bar.gb-demo-eingeklappt .gb-demo-btn{display:none}
 .gb-demo-bar.gb-demo-eingeklappt .gb-demo-auf{display:block}
+/* Kurzlabels in Leiste und Reiter */
+.hero-tab-kurz{display:none}
+.ft-reiter{flex-direction:column;gap:3px;width:56px;height:62px}
+.ft-reiter-text{font-size:12px;font-weight:700;line-height:1}
+@media (min-width:768px) and (max-width:1559px){
+  .hero-tab-btns.gb-tabs-visible .hero-tab-btn{width:58px!important;height:58px!important;flex-direction:column!important;gap:3px!important}
+  .hero-tab-btns.gb-tabs-visible .hero-tab-btn-termin{background:var(--primary,#1E6AA0)!important;color:#fff!important;text-decoration:none!important}
+  .hero-tab-btns.gb-tabs-visible .hero-tab-btn-video{background:var(--bg,#F7F1E8)!important;color:var(--primary,#1E6AA0)!important;box-shadow:0 0 0 1.5px var(--primary,#1E6AA0) inset!important;text-decoration:none!important}
+  .hero-tab-btns.gb-tabs-visible .hero-tab-kurz{display:block!important;font-size:12px!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important}
+}
+/* Demo-Box unten links über dem Barrierefreiheits-Knopf, rechts bleibt frei */
+.gb-demo-bar{right:auto!important;left:20px!important;bottom:88px!important;align-items:flex-start!important}
+.gb-demo-label{text-align:left!important}
+/* Team-Karten: Text einheitlich links (Desktop/Querformat, Hochformat-Karussell bleibt mittig) */
+@media (min-width:1025px),(min-width:768px) and (orientation:landscape){
+  .team-grid .team-karte .team-body,.team-grid .team-karte:first-child .team-body,.team-grid .team-karte:nth-child(3) .team-body{text-align:left!important}
+}
 </style>
 <aside id="ft-zettel" class="ft-zettel ft-zettel--v2" aria-label="Termin vereinbaren">
   <div class="ft-zettel-clip" aria-hidden="true"></div>
@@ -4629,7 +4648,7 @@ body.gb-modal-open{overflow:hidden}
     </a>
   </div>
 </aside>
-<button type="button" class="ft-reiter" id="ft-reiter" aria-label="Termin buchen öffnen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></button>
+<button type="button" class="ft-reiter" id="ft-reiter" aria-label="Termin buchen öffnen" title="Termin buchen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span class="ft-reiter-text" aria-hidden="true">Termin</span></button>
 <script>
 // terminzettel: sichtbar ab team-grid, kurz weg bei Schick-uns-Post, weg beim Footer
 (function(){
@@ -4688,14 +4707,23 @@ body.gb-modal-open{overflow:hidden}
     manuellAuf = true; status();
     var b = zettel.querySelector('.ft-zettel-btn'); if(b) b.focus();
   });
+  // Demo-Box: im Team/Kontakt und unter 1560px eingeklappt (sonst ragt sie in den Inhalt)
+  function demoStatus(){
+    var demo = document.getElementById('gb-demo-bar');
+    if(!demo) return;
+    var einklappen = imBereich.team === true || imBereich.kontakt === true || window.innerWidth < 1560;
+    if(!einklappen) delete demo.dataset.offen;
+    demo.classList.toggle('gb-demo-eingeklappt', einklappen && !demo.dataset.offen);
+  }
+  window.addEventListener('resize', demoStatus, {passive:true});
+  document.addEventListener('DOMContentLoaded', demoStatus);
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(eintraege){
       eintraege.forEach(function(en){ imBereich[en.target.id] = en.isIntersecting; });
       if(!bereichAktiv()) manuellAuf = false;
       status();
       var demo = document.getElementById('gb-demo-bar');
-      if(demo) demo.classList.toggle('gb-demo-eingeklappt', imBereich.team === true && !demo.dataset.offen);
-      if(demo && !imBereich.team) delete demo.dataset.offen;
+      demoStatus();
     }, {rootMargin:'-20% 0px -20% 0px'});
     ['team','kontakt'].forEach(function(id){ var el = document.getElementById(id); if(el) io.observe(el); });
   }
@@ -6006,9 +6034,13 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-e
   function chk() {
     if (!mq.matches || !s) return;
     s.style.transition = 'opacity 0.3s';
-    s.style.opacity = window.scrollY > window.innerHeight * 0.85 ? '0' : '1';
+    // nur solange der Hero oben im Bild ist, sonst haengt sie ueber dem Inhalt
+    var hero = document.querySelector('.hero-v2');
+    var grenze = hero ? hero.offsetHeight * 0.4 : window.innerHeight * 0.4;
+    s.style.opacity = window.scrollY > grenze ? '0' : '1';
   }
   window.addEventListener('scroll', chk, {passive: true});
+  chk();
 })();
 </script>
 <!-- SofortFax Live-Widget -->
