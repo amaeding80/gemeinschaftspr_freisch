@@ -4582,12 +4582,12 @@ body.gb-modal-open{overflow:hidden}
 /* Kalender-Reiter (eingeklappte Karte) */
 .ft-reiter{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:290;width:48px;height:56px;border:none;border-radius:0 14px 14px 0;background:var(--accent);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:2px 6px 20px rgba(0,0,0,.18)}
 .ft-reiter.ft-reiter-an{display:flex}
-/* Karte erst ab 1560px, darunter rechte Leiste */
-@media (max-width:1559px){
+/* Karte ausgeblendet, überall rechte Leiste */
+@media all{
   .ft-zettel,.ft-reiter{display:none!important}
 }
 /* rechte Leiste: bewusst angedockt statt abgeschnitten */
-@media (min-width:768px) and (max-width:1559px){
+@media (min-width:768px){
   .hero-tab-btns.gb-tabs-visible{display:flex!important;flex-direction:column!important;position:fixed!important;right:0!important;top:62%!important;transform:translateY(-50%)!important;z-index:999!important;gap:6px!important;width:auto!important;padding:7px 0 7px 7px!important;background:#fff!important;border-radius:16px 0 0 16px!important;box-shadow:-4px 6px 22px rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.05)!important}
   .hero-tab-btns.gb-tabs-visible .hero-tab-btn{width:48px!important;height:48px!important;border-radius:12px 0 0 12px!important;font-size:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
   .hero-tab-btns.gb-tabs-visible .hero-tab-btn svg{width:22px!important;height:22px!important}
@@ -4601,7 +4601,7 @@ body.gb-modal-open{overflow:hidden}
 .hero-tab-kurz{display:none}
 .ft-reiter{flex-direction:column;gap:3px;width:56px;height:62px}
 .ft-reiter-text{font-size:12px;font-weight:700;line-height:1}
-@media (min-width:768px) and (max-width:1559px){
+@media (min-width:768px){
   .hero-tab-btns.gb-tabs-visible .hero-tab-btn{width:58px!important;height:58px!important;flex-direction:column!important;gap:3px!important}
   .hero-tab-btns.gb-tabs-visible .hero-tab-btn-termin{background:var(--primary,#1E6AA0)!important;color:#fff!important;text-decoration:none!important}
   .hero-tab-btns.gb-tabs-visible .hero-tab-btn-video{background:var(--bg,#F7F1E8)!important;color:var(--primary,#1E6AA0)!important;box-shadow:0 0 0 1.5px var(--primary,#1E6AA0) inset!important;text-decoration:none!important}
@@ -4732,7 +4732,7 @@ body.gb-modal-open{overflow:hidden}
 
 // Rechte Leiste auch auf Desktop unter 1560px nach dem Hero zeigen
 (function(){
-  var mq = window.matchMedia('(min-width:768px) and (max-width:1559px)');
+  var mq = window.matchMedia('(min-width:768px)');
   var hero = document.querySelector('.hero.hero-v2');
   var btns = document.querySelector('.hero-tab-btns');
   if(!hero || !btns) return;
