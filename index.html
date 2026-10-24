@@ -6090,6 +6090,15 @@ img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none;pointer-e
   .dock-termin-popover{width:auto;min-width:200px;max-width:calc(100vw - 28px);right:max(14px,env(safe-area-inset-right));box-sizing:border-box}
   .dock-pop-row{white-space:nowrap}
 }
+  .ft-zettel-clip { display: none !important; }
+/* Bichler: Foto eingerückt mit hellem Rahmen, ganzer Kopf sichtbar */
+@media (min-width: 768px) {
+  .team-grid .team-karte:nth-child(2) .team-foto { padding: 14px; background: #f6efe4; box-sizing: border-box; }
+  .team-grid .team-karte:nth-child(2) .team-foto img { transform: none !important; object-fit: cover !important; object-position: center 4% !important; border-radius: 8px; }
+}
+@media (max-width: 767px) {
+  .team-grid .team-karte:nth-child(2) .team-foto img { transform: none !important; object-position: center 6% !important; }
+}
 </style>
 <script src="barrierefreiheit.js?v=4" defer></script>
 </body>
